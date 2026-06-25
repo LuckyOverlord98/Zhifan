@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
+import ProductSearch from "./components/ProductSearch.jsx";
+import { products, manufacturerTabs, categoryMeta } from "./data/productCatalog.js";
 
 const navItems = [
   ["/#products", "产品中心"],
@@ -6,15 +8,6 @@ const navItems = [
   ["/#knowledge", "焊接操作"],
   ["/#strength", "资质与服务"],
   ["/#contact", "联系我们"]
-];
-
-const products = [
-  ["01", "实芯气保焊丝", "约1500吨常备，适用于钢结构、装备制造和连续焊接产线。"],
-  ["02", "药芯气保焊丝", "约800吨常备，兼顾效率、成形质量和现场适应性。"],
-  ["03", "埋弧焊丝焊剂", "约600吨常备，服务厚板、筒体、管道和大型构件。"],
-  ["04", "不锈钢焊材", "约250吨常备，覆盖常见不锈钢焊接与耐腐蚀工况。"],
-  ["05", "铝焊丝与特种焊材", "铝焊丝约30吨常备，并配套耐磨、耐热、异种钢材料。"],
-  ["06", "设备配件与工具", "电焊机、割炬、辅料、配件及常用五金手动工具。"]
 ];
 
 const caseCards = [
@@ -198,92 +191,6 @@ function AdminDashboard() {
 }
 
 
-const manufacturerTabs = ["\u91d1\u6865", "\u5927\u897f\u6d0b", "\u4e1c\u98ce", "\u5929\u6cf0", "\u5176\u4ed6"];
-const categoryMeta = {
-  "solid-wires": {
-    title: "\u5b9e\u82af\u6c14\u4fdd\u710a\u4e1d",
-    eyebrow: "Product Catalog",
-    description: "\u9002\u7528\u4e8e\u94a2\u7ed3\u6784\u3001\u88c5\u5907\u5236\u9020\u548c\u81ea\u52a8\u5316\u710a\u63a5\u4ea7\u7ebf\uff0c\u540e\u7eed\u53ef\u6309\u5382\u5bb6\u5bfc\u5165 ER50-6 \u7b49\u5e38\u7528\u578b\u53f7\u3002"
-  },
-  "flux-cored-wires": {
-    title: "\u836f\u82af\u6c14\u4fdd\u710a\u4e1d",
-    eyebrow: "Product Catalog",
-    description: "\u517c\u987e\u6548\u7387\u3001\u6210\u5f62\u548c\u73b0\u573a\u9002\u5e94\u6027\uff0c\u9002\u5408\u4e2d\u539a\u677f\u3001\u8239\u8236\u548c\u5de5\u7a0b\u6784\u4ef6\u7b49\u573a\u666f\u3002"
-  },
-  "submerged-arc": {
-    title: "\u57cb\u5f27\u710a\u4e1d\u710a\u5242",
-    eyebrow: "Product Catalog",
-    description: "\u56f4\u7ed5\u539a\u677f\u957f\u710a\u7f1d\u548c\u5927\u578b\u6784\u4ef6\uff0c\u6309\u710a\u4e1d\u3001\u710a\u5242\u6210\u5957\u65b9\u5f0f\u7ba1\u7406\u578b\u53f7\u3002"
-  },
-  "stainless-materials": {
-    title: "\u4e0d\u9508\u94a2\u710a\u6750",
-    eyebrow: "Product Catalog",
-    description: "\u9762\u5411 304\u3001316L\u3001\u53cc\u76f8\u94a2\u548c\u5f02\u79cd\u94a2\u7b49\u710a\u63a5\u573a\u666f\uff0c\u6309\u5382\u5bb6\u9884\u7559\u578b\u53f7\u6e05\u5355\u3002"
-  },
-  "special-materials": {
-    title: "\u94dd\u710a\u4e1d\u4e0e\u7279\u79cd\u710a\u6750",
-    eyebrow: "Product Catalog",
-    description: "\u7528\u4e8e\u94dd\u5408\u91d1\u3001\u8010\u78e8\u3001\u8010\u70ed\u548c\u5f02\u79cd\u94a2\u7b49\u7279\u6b8a\u710a\u63a5\u5de5\u51b5\u3002"
-  },
-  "equipment-accessories": {
-    title: "\u8bbe\u5907\u914d\u4ef6\u4e0e\u5de5\u5177",
-    eyebrow: "Product Catalog",
-    description: "\u5305\u542b\u710a\u673a\u3001\u5272\u70ac\u3001\u914d\u4ef6\u3001\u8f85\u6599\u548c\u4e94\u91d1\u5de5\u5177\uff0c\u4fbf\u4e8e\u4e0e\u710a\u6750\u4e00\u5e76\u914d\u9001\u3002"
-  },
-  "carbon-steel-electrodes": {
-    title: "\u78b3\u94a2\u710a\u6761",
-    eyebrow: "Jinqiao Catalog",
-    description: "\u9002\u7528\u4e8e\u4f4e\u78b3\u94a2\u548c 490MPa \u7ea7\u7ed3\u6784\u710a\u63a5\uff0c\u8986\u76d6\u901a\u7528\u7ed3\u6784\u3001\u4e2d\u539a\u677f\u3001\u73b0\u573a\u7ef4\u4fee\u4e0e\u91cd\u8981\u627f\u8f7d\u6784\u4ef6\u3002"
-  }
-};
-
-function ProductSearch() {
-  const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const keyword = query.trim();
-    if (!keyword) {
-      setResults([]);
-      return;
-    }
-    const controller = new AbortController();
-    const timer = window.setTimeout(async () => {
-      try {
-        const response = await fetch("/api/products?search=" + encodeURIComponent(keyword), { signal: controller.signal });
-        const data = await response.json();
-        setResults(data.items || []);
-        setOpen(true);
-      } catch (error) {
-        if (error.name !== "AbortError") setResults([]);
-      }
-    }, 220);
-    return () => {
-      window.clearTimeout(timer);
-      controller.abort();
-    };
-  }, [query]);
-
-  return (
-    <div className="product-search" role="search">
-      <label htmlFor="productSearch">{"\u4ea7\u54c1\u641c\u7d22"}</label>
-      <input id="productSearch" type="search" value={query} onChange={(event) => setQuery(event.target.value)} onFocus={() => setOpen(true)} placeholder={"\u641c\u7d22\u578b\u53f7\uff0c\u5982 J422 / J507"} />
-      {open && query.trim() && (
-        <div className="product-search-results">
-          {results.length === 0 ? (
-            <p>{"\u6682\u65e0\u5339\u914d\u578b\u53f7"}</p>
-          ) : results.slice(0, 6).map((item) => (
-            <a key={item.slug} href={"/products/" + item.slug}>
-              <strong>{item.model}</strong>
-              <span>{item.manufacturer} ? {item.categoryName}</span>
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
 
 function ProductPageShell({ children }) {
   return (
@@ -507,7 +414,7 @@ function App() {
 
         <section className="section" id="products">
           <div className="section-split"><div className="section-heading"><p className="eyebrow">Products</p><h2>{"\u4ea7\u54c1\u4e2d\u5fc3"}</h2><p>{"\u9ad8\u9891\u54c1\u7c7b\u5e38\u5907\u5e93\u5b58\uff0c\u6309\u54c1\u724c\u3001\u89c4\u683c\u548c\u9879\u76ee\u8ba1\u5212\u8fdb\u884c\u4fdd\u4f9b\u3002"}</p><ProductSearch /></div><figure className="section-image"><img src="/assets/sections/products-shelves.png" alt="货架上的焊丝、焊条与焊剂库存" /></figure></div>
-          <div className="product-grid">{products.map((item) => <a className="product-home-card" key={item.number} href={"/products/" + item.slug}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></a>)}<a className="product-category-card" href="/products/carbon-steel-electrodes"><span>07</span><h3>{"\u78b3\u94a2\u710a\u6761"}</h3><p>{"\u9002\u7528\u4e8e\u4f4e\u78b3\u94a2\u548c 490MPa \u7ea7\u7ed3\u6784\u710a\u63a5\uff0c\u8986\u76d6\u901a\u7528\u7ed3\u6784\u3001\u4e2d\u539a\u677f\u3001\u73b0\u573a\u7ef4\u4fee\u4e0e\u91cd\u8981\u627f\u8f7d\u6784\u4ef6\u3002"}</p></a></div>
+          <div className="product-grid">{products.map((item) => <a className="product-home-card" key={item.number} href={"/products/" + item.slug}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></a>)}</div>
         </section>
 
         <section className="section soft" id="solutions">

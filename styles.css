@@ -2075,3 +2075,187 @@ h4 {
   border-color: rgba(18, 100, 216, 0.32);
   box-shadow: 0 16px 40px rgba(18, 100, 216, 0.12);
 }
+
+
+/* Design refinement: cleaner white surfaces, subtle blue accents, integrated imagery. */
+body {
+  background: #ffffff;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(226, 232, 240, 0.86);
+}
+
+.hero {
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 84px max(20px, calc((100% - 1160px) / 2)) 46px;
+}
+
+.hero::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 37%, rgba(255, 255, 255, 0.24) 72%, rgba(255, 255, 255, 0.04) 100%),
+    url("/assets/sections/hero-building-zhifan.png") right center / cover no-repeat;
+}
+
+.hero::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #ffffff);
+}
+
+.hero-copy-wrap {
+  max-width: 620px;
+}
+
+.hero-copy {
+  max-width: 520px;
+  color: #4b5565;
+}
+
+.hero-metrics {
+  background: rgba(255, 255, 255, 0.84);
+  border-color: rgba(226, 232, 240, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.07);
+}
+
+.section {
+  padding: 74px 0;
+}
+
+.soft,
+.brand-strip,
+.strength-section {
+  background: #ffffff;
+}
+
+.section-split {
+  align-items: center;
+}
+
+.section-image,
+.contact-image,
+.stock-gallery figure {
+  border-radius: 8px;
+  box-shadow: none;
+  background: #f8fafc;
+  position: relative;
+}
+
+.section-image::after,
+.contact-image::after,
+.stock-gallery figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(18,100,216,0.12));
+  pointer-events: none;
+}
+
+.product-grid {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.product-home-card,
+.product-grid article,
+.case-list article,
+.case-data-grid article,
+.knowledge-grid article,
+.service-grid article,
+.contact-form,
+.detail-summary,
+.detail-card,
+.spec-table-card,
+.product-browser,
+.product-page-hero,
+.product-detail-hero {
+  border-radius: 8px;
+  box-shadow: none;
+  border-color: #e5e7eb;
+}
+
+.product-home-card {
+  min-height: 190px;
+  padding: 18px;
+  background: #ffffff;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.product-home-card > span {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  background: #eef5ff;
+  color: var(--blue-dark);
+  font-size: 12px;
+}
+
+.product-home-card h3 {
+  min-height: 54px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.product-home-card p {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.product-home-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(18, 100, 216, 0.42);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+.strength-hero {
+  border-radius: 8px;
+  box-shadow: none;
+  background:
+    linear-gradient(90deg, rgba(6, 32, 72, 0.88) 0%, rgba(18, 100, 216, 0.58) 46%, rgba(255, 255, 255, 0.16) 100%),
+    url("/assets/sections/strength-warehouse-bg.png") center / cover no-repeat;
+}
+
+.service-grid article::before,
+.service-grid article::after,
+.product-category-card {
+  border-radius: 8px;
+}
+
+@media (max-width: 1080px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.88) 48%, rgba(255,255,255,0.35) 100%),
+      url("/assets/sections/hero-building-zhifan.png") center top / cover no-repeat;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-home-card {
+    min-height: auto;
+  }
+
+  .product-home-card h3 {
+    min-height: auto;
+  }
+}
