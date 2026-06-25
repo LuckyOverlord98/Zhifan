@@ -40,3 +40,13 @@ Public endpoints:
 Admin inquiry list:
 - GET /api/inquiries
 - Header: x-admin-token: your-token
+## Admin page
+
+Open `/admin`, enter `ADMIN_TOKEN`, then click the query button to view customer inquiries stored in MongoDB.
+
+Direct MongoDB shell access on the server:
+
+```bash
+mongosh "mongodb://127.0.0.1:27017/zhifan_welding"
+db.inquiries.find().sort({ createdAt: -1 }).limit(20).pretty()
+```

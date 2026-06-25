@@ -109,9 +109,99 @@ function ContactForm() {
   );
 }
 
+function AdminDashboard() {
+  const [token, setToken] = useState(() => localStorage.getItem("zhifanAdminToken") || "");
+  const [items, setItems] = useState([]);
+  const [status, setStatus] = useState({ type: "idle", text: "" });
+
+  async function loadInquiries(event) {
+    event?.preventDefault();
+    setStatus({ type: "loading", text: "正在读取咨询数据..." });
+
+    try {
+      const response = await fetch("/api/inquiries", {
+        headers: { "x-admin-token": token }
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.message || "读取失败");
+      localStorage.setItem("zhifanAdminToken", token);
+      setItems(result.items || []);
+      setStatus({ type: "success", text: `已读取 ${result.items?.length || 0} 条咨询。` });
+    } catch (error) {
+      setItems([]);
+      setStatus({ type: "error", text: error.message || "读取失败，请检查后台 token。" });
+    }
+  }
+
+  function formatTime(value) {
+    if (!value) return "-";
+    return new Intl.DateTimeFormat("zh-CN", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit"
+    }).format(new Date(value));
+  }
+
+  return (
+    <main className="admin-page">
+      <section className="admin-shell">
+        <div className="admin-heading">
+          <a href="/" className="admin-back">返回网站</a>
+          <p className="eyebrow">Admin</p>
+          <h1>客户咨询后台</h1>
+          <p>输入服务器环境变量中的 ADMIN_TOKEN，查看 MongoDB 中保存的客户咨询数据。</p>
+        </div>
+
+        <form className="admin-login" onSubmit={loadInquiries}>
+          <label>
+            后台 Token
+            <input type="password" value={token} onChange={(event) => setToken(event.target.value)} placeholder="请输入 ADMIN_TOKEN" required />
+          </label>
+          <button type="submit">读取咨询</button>
+        </form>
+
+        {status.text && <p className={`form-status ${status.type}`}>{status.text}</p>}
+
+        <div className="admin-table-wrap">
+          <table className="admin-table">
+            <thead>
+              <tr>
+                <th>提交时间</th>
+                <th>联系人</th>
+                <th>电话</th>
+                <th>公司</th>
+                <th>需求说明</th>
+                <th>状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.length === 0 ? (
+                <tr><td colSpan="6" className="admin-empty">暂无数据，或尚未读取。</td></tr>
+              ) : items.map((item) => (
+                <tr key={item._id}>
+                  <td>{formatTime(item.createdAt)}</td>
+                  <td>{item.name || "-"}</td>
+                  <td>{item.phone || "-"}</td>
+                  <td>{item.company || "-"}</td>
+                  <td>{item.message || "-"}</td>
+                  <td>{item.status || "new"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  );
+}
 function App() {
+  const isAdminPage = window.location.pathname === "/admin" || window.location.pathname === "/admin/";
   const [knowledgeOpen, setKnowledgeOpen] = useState(false);
   const visibleArticles = useMemo(() => (knowledgeOpen ? knowledgeArticles : knowledgeArticles.slice(0, 5)), [knowledgeOpen]);
+
+  if (isAdminPage) return <AdminDashboard />;
 
   return (
     <>

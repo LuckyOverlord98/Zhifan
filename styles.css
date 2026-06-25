@@ -1272,3 +1272,132 @@ h4 {
   cursor: wait;
   opacity: 0.68;
 }
+
+.admin-page {
+  min-height: 100vh;
+  padding: 56px 20px;
+  background: var(--sky);
+}
+
+.admin-shell {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.admin-heading {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.admin-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.1;
+}
+
+.admin-heading p {
+  margin: 0;
+  max-width: 680px;
+}
+
+.admin-back {
+  width: fit-content;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.admin-login {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.admin-login label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.admin-login input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--sky);
+}
+
+.admin-login button {
+  min-height: 50px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 22px;
+  color: var(--white);
+  background: var(--blue);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.admin-table-wrap {
+  margin-top: 20px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  background: var(--white);
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-table th {
+  color: var(--ink);
+  background: var(--blue-soft);
+  font-size: 14px;
+}
+
+.admin-table td {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.admin-empty {
+  text-align: center;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .admin-page {
+    padding: 24px 12px;
+  }
+
+  .admin-shell {
+    padding: 20px;
+  }
+
+  .admin-login {
+    grid-template-columns: 1fr;
+  }
+}
