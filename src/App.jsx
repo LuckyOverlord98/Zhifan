@@ -284,6 +284,29 @@ function ProductCategoryPage({ categorySlug }) {
   );
 }
 
+function getStandardGroup(standard) {
+  const value = String(standard || "").trim();
+  if (/^(GB|NB\/T|JB|HG|CB)/i.test(value)) return "国标 / 行标";
+  if (/^AWS/i.test(value)) return "美标 AWS";
+  if (/^(ISO|EN ISO)/i.test(value)) return "国际标 ISO";
+  if (/^EN/i.test(value)) return "欧标 EN";
+  return "其他标准";
+}
+
+function groupStandards(standards = []) {
+  const groups = [];
+  for (const standard of standards.filter(Boolean)) {
+    const label = getStandardGroup(standard);
+    let group = groups.find((item) => item.label === label);
+    if (!group) {
+      group = { label, values: [] };
+      groups.push(group);
+    }
+    group.values.push(standard);
+  }
+  return groups;
+}
+
 function DataTable({ title, rows }) {
   if (!rows || rows.length === 0) return null;
   return (
@@ -338,8 +361,14 @@ function ProductDetailPage({ slug }) {
           </div>
           <div className="detail-summary">
             <span>{"\u6267\u884c\u6807\u51c6"}</span>
-            <strong>{product.standard || "\u6309\u5382\u5bb6\u8d44\u6599"}</strong>
-            {product.standards?.length > 0 && <ul className="standard-list">{product.standards.map((standard) => <li key={standard}>{standard}</li>)}</ul>}
+            {product.standards?.length > 0 ? (
+              <div className="standard-groups">{groupStandards(product.standards).map((group) => (
+                <div className="standard-group" key={group.label}>
+                  <b>{group.label}</b>
+                  <ul>{group.values.map((standard) => <li key={standard}>{standard}</li>)}</ul>
+                </div>
+              ))}</div>
+            ) : <strong>{product.standard || "\u6309\u5382\u5bb6\u8d44\u6599"}</strong>}
             <p>{product.summary}</p>
           </div>
         </section>
