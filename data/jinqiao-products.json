@@ -7233,11 +7233,10 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.Ag30CuZnIn",
     "name": "金桥 JQ.Ag30CuZnIn 碳钢焊条",
-    "standard": "GB BAg30CuZnIn / GB/T 10046 BAg30CuZnIn / GB/T 标准 29.0～31.0 37.0～39.0 25.5～28.5 4.5～5.5 / AWS -",
+    "standard": "GB BAg30CuZnIn / GB/T 10046 BAg30CuZnIn / AWS -",
     "standards": [
       "GB BAg30CuZnIn",
       "GB/T 10046 BAg30CuZnIn",
-      "GB/T 标准 29.0～31.0 37.0～39.0 25.5～28.5 4.5～5.5",
       "AWS -"
     ],
     "summary": "金桥 JQ.Ag30CuZnIn，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
@@ -7344,11 +7343,10 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.Ag34CuZnIn",
     "name": "金桥 JQ.Ag34CuZnIn 碳钢焊条",
-    "standard": "GB BAg34CuZnIn / GB/T 10046 BAg34CuZnIn / GB/T 标准 33.0～35.0 34.0～36.0 28.5～31.5 0.8～1.2 / AWS -",
+    "standard": "GB BAg34CuZnIn / GB/T 10046 BAg34CuZnIn / AWS -",
     "standards": [
       "GB BAg34CuZnIn",
       "GB/T 10046 BAg34CuZnIn",
-      "GB/T 标准 33.0～35.0 34.0～36.0 28.5～31.5 0.8～1.2",
       "AWS -"
     ],
     "summary": "金桥 JQ.Ag34CuZnIn，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
@@ -7455,11 +7453,10 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.Ag40CuZnIn",
     "name": "金桥 JQ.Ag40CuZnIn 碳钢焊条",
-    "standard": "GB BAg40CuZnIn / GB/T 10046 BAg40CuZnIn / GB/T 标准 39.0～41.0 29.0～31.0 23.5～26.5 4.5～5.5 / AWS -",
+    "standard": "GB BAg40CuZnIn / GB/T 10046 BAg40CuZnIn / AWS -",
     "standards": [
       "GB BAg40CuZnIn",
       "GB/T 10046 BAg40CuZnIn",
-      "GB/T 标准 39.0～41.0 29.0～31.0 23.5～26.5 4.5～5.5",
       "AWS -"
     ],
     "summary": "金桥 JQ.Ag40CuZnIn，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
@@ -8060,14 +8057,13 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.E312",
     "name": "金桥 JQ.E312 碳钢焊条",
-    "standard": "GB E312-16 / GB/T 983 E312-16 / AWS A5.4 E312-16 / ISO 3581-A-E(29 9)R 3 2 / ISO 3581-B-ES 312-16 / GB/T 标准 ≥660 ≥15 / AWS E312-16",
+    "standard": "GB E312-16 / GB/T 983 E312-16 / AWS A5.4 E312-16 / ISO 3581-A-E(29 9)R 3 2 / ISO 3581-B-ES 312-16 / AWS E312-16",
     "standards": [
       "GB E312-16",
       "GB/T 983 E312-16",
       "AWS A5.4 E312-16",
       "ISO 3581-A-E(29 9)R 3 2",
       "ISO 3581-B-ES 312-16",
-      "GB/T 标准 ≥660 ≥15",
       "AWS E312-16"
     ],
     "summary": "金桥 JQ.E312，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
@@ -8210,11 +8206,10 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.E385",
     "name": "金桥 JQ.E385 碳钢焊条",
-    "standard": "GB/T 983 E385-16 / AWS A5.4 E385-16 / GB/T 标准 ≥520 ≥28",
+    "standard": "GB/T 983 E385-16 / AWS A5.4 E385-16",
     "standards": [
       "GB/T 983 E385-16",
-      "AWS A5.4 E385-16",
-      "GB/T 标准 ≥520 ≥28"
+      "AWS A5.4 E385-16"
     ],
     "summary": "金桥 JQ.E385，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
     "introduction": "JQ.E385 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -11606,14 +11601,13 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.S2209",
     "name": "金桥 JQ.S2209 碳钢焊条",
-    "standard": "GB E2209-16 / GB/T 983 E2209-16 / AWS A5.4 E2209-16 / ISO 3581-A-E(22 9 3 N L)R 3 2 / ISO 3581-B-ES 2209-16 / GB/T ≤ 0.50～ 21.5～ 7.5～ 2.5～ 0.08～ / AWS E2209-16",
+    "standard": "GB E2209-16 / GB/T 983 E2209-16 / AWS A5.4 E2209-16 / ISO 3581-A-E(22 9 3 N L)R 3 2 / ISO 3581-B-ES 2209-16 / AWS E2209-16",
     "standards": [
       "GB E2209-16",
       "GB/T 983 E2209-16",
       "AWS A5.4 E2209-16",
       "ISO 3581-A-E(22 9 3 N L)R 3 2",
       "ISO 3581-B-ES 2209-16",
-      "GB/T ≤ 0.50～ 21.5～ 7.5～ 2.5～ 0.08～",
       "AWS E2209-16"
     ],
     "summary": "金桥 JQ.S2209，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
@@ -12314,12 +12308,11 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.YR551B2-1",
     "name": "金桥 JQ.YR551B2-1 碳钢焊条",
-    "standard": "GB/T 17493 T55T1-1C1-1CM / AWS A5.29 E81T1-B2C / ISO 17634-B-T55T1-1C1-1CM / GB/T 标 0.05～ 1.00～ 0.40～",
+    "standard": "GB/T 17493 T55T1-1C1-1CM / AWS A5.29 E81T1-B2C / ISO 17634-B-T55T1-1C1-1CM",
     "standards": [
       "GB/T 17493 T55T1-1C1-1CM",
       "AWS A5.29 E81T1-B2C",
-      "ISO 17634-B-T55T1-1C1-1CM",
-      "GB/T 标 0.05～ 1.00～ 0.40～"
+      "ISO 17634-B-T55T1-1C1-1CM"
     ],
     "summary": "金桥 JQ.YR551B2-1，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
     "introduction": "JQ.YR551B2-1 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -12435,11 +12428,10 @@
     "categoryName": "碳钢焊条",
     "model": "JQ.YR621B3L-1",
     "name": "金桥 JQ.YR621B3L-1 碳钢焊条",
-    "standard": "GB/T 17493 T62T1-1C1-2C1ML / AWS A5.29 E91T1-B3LC / GB/T 标 2.00～ 0.90～",
+    "standard": "GB/T 17493 T62T1-1C1-2C1ML / AWS A5.29 E91T1-B3LC",
     "standards": [
       "GB/T 17493 T62T1-1C1-2C1ML",
-      "AWS A5.29 E91T1-B3LC",
-      "GB/T 标 2.00～ 0.90～"
+      "AWS A5.29 E91T1-B3LC"
     ],
     "summary": "金桥 JQ.YR621B3L-1，来源于《金桥焊材 2024 产品手册》，用于碳钢焊条相关工况。",
     "introduction": "JQ.YR621B3L-1 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -15229,12 +15221,13 @@
     "categoryName": "药芯气保焊丝",
     "model": "JQ.YJ621K2-1",
     "name": "金桥 JQ.YJ621K2-1 药芯气保焊丝",
-    "standard": "GB T624T1-1C1A-N3M1 / GB/T 36233 T624T1-1C1A-N3M1 / AWS A5.29 E91T1-K2C / ISO 17632-B-T624T1-1C1A-N3 / AWS E91T1-K2C",
+    "standard": "GB T624T1-1C1A-N3M1 / GB/T 36233 T624T1-1C1A-N3M1 / AWS A5.29 E91T1-K2C / ISO 17632-B-T624T1-1C1A-N3 / GB/T 0.50～ ≤ ≤ 1.00～ / AWS E91T1-K2C",
     "standards": [
       "GB T624T1-1C1A-N3M1",
       "GB/T 36233 T624T1-1C1A-N3M1",
       "AWS A5.29 E91T1-K2C",
       "ISO 17632-B-T624T1-1C1A-N3",
+      "GB/T 0.50～ ≤ ≤ 1.00～",
       "AWS E91T1-K2C"
     ],
     "summary": "金桥 JQ.YJ621K2-1，来源于《金桥焊材 2024 产品手册》，用于药芯气保焊丝相关工况。",
@@ -15436,11 +15429,12 @@
     "categoryName": "药芯气保焊丝",
     "model": "JQ.YJ691K3-1",
     "name": "金桥 JQ.YJ691K3-1 药芯气保焊丝",
-    "standard": "GB T692T1-1C1A-N3M2 / GB/T 36233 T692T1-1C1A-N3M2 / AWS A5.29 E101T1-K3C / AWS E101T1-K3C",
+    "standard": "GB T692T1-1C1A-N3M2 / GB/T 36233 T692T1-1C1A-N3M2 / AWS A5.29 E101T1-K3C / GB/T 0.75～ ≤ ≤ 1.25～ 0.25～ / AWS E101T1-K3C",
     "standards": [
       "GB T692T1-1C1A-N3M2",
       "GB/T 36233 T692T1-1C1A-N3M2",
       "AWS A5.29 E101T1-K3C",
+      "GB/T 0.75～ ≤ ≤ 1.25～ 0.25～",
       "AWS E101T1-K3C"
     ],
     "summary": "金桥 JQ.YJ691K3-1，来源于《金桥焊材 2024 产品手册》，用于药芯气保焊丝相关工况。",
@@ -16381,12 +16375,13 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.MG50-3",
     "name": "金桥 JQ.MG50-3 实芯气保及氩弧焊丝",
-    "standard": "GB G49A4C1S3/G49 A4M21S3 / GB/T 8110 G49A4C1S3/G49A4M21S3 / AWS A5.18 ER70S-3 / ISO 14341-A-G 38 4 M21 2Si / AWS ER70S-3",
+    "standard": "GB G49A4C1S3/G49 A4M21S3 / GB/T 8110 G49A4C1S3/G49A4M21S3 / AWS A5.18 ER70S-3 / ISO 14341-A-G 38 4 M21 2Si / GB/T 0.06～ 0.90～ 0.45～ ≤ ≤ ≤ ≤ / AWS ER70S-3",
     "standards": [
       "GB G49A4C1S3/G49 A4M21S3",
       "GB/T 8110 G49A4C1S3/G49A4M21S3",
       "AWS A5.18 ER70S-3",
       "ISO 14341-A-G 38 4 M21 2Si",
+      "GB/T 0.06～ 0.90～ 0.45～ ≤ ≤ ≤ ≤",
       "AWS ER70S-3"
     ],
     "summary": "金桥 JQ.MG50-3，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -16466,12 +16461,13 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.MG50-4",
     "name": "金桥 JQ.MG50-4 实芯气保及氩弧焊丝",
-    "standard": "GB G49AZC1S4 / GB/T 8110 G49AZC1S4 / AWS A5.18 ER70S-4 / ISO 14341-B-G 49 Z C1 S4 / AWS ER70S-4",
+    "standard": "GB G49AZC1S4 / GB/T 8110 G49AZC1S4 / AWS A5.18 ER70S-4 / ISO 14341-B-G 49 Z C1 S4 / GB/T 0.06～ 1.00～ 0.65～ ≤ ≤ / AWS ER70S-4",
     "standards": [
       "GB G49AZC1S4",
       "GB/T 8110 G49AZC1S4",
       "AWS A5.18 ER70S-4",
       "ISO 14341-B-G 49 Z C1 S4",
+      "GB/T 0.06～ 1.00～ 0.65～ ≤ ≤",
       "AWS ER70S-4"
     ],
     "summary": "金桥 JQ.MG50-4，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -16893,13 +16889,12 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.MG50-Ti",
     "name": "金桥 JQ.MG50-Ti 实芯气保及氩弧焊丝",
-    "standard": "GB G49A3C1S11 / GB/T 8110 G49A3C1S11 / AWS A5.18 ER70S-G / ISO 14341-B-G 49 3U C1 S11 / GB/T 标 / AWS ER70S-G",
+    "standard": "GB G49A3C1S11 / GB/T 8110 G49A3C1S11 / AWS A5.18 ER70S-G / ISO 14341-B-G 49 3U C1 S11 / AWS ER70S-G",
     "standards": [
       "GB G49A3C1S11",
       "GB/T 8110 G49A3C1S11",
       "AWS A5.18 ER70S-G",
       "ISO 14341-B-G 49 3U C1 S11",
-      "GB/T 标",
       "AWS ER70S-G"
     ],
     "summary": "金桥 JQ.MG50-Ti，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -17115,11 +17110,12 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.MG55-B2",
     "name": "金桥 JQ.MG55-B2 实芯气保及氩弧焊丝",
-    "standard": "GB G55M131CM / GB/T 39279 G55M131CM / AWS A5.28 ER80S-B2 / AWS ER80S-B2",
+    "standard": "GB G55M131CM / GB/T 39279 G55M131CM / AWS A5.28 ER80S-B2 / GB/T 0.07～ 0.40～ 0.40～ ≤ ≤ ≤ 1.20～ ≤ / AWS ER80S-B2",
     "standards": [
       "GB G55M131CM",
       "GB/T 39279 G55M131CM",
       "AWS A5.28 ER80S-B2",
+      "GB/T 0.07～ 0.40～ 0.40～ ≤ ≤ ≤ 1.20～ ≤",
       "AWS ER80S-B2"
     ],
     "summary": "金桥 JQ.MG55-B2，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -17191,11 +17187,12 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.MG55-B2-MnV",
     "name": "金桥 JQ.MG55-B2-MnV 实芯气保及氩弧焊丝",
-    "standard": "GB G55M211CM4V / GB/T 39279 G55M211CM4V / AWS A5.28 ER80S-G / AWS ER80S-G",
+    "standard": "GB G55M211CM4V / GB/T 39279 G55M211CM4V / AWS A5.28 ER80S-G / GB/T 0.06～ 1.20～ 0.60～ ≤ ≤ ≤ 1.00～ 0.50～ 0.20～ ≤ / AWS ER80S-G",
     "standards": [
       "GB G55M211CM4V",
       "GB/T 39279 G55M211CM4V",
       "AWS A5.28 ER80S-G",
+      "GB/T 0.06～ 1.20～ 0.60～ ≤ ≤ ≤ 1.00～ 0.50～ 0.20～ ≤",
       "AWS ER80S-G"
     ],
     "summary": "金桥 JQ.MG55-B2-MnV，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -18119,12 +18116,11 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.MG62-B3",
     "name": "金桥 JQ.MG62-B3 实芯气保及氩弧焊丝",
-    "standard": "GB G62M212C1M3 / GB/T 39279 G62M212C1M3 / AWS A5.28 ER90S-G / GB/T ≤ 0.75～ 0.30～ / AWS ER90S-G",
+    "standard": "GB G62M212C1M3 / GB/T 39279 G62M212C1M3 / AWS A5.28 ER90S-G / AWS ER90S-G",
     "standards": [
       "GB G62M212C1M3",
       "GB/T 39279 G62M212C1M3",
       "AWS A5.28 ER90S-G",
-      "GB/T ≤ 0.75～ 0.30～",
       "AWS ER90S-G"
     ],
     "summary": "金桥 JQ.MG62-B3，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -18609,12 +18605,13 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.MG70S-6",
     "name": "金桥 JQ.MG70S-6 实芯气保及氩弧焊丝",
-    "standard": "GB G49A3C1S6/G49 A4M21S6 / GB/T 8110 G49A3C1S6/G49A4M21S6 / AWS A5.18 ER70S-6 / ISO 14341-B-G S6 / AWS ER70S-6",
+    "standard": "GB G49A3C1S6/G49 A4M21S6 / GB/T 8110 G49A3C1S6/G49A4M21S6 / AWS A5.18 ER70S-6 / ISO 14341-B-G S6 / GB/T 0.06～ 1.40～ 0.80～ ≤ ≤ ≤ / AWS ER70S-6",
     "standards": [
       "GB G49A3C1S6/G49 A4M21S6",
       "GB/T 8110 G49A3C1S6/G49A4M21S6",
       "AWS A5.18 ER70S-6",
       "ISO 14341-B-G S6",
+      "GB/T 0.06～ 1.40～ 0.80～ ≤ ≤ ≤",
       "AWS ER70S-6"
     ],
     "summary": "金桥 JQ.MG70S-6，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -20106,11 +20103,12 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.TG50",
     "name": "金桥 JQ.TG50 实芯气保及氩弧焊丝",
-    "standard": "GB W49A36 / GB/T 39280 W49A36 / AWS A5.18 ER70S-6 / AWS ER70S-6",
+    "standard": "GB W49A36 / GB/T 39280 W49A36 / AWS A5.18 ER70S-6 / GB/T 0.06～ 1.40～ 0.80～ ≤ ≤ ≤ ≤ ≤ ≤ ≤ / AWS ER70S-6",
     "standards": [
       "GB W49A36",
       "GB/T 39280 W49A36",
       "AWS A5.18 ER70S-6",
+      "GB/T 0.06～ 1.40～ 0.80～ ≤ ≤ ≤ ≤ ≤ ≤ ≤",
       "AWS ER70S-6"
     ],
     "summary": "金桥 JQ.TG50，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -21900,11 +21898,12 @@
     "categoryName": "实芯气保及氩弧焊丝",
     "model": "JQ.TGR30-1",
     "name": "金桥 JQ.TGR30-1 实芯气保及氩弧焊丝",
-    "standard": "GB W551CM / GB/T 39279 W551CM / AWS A5.28 ER80S-B2 / AWS ER80S-B2",
+    "standard": "GB W551CM / GB/T 39279 W551CM / AWS A5.28 ER80S-B2 / GB/T 0.07～ 0.40～ 0.40～ ≤ ≤ ≤ 1.20～ 0.40～ ≤ / AWS ER80S-B2",
     "standards": [
       "GB W551CM",
       "GB/T 39279 W551CM",
       "AWS A5.28 ER80S-B2",
+      "GB/T 0.07～ 0.40～ 0.40～ ≤ ≤ ≤ 1.20～ 0.40～ ≤",
       "AWS ER80S-B2"
     ],
     "summary": "金桥 JQ.TGR30-1，来源于《金桥焊材 2024 产品手册》，用于实芯气保及氩弧焊丝相关工况。",
@@ -22286,12 +22285,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D102",
     "name": "金桥 D102 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPMn2-03 / GB/T 984 EDPMn2-16 / GB/T 984 EDPMn2-15 / GB/T 标准 ≥220",
+    "standard": "GB/T 984 EDPMn2-03 / GB/T 984 EDPMn2-16 / GB/T 984 EDPMn2-15",
     "standards": [
       "GB/T 984 EDPMn2-03",
       "GB/T 984 EDPMn2-16",
-      "GB/T 984 EDPMn2-15",
-      "GB/T 标准 ≥220"
+      "GB/T 984 EDPMn2-15"
     ],
     "summary": "金桥 D102，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D102 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22326,10 +22324,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D112",
     "name": "金桥 D112 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMo-A1-03 / GB/T 标准 ≥220",
+    "standard": "GB/T 984 EDPCrMo-A1-03",
     "standards": [
-      "GB/T 984 EDPCrMo-A1-03",
-      "GB/T 标准 ≥220"
+      "GB/T 984 EDPCrMo-A1-03"
     ],
     "summary": "金桥 D112，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D112 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22372,11 +22369,10 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D126",
     "name": "金桥 D126 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPMn4-16 / GB/T 984 EDPMn4-15 / GB/T 标准 ≥30",
+    "standard": "GB/T 984 EDPMn4-16 / GB/T 984 EDPMn4-15",
     "standards": [
       "GB/T 984 EDPMn4-16",
-      "GB/T 984 EDPMn4-15",
-      "GB/T 标准 ≥30"
+      "GB/T 984 EDPMn4-15"
     ],
     "summary": "金桥 D126，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D126 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22415,10 +22411,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D132",
     "name": "金桥 D132 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMo-A2-03 / GB/T 标准 ≥30",
+    "standard": "GB/T 984 EDPCrMo-A2-03",
     "standards": [
-      "GB/T 984 EDPCrMo-A2-03",
-      "GB/T 标准 ≥30"
+      "GB/T 984 EDPCrMo-A2-03"
     ],
     "summary": "金桥 D132，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D132 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22457,10 +22452,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D167",
     "name": "金桥 D167 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPMn6-15 / GB/T 标准 ≥50",
+    "standard": "GB/T 984 EDPMn6-15",
     "standards": [
-      "GB/T 984 EDPMn6-15",
-      "GB/T 标准 ≥50"
+      "GB/T 984 EDPMn6-15"
     ],
     "summary": "金桥 D167，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D167 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22499,10 +22493,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D172",
     "name": "金桥 D172 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMo-A3-03 / GB/T 标准 ≥40",
+    "standard": "GB/T 984 EDPCrMo-A3-03",
     "standards": [
-      "GB/T 984 EDPCrMo-A3-03",
-      "GB/T 标准 ≥40"
+      "GB/T 984 EDPCrMo-A3-03"
     ],
     "summary": "金桥 D172，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D172 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22541,10 +22534,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D207",
     "name": "金桥 D207 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMnSi-A1-15 / GB/T 标准 ≥50",
+    "standard": "GB/T 984 EDPCrMnSi-A1-15",
     "standards": [
-      "GB/T 984 EDPCrMnSi-A1-15",
-      "GB/T 标准 ≥50"
+      "GB/T 984 EDPCrMnSi-A1-15"
     ],
     "summary": "金桥 D207，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D207 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22599,10 +22591,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D212",
     "name": "金桥 D212 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMo-A4-03 / GB/T 标准 ≥50",
+    "standard": "GB/T 984 EDPCrMo-A4-03",
     "standards": [
-      "GB/T 984 EDPCrMo-A4-03",
-      "GB/T 标准 ≥50"
+      "GB/T 984 EDPCrMo-A4-03"
     ],
     "summary": "金桥 D212，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D212 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22641,10 +22632,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D217",
     "name": "金桥 D217 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMo-A3-15 / GB/T 标准 ≥40",
+    "standard": "GB/T 984 EDPCrMo-A3-15",
     "standards": [
-      "GB/T 984 EDPCrMo-A3-15",
-      "GB/T 标准 ≥40"
+      "GB/T 984 EDPCrMo-A3-15"
     ],
     "summary": "金桥 D217，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D217 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22683,11 +22673,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D227",
     "name": "金桥 D227 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMoV-A2-15 / GB/T 标准 0.45～0.65 4.00～5.00 2.00～3.00 4.00～5.00 / GB/T 标准 ≥55",
+    "standard": "GB/T 984 EDPCrMoV-A2-15",
     "standards": [
-      "GB/T 984 EDPCrMoV-A2-15",
-      "GB/T 标准 0.45～0.65 4.00～5.00 2.00～3.00 4.00～5.00",
-      "GB/T 标准 ≥55"
+      "GB/T 984 EDPCrMoV-A2-15"
     ],
     "summary": "金桥 D227，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D227 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22730,10 +22718,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D237",
     "name": "金桥 D237 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDPCrMoV-A1-15 / GB/T 标准 ≥50",
+    "standard": "GB/T 984 EDPCrMoV-A1-15",
     "standards": [
-      "GB/T 984 EDPCrMoV-A1-15",
-      "GB/T 标准 ≥50"
+      "GB/T 984 EDPCrMoV-A1-15"
     ],
     "summary": "金桥 D237，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D237 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22780,10 +22767,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D256",
     "name": "金桥 D256 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDMn-A-16 / GB/T 标准 ≥170",
+    "standard": "GB/T 984 EDMn-A-16",
     "standards": [
-      "GB/T 984 EDMn-A-16",
-      "GB/T 标准 ≥170"
+      "GB/T 984 EDMn-A-16"
     ],
     "summary": "金桥 D256，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D256 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -22826,10 +22812,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D266",
     "name": "金桥 D266 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDMn-B-16 / GB/T 标准 ≥170",
+    "standard": "GB/T 984 EDMn-B-16",
     "standards": [
-      "GB/T 984 EDMn-B-16",
-      "GB/T 标准 ≥170"
+      "GB/T 984 EDMn-B-16"
     ],
     "summary": "金桥 D266，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D266 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23052,10 +23037,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D307",
     "name": "金桥 D307 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDD-D-15 / GB/T 标准 ≥55",
+    "standard": "GB/T 984 EDD-D-15",
     "standards": [
-      "GB/T 984 EDD-D-15",
-      "GB/T 标准 ≥55"
+      "GB/T 984 EDD-D-15"
     ],
     "summary": "金桥 D307，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D307 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23110,10 +23094,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D317",
     "name": "金桥 D317 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDRCrMoWV-A3-15 / GB/T 标准 ≥50",
+    "standard": "GB/T 984 EDRCrMoWV-A3-15",
     "standards": [
-      "GB/T 984 EDRCrMoWV-A3-15",
-      "GB/T 标准 ≥50"
+      "GB/T 984 EDRCrMoWV-A3-15"
     ],
     "summary": "金桥 D317，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D317 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23172,10 +23155,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D322",
     "name": "金桥 D322 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDRCrMoWV-A1-03 / GB/T 标准 ≥55",
+    "standard": "GB/T 984 EDRCrMoWV-A1-03",
     "standards": [
-      "GB/T 984 EDRCrMoWV-A1-03",
-      "GB/T 标准 ≥55"
+      "GB/T 984 EDRCrMoWV-A1-03"
     ],
     "summary": "金桥 D322，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D322 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23230,10 +23212,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D327",
     "name": "金桥 D327 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDRCrMoWV-A1-15 / GB/T 标准 ≥55",
+    "standard": "GB/T 984 EDRCrMoWV-A1-15",
     "standards": [
-      "GB/T 984 EDRCrMoWV-A1-15",
-      "GB/T 标准 ≥55"
+      "GB/T 984 EDRCrMoWV-A1-15"
     ],
     "summary": "金桥 D327，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D327 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23288,10 +23269,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D337",
     "name": "金桥 D337 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDRCrW-15 / GB/T 标准 ≥48",
+    "standard": "GB/T 984 EDRCrW-15",
     "standards": [
-      "GB/T 984 EDRCrW-15",
-      "GB/T 标准 ≥48"
+      "GB/T 984 EDRCrW-15"
     ],
     "summary": "金桥 D337，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D337 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23342,10 +23322,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D397",
     "name": "金桥 D397 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDRCrMnMo-15 / GB/T 标准 ≥40",
+    "standard": "GB/T 984 EDRCrMnMo-15",
     "standards": [
-      "GB/T 984 EDRCrMnMo-15",
-      "GB/T 标准 ≥40"
+      "GB/T 984 EDRCrMnMo-15"
     ],
     "summary": "金桥 D397，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D397 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23400,10 +23379,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D502",
     "name": "金桥 D502 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCr-A1-03 / GB/T 标准 ≥40",
+    "standard": "GB/T 984 EDCr-A1-03",
     "standards": [
-      "GB/T 984 EDCr-A1-03",
-      "GB/T 标准 ≥40"
+      "GB/T 984 EDCr-A1-03"
     ],
     "summary": "金桥 D502，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D502 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23450,10 +23428,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D507",
     "name": "金桥 D507 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCr-A1-15 / GB/T 标准 ≥40",
+    "standard": "GB/T 984 EDCr-A1-15",
     "standards": [
-      "GB/T 984 EDCr-A1-15",
-      "GB/T 标准 ≥40"
+      "GB/T 984 EDCr-A1-15"
     ],
     "summary": "金桥 D507，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D507 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23500,10 +23477,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D507Mo",
     "name": "金桥 D507Mo 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCr-A2-15 / GB/T 标准 ≥37",
+    "standard": "GB/T 984 EDCr-A2-15",
     "standards": [
-      "GB/T 984 EDCr-A2-15",
-      "GB/T 标准 ≥37"
+      "GB/T 984 EDCr-A2-15"
     ],
     "summary": "金桥 D507Mo，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D507Mo 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23609,10 +23585,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D512",
     "name": "金桥 D512 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCr-B-03 / GB/T 标准 ≥45",
+    "standard": "GB/T 984 EDCr-B-03",
     "standards": [
-      "GB/T 984 EDCr-B-03",
-      "GB/T 标准 ≥45"
+      "GB/T 984 EDCr-B-03"
     ],
     "summary": "金桥 D512，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D512 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23651,10 +23626,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D516MA",
     "name": "金桥 D516MA 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCrMn-A-16 / GB/T 标准 ≥30",
+    "standard": "GB/T 984 EDCrMn-A-16",
     "standards": [
-      "GB/T 984 EDCrMn-A-16",
-      "GB/T 标准 ≥30"
+      "GB/T 984 EDCrMn-A-16"
     ],
     "summary": "金桥 D516MA，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D516MA 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23697,10 +23671,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D517",
     "name": "金桥 D517 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCr-B-15 / GB/T 标准 ≥45",
+    "standard": "GB/T 984 EDCr-B-15",
     "standards": [
-      "GB/T 984 EDCr-B-15",
-      "GB/T 标准 ≥45"
+      "GB/T 984 EDCr-B-15"
     ],
     "summary": "金桥 D517，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D517 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23739,10 +23712,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D547",
     "name": "金桥 D547 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCrNi-A-15 / GB/T 标准 270～320",
+    "standard": "GB/T 984 EDCrNi-A-15",
     "standards": [
-      "GB/T 984 EDCrNi-A-15",
-      "GB/T 标准 270～320"
+      "GB/T 984 EDCrNi-A-15"
     ],
     "summary": "金桥 D547，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D547 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23866,10 +23838,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D557",
     "name": "金桥 D557 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCrNi-C-15 / GB/T 标准 ≥37",
+    "standard": "GB/T 984 EDCrNi-C-15",
     "standards": [
-      "GB/T 984 EDCrNi-C-15",
-      "GB/T 标准 ≥37"
+      "GB/T 984 EDCrNi-C-15"
     ],
     "summary": "金桥 D557，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D557 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23924,10 +23895,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D577",
     "name": "金桥 D577 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDCrMn-C-15 / GB/T 标准 ≥28",
+    "standard": "GB/T 984 EDCrMn-C-15",
     "standards": [
-      "GB/T 984 EDCrMn-C-15",
-      "GB/T 标准 ≥28"
+      "GB/T 984 EDCrMn-C-15"
     ],
     "summary": "金桥 D577，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D577 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -23982,11 +23952,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D608",
     "name": "金桥 D608 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDZ-A1-08 / GB/T 标准 2.50～4.50 3.00～5.00 3.00～5.00 / GB/T 标准 ≥55",
+    "standard": "GB/T 984 EDZ-A1-08",
     "standards": [
-      "GB/T 984 EDZ-A1-08",
-      "GB/T 标准 2.50～4.50 3.00～5.00 3.00～5.00",
-      "GB/T 标准 ≥55"
+      "GB/T 984 EDZ-A1-08"
     ],
     "summary": "金桥 D608，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D608 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -24068,10 +24036,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D667",
     "name": "金桥 D667 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDZCr-C-15 / GB/T 标准 ≥48",
+    "standard": "GB/T 984 EDZCr-C-15",
     "standards": [
-      "GB/T 984 EDZCr-C-15",
-      "GB/T 标准 ≥48"
+      "GB/T 984 EDZCr-C-15"
     ],
     "summary": "金桥 D667，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D667 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -24122,10 +24089,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D687",
     "name": "金桥 D687 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDZCr-D-15 / GB/T 标准 ≥58",
+    "standard": "GB/T 984 EDZCr-D-15",
     "standards": [
-      "GB/T 984 EDZCr-D-15",
-      "GB/T 标准 ≥58"
+      "GB/T 984 EDZCr-D-15"
     ],
     "summary": "金桥 D687，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D687 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -24176,10 +24142,9 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "D707",
     "name": "金桥 D707 铝焊丝与特种焊材",
-    "standard": "GB/T 984 EDW-A-15 / GB/T 标准 ≥60",
+    "standard": "GB/T 984 EDW-A-15",
     "standards": [
-      "GB/T 984 EDW-A-15",
-      "GB/T 标准 ≥60"
+      "GB/T 984 EDW-A-15"
     ],
     "summary": "金桥 D707，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
     "introduction": "D707 为金桥焊材产品手册收录型号。详情页保留 PDF 中可抽取的执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
@@ -24511,11 +24476,10 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu48ZnNi",
     "name": "金桥 JQ.Cu48ZnNi 铝焊丝与特种焊材",
-    "standard": "GB 相当 BCu48ZnNi(Si) / GB/T 6418 BCu48ZnNi（Si） / GB/T 标准 46.0～50.0 余量 0.15～0.20 9.0～11.0 / AWS RBCuZn-D",
+    "standard": "GB 相当 BCu48ZnNi(Si) / GB/T 6418 BCu48ZnNi（Si） / AWS RBCuZn-D",
     "standards": [
       "GB 相当 BCu48ZnNi(Si)",
       "GB/T 6418 BCu48ZnNi（Si）",
-      "GB/T 标准 46.0～50.0 余量 0.15～0.20 9.0～11.0",
       "AWS RBCuZn-D"
     ],
     "summary": "金桥 JQ.Cu48ZnNi，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24563,11 +24527,10 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu60ZnSn",
     "name": "金桥 JQ.Cu60ZnSn 铝焊丝与特种焊材",
-    "standard": "GB BCu60ZnSn(Si) / GB/T 6418 BCu60ZnSn（Si） / GB/T 标准 59.0～61.0 余量 0.8～1.2 0.15～0.35 / AWS -",
+    "standard": "GB BCu60ZnSn(Si) / GB/T 6418 BCu60ZnSn（Si） / AWS -",
     "standards": [
       "GB BCu60ZnSn(Si)",
       "GB/T 6418 BCu60ZnSn（Si）",
-      "GB/T 标准 59.0～61.0 余量 0.8～1.2 0.15～0.35",
       "AWS -"
     ],
     "summary": "金桥 JQ.Cu60ZnSn，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24615,12 +24578,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu80AgP",
     "name": "金桥 JQ.Cu80AgP 铝焊丝与特种焊材",
-    "standard": "GB BCu80AgP / GB/T 6418 BCu80AgP / AWS A5.8 BCuP-5 / GB/T 标准 余量 4.8～5.2 14.5～15.5 / AWS BCuP-5",
+    "standard": "GB BCu80AgP / GB/T 6418 BCu80AgP / AWS A5.8 BCuP-5 / AWS BCuP-5",
     "standards": [
       "GB BCu80AgP",
       "GB/T 6418 BCu80AgP",
       "AWS A5.8 BCuP-5",
-      "GB/T 标准 余量 4.8～5.2 14.5～15.5",
       "AWS BCuP-5"
     ],
     "summary": "金桥 JQ.Cu80AgP，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24664,12 +24626,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu87PAg",
     "name": "金桥 JQ.Cu87PAg 铝焊丝与特种焊材",
-    "standard": "GB BCu87PAg / GB/T 6418 BCu87PAg / AWS A5.8 BCuP-4 / GB/T 标准 余量 7.0～7.5 5.8～6.2 / AWS BCuP-4",
+    "standard": "GB BCu87PAg / GB/T 6418 BCu87PAg / AWS A5.8 BCuP-4 / AWS BCuP-4",
     "standards": [
       "GB BCu87PAg",
       "GB/T 6418 BCu87PAg",
       "AWS A5.8 BCuP-4",
-      "GB/T 标准 余量 7.0～7.5 5.8～6.2",
       "AWS BCuP-4"
     ],
     "summary": "金桥 JQ.Cu87PAg，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24713,12 +24674,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu88PAg",
     "name": "金桥 JQ.Cu88PAg 铝焊丝与特种焊材",
-    "standard": "GB BCu88PAg / GB/T 6418 BCu88PAg / AWS A5.8 BCuP-7 / GB/T 标准 余量 6.5～7.0 4.8～5.2 / AWS BCuP-7",
+    "standard": "GB BCu88PAg / GB/T 6418 BCu88PAg / AWS A5.8 BCuP-7 / AWS BCuP-7",
     "standards": [
       "GB BCu88PAg",
       "GB/T 6418 BCu88PAg",
       "AWS A5.8 BCuP-7",
-      "GB/T 标准 余量 6.5～7.0 4.8～5.2",
       "AWS BCuP-7"
     ],
     "summary": "金桥 JQ.Cu88PAg，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24805,12 +24765,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu89PAg",
     "name": "金桥 JQ.Cu89PAg 铝焊丝与特种焊材",
-    "standard": "GB BCu89PAg / GB/T 6418 BCu89PAg / AWS A5.8 BCuP-3 / GB/T 标准 余量 5.8～6.2 4.8～5.2 / AWS BCuP-3",
+    "standard": "GB BCu89PAg / GB/T 6418 BCu89PAg / AWS A5.8 BCuP-3 / AWS BCuP-3",
     "standards": [
       "GB BCu89PAg",
       "GB/T 6418 BCu89PAg",
       "AWS A5.8 BCuP-3",
-      "GB/T 标准 余量 5.8～6.2 4.8～5.2",
       "AWS BCuP-3"
     ],
     "summary": "金桥 JQ.Cu89PAg，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24900,12 +24859,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu91PAg",
     "name": "金桥 JQ.Cu91PAg 铝焊丝与特种焊材",
-    "standard": "GB BCu91PAg / GB/T 6418 BCu91PAg / AWS A5.8 BCuP-6 / GB/T 标准 余量 6.8～7.2 1.8～2.2 / AWS BCuP-6",
+    "standard": "GB BCu91PAg / GB/T 6418 BCu91PAg / AWS A5.8 BCuP-6 / AWS BCuP-6",
     "standards": [
       "GB BCu91PAg",
       "GB/T 6418 BCu91PAg",
       "AWS A5.8 BCuP-6",
-      "GB/T 标准 余量 6.8～7.2 1.8～2.2",
       "AWS BCuP-6"
     ],
     "summary": "金桥 JQ.Cu91PAg，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24949,11 +24907,10 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu92P",
     "name": "金桥 JQ.Cu92P 铝焊丝与特种焊材",
-    "standard": "GB BCu92P / GB/T 6418 BCu92P / GB/T 标准 余量 7.5～8.1 / AWS -",
+    "standard": "GB BCu92P / GB/T 6418 BCu92P / AWS -",
     "standards": [
       "GB BCu92P",
       "GB/T 6418 BCu92P",
-      "GB/T 标准 余量 7.5～8.1",
       "AWS -"
     ],
     "summary": "金桥 JQ.Cu92P，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -24993,12 +24950,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "JQ.Cu93P",
     "name": "金桥 JQ.Cu93P 铝焊丝与特种焊材",
-    "standard": "GB BCu93P-B / GB/T 6418 BCu93P-B / AWS A5.8 BCuP-2 / GB/T 标准 余量 6.6～7.4 / AWS BCuP-2",
+    "standard": "GB BCu93P-B / GB/T 6418 BCu93P-B / AWS A5.8 BCuP-2 / AWS BCuP-2",
     "standards": [
       "GB BCu93P-B",
       "GB/T 6418 BCu93P-B",
       "AWS A5.8 BCuP-2",
-      "GB/T 标准 余量 6.6～7.4",
       "AWS BCuP-2"
     ],
     "summary": "金桥 JQ.Cu93P，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -26883,13 +26839,12 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R106Fe",
     "name": "金桥 R106Fe 铝焊丝与特种焊材",
-    "standard": "GB E5018-1M3 / GB/T 5118 E5018-1M3 / AWS A5.5 E7018-A1 / ISO 3580-B-E4918-1M3 / GB/T 标准 ≥490 ≥390 ≥22 / AWS E7018-A1",
+    "standard": "GB E5018-1M3 / GB/T 5118 E5018-1M3 / AWS A5.5 E7018-A1 / ISO 3580-B-E4918-1M3 / AWS E7018-A1",
     "standards": [
       "GB E5018-1M3",
       "GB/T 5118 E5018-1M3",
       "AWS A5.5 E7018-A1",
       "ISO 3580-B-E4918-1M3",
-      "GB/T 标准 ≥490 ≥390 ≥22",
       "AWS E7018-A1"
     ],
     "summary": "金桥 R106Fe，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -26949,13 +26904,12 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R107",
     "name": "金桥 R107 铝焊丝与特种焊材",
-    "standard": "GB E5015-1M3 / GB/T 5118 E5015-1M3 / AWS A5.5 E7015-A1 / ISO 3580-B-E4915-1M3 / GB/T 标准 ≥490 ≥390 ≥22 / AWS E7015-A1",
+    "standard": "GB E5015-1M3 / GB/T 5118 E5015-1M3 / AWS A5.5 E7015-A1 / ISO 3580-B-E4915-1M3 / AWS E7015-A1",
     "standards": [
       "GB E5015-1M3",
       "GB/T 5118 E5015-1M3",
       "AWS A5.5 E7015-A1",
       "ISO 3580-B-E4915-1M3",
-      "GB/T 标准 ≥490 ≥390 ≥22",
       "AWS E7015-A1"
     ],
     "summary": "金桥 R107，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -27441,12 +27395,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R327",
     "name": "金桥 R327 铝焊丝与特种焊材",
-    "standard": "GB E5515-1CMWV / GB/T 5118 E5515-1CMWV / ISO 3580-B-E5515-G / GB/T 标准 ≥550 ≥460 ≥15 / AWS --",
+    "standard": "GB E5515-1CMWV / GB/T 5118 E5515-1CMWV / ISO 3580-B-E5515-G / AWS --",
     "standards": [
       "GB E5515-1CMWV",
       "GB/T 5118 E5515-1CMWV",
       "ISO 3580-B-E5515-G",
-      "GB/T 标准 ≥550 ≥460 ≥15",
       "AWS --"
     ],
     "summary": "金桥 R327，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -27518,12 +27471,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R337",
     "name": "金桥 R337 铝焊丝与特种焊材",
-    "standard": "GB E5515-1CMVNb / GB/T 5118 E5515-1CMVNb / ISO 3580-B-E5515-G / GB/T 标准 ≥550 ≥460 ≥15 / AWS --",
+    "standard": "GB E5515-1CMVNb / GB/T 5118 E5515-1CMVNb / ISO 3580-B-E5515-G / AWS --",
     "standards": [
       "GB E5515-1CMVNb",
       "GB/T 5118 E5515-1CMVNb",
       "ISO 3580-B-E5515-G",
-      "GB/T 标准 ≥550 ≥460 ≥15",
       "AWS --"
     ],
     "summary": "金桥 R337，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -27595,12 +27547,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R347",
     "name": "金桥 R347 铝焊丝与特种焊材",
-    "standard": "GB E5515-2CMWVB / GB/T 5118 E5515-2CMWVB / ISO 3580-B-E5515-G / GB/T 标准 / AWS --",
+    "standard": "GB E5515-2CMWVB / GB/T 5118 E5515-2CMWVB / ISO 3580-B-E5515-G / AWS --",
     "standards": [
       "GB E5515-2CMWVB",
       "GB/T 5118 E5515-2CMWVB",
       "ISO 3580-B-E5515-G",
-      "GB/T 标准",
       "AWS --"
     ],
     "summary": "金桥 R347，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -27745,13 +27696,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R417",
     "name": "金桥 R417 铝焊丝与特种焊材",
-    "standard": "GB E5515-2CMVNb / GB/T 5118 E5515-2CMVNb / ISO 3580-B-E5515-G / GB/T 标准 / GB/T 标准 ≥550 ≥460 ≥15 / AWS --",
+    "standard": "GB E5515-2CMVNb / GB/T 5118 E5515-2CMVNb / ISO 3580-B-E5515-G / AWS --",
     "standards": [
       "GB E5515-2CMVNb",
       "GB/T 5118 E5515-2CMVNb",
       "ISO 3580-B-E5515-G",
-      "GB/T 标准",
-      "GB/T 标准 ≥550 ≥460 ≥15",
       "AWS --"
     ],
     "summary": "金桥 R417，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -27898,13 +27847,11 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R517",
     "name": "金桥 R517 铝焊丝与特种焊材",
-    "standard": "GB E5515-5CM / GB/T 5118 E5515-5CM / AWS A5.5 E8015-B6 / GB/T 标准 / GB/T 标准 ≥550 ≥460 ≥17 / AWS E8015-B6",
+    "standard": "GB E5515-5CM / GB/T 5118 E5515-5CM / AWS A5.5 E8015-B6 / AWS E8015-B6",
     "standards": [
       "GB E5515-5CM",
       "GB/T 5118 E5515-5CM",
       "AWS A5.5 E8015-B6",
-      "GB/T 标准",
-      "GB/T 标准 ≥550 ≥460 ≥17",
       "AWS E8015-B6"
     ],
     "summary": "金桥 R517，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -27972,12 +27919,10 @@
     "categoryName": "铝焊丝与特种焊材",
     "model": "R707",
     "name": "金桥 R707 铝焊丝与特种焊材",
-    "standard": "GB E6215-9C1M / GB/T 5118 E6215-9C1M / GB/T 标准 / GB/T 标准 ≥620 ≥530 ≥15 / AWS --",
+    "standard": "GB E6215-9C1M / GB/T 5118 E6215-9C1M / AWS --",
     "standards": [
       "GB E6215-9C1M",
       "GB/T 5118 E6215-9C1M",
-      "GB/T 标准",
-      "GB/T 标准 ≥620 ≥530 ≥15",
       "AWS --"
     ],
     "summary": "金桥 R707，来源于《金桥焊材 2024 产品手册》，用于铝焊丝与特种焊材相关工况。",
@@ -28851,14 +28796,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A002",
     "name": "金桥 A002 不锈钢焊材",
-    "standard": "GB E308L-16 / GB/T 983 E308L-16 / AWS A5.4 E308L-16 / ISO 3581-A-E（19 9 L）R 3 2 / ISO 3581-B-ES 308L-16 / GB/T 标 0.50～ 18.0～ 9.0～ / AWS E308L-16",
+    "standard": "GB E308L-16 / GB/T 983 E308L-16 / AWS A5.4 E308L-16 / ISO 3581-A-E（19 9 L）R 3 2 / ISO 3581-B-ES 308L-16 / AWS E308L-16",
     "standards": [
       "GB E308L-16",
       "GB/T 983 E308L-16",
       "AWS A5.4 E308L-16",
       "ISO 3581-A-E（19 9 L）R 3 2",
       "ISO 3581-B-ES 308L-16",
-      "GB/T 标 0.50～ 18.0～ 9.0～",
       "AWS E308L-16"
     ],
     "summary": "金桥 A002，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -28926,14 +28870,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A022",
     "name": "金桥 A022 不锈钢焊材",
-    "standard": "GB E316L-16 / GB/T 983 E316L-16 / AWS A5.4 E316L-16 / ISO 3581-A-E（19 12 3 L）R 3 2 / ISO 3581-B-ES 316L-16 / GB/T 标 0.50～ 17.0～ 11.0～ 2.0～ / AWS E316L-16",
+    "standard": "GB E316L-16 / GB/T 983 E316L-16 / AWS A5.4 E316L-16 / ISO 3581-A-E（19 12 3 L）R 3 2 / ISO 3581-B-ES 316L-16 / AWS E316L-16",
     "standards": [
       "GB E316L-16",
       "GB/T 983 E316L-16",
       "AWS A5.4 E316L-16",
       "ISO 3581-A-E（19 12 3 L）R 3 2",
       "ISO 3581-B-ES 316L-16",
-      "GB/T 标 0.50～ 17.0～ 11.0～ 2.0～",
       "AWS E316L-16"
     ],
     "summary": "金桥 A022，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29001,13 +28944,12 @@
     "categoryName": "不锈钢焊材",
     "model": "A022Mo",
     "name": "金桥 A022Mo 不锈钢焊材",
-    "standard": "GB E317L-16 / GB/T 983 E317L-16 / AWS A5.4 E317L-16 / ISO 3581-B-ES 317L-16 / GB/T 标 0.50～ 18.0～ 12.0～ 3.0～ / AWS E317L-16",
+    "standard": "GB E317L-16 / GB/T 983 E317L-16 / AWS A5.4 E317L-16 / ISO 3581-B-ES 317L-16 / AWS E317L-16",
     "standards": [
       "GB E317L-16",
       "GB/T 983 E317L-16",
       "AWS A5.4 E317L-16",
       "ISO 3581-B-ES 317L-16",
-      "GB/T 标 0.50～ 18.0～ 12.0～ 3.0～",
       "AWS E317L-16"
     ],
     "summary": "金桥 A022Mo，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29075,14 +29017,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A042",
     "name": "金桥 A042 不锈钢焊材",
-    "standard": "GB E309LMo-1 6 / GB/T 983 E309LMo-16 / AWS A5.4 E309LMo-16 / ISO 3581-A-E(23 12 2 L) R 3 2 / ISO 3581-B-ES 309LMo-16 / GB/T 标 0.50～ 22.0～ 12.0～ 2.0～ / AWS E309LMo-16",
+    "standard": "GB E309LMo-1 6 / GB/T 983 E309LMo-16 / AWS A5.4 E309LMo-16 / ISO 3581-A-E(23 12 2 L) R 3 2 / ISO 3581-B-ES 309LMo-16 / AWS E309LMo-16",
     "standards": [
       "GB E309LMo-1 6",
       "GB/T 983 E309LMo-16",
       "AWS A5.4 E309LMo-16",
       "ISO 3581-A-E(23 12 2 L) R 3 2",
       "ISO 3581-B-ES 309LMo-16",
-      "GB/T 标 0.50～ 22.0～ 12.0～ 2.0～",
       "AWS E309LMo-16"
     ],
     "summary": "金桥 A042，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29225,14 +29166,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A102",
     "name": "金桥 A102 不锈钢焊材",
-    "standard": "GB E308-16 / GB/T 983 E308-16 / AWS A5.4 E308-16 / ISO 3581-A-E(19 9) R 3 2 / ISO 3581-B-ES 308-16 / GB/T 标 0.50～ 18.0～ 9.0～ / AWS E308-16",
+    "standard": "GB E308-16 / GB/T 983 E308-16 / AWS A5.4 E308-16 / ISO 3581-A-E(19 9) R 3 2 / ISO 3581-B-ES 308-16 / AWS E308-16",
     "standards": [
       "GB E308-16",
       "GB/T 983 E308-16",
       "AWS A5.4 E308-16",
       "ISO 3581-A-E(19 9) R 3 2",
       "ISO 3581-B-ES 308-16",
-      "GB/T 标 0.50～ 18.0～ 9.0～",
       "AWS E308-16"
     ],
     "summary": "金桥 A102，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29300,14 +29240,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A107",
     "name": "金桥 A107 不锈钢焊材",
-    "standard": "GB E308-15 / GB/T 983 E308-15 / AWS A5.4 E308-15 / ISO 3581-A-E(19 9) B 4 2 / ISO 3581-B-ES 308-15 / GB/T 标 0.50～ 18.0～ 9.0～ / AWS E308-15",
+    "standard": "GB E308-15 / GB/T 983 E308-15 / AWS A5.4 E308-15 / ISO 3581-A-E(19 9) B 4 2 / ISO 3581-B-ES 308-15 / AWS E308-15",
     "standards": [
       "GB E308-15",
       "GB/T 983 E308-15",
       "AWS A5.4 E308-15",
       "ISO 3581-A-E(19 9) B 4 2",
       "ISO 3581-B-ES 308-15",
-      "GB/T 标 0.50～ 18.0～ 9.0～",
       "AWS E308-15"
     ],
     "summary": "金桥 A107，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29607,14 +29546,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A202",
     "name": "金桥 A202 不锈钢焊材",
-    "standard": "GB E316-16 / GB/T 983 E316-16 / AWS A5.4 E316-16 / ISO 3581-A-E(19 12 2)R 3 2 / ISO 3581-B-ES 316-16 / GB/T 标 0.50～ 17.0～ 11.0～ 2.0～ / AWS E316-16",
+    "standard": "GB E316-16 / GB/T 983 E316-16 / AWS A5.4 E316-16 / ISO 3581-A-E(19 12 2)R 3 2 / ISO 3581-B-ES 316-16 / AWS E316-16",
     "standards": [
       "GB E316-16",
       "GB/T 983 E316-16",
       "AWS A5.4 E316-16",
       "ISO 3581-A-E(19 12 2)R 3 2",
       "ISO 3581-B-ES 316-16",
-      "GB/T 标 0.50～ 17.0～ 11.0～ 2.0～",
       "AWS E316-16"
     ],
     "summary": "金桥 A202，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29682,14 +29620,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A207",
     "name": "金桥 A207 不锈钢焊材",
-    "standard": "GB E316-15 / GB/T 983 E316-15 / AWS A5.4 E316-15 / ISO 3581-A-E(19 12 2)B 4 2 / ISO 3581-B-ES 316-15 / GB/T 标 0.50～ ≤ 17.0～ 11.0～ 2.0～ / AWS E316-15",
+    "standard": "GB E316-15 / GB/T 983 E316-15 / AWS A5.4 E316-15 / ISO 3581-A-E(19 12 2)B 4 2 / ISO 3581-B-ES 316-15 / AWS E316-15",
     "standards": [
       "GB E316-15",
       "GB/T 983 E316-15",
       "AWS A5.4 E316-15",
       "ISO 3581-A-E(19 12 2)B 4 2",
       "ISO 3581-B-ES 316-15",
-      "GB/T 标 0.50～ ≤ 17.0～ 11.0～ 2.0～",
       "AWS E316-15"
     ],
     "summary": "金桥 A207，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29835,12 +29772,11 @@
     "categoryName": "不锈钢焊材",
     "model": "A232",
     "name": "金桥 A232 不锈钢焊材",
-    "standard": "GB E318V-16 / GB/T 983 E318V-16 / GB/T 0.50～ ≤ 17.0～ 11.0～ 2.0～ 0.30～ / GB/T 标准 ≥540 ≥25 / AWS --",
+    "standard": "GB E318V-16 / GB/T 983 E318V-16 / GB/T 0.50～ ≤ 17.0～ 11.0～ 2.0～ 0.30～ / AWS --",
     "standards": [
       "GB E318V-16",
       "GB/T 983 E318V-16",
       "GB/T 0.50～ ≤ 17.0～ 11.0～ 2.0～ 0.30～",
-      "GB/T 标准 ≥540 ≥25",
       "AWS --"
     ],
     "summary": "金桥 A232，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -29912,11 +29848,10 @@
     "categoryName": "不锈钢焊材",
     "model": "A237",
     "name": "金桥 A237 不锈钢焊材",
-    "standard": "GB E318V-15 / GB/T 983 E318V-15 / GB/T 标准 ≥540 ≥25 / AWS --",
+    "standard": "GB E318V-15 / GB/T 983 E318V-15 / AWS --",
     "standards": [
       "GB E318V-15",
       "GB/T 983 E318V-15",
-      "GB/T 标准 ≥540 ≥25",
       "AWS --"
     ],
     "summary": "金桥 A237，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -30361,14 +30296,13 @@
     "categoryName": "不锈钢焊材",
     "model": "A402",
     "name": "金桥 A402 不锈钢焊材",
-    "standard": "GB E310-16 / GB/T 983 E310-16 / AWS A5.4 E310-16 / ISO 3581-A-E(25 20)R 3 2 / ISO 3581-B-ES 310-16 / GB/T 标 0.08～ 1.00～ 25.0～ 20.0～ / AWS E310-16",
+    "standard": "GB E310-16 / GB/T 983 E310-16 / AWS A5.4 E310-16 / ISO 3581-A-E(25 20)R 3 2 / ISO 3581-B-ES 310-16 / AWS E310-16",
     "standards": [
       "GB E310-16",
       "GB/T 983 E310-16",
       "AWS A5.4 E310-16",
       "ISO 3581-A-E(25 20)R 3 2",
       "ISO 3581-B-ES 310-16",
-      "GB/T 标 0.08～ 1.00～ 25.0～ 20.0～",
       "AWS E310-16"
     ],
     "summary": "金桥 A402，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -30655,12 +30589,10 @@
     "categoryName": "不锈钢焊材",
     "model": "A502",
     "name": "金桥 A502 不锈钢焊材",
-    "standard": "GB E16-25MoN -16 / GB/T 983 E16-25MoN-16 / GB/T ≤ 0.50～ 14.0～ 22.0～ 5.0～ / GB/T 标准 ≥610 ≥30 / AWS --",
+    "standard": "GB E16-25MoN -16 / GB/T 983 E16-25MoN-16 / AWS --",
     "standards": [
       "GB E16-25MoN -16",
       "GB/T 983 E16-25MoN-16",
-      "GB/T ≤ 0.50～ 14.0～ 22.0～ 5.0～",
-      "GB/T 标准 ≥610 ≥30",
       "AWS --"
     ],
     "summary": "金桥 A502，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -30732,12 +30664,10 @@
     "categoryName": "不锈钢焊材",
     "model": "A507",
     "name": "金桥 A507 不锈钢焊材",
-    "standard": "GB E16-25MoN -15 / GB/T 983 E16-25MoN-15 / GB/T ≤ 0.50～ 14.0～ 22.0～ 5.0～ / GB/T 标准 ≥610 ≥30 / AWS --",
+    "standard": "GB E16-25MoN -15 / GB/T 983 E16-25MoN-15 / AWS --",
     "standards": [
       "GB E16-25MoN -15",
       "GB/T 983 E16-25MoN-15",
-      "GB/T ≤ 0.50～ 14.0～ 22.0～ 5.0～",
-      "GB/T 标准 ≥610 ≥30",
       "AWS --"
     ],
     "summary": "金桥 A507，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -31184,11 +31114,12 @@
     "categoryName": "不锈钢焊材",
     "model": "JQ.ER50-3",
     "name": "金桥 JQ.ER50-3 不锈钢焊材",
-    "standard": "GB W49A23 / GB/T 39280 W49A23 / AWS A5.18 ER70S-3 / AWS ER70S-3",
+    "standard": "GB W49A23 / GB/T 39280 W49A23 / AWS A5.18 ER70S-3 / GB/T 0.06～ 0.90～ 0.45～ ≤ ≤ ≤ ≤ ≤ ≤ ≤ / AWS ER70S-3",
     "standards": [
       "GB W49A23",
       "GB/T 39280 W49A23",
       "AWS A5.18 ER70S-3",
+      "GB/T 0.06～ 0.90～ 0.45～ ≤ ≤ ≤ ≤ ≤ ≤ ≤",
       "AWS ER70S-3"
     ],
     "summary": "金桥 JQ.ER50-3，来源于《金桥焊材 2024 产品手册》，用于不锈钢焊材相关工况。",
@@ -35886,11 +35817,10 @@
     "categoryName": "碳钢埋弧焊丝焊剂",
     "model": "JQ.H08MnSiCuCrNi",
     "name": "金桥 JQ.H08MnSiCuCrNi 碳钢埋弧焊丝焊剂",
-    "standard": "GB G43A4UM21SN CC3 / GB/T 8110 G43A4UM21SNCC3 / GB/T 标 0.90～ 0.35～ 0.20～ 0.20～ 0.20～ / AWS --",
+    "standard": "GB G43A4UM21SN CC3 / GB/T 8110 G43A4UM21SNCC3 / AWS --",
     "standards": [
       "GB G43A4UM21SN CC3",
       "GB/T 8110 G43A4UM21SNCC3",
-      "GB/T 标 0.90～ 0.35～ 0.20～ 0.20～ 0.20～",
       "AWS --"
     ],
     "summary": "金桥 JQ.H08MnSiCuCrNi，来源于《金桥焊材 2024 产品手册》，用于碳钢埋弧焊丝焊剂相关工况。",
@@ -37328,12 +37258,11 @@
     "categoryName": "碳钢埋弧焊丝焊剂",
     "model": "JQ.SJ601",
     "name": "金桥 JQ.SJ601 碳钢埋弧焊丝焊剂",
-    "standard": "GB SF308G-S3 08 / GB/T 17854 S F308 G-S308 / 相当 ISO 14174-S A Z 2 / GB/T 标准 ≥520 ≥30 / AWS --",
+    "standard": "GB SF308G-S3 08 / GB/T 17854 S F308 G-S308 / 相当 ISO 14174-S A Z 2 / AWS --",
     "standards": [
       "GB SF308G-S3 08",
       "GB/T 17854 S F308 G-S308",
       "相当 ISO 14174-S A Z 2",
-      "GB/T 标准 ≥520 ≥30",
       "AWS --"
     ],
     "summary": "金桥 JQ.SJ601，来源于《金桥焊材 2024 产品手册》，用于碳钢埋弧焊丝焊剂相关工况。",
@@ -37373,12 +37302,11 @@
     "categoryName": "碳钢埋弧焊丝焊剂",
     "model": "JQ.SJ601T",
     "name": "金桥 JQ.SJ601T 碳钢埋弧焊丝焊剂",
-    "standard": "GB SF308LG-S30 8L / GB/T 17854 S F308 G-308L / ISO 14174-S A Z 2 / GB/T 标准 ≥520 ≥30 ≥31 / AWS --",
+    "standard": "GB SF308LG-S30 8L / GB/T 17854 S F308 G-308L / ISO 14174-S A Z 2 / AWS --",
     "standards": [
       "GB SF308LG-S30 8L",
       "GB/T 17854 S F308 G-308L",
       "ISO 14174-S A Z 2",
-      "GB/T 标准 ≥520 ≥30 ≥31",
       "AWS --"
     ],
     "summary": "金桥 JQ.SJ601T，来源于《金桥焊材 2024 产品手册》，用于碳钢埋弧焊丝焊剂相关工况。",
@@ -37474,12 +37402,11 @@
     "categoryName": "碳钢埋弧焊丝焊剂",
     "model": "JQ.SJ629",
     "name": "金桥 JQ.SJ629 碳钢埋弧焊丝焊剂",
-    "standard": "GB SF2209G-S2209 / GB/T 17854 S F2209 FB-S2209 / ISO 14174-S A FB 2 / GB/T 标准 ≥690 ≥20 / AWS --",
+    "standard": "GB SF2209G-S2209 / GB/T 17854 S F2209 FB-S2209 / ISO 14174-S A FB 2 / AWS --",
     "standards": [
       "GB SF2209G-S2209",
       "GB/T 17854 S F2209 FB-S2209",
       "ISO 14174-S A FB 2",
-      "GB/T 标准 ≥690 ≥20",
       "AWS --"
     ],
     "summary": "金桥 JQ.SJ629，来源于《金桥焊材 2024 产品手册》，用于碳钢埋弧焊丝焊剂相关工况。",
