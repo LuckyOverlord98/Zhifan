@@ -49,7 +49,7 @@ function Header() {
     <header className="site-header" id="top">
       <nav className="nav" aria-label="主导航">
         <a className="brand" href="#home" aria-label="宁波志凡焊材有限公司首页" onClick={() => setOpen(false)}>
-          <span className="brand-mark">志</span>
+          <img className="brand-logo" src="/assets/site/zhifan-logo.png" alt="志凡焊材 logo" />
           <span>
             <strong>宁波志凡焊材有限公司</strong>
             <small>ZhiFan Welding Materials</small>
