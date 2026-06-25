@@ -39,7 +39,7 @@ function ProductSearch() {
           ) : results.slice(0, 6).map((item) => (
             <a key={item.slug} href={"/products/" + item.slug}>
               <strong>{item.model}</strong>
-              <span>{item.manufacturer}{" ? "}{item.categoryName}</span>
+              <span>{[item.manufacturer, item.categoryName].filter(Boolean).join(" · ")}</span>
             </a>
           ))}
         </div>

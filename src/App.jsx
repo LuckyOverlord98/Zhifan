@@ -218,14 +218,15 @@ function ProductPageShell({ children }) {
 
 function ProductCategoryPage({ categorySlug }) {
   const meta = categoryMeta[categorySlug] || { title: "\u4ea7\u54c1\u4e2d\u5fc3", eyebrow: "Products", description: "\u6309\u5382\u5bb6\u548c\u578b\u53f7\u67e5\u770b\u4ea7\u54c1\u89c4\u683c\u3002" };
-  const [manufacturer, setManufacturer] = useState("\u91d1\u6865");
+  const [manufacturer, setManufacturer] = useState("\u5168\u90e8");
   const [items, setItems] = useState([]);
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
     const controller = new AbortController();
     setStatus("loading");
-    fetch("/api/products?category=" + encodeURIComponent(categorySlug) + "&manufacturer=" + encodeURIComponent(manufacturer), { signal: controller.signal })
+    const manufacturerQuery = manufacturer === "\u5168\u90e8" ? "" : "&manufacturer=" + encodeURIComponent(manufacturer);
+    fetch("/api/products?category=" + encodeURIComponent(categorySlug) + manufacturerQuery, { signal: controller.signal })
       .then((response) => response.json().then((data) => ({ ok: response.ok, data })))
       .then(({ ok, data }) => {
         if (!ok) throw new Error(data.message || "read failed");
@@ -272,7 +273,7 @@ function ProductCategoryPage({ categorySlug }) {
                 <div>
                   <h3>{item.name}</h3>
                   <p>{item.summary}</p>
-                  <small>{item.manufacturer} ? {item.categoryName} ? {item.standard}</small>
+                  <small>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" · ")}</small>
                 </div>
               </a>
             ))}
@@ -338,6 +339,7 @@ function ProductDetailPage({ slug }) {
           <div className="detail-summary">
             <span>{"\u6267\u884c\u6807\u51c6"}</span>
             <strong>{product.standard || "\u6309\u5382\u5bb6\u8d44\u6599"}</strong>
+            {product.standards?.length > 0 && <ul className="standard-list">{product.standards.map((standard) => <li key={standard}>{standard}</li>)}</ul>}
             <p>{product.summary}</p>
           </div>
         </section>
@@ -402,18 +404,31 @@ function App() {
         </section>
 
         <section className="section brand-strip" aria-label="授权品牌">
-          <div className="section-heading compact-heading"><p className="eyebrow">Authorized Brands</p><h2>授权品牌</h2><p>长期代理主流焊材与焊接设备品牌，支持现货供应、资料配合与项目保供。</p></div>
-          <div className="brand-logo-grid">
+          <div className="section-heading compact-heading"><p className="eyebrow">Authorized Brands</p><h2>授权品牌</h2><p>主流焊材、焊机、割炬、衬垫与工具品牌集中配套，支持现货供应、资料配合与项目保供。</p></div>
+          <div className="brand-logo-grid featured-brands">
             <article><img src="/assets/brands/jinqiao.png" alt="天津金桥焊材 logo" /><span>天津金桥焊材</span></article>
             <article><img src="/assets/brands/atlantic.png" alt="上海大西洋焊材 logo" /><span>上海大西洋焊材</span></article>
             <article><img src="/assets/brands/shanghai-dongfeng.png" alt="上海东风焊材 logo" /><span>上海东风焊材</span></article>
             <article><img src="/assets/brands/tiantai.png" alt="天泰焊材 logo" /><span>天泰焊材</span></article>
+            <article><img src="/assets/brands/longxing.png" alt="隆兴割炬 logo" /><span>隆兴割炬</span></article>
           </div>
-          <div className="brand-cloud secondary-brands"><span>常州运河焊材</span><span>亚泰焊材</span><span>隆兴割炬</span><span>上海通用电焊机</span></div>
+          <details className="brand-more">
+            <summary>查看更多合作品牌</summary>
+            <div className="brand-logo-grid brand-logo-grid-small">
+              <article><img src="/assets/brands/tayor.png" alt="上海通用重工集团 logo" /><span>上海通用电焊机</span></article>
+              <article><img src="/assets/brands/great-wall-precision.png" alt="长城精工 logo" /><span>长城精工</span></article>
+              <article><img src="/assets/brands/shunxin.png" alt="舜鑫焊材 logo" /><span>舜鑫焊材</span></article>
+              <article><img src="/assets/brands/tiemao.png" alt="铁锚焊材 logo" /><span>铁锚焊材</span></article>
+              <article><img src="/assets/brands/taichang.png" alt="上海泰昌衬垫 logo" /><span>上海泰昌衬垫</span></article>
+              <article><img src="/assets/brands/jetech.png" alt="上海捷科工具 logo" /><span>上海捷科工具</span></article>
+            </div>
+            <div className="brand-cloud secondary-brands"><span>力易得工具</span><span>田岛工具</span><span>沙龙衬垫</span><span>常州运河焊材</span><span>亚泰焊材</span></div>
+          </details>
         </section>
 
         <section className="section" id="products">
           <div className="section-split"><div className="section-heading"><p className="eyebrow">Products</p><h2>{"\u4ea7\u54c1\u4e2d\u5fc3"}</h2><p>{"\u9ad8\u9891\u54c1\u7c7b\u5e38\u5907\u5e93\u5b58\uff0c\u6309\u54c1\u724c\u3001\u89c4\u683c\u548c\u9879\u76ee\u8ba1\u5212\u8fdb\u884c\u4fdd\u4f9b\u3002"}</p><ProductSearch /></div><figure className="section-image"><img src="/assets/sections/products-shelves.png" alt="货架上的焊丝、焊条与焊剂库存" /></figure></div>
+          <div className="stock-proof-strip" aria-label="核心供应能力"><article><strong>备货量大</strong><span>常备焊材 2600-3200 吨，高频规格提前锁库。</span></article><article><strong>品类全</strong><span>7 大焊材与设备配件分类，按厂家和型号快速筛选。</span></article><article><strong>响应快</strong><span>宁波 48 小时、浙江 96 小时正常送达。</span></article></div>
           <div className="product-grid">{products.map((item) => <a className="product-home-card" key={item.number} href={"/products/" + item.slug}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></a>)}</div>
         </section>
 
@@ -421,6 +436,20 @@ function App() {
           <div className="section-split"><div className="section-heading"><p className="eyebrow">Cases</p><h2>案例及相关业绩</h2><p>客户名称和精确吨位已脱敏，仅保留行业、供应规模和服务方式。</p></div><figure className="section-image"><img src="/assets/sections/cases-handover.png" alt="仓库客户提货与交付沟通场景" /></figure></div>
           <div className="case-list compact-list"><article><h3>工程项目保供</h3><p>提前锁定常用规格，专门小组跟进库存、发货、资料和异常响应。</p></article><article><h3>区域快速配送</h3><p>宁波地区正常48小时内，浙江全区域正常96小时内送达。</p></article><article><h3>跨省发运</h3><p>覆盖江浙沪及周边省区，可按需发往指定地点或偏远省区。</p></article></div>
           <div className="case-data-grid">{caseCards.map(([tag, title, text]) => <article key={title}><span>{tag}</span><h4>{title}</h4><p>{text}</p></article>)}</div>
+          <div className="delivery-scene-grid" aria-label="焊材配送场景素材"><article className="delivery-card steel"><span>钢结构工厂</span><strong>整托焊丝、焊条到厂交付</strong></article><article className="delivery-card shipyard"><span>船厂项目</span><strong>按批次保障船体与分段焊接</strong></article><article className="delivery-card auto"><span>汽车制造</span><strong>产线耗材稳定补给</strong></article><article className="delivery-card machinery"><span>机械制造</span><strong>设备构件焊材快速响应</strong></article></div>
+        </section>
+
+
+        <section className="section seo-keywords" aria-label="焊材应用与采购关键词覆盖">
+          <div className="section-heading"><p className="eyebrow">Application Keywords</p><h2>按行业、工艺和标准快速匹配焊材</h2><p>面向船厂、钢结构、压力容器、汽车制造、电建火电风电水电核电、石化项目等客户，围绕焊材采购、焊材批发、焊材供应商、焊材现货供应和技术选型支持建立一站式入口。</p></div>
+          <div className="seo-keyword-grid">
+            <article><h3>行业场景</h3><p>船用焊材、船厂专用焊丝、船级社认证焊材、钢结构焊接材料、压力容器焊材、锅炉焊条、汽车焊接材料、风电塔筒焊丝、核电焊材、石化管道焊条。</p></article>
+            <article><h3>产品与工艺</h3><p>碳钢焊条、低合金钢焊条、实芯焊丝、药芯焊丝、埋弧焊丝焊剂、氩弧焊填充焊丝、手工电弧焊焊条、自动焊焊接材料、复合板焊接材料。</p></article>
+            <article><h3>材质体系</h3><p>铬钼耐热钢焊条、奥氏体不锈钢焊丝、双相不锈钢焊条、镍基合金焊丝、低温镍钢焊条、耐候钢焊材、耐磨堆焊合金焊条、铝镁合金焊丝。</p></article>
+            <article><h3>标准与质保</h3><p>CCS、ABS、DNV、LR、BV、NK船级社认证焊材，NB/T 47018标准焊材、AWS标准焊条、焊材质量证明书、焊材质保书、熔敷金属化学成分与冲击韧性报告。</p></article>
+            <article><h3>常用型号</h3><p>J422、J506、J507、ER50-6、ER50-G、E71T-1、E308-16、E309-16、E316-16、ER316L、H08MnA、H10Mn2、SJ101、HJ431、R307、A102、A132。</p></article>
+            <article><h3>工程采购</h3><p>海上平台焊接材料、桥梁钢结构焊材、LNG储罐焊材、高压管道焊条、锅炉受热面焊材、风电基础焊接材料、换热器焊接材料、宁波焊材配送上门。</p></article>
+          </div>
         </section>
 
         <section className="section" id="knowledge">
@@ -440,6 +469,7 @@ function App() {
 
         <section className="section contact" id="contact">
           <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><img src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:0574-89007658">公司电话：0574-89007658</a><a href="tel:13805890268">手机联系：13805890268</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
+          <div className="amap-card"><div><strong>现场志凡焊材（新仓库）</strong><span>高德地图定位：宁波市鄞州区富宁路119号</span></div><a href="https://uri.amap.com/marker?position=121.6359,29.8325&name=%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%EF%BC%88%E6%96%B0%E4%BB%93%E5%BA%93%EF%BC%89&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div>
           <ContactForm />
         </section>
       </main>

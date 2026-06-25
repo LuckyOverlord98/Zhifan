@@ -44,7 +44,7 @@ const products = [
 ];
 
 
-const manufacturerTabs = ["\u91d1\u6865", "\u5927\u897f\u6d0b", "\u4e1c\u98ce", "\u5929\u6cf0", "\u5176\u4ed6"];
+const manufacturerTabs = ["\u5168\u90e8", "\u91d1\u6865", "\u5927\u897f\u6d0b", "\u4e1c\u98ce", "\u5929\u6cf0", "\u5176\u4ed6"];
 const categoryMeta = {
   "carbon-steel-electrodes": {
     title: "\u78b3\u94a2\u710a\u6761",

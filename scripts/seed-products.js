@@ -11,7 +11,7 @@ const rootDir = path.resolve(__dirname, "..");
 dotenv.config({ path: path.join(rootDir, ".env") });
 
 const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/zhifan";
-const productsPath = path.join(rootDir, "data", "jinqiao-carbon-electrodes.json");
+const productsPath = path.join(rootDir, "data", "jinqiao-products.json");
 
 async function main() {
   const raw = await fs.readFile(productsPath, "utf8");
@@ -27,8 +27,13 @@ async function main() {
     name: "text",
     summary: "text",
     categoryName: "text",
-    manufacturer: "text"
+    manufacturer: "text",
+    standard: "text",
+    standards: "text"
   });
+
+  const slugs = products.map((product) => product.slug);
+  await collection.deleteMany({ manufacturer: "金桥", slug: { $nin: slugs } });
 
   let changed = 0;
   for (const product of products) {

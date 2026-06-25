@@ -38,6 +38,7 @@ const productSchema = new mongoose.Schema(
     model: { type: String, required: true, index: true, trim: true },
     name: { type: String, required: true, trim: true },
     standard: { type: String, trim: true },
+    standards: [{ type: String, trim: true }],
     summary: { type: String, trim: true },
     introduction: { type: String, trim: true },
     applications: [{ type: String, trim: true }],
@@ -49,12 +50,12 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-productSchema.index({ model: "text", name: "text", summary: "text", categoryName: "text", manufacturer: "text" });
+productSchema.index({ model: "text", name: "text", summary: "text", categoryName: "text", manufacturer: "text", standard: "text", standards: "text" });
 
 const Inquiry = mongoose.model("Inquiry", inquirySchema);
 const Product = mongoose.model("Product", productSchema);
 
-const seedProductsPath = path.resolve(__dirname, "../data/jinqiao-carbon-electrodes.json");
+const seedProductsPath = path.resolve(__dirname, "../data/jinqiao-products.json");
 let seedProductsCache = null;
 
 function loadSeedProducts() {
@@ -69,7 +70,7 @@ function productMatches(product, filters) {
   if (filters.category && product.categorySlug !== filters.category) return false;
   if (filters.manufacturer && product.manufacturer !== filters.manufacturer) return false;
   if (filters.search) {
-    const haystack = [product.model, product.name, product.summary, product.standard, product.categoryName, product.manufacturer].join(" ").toLowerCase();
+    const haystack = [product.model, product.name, product.summary, product.standard, ...(product.standards || []), product.categoryName, product.manufacturer].join(" ").toLowerCase();
     if (!haystack.includes(filters.search.toLowerCase())) return false;
   }
   return true;
@@ -173,7 +174,7 @@ app.get("/api/products", async (req, res, next) => {
     if (manufacturer) query.manufacturer = manufacturer;
     if (search) {
       const pattern = new RegExp(escapeRegex(search), "i");
-      query.$or = [{ model: pattern }, { name: pattern }, { summary: pattern }, { standard: pattern }];
+      query.$or = [{ model: pattern }, { name: pattern }, { summary: pattern }, { standard: pattern }, { standards: pattern }];
     }
 
     if (mongoose.connection.readyState !== 1) {
