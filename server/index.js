@@ -305,7 +305,14 @@ app.get("/api/inquiries", async (req, res, next) => {
 });
 
 const distDir = path.resolve(__dirname, "../dist");
-app.use(express.static(distDir));
+app.use(express.static(distDir, {
+  maxAge: "1h",
+  setHeaders(res, filePath) {
+    if (/\.(?:webp|avif|png|jpg|jpeg|svg|ico|css|js)$/i.test(filePath)) {
+      res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+    }
+  }
+}));
 app.get("*", (req, res, next) => {
   if (req.path.startsWith("/api")) return next();
   res.sendFile(path.join(distDir, "index.html"));

@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import ProductSearch from "./components/ProductSearch.jsx";
+import OptimizedImage from "./components/OptimizedImage.jsx";
 import { products, manufacturerTabs, categoryMeta } from "./data/productCatalog.js";
+import { knowledgeQaArticles, knowledgeQaCategories } from "./data/knowledgeQa.js";
 
 const navItems = [
   ["/#products", "产品中心"],
@@ -46,6 +48,56 @@ const certificates = [
     image: "/assets/certificates/itw-tiantai-authorization-2026.png"
   }
 ];
+
+
+const defaultSeo = {
+  title: "宁波志凡焊材有限公司 | 焊材一级经销与现货保供服务",
+  description: "宁波志凡焊材有限公司位于宁波市鄞州区富宁路119号，专业批发焊材近二十八年，系金桥、大西洋、东风、天泰、孚尔姆、运河、亚泰等品牌全国一级经销商。年供货量数万吨，常备库存数千吨，全系列覆盖实芯气保焊丝、药芯气保焊丝、埋弧焊丝焊剂、不锈钢及铝焊材，并配套焊割配件与五金工具。主营服务江浙沪及周边船厂、机械厂、钢结构、压力容器、电力工程（火/风/水/核电）及石化项目，提供一站式配货、原厂质保书、项目跟单及专属保供服务，现货充足，宁波48小时、浙江96小时高效送达。",
+  keywords: "宁波焊材批发,浙江焊材供应商,江浙沪焊材供应,船用焊材,钢结构焊材,压力容器焊材,NB/T 47018标准焊材,金桥焊材,大西洋焊材,上海东风焊材,天泰焊材,J422碳钢焊条,J507低合金钢焊条,ER50-6气体保护焊丝,E71T-1药芯焊丝,A102不锈钢焊条,H08MnA埋弧焊丝,SJ101烧结焊剂,焊材质量证明书,焊材现货供应,焊材急件配送"
+};
+
+function setMetaAttribute(selector, identity, values) {
+  let element = document.head.querySelector(selector);
+  if (!element) {
+    element = document.createElement("meta");
+    Object.entries(identity).forEach(([key, value]) => element.setAttribute(key, value));
+    document.head.appendChild(element);
+  }
+  Object.entries(values).forEach(([key, value]) => element.setAttribute(key, value));
+}
+
+function usePageMeta(meta) {
+  useEffect(() => {
+    if (!meta) return undefined;
+    const pageMeta = { ...defaultSeo, ...meta };
+    document.title = pageMeta.title;
+    setMetaAttribute('meta[name="description"]', { name: "description" }, { content: pageMeta.description });
+    setMetaAttribute('meta[name="keywords"]', { name: "keywords" }, { content: pageMeta.keywords });
+    setMetaAttribute('meta[property="og:title"]', { property: "og:title" }, { content: pageMeta.title });
+    setMetaAttribute('meta[property="og:description"]', { property: "og:description" }, { content: pageMeta.description });
+  }, [meta?.title, meta?.description, meta?.keywords]);
+}
+
+function productCategorySeo(meta) {
+  const title = meta.title || "产品中心";
+  return {
+    title: `${title} | 产品中心 | 宁波志凡焊材有限公司`,
+    description: `${title}现货产品清单，支持按厂家筛选金桥、大西洋、上海东风、天泰及其他品牌型号，适配船厂、钢结构、压力容器、机械厂、电力工程和石化项目焊材采购。`,
+    keywords: [title, meta.eyebrow, "宁波焊材批发", "浙江焊材供应商", "焊材现货供应", "焊材质量证明书", "焊材急件配送", "金桥焊材", "大西洋焊材", "上海东风焊材", "天泰焊材"].filter(Boolean).join(",")
+  };
+}
+
+function productDetailSeo(product) {
+  if (!product) return {
+    title: "产品详情 | 宁波志凡焊材有限公司",
+    description: "查看焊材型号、执行标准、化学成分、熔敷金属力学性能与规格信息。",
+    keywords: "焊材型号,执行标准,化学成分,熔敷金属,宁波焊材批发"
+  };
+  const title = `${product.manufacturer || ""} ${product.model || product.name} | ${product.categoryName || "焊材"}`;
+  const description = `${product.manufacturer || "品牌"}${product.model || ""}${product.name ? " " + product.name : ""}产品详情，包含执行标准、适用场景、化学成分、熔敷金属力学性能与规格信息，支持宁波、浙江及江浙沪项目现货保供。`;
+  const keywords = [product.model, product.name, product.manufacturer, product.categoryName, product.standard, ...(product.standards || []), "焊材现货供应", "焊材质量证明书", "熔敷金属化学成分", "焊材力学性能", "宁波焊材批发"].filter(Boolean).join(",");
+  return { title: `${title} | 宁波志凡焊材有限公司`, description, keywords };
+}
 
 const knowledgeArticles = [
   ["01", "焊材选型通用原则：先定母材，再定工艺，再定牌号", "先定母材，再定工艺，再定牌号，避免只按品牌或单一型号采购。", "/articles/selection-principles.html"],
@@ -217,7 +269,7 @@ function CertificateSlider() {
       <div className="certificate-stage" aria-live="polite">
         {certificates.map((item, index) => (
           <figure className={"certificate-slide" + (index === active ? " active" : "")} key={item.image} aria-hidden={index !== active}>
-            <img src={item.image} alt={item.title} loading={index === 0 ? "eager" : "lazy"} />
+            <OptimizedImage src={item.image} alt={item.title} loading={index === 0 ? "eager" : "lazy"} />
           </figure>
         ))}
       </div>
@@ -245,7 +297,7 @@ function Header() {
     <header className={`site-header ${scrolled ? "scrolled" : ""}`} id="top">
       <nav className="nav" aria-label="主导航">
         <a className="brand" href="/#home" aria-label="宁波志凡焊材有限公司首页" onClick={() => setOpen(false)}>
-          <img className="brand-logo" src="/assets/site/zhifan-logo.png" alt="志凡焊材 logo" />
+          <OptimizedImage className="brand-logo" src="/assets/site/zhifan-logo.png" alt="志凡焊材 logo" />
           <span>
             <strong>宁波志凡焊材有限公司</strong>
             <small>ZhiFan Welding Materials</small>
@@ -430,9 +482,16 @@ function ProductPageShell({ children }) {
 function ProductCategoryPage({ categorySlug }) {
   useIndustrialMotion([categorySlug]);
   const meta = categoryMeta[categorySlug] || { title: "\u4ea7\u54c1\u4e2d\u5fc3", eyebrow: "Products", description: "\u6309\u5382\u5bb6\u548c\u578b\u53f7\u67e5\u770b\u4ea7\u54c1\u89c4\u683c\u3002" };
+  usePageMeta(productCategorySeo(meta));
   const [manufacturer, setManufacturer] = useState("\u5168\u90e8");
   const [items, setItems] = useState([]);
   const [status, setStatus] = useState("loading");
+  const [page, setPage] = useState(1);
+  const pageSize = 15;
+
+  useEffect(() => {
+    setPage(1);
+  }, [categorySlug, manufacturer]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -453,6 +512,10 @@ function ProductCategoryPage({ categorySlug }) {
       });
     return () => controller.abort();
   }, [categorySlug, manufacturer]);
+
+  const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
+  const safePage = Math.min(page, totalPages);
+  const pagedItems = items.slice((safePage - 1) * pageSize, safePage * pageSize);
 
   return (
     <ProductPageShell>
@@ -477,15 +540,21 @@ function ProductCategoryPage({ categorySlug }) {
           {status === "loading" && <p className="product-state">{"\u6b63\u5728\u8bfb\u53d6\u4ea7\u54c1\u578b\u53f7..."}</p>}
           {status === "error" && <p className="product-state">{"\u4ea7\u54c1\u6570\u636e\u6682\u65f6\u8bfb\u53d6\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u5237\u65b0\u3002"}</p>}
           {status === "ready" && items.length === 0 && <p className="product-state">{"\u8be5\u5382\u5bb6\u578b\u53f7\u6b63\u5728\u6574\u7406\u4e2d\uff0c\u5df2\u9884\u7559\u5206\u7c7b\u5165\u53e3\u3002"}</p>}
+          {status === "ready" && items.length > 0 && (
+            <div className="product-list-meta">
+              <span>{"\u5171 " + items.length + " \u4e2a\u578b\u53f7"}</span>
+              {items.length > pageSize && <span>{"\u7b2c " + safePage + " / " + totalPages + " \u9875\uff0c\u6bcf\u9875 15 \u4e2a"}</span>}
+            </div>
+          )}
 
           <div className="product-list">
-            {items.map((item) => (
+            {pagedItems.map((item) => (
               <a className="product-row" key={item.slug} href={"/products/" + item.slug}>
                 <span className="model-badge">{item.model}</span>
                 <div>
                   <h3>{item.name}</h3>
                   <p>{item.summary}</p>
-                  <small>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" · ")}</small>
+                  <small>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" / ")}</small>
                 </div>
               </a>
             ))}
@@ -559,6 +628,8 @@ function ProductDetailPage({ slug }) {
     return () => controller.abort();
   }, [slug]);
 
+  usePageMeta(productDetailSeo(product));
+
   if (status === "loading") return <ProductPageShell><main className="product-page"><p className="product-state">{"\u6b63\u5728\u8bfb\u53d6\u4ea7\u54c1\u8be6\u60c5..."}</p></main></ProductPageShell>;
   if (status === "error" || !product) return <ProductPageShell><main className="product-page"><p className="product-state">{"\u672a\u627e\u5230\u8be5\u4ea7\u54c1\u578b\u53f7\u3002"}</p><a className="secondary-btn" href="/products/carbon-steel-electrodes">{"\u8fd4\u56de\u4ea7\u54c1\u5217\u8868"}</a></main></ProductPageShell>;
 
@@ -616,9 +687,15 @@ function App() {
   const currentPath = window.location.pathname;
   const isAdminPage = currentPath === "/admin" || currentPath === "/admin/";
   const [knowledgeOpen, setKnowledgeOpen] = useState(false);
-  const visibleArticles = useMemo(() => (knowledgeOpen ? knowledgeArticles : knowledgeArticles.slice(0, 5)), [knowledgeOpen]);
+  const [activeKnowledgeCategory, setActiveKnowledgeCategory] = useState(knowledgeQaCategories[0]?.slug || "all");
+  const currentKnowledgeArticles = useMemo(() => {
+    if (activeKnowledgeCategory === "all") return knowledgeQaArticles;
+    return knowledgeQaArticles.filter((article) => article.categorySlug === activeKnowledgeCategory);
+  }, [activeKnowledgeCategory]);
+  const visibleArticles = useMemo(() => (knowledgeOpen ? currentKnowledgeArticles : currentKnowledgeArticles.slice(0, 5)), [knowledgeOpen, currentKnowledgeArticles]);
 
-  useIndustrialMotion([knowledgeOpen, currentPath]);
+  usePageMeta(isAdminPage || currentPath.startsWith("/products/") ? null : defaultSeo);
+  useIndustrialMotion([knowledgeOpen, activeKnowledgeCategory, currentPath]);
 
   if (isAdminPage) return <AdminDashboard />;
   if (currentPath.startsWith("/products/")) {
@@ -639,7 +716,7 @@ function App() {
             <p className="founded-note">Founded in 1998</p>
             <div className="hero-actions"><a className="primary-btn" href="#contact">{"\u7acb\u5373\u54a8\u8be2"}</a><a className="secondary-btn" href="#products">{"\u67e5\u770b\u4ea7\u54c1"}</a></div>
           </div>
-          <div className="hero-visual" aria-label="焊材仓储与工业焊接场景"><img src="/assets/hero-welding.png" alt="焊材仓储与工业焊接场景" /></div>
+          <div className="hero-visual" aria-label="焊材仓储与工业焊接场景"><OptimizedImage src="/assets/hero-welding.png" alt="焊材仓储与工业焊接场景" /></div>
           <dl className="hero-metrics" aria-label="core data"><div><dt><CountNumber value={28} suffix={"\u5e74"} /></dt><dd>{"\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</dd></div><div><dt>{"\u7701\u5185\u9886\u5148"}</dt><dd>{"\u4f9b\u8d27\u89c4\u6a21"}</dd></div><div><dt><CountNumber value={96} suffix={"\u5c0f\u65f6"} /></dt><dd>{"\u6d59\u6c5f\u533a\u57df\u6b63\u5e38\u9001\u8fbe"}</dd></div></dl>
         </section>
 
@@ -651,21 +728,21 @@ function App() {
         <section className="section brand-strip" aria-label="授权品牌">
           <div className="section-heading compact-heading"><p className="eyebrow">Authorized Brands</p><h2>授权品牌</h2><p>主流焊材、焊机、割炬、衬垫与工具品牌集中配套，支持现货供应、资料配合与项目保供。</p></div>
           <div className="brand-logo-grid featured-brands">
-            <article><img src="/assets/brands/shanghai-dongfeng.png" alt="上海东风焊材 logo" /><span>上海东风焊材</span></article>
-            <article><img src="/assets/brands/jinqiao.png" alt="天津金桥焊材 logo" /><span>天津金桥焊材</span></article>
-            <article><img src="/assets/brands/atlantic.png" alt="上海大西洋焊材 logo" /><span>上海大西洋焊材</span></article>
-            <article><img src="/assets/brands/tiantai.png" alt="天泰焊材 logo" /><span>天泰焊材</span></article>
-            <article><img src="/assets/brands/shunxin.png" alt="舜鑫焊材 logo" /><span>舜鑫焊材</span></article>
+            <article><OptimizedImage src="/assets/brands/shanghai-dongfeng.png" alt="上海东风焊材 logo" /><span>上海东风焊材</span></article>
+            <article><OptimizedImage src="/assets/brands/jinqiao.png" alt="天津金桥焊材 logo" /><span>天津金桥焊材</span></article>
+            <article><OptimizedImage src="/assets/brands/atlantic.png" alt="上海大西洋焊材 logo" /><span>上海大西洋焊材</span></article>
+            <article><OptimizedImage src="/assets/brands/tiantai.png" alt="天泰焊材 logo" /><span>天泰焊材</span></article>
+            <article><OptimizedImage src="/assets/brands/shunxin.png" alt="舜鑫焊材 logo" /><span>舜鑫焊材</span></article>
           </div>
           <details className="brand-more">
             <summary>查看更多合作品牌</summary>
             <div className="brand-logo-grid brand-logo-grid-small">
-              <article><img src="/assets/brands/longxing.png" alt="隆兴割炬 logo" /><span>隆兴割炬</span></article>
-              <article><img src="/assets/brands/tayor.png" alt="上海通用重工集团 logo" /><span>上海通用电焊机</span></article>
-              <article><img src="/assets/brands/great-wall-precision.png" alt="长城精工 logo" /><span>长城精工</span></article>
-              <article><img src="/assets/brands/tiemao.png" alt="铁锚焊材 logo" /><span>铁锚焊材</span></article>
-              <article><img src="/assets/brands/taichang.png" alt="上海泰昌衬垫 logo" /><span>上海泰昌衬垫</span></article>
-              <article><img src="/assets/brands/jetech.png" alt="上海捷科工具 logo" /><span>上海捷科工具</span></article>
+              <article><OptimizedImage src="/assets/brands/longxing.png" alt="隆兴割炬 logo" /><span>隆兴割炬</span></article>
+              <article><OptimizedImage src="/assets/brands/tayor.png" alt="上海通用重工集团 logo" /><span>上海通用电焊机</span></article>
+              <article><OptimizedImage src="/assets/brands/great-wall-precision.png" alt="长城精工 logo" /><span>长城精工</span></article>
+              <article><OptimizedImage src="/assets/brands/tiemao.png" alt="铁锚焊材 logo" /><span>铁锚焊材</span></article>
+              <article><OptimizedImage src="/assets/brands/taichang.png" alt="上海泰昌衬垫 logo" /><span>上海泰昌衬垫</span></article>
+              <article><OptimizedImage src="/assets/brands/jetech.png" alt="上海捷科工具 logo" /><span>上海捷科工具</span></article>
             </div>
             <div className="brand-cloud secondary-brands"><span>力易得工具</span><span>田岛工具</span><span>沙龙衬垫</span><span>常州运河焊材</span><span>亚泰焊材</span></div>
           </details>
@@ -673,13 +750,13 @@ function App() {
         </section>
 
         <section className="section" id="products">
-          <div className="section-split"><div className="section-heading"><p className="eyebrow">Products</p><h2>{"\u4ea7\u54c1\u4e2d\u5fc3"}</h2><p>{"\u9ad8\u9891\u54c1\u7c7b\u5e38\u5907\u5e93\u5b58\uff0c\u6309\u54c1\u724c\u3001\u89c4\u683c\u548c\u9879\u76ee\u8ba1\u5212\u8fdb\u884c\u4fdd\u4f9b\u3002"}</p><ProductSearch /></div><figure className="section-image"><img src="/assets/sections/products-shelves.png" alt="货架上的焊丝、焊条与焊剂库存" /></figure></div>
+          <div className="section-split"><div className="section-heading"><p className="eyebrow">Products</p><h2>{"\u4ea7\u54c1\u4e2d\u5fc3"}</h2><p>{"\u9ad8\u9891\u54c1\u7c7b\u5e38\u5907\u5e93\u5b58\uff0c\u6309\u54c1\u724c\u3001\u89c4\u683c\u548c\u9879\u76ee\u8ba1\u5212\u8fdb\u884c\u4fdd\u4f9b\u3002"}</p><ProductSearch /></div><figure className="section-image"><OptimizedImage src="/assets/sections/products-shelves.png" alt="货架上的焊丝、焊条与焊剂库存" /></figure></div>
           <div className="stock-proof-strip" aria-label="核心供应能力"><article><strong>备货量大</strong><span>常备焊材 2600-3200 吨，高频规格提前锁库。</span></article><article><strong>品类全</strong><span>7 大焊材与设备配件分类，按厂家和型号快速筛选。</span></article><article><strong>响应快</strong><span>宁波 48 小时、浙江 96 小时正常送达。</span></article></div>
           <div className="product-grid">{products.map((item) => <a className="product-home-card" key={item.number} href={"/products/" + item.slug}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></a>)}</div>
         </section>
 
         <section className="section soft" id="solutions">
-          <div className="section-split"><div className="section-heading"><p className="eyebrow">Cases</p><h2>案例及相关业绩</h2><p>客户名称和精确吨位已脱敏，仅保留行业、供应规模和服务方式。</p></div><figure className="section-image"><img src="/assets/sections/cases-handover.png" alt="仓库客户提货与交付沟通场景" /></figure></div>
+          <div className="section-split"><div className="section-heading"><p className="eyebrow">Cases</p><h2>案例及相关业绩</h2><p>客户名称和精确吨位已脱敏，仅保留行业、供应规模和服务方式。</p></div><figure className="section-image"><OptimizedImage src="/assets/sections/cases-handover.png" alt="仓库客户提货与交付沟通场景" /></figure></div>
           <div className="case-list compact-list"><article><h3>工程项目保供</h3><p>提前锁定常用规格，专门小组跟进库存、发货、资料和异常响应。</p></article><article><h3>区域快速配送</h3><p>宁波地区正常48小时内，浙江全区域正常96小时内送达。</p></article><article><h3>跨省发运</h3><p>覆盖江浙沪及周边省区，可按需发往指定地点或偏远省区。</p></article></div>
           <div className="case-data-grid">{caseCards.map(([tag, title, text]) => <article key={title}><span>{tag}</span><h4>{title}</h4><p>{text}</p></article>)}</div>
           <div className="delivery-scene-grid" aria-label="焊材配送场景素材"><article className="delivery-card steel"><span>钢结构工厂</span><strong>整托焊丝、焊条到厂交付</strong></article><article className="delivery-card shipyard"><span>船厂项目</span><strong>按批次保障船体与分段焊接</strong></article><article className="delivery-card auto"><span>汽车制造</span><strong>产线耗材稳定补给</strong></article><article className="delivery-card machinery"><span>机械制造</span><strong>设备构件焊材快速响应</strong></article></div>
@@ -699,22 +776,29 @@ function App() {
         </section>
 
         <section className="section" id="knowledge">
-          <div className="section-split"><div className="section-heading"><p className="eyebrow">Knowledge</p><h2>焊接操作</h2><p>根据采购、选型和现场问题的重要程度排序，优先展示能最快帮助客户明确型号、工艺和风险的内容。</p></div><figure className="section-image"><img src="/assets/sections/knowledge-operation.png" alt="焊材选型与焊接操作准备" /></figure></div>
-          <div className={`knowledge-list ${knowledgeOpen ? "" : "collapsed"}`} id="knowledgeList">
-            {visibleArticles.map(([number, title, text, href]) => <a className="knowledge-card" key={href} href={href}><span>{number}</span><h3>{title}</h3><p>{text}</p><strong>阅读全文</strong></a>)}
+          <div className="section-split"><div className="section-heading"><p className="eyebrow">Knowledge</p><h2>{"\u710a\u63a5\u64cd\u4f5c"}</h2><p>{"\u56f4\u7ed5\u710a\u6750\u57fa\u7840\u3001\u5e38\u89c1\u9009\u578b\u3001\u884c\u4e1a\u5e94\u7528\u3001\u73b0\u573a\u7f3a\u9677\u548c\u50a8\u5b58\u70d8\u5e72\u6574\u7406 80 \u7bc7\u95ee\u7b54\uff0c\u6309\u91c7\u8d2d\u548c\u73b0\u573a\u6c9f\u901a\u9891\u7387\u5206\u7c7b\u6d4f\u89c8\u3002"}</p></div><figure className="section-image"><OptimizedImage src="/assets/sections/knowledge-operation.png" alt={"\u710a\u6750\u9009\u578b\u4e0e\u710a\u63a5\u64cd\u4f5c\u51c6\u5907"} sizes="(max-width: 760px) 100vw, 46vw" /></figure></div>
+          <div className="knowledge-category-tabs" role="tablist" aria-label="welding knowledge categories">
+            {knowledgeQaCategories.map((category) => (
+              <button key={category.slug} type="button" className={activeKnowledgeCategory === category.slug ? "active" : ""} onClick={() => { setActiveKnowledgeCategory(category.slug); setKnowledgeOpen(false); }}>
+                <span>{category.title.replace(/^\S+?/, "")}</span><small>{category.count}{" \u7bc7"}</small>
+              </button>
+            ))}
           </div>
-          <div className="knowledge-more"><button type="button" aria-expanded={knowledgeOpen} aria-controls="knowledgeList" onClick={() => setKnowledgeOpen((value) => !value)}>{knowledgeOpen ? "收起文章" : "查看更多 10 篇"}</button></div>
+          <div className={`knowledge-list qa-knowledge-list ${knowledgeOpen ? "" : "collapsed"}`} id="knowledgeList">
+            {visibleArticles.map((article) => <a className="knowledge-card qa-knowledge-card" key={article.href} href={article.href}><span>{article.number}</span><h3>{article.title}</h3><p>{article.summary}</p><strong>{"\u9605\u8bfb\u5168\u6587"}</strong></a>)}
+          </div>
+          {currentKnowledgeArticles.length > 5 && <div className="knowledge-more"><button type="button" aria-expanded={knowledgeOpen} aria-controls="knowledgeList" onClick={() => setKnowledgeOpen((value) => !value)}>{knowledgeOpen ? "\u6536\u8d77\u6587\u7ae0" : "\u67e5\u770b\u66f4\u591a " + (currentKnowledgeArticles.length - 5) + " \u7bc7"}</button></div>}
         </section>
 
         <section className="section soft strength-section" id="strength">
           <div className="strength-hero"><div><p className="eyebrow">Capability</p><h2>{"\u8d44\u8d28\u4e0e\u670d\u52a1"}</h2><p>{"\u4e00\u7ea7\u7ecf\u9500\u8d44\u6e90\u3001\u5145\u8db3\u73b0\u8d27\u5e93\u5b58\u548c\u533a\u57df\u7269\u6d41\u80fd\u529b\uff0c\u5171\u540c\u652f\u6491\u7a33\u5b9a\u4ea4\u4ed8\u3002"}</p></div></div>
           <div className="credential-panel"><div><strong>28{"\u5e74"}</strong><span>{"\u710a\u6750\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</span></div><div><strong>省内领先</strong><span>浙江省内供货规模</span></div><div><strong>3200吨</strong><span>常备焊材库存上限</span></div><div><strong>一级</strong><span>多品牌全国经销商</span></div></div>
           <div className="service-grid"><article><span>服务</span><h4>全过程技术支持</h4><p>技术工程师与客户经理配合，提供参数说明、现场指导、调试和使用问题处理。</p></article><article><span>响应</span><h4>质量问题快速处理</h4><p>质保期内质量问题立即响应，48小时内派专人到现场，并按要求配合更换。</p></article><article><span>预案</span><h4>紧急保供机制</h4><p>安全库存、备选货品、多元物流和快速响应小组，应对突发订单与运输异常。</p></article></div>
-          <div className="stock-gallery" aria-label="仓储实景素材"><figure><img src="/assets/sections/warehouse-ai-shelves-3.png" alt="仓库货架实景" /></figure><figure><img src="/assets/sections/warehouse-ai-stock-2.png" alt="焊丝焊条托盘库存实景" /></figure><figure><img src="/assets/sections/warehouse-ai-overview-1.png" alt="仓库整体库存实景" /></figure></div>
+          <div className="stock-gallery" aria-label="仓储实景素材"><figure><OptimizedImage src="/assets/sections/warehouse-ai-shelves-3.png" alt="仓库货架实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-stock-2.png" alt="焊丝焊条托盘库存实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-overview-1.png" alt="仓库整体库存实景" /></figure></div>
         </section>
 
         <section className="section contact" id="contact">
-          <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><img src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:0574-89007658">公司电话：0574-89007658</a><a href="tel:13805890268">手机联系：13805890268</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
+          <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><OptimizedImage src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:0574-89007658">公司电话：0574-89007658</a><a href="tel:13805890268">手机联系：13805890268</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
           <div className="amap-card"><div><strong>现场志凡焊材（新仓库）</strong><span>高德地图定位：宁波市鄞州区富宁路119号</span></div><a href="https://uri.amap.com/marker?position=121.6359,29.8325&name=%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%EF%BC%88%E6%96%B0%E4%BB%93%E5%BA%93%EF%BC%89&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div>
           <ContactForm />
         </section>
