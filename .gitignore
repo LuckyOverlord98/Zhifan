@@ -3,3 +3,4 @@ dist/
 .env
 npm-debug.log*
 pnpm-lock.yaml
+source-docs/
