@@ -435,18 +435,18 @@ function App() {
         <section className="section brand-strip" aria-label="授权品牌">
           <div className="section-heading compact-heading"><p className="eyebrow">Authorized Brands</p><h2>授权品牌</h2><p>主流焊材、焊机、割炬、衬垫与工具品牌集中配套，支持现货供应、资料配合与项目保供。</p></div>
           <div className="brand-logo-grid featured-brands">
+            <article><img src="/assets/brands/shanghai-dongfeng.png" alt="上海东风焊材 logo" /><span>上海东风焊材</span></article>
             <article><img src="/assets/brands/jinqiao.png" alt="天津金桥焊材 logo" /><span>天津金桥焊材</span></article>
             <article><img src="/assets/brands/atlantic.png" alt="上海大西洋焊材 logo" /><span>上海大西洋焊材</span></article>
-            <article><img src="/assets/brands/shanghai-dongfeng.png" alt="上海东风焊材 logo" /><span>上海东风焊材</span></article>
             <article><img src="/assets/brands/tiantai.png" alt="天泰焊材 logo" /><span>天泰焊材</span></article>
-            <article><img src="/assets/brands/longxing.png" alt="隆兴割炬 logo" /><span>隆兴割炬</span></article>
+            <article><img src="/assets/brands/shunxin.png" alt="舜鑫焊材 logo" /><span>舜鑫焊材</span></article>
           </div>
           <details className="brand-more">
             <summary>查看更多合作品牌</summary>
             <div className="brand-logo-grid brand-logo-grid-small">
+              <article><img src="/assets/brands/longxing.png" alt="隆兴割炬 logo" /><span>隆兴割炬</span></article>
               <article><img src="/assets/brands/tayor.png" alt="上海通用重工集团 logo" /><span>上海通用电焊机</span></article>
               <article><img src="/assets/brands/great-wall-precision.png" alt="长城精工 logo" /><span>长城精工</span></article>
-              <article><img src="/assets/brands/shunxin.png" alt="舜鑫焊材 logo" /><span>舜鑫焊材</span></article>
               <article><img src="/assets/brands/tiemao.png" alt="铁锚焊材 logo" /><span>铁锚焊材</span></article>
               <article><img src="/assets/brands/taichang.png" alt="上海泰昌衬垫 logo" /><span>上海泰昌衬垫</span></article>
               <article><img src="/assets/brands/jetech.png" alt="上海捷科工具 logo" /><span>上海捷科工具</span></article>
