@@ -22,6 +22,12 @@ async function main() {
 
   await collection.createIndex({ slug: 1 }, { unique: true });
   await collection.createIndex({ manufacturer: 1, categorySlug: 1, model: 1 });
+
+  const indexes = await collection.indexes();
+  for (const index of indexes) {
+    if (index.key && index.key._fts === "text") await collection.dropIndex(index.name);
+  }
+
   await collection.createIndex({
     model: "text",
     name: "text",
