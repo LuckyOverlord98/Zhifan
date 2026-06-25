@@ -10,6 +10,8 @@ const navItems = [
   ["/#contact", "联系我们"]
 ];
 
+const customerLocationOptions = ["海曙","鄞州","江北","镇海","北仑","余姚","慈溪","奉化","宁海","象山县","新昌","嵊州上虞","浙江","上海","江苏","其他","海外"];
+
 const caseCards = [
   ["船舶制造", "舟山区域大型船舶制造客户", "年度供货规模：千吨级。配套实芯焊丝、药芯焊丝、埋弧焊丝焊剂及结构钢焊条。"],
   ["船舶修造", "宁波及周边船舶客户群", "年度供货规模：500吨以上。按生产计划进行多品牌焊材组合与分批配送。"],
@@ -37,6 +39,14 @@ const knowledgeArticles = [
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const updateScrolled = () => setScrolled(window.scrollY > 16);
+    updateScrolled();
+    window.addEventListener("scroll", updateScrolled, { passive: true });
+    return () => window.removeEventListener("scroll", updateScrolled);
+  }, []);
 
   return (
     <header className={`site-header ${scrolled ? "scrolled" : ""}`} id="top">
@@ -62,7 +72,7 @@ function Header() {
 }
 
 function ContactForm() {
-  const [form, setForm] = useState({ name: "", phone: "", company: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", company: "", customerLocation: "", message: "" });
   const [status, setStatus] = useState({ type: "idle", text: "" });
   const disabled = status.type === "loading";
 
@@ -79,7 +89,7 @@ function ContactForm() {
       const result = await response.json();
       if (!response.ok) throw new Error(result.message || "提交失败");
       setStatus({ type: "success", text: "已收到咨询，我们会尽快联系您。" });
-      setForm({ name: "", phone: "", company: "", message: "" });
+      setForm({ name: "", phone: "", company: "", customerLocation: "", message: "" });
     } catch (error) {
       setStatus({ type: "error", text: error.message || "提交失败，请稍后再试。" });
     }
@@ -95,6 +105,12 @@ function ContactForm() {
       <label>姓名<input type="text" name="name" value={form.name} onChange={updateField} placeholder="请输入联系人姓名" required /></label>
       <label>电话<input type="tel" name="phone" value={form.phone} onChange={updateField} placeholder="请输入联系电话" required /></label>
       <label>公司<input type="text" name="company" value={form.company} onChange={updateField} placeholder="请输入公司名称（选填）" /></label>
+      <label>客户位置
+        <select name="customerLocation" value={form.customerLocation} onChange={updateField}>
+          <option value="">请选择客户位置（选填）</option>
+          {customerLocationOptions.map((location) => <option key={location} value={location}>{location}</option>)}
+        </select>
+      </label>
       <label>需求说明<textarea name="message" rows="5" value={form.message} onChange={updateField} placeholder="例如：金桥 ER50-6 1.2mm，20吨，发往宁波鄞州，需合格证和材质证明" required></textarea></label>
       <button type="submit" disabled={disabled}>{disabled ? "提交中..." : "提交咨询"}</button>
       {status.text && <p className={`form-status ${status.type}`}>{status.text}</p>}
@@ -165,19 +181,21 @@ function AdminDashboard() {
                 <th>联系人</th>
                 <th>电话</th>
                 <th>公司</th>
+                <th>客户位置</th>
                 <th>需求说明</th>
                 <th>状态</th>
               </tr>
             </thead>
             <tbody>
               {items.length === 0 ? (
-                <tr><td colSpan="6" className="admin-empty">暂无数据，或尚未读取。</td></tr>
+                <tr><td colSpan="7" className="admin-empty">暂无数据，或尚未读取。</td></tr>
               ) : items.map((item) => (
                 <tr key={item._id}>
                   <td>{formatTime(item.createdAt)}</td>
                   <td>{item.name || "-"}</td>
                   <td>{item.phone || "-"}</td>
                   <td>{item.company || "-"}</td>
+                  <td>{item.customerLocation || "-"}</td>
                   <td>{item.message || "-"}</td>
                   <td>{item.status || "new"}</td>
                 </tr>

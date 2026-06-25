@@ -20,6 +20,7 @@ const inquirySchema = new mongoose.Schema(
     name: { type: String, required: true, trim: true, maxlength: 60 },
     phone: { type: String, required: true, trim: true, maxlength: 40 },
     company: { type: String, trim: true, maxlength: 120 },
+    customerLocation: { type: String, trim: true, maxlength: 40 },
     message: { type: String, required: true, trim: true, maxlength: 2000 },
     status: { type: String, enum: ["new", "contacted", "closed"], default: "new" },
     source: { type: String, default: "website" },
@@ -116,6 +117,7 @@ function validateInquiry(body) {
     name: normalizeText(body.name),
     phone: normalizeText(body.phone),
     company: normalizeText(body.company),
+    customerLocation: normalizeText(body.customerLocation),
     message: normalizeText(body.message)
   };
 
