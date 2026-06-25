@@ -39,7 +39,7 @@ function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="site-header" id="top">
+    <header className={`site-header ${scrolled ? "scrolled" : ""}`} id="top">
       <nav className="nav" aria-label="主导航">
         <a className="brand" href="/#home" aria-label="宁波志凡焊材有限公司首页" onClick={() => setOpen(false)}>
           <img className="brand-logo" src="/assets/site/zhifan-logo.png" alt="志凡焊材 logo" />
@@ -384,6 +384,7 @@ function ProductDetailPage({ slug }) {
           </article>
           <DataTable title={"\u5316\u5b66\u6210\u5206\u53c2\u8003"} rows={product.composition} />
           <DataTable title={"\u7194\u6577\u91d1\u5c5e\u529b\u5b66\u6027\u80fd"} rows={product.depositedMetal} />
+          <DataTable title={"规格/焊丝粗细"} rows={product.dimensions} />
           <article className="detail-card wide note-card">
             <h2>{"\u4f7f\u7528\u63d0\u793a"}</h2>
             <p>{product.notes}</p>
