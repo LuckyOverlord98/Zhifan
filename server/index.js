@@ -54,11 +54,39 @@ const productSchema = new mongoose.Schema(
 
 productSchema.index({ model: "text", name: "text", summary: "text", categoryName: "text", manufacturer: "text", standard: "text", standards: "text" });
 
+inquirySchema.index({ createdAt: -1 });
+inquirySchema.index({ status: 1, createdAt: -1 });
+inquirySchema.index({ customerLocation: 1, createdAt: -1 });
+
+productSchema.index({ name: 1 });
+productSchema.index({ summary: 1 });
+productSchema.index({ categorySlug: 1, manufacturer: 1, model: 1 });
+
 const Inquiry = mongoose.model("Inquiry", inquirySchema);
 const Product = mongoose.model("Product", productSchema);
 
 const seedProductsPath = path.resolve(__dirname, "../data/jinqiao-products.json");
 let seedProductsCache = null;
+const apiCache = new Map();
+const CACHE_TTL_MS = 2 * 60 * 1000;
+
+function getCachedJson(key) {
+  const item = apiCache.get(key);
+  if (!item || item.expiresAt < Date.now()) {
+    apiCache.delete(key);
+    return null;
+  }
+  return item.value;
+}
+
+function setCachedJson(key, value, ttl = CACHE_TTL_MS) {
+  apiCache.set(key, { value, expiresAt: Date.now() + ttl });
+}
+
+function sendCachedJson(res, payload, browserSeconds = 60) {
+  res.set("Cache-Control", "public, max-age=" + browserSeconds + ", stale-while-revalidate=300");
+  res.json(payload);
+}
 
 function loadSeedProducts() {
   if (!seedProductsCache) {
@@ -141,14 +169,26 @@ app.get("/api/health", (_req, res) => {
 
 app.get("/api/product-categories", async (_req, res, next) => {
   try {
-    if (mongoose.connection.readyState !== 1) return res.json({ items: buildCategories(loadSeedProducts()) });
+    const cacheKey = "product-categories";
+    const cached = getCachedJson(cacheKey);
+    if (cached) return sendCachedJson(res, cached, 120);
+
+    if (mongoose.connection.readyState !== 1) {
+      const payload = { items: buildCategories(loadSeedProducts()) };
+      setCachedJson(cacheKey, payload);
+      return sendCachedJson(res, payload, 120);
+    }
 
     const groups = await Product.aggregate([
       { $group: { _id: { categorySlug: "$categorySlug", categoryName: "$categoryName", manufacturer: "$manufacturer" }, count: { $sum: 1 } } },
       { $sort: { "_id.categoryName": 1, "_id.manufacturer": 1 } }
     ]);
 
-    if (groups.length === 0) return res.json({ items: buildCategories(loadSeedProducts()) });
+    if (groups.length === 0) {
+      const payload = { items: buildCategories(loadSeedProducts()) };
+      setCachedJson(cacheKey, payload);
+      return sendCachedJson(res, payload, 120);
+    }
 
     const map = new Map();
     for (const row of groups) {
@@ -159,9 +199,13 @@ app.get("/api/product-categories", async (_req, res, next) => {
       item.manufacturers.push({ name: row._id.manufacturer, count: row.count });
     }
 
-    res.json({ items: Array.from(map.values()) });
+    const payload = { items: Array.from(map.values()) };
+    setCachedJson(cacheKey, payload);
+    sendCachedJson(res, payload, 120);
   } catch (error) {
-    res.json({ items: buildCategories(loadSeedProducts()) });
+    const payload = { items: buildCategories(loadSeedProducts()) };
+    setCachedJson("product-categories", payload);
+    sendCachedJson(res, payload, 120);
   }
 });
 
@@ -170,8 +214,11 @@ app.get("/api/products", async (req, res, next) => {
   const category = normalizeText(req.query.category);
   const manufacturer = normalizeText(req.query.manufacturer);
   const filters = { search, category, manufacturer };
+  const cacheKey = "products:" + JSON.stringify(filters);
 
   try {
+    const cached = getCachedJson(cacheKey);
+    if (cached) return sendCachedJson(res, cached, search ? 30 : 120);
     const query = {};
     if (category) query.categorySlug = category;
     if (manufacturer) query.manufacturer = manufacturer;
@@ -181,7 +228,9 @@ app.get("/api/products", async (req, res, next) => {
     }
 
     if (mongoose.connection.readyState !== 1) {
-      return res.json({ items: listSeedProducts(filters).map(publicProductSummary), source: "seed" });
+      const payload = { items: listSeedProducts(filters).map(publicProductSummary), source: "seed" };
+      setCachedJson(cacheKey, payload);
+      return sendCachedJson(res, payload, search ? 30 : 120);
     }
 
     const items = await Product.find(query)
@@ -192,12 +241,20 @@ app.get("/api/products", async (req, res, next) => {
 
     if (items.length === 0 && (category || search || manufacturer)) {
       const seedItems = listSeedProducts(filters).map(publicProductSummary);
-      if (seedItems.length > 0) return res.json({ items: seedItems, source: "seed" });
+      if (seedItems.length > 0) {
+        const payload = { items: seedItems, source: "seed" };
+        setCachedJson(cacheKey, payload);
+        return sendCachedJson(res, payload, search ? 30 : 120);
+      }
     }
 
-    res.json({ items, source: "mongo" });
+    const payload = { items, source: "mongo" };
+    setCachedJson(cacheKey, payload);
+    sendCachedJson(res, payload, search ? 30 : 120);
   } catch (error) {
-    res.json({ items: listSeedProducts(filters).map(publicProductSummary), source: "seed" });
+    const payload = { items: listSeedProducts(filters).map(publicProductSummary), source: "seed" };
+    setCachedJson(cacheKey, payload);
+    sendCachedJson(res, payload, search ? 30 : 120);
   }
 });
 
@@ -262,7 +319,8 @@ app.use((error, _req, res, _next) => {
 async function start() {
   try {
     await mongoose.connect(mongoUri, { serverSelectionTimeoutMS: 3000 });
-    console.log("MongoDB connected.");
+    await Promise.all([Product.createIndexes(), Inquiry.createIndexes()]);
+    console.log("MongoDB connected and indexes ensured.");
   } catch (error) {
     console.warn("MongoDB unavailable, product APIs will use bundled seed data:", error.message);
   }

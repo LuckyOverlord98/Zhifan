@@ -21,7 +21,7 @@ function ProductSearch() {
       } catch (error) {
         if (error.name !== "AbortError") setResults([]);
       }
-    }, 220);
+    }, 300);
     return () => {
       window.clearTimeout(timer);
       controller.abort();

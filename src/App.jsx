@@ -19,6 +19,34 @@ const caseCards = [
   ["钢材贸易", "区域工程配套客户", "年度供货规模：200吨以上。提供常用焊条、实芯焊丝和品牌替代建议。"]
 ];
 
+
+const certificates = [
+  {
+    title: "\u5929\u6d25\u91d1\u6865\u6388\u6743\u9500\u552e\u3001\u670d\u52a1\u7ecf\u9500\u5546",
+    issuer: "\u5929\u6d25\u5e02\u91d1\u6865\u710a\u6750\u96c6\u56e2\u9500\u552e\u6709\u9650\u516c\u53f8",
+    period: "2026",
+    image: "/assets/certificates/jinqiao-authorization-2026.png"
+  },
+  {
+    title: "\u4e0a\u6d77\u4e1c\u98ce\u6388\u6743\u8bc1\u4e66",
+    issuer: "\u4e0a\u6d77\u710a\u63a5\u5668\u6750\u6709\u9650\u516c\u53f8",
+    period: "2026",
+    image: "/assets/certificates/dongfeng-authorization-2026.jpg"
+  },
+  {
+    title: "\u4e0a\u6d77\u5927\u897f\u6d0b\u7ecf\u9500\u5546\u6388\u6743\u4e66",
+    issuer: "\u4e0a\u6d77\u5927\u897f\u6d0b\u710a\u63a5\u6750\u6599\u6709\u9650\u8d23\u4efb\u516c\u53f8",
+    period: "2026",
+    image: "/assets/certificates/atlantic-authorization-2026.png"
+  },
+  {
+    title: "ITW \u710a\u63a5\u4ea7\u54c1\u6388\u6743\u8bc1\u4e66",
+    issuer: "ITW Welding Greater China",
+    period: "2026",
+    image: "/assets/certificates/itw-tiantai-authorization-2026.png"
+  }
+];
+
 const knowledgeArticles = [
   ["01", "焊材选型通用原则：先定母材，再定工艺，再定牌号", "先定母材，再定工艺，再定牌号，避免只按品牌或单一型号采购。", "/articles/selection-principles.html"],
   ["02", "最常见碳钢类、不锈钢类匹配表", "适合快速沟通常用母材、焊材类型和替代方向。", "/articles/matching-table.html"],
@@ -36,6 +64,171 @@ const knowledgeArticles = [
   ["14", "不锈钢焊接缺陷与工艺控制", "关注晶间腐蚀、热裂纹、气孔与层间温度。", "/articles/stainless-defects.html"],
   ["15", "焊接是什么：把两块金属变成一个可靠接头", "用通俗方式解释可靠接头形成过程，适合作为入门基础。", "/articles/what-is-welding.html"]
 ];
+
+function useIndustrialMotion(deps = []) {
+  useEffect(() => {
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const revealTargets = Array.from(document.querySelectorAll([
+      ".section-heading",
+      ".section-image",
+      ".intro-text",
+      ".intro > p",
+      ".product-home-card",
+      ".stock-proof-strip article",
+      ".case-list article",
+      ".case-data-grid article",
+      ".delivery-card",
+      ".seo-keyword-grid article",
+      ".knowledge-card",
+      ".strength-hero",
+      ".credential-panel > div",
+      ".service-grid article",
+      ".stock-gallery figure",
+      ".contact > div",
+      ".amap-card",
+      ".contact-form",
+      ".product-row",
+      ".detail-card",
+      ".spec-table-card",
+      ".detail-summary",
+      ".certificate-slider"
+    ].join(",")));
+
+    revealTargets.forEach((element, index) => {
+      element.dataset.reveal = element.dataset.reveal || "true";
+      element.style.setProperty("--reveal-order", String(index % 6));
+      if (reduceMotion) element.classList.add("is-visible");
+    });
+
+    if (reduceMotion) return undefined;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10%", threshold: 0.12 });
+
+    revealTargets.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
+  }, deps);
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return undefined;
+    const hero = document.querySelector(".hero");
+    if (!hero) return undefined;
+
+    let ticking = false;
+    const update = () => {
+      const shift = Math.min(24, Math.max(0, window.scrollY * 0.035));
+      hero.style.setProperty("--hero-shift", shift.toFixed(1) + "px");
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+}
+
+function CountNumber({ value, suffix = "" }) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      setCurrent(value);
+      return undefined;
+    }
+
+    let frame = 0;
+    let started = false;
+    const element = document.querySelector('[data-count-value="' + value + '"]');
+    const run = () => {
+      const start = performance.now();
+      const duration = 760;
+      const tick = (time) => {
+        const progress = Math.min(1, (time - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setCurrent(Math.round(value * eased));
+        if (progress < 1) frame = window.requestAnimationFrame(tick);
+      };
+      frame = window.requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!started && entries.some((entry) => entry.isIntersecting)) {
+        started = true;
+        run();
+        observer.disconnect();
+      }
+    }, { threshold: 0.4 });
+
+    if (element) observer.observe(element);
+    else run();
+
+    return () => {
+      observer.disconnect();
+      window.cancelAnimationFrame(frame);
+    };
+  }, [value]);
+
+  return <span data-count-value={value}>{current}{suffix}</span>;
+}
+
+function CertificateSlider() {
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const move = (direction) => {
+    setActive((current) => (current + direction + certificates.length) % certificates.length);
+  };
+
+  useEffect(() => {
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (paused || reduceMotion) return undefined;
+    const timer = window.setInterval(() => move(1), 4500);
+    return () => window.clearInterval(timer);
+  }, [paused]);
+
+  return (
+    <div className="certificate-slider" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onFocus={() => setPaused(true)} onBlur={() => setPaused(false)}>
+      <div className="certificate-copy">
+        <p className="eyebrow">Certificates</p>
+        <h3>{"\u6388\u6743\u8bc1\u4e66"}</h3>
+        <p>{"\u6838\u5fc3\u54c1\u724c\u6388\u6743\u6587\u4ef6\u96c6\u4e2d\u5c55\u793a\uff0c\u652f\u6301\u9879\u76ee\u6295\u6807\u3001\u4f9b\u8d27\u8d44\u8d28\u5ba1\u6838\u4e0e\u552e\u540e\u8d44\u6599\u914d\u5408\u3002"}</p>
+        <div className="certificate-current">
+          <strong>{certificates[active].title}</strong>
+          <span>{certificates[active].issuer} - {certificates[active].period}</span>
+        </div>
+        <div className="certificate-controls" aria-label="certificate carousel controls">
+          <button type="button" onClick={() => move(-1)} aria-label="previous certificate">{"<"}</button>
+          <button type="button" onClick={() => move(1)} aria-label="next certificate">{">"}</button>
+        </div>
+      </div>
+      <div className="certificate-stage" aria-live="polite">
+        {certificates.map((item, index) => (
+          <figure className={"certificate-slide" + (index === active ? " active" : "")} key={item.image} aria-hidden={index !== active}>
+            <img src={item.image} alt={item.title} loading={index === 0 ? "eager" : "lazy"} />
+          </figure>
+        ))}
+      </div>
+      <div className="certificate-dots" role="tablist" aria-label="certificate selector">
+        {certificates.map((item, index) => (
+          <button key={item.image} type="button" className={index === active ? "active" : ""} onClick={() => setActive(index)} aria-label={"view " + item.title} aria-selected={index === active} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -235,6 +428,7 @@ function ProductPageShell({ children }) {
 }
 
 function ProductCategoryPage({ categorySlug }) {
+  useIndustrialMotion([categorySlug]);
   const meta = categoryMeta[categorySlug] || { title: "\u4ea7\u54c1\u4e2d\u5fc3", eyebrow: "Products", description: "\u6309\u5382\u5bb6\u548c\u578b\u53f7\u67e5\u770b\u4ea7\u54c1\u89c4\u683c\u3002" };
   const [manufacturer, setManufacturer] = useState("\u5168\u90e8");
   const [items, setItems] = useState([]);
@@ -345,6 +539,7 @@ function DataTable({ title, rows }) {
 }
 
 function ProductDetailPage({ slug }) {
+  useIndustrialMotion([slug]);
   const [product, setProduct] = useState(null);
   const [status, setStatus] = useState("loading");
 
@@ -423,6 +618,8 @@ function App() {
   const [knowledgeOpen, setKnowledgeOpen] = useState(false);
   const visibleArticles = useMemo(() => (knowledgeOpen ? knowledgeArticles : knowledgeArticles.slice(0, 5)), [knowledgeOpen]);
 
+  useIndustrialMotion([knowledgeOpen, currentPath]);
+
   if (isAdminPage) return <AdminDashboard />;
   if (currentPath.startsWith("/products/")) {
     const productPath = decodeURIComponent(currentPath.replace("/products/", "").replace(/\/$/, ""));
@@ -443,7 +640,7 @@ function App() {
             <div className="hero-actions"><a className="primary-btn" href="#contact">{"\u7acb\u5373\u54a8\u8be2"}</a><a className="secondary-btn" href="#products">{"\u67e5\u770b\u4ea7\u54c1"}</a></div>
           </div>
           <div className="hero-visual" aria-label="焊材仓储与工业焊接场景"><img src="/assets/hero-welding.png" alt="焊材仓储与工业焊接场景" /></div>
-          <dl className="hero-metrics" aria-label="core data"><div><dt>28{"\u5e74"}</dt><dd>{"\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</dd></div><div><dt>{"\u7701\u5185\u9886\u5148"}</dt><dd>{"\u4f9b\u8d27\u89c4\u6a21"}</dd></div><div><dt>96{"\u5c0f\u65f6"}</dt><dd>{"\u6d59\u6c5f\u533a\u57df\u6b63\u5e38\u9001\u8fbe"}</dd></div></dl>
+          <dl className="hero-metrics" aria-label="core data"><div><dt><CountNumber value={28} suffix={"\u5e74"} /></dt><dd>{"\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</dd></div><div><dt>{"\u7701\u5185\u9886\u5148"}</dt><dd>{"\u4f9b\u8d27\u89c4\u6a21"}</dd></div><div><dt><CountNumber value={96} suffix={"\u5c0f\u65f6"} /></dt><dd>{"\u6d59\u6c5f\u533a\u57df\u6b63\u5e38\u9001\u8fbe"}</dd></div></dl>
         </section>
 
         <section className="section intro" aria-label="公司简介">
@@ -472,6 +669,7 @@ function App() {
             </div>
             <div className="brand-cloud secondary-brands"><span>力易得工具</span><span>田岛工具</span><span>沙龙衬垫</span><span>常州运河焊材</span><span>亚泰焊材</span></div>
           </details>
+          <CertificateSlider />
         </section>
 
         <section className="section" id="products">
