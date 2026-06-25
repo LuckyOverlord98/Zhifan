@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   color-scheme: light;
   --blue: #1264d8;
   --blue-dark: #0b3f93;
@@ -808,7 +808,7 @@ h4 {
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(8, 45, 105, 0.92) 0%, rgba(18, 100, 216, 0.72) 46%, rgba(18, 100, 216, 0.18) 100%),
-    url("assets/sections/strength-warehouse-bg.png") center / cover no-repeat;
+    url("/assets/sections/strength-warehouse-bg.png") center / cover no-repeat;
   box-shadow: var(--shadow);
 }
 
@@ -910,7 +910,7 @@ h4 {
     border-radius: 24px;
     background:
       linear-gradient(180deg, rgba(8, 45, 105, 0.94) 0%, rgba(18, 100, 216, 0.72) 62%, rgba(18, 100, 216, 0.34) 100%),
-      url("assets/sections/strength-warehouse-bg.png") center / cover no-repeat;
+      url("/assets/sections/strength-warehouse-bg.png") center / cover no-repeat;
   }
 }
 
@@ -1240,4 +1240,35 @@ h4 {
   .article-keypoints {
     padding: 20px;
   }
+}
+
+.form-status {
+  margin: 4px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.form-status.success {
+  color: #0b6b3a;
+  background: #e9f8ef;
+  border: 1px solid #bce8cc;
+}
+
+.form-status.error {
+  color: #a32020;
+  background: #fff0f0;
+  border: 1px solid #f4c7c7;
+}
+
+.form-status.loading {
+  color: var(--blue-dark);
+  background: var(--blue-soft);
+  border: 1px solid #c9ddff;
+}
+
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.68;
 }
