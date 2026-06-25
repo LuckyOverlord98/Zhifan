@@ -1401,3 +1401,112 @@ h4 {
     grid-template-columns: 1fr;
   }
 }
+
+.site-footer {
+  display: block;
+  padding: 34px max(20px, calc((100vw - 1160px) / 2));
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.9fr) minmax(280px, 1.1fr);
+  gap: 28px;
+  align-items: start;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.footer-main strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--white);
+  font-size: 18px;
+}
+
+.footer-main p {
+  margin: 4px 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 10px 18px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+}
+
+@media (max-width: 720px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+
+.article-hero figure,
+.article-inline-image {
+  position: relative;
+  isolation: isolate;
+  border: 0;
+  background: linear-gradient(135deg, rgba(18, 100, 216, 0.16), rgba(255, 255, 255, 0.78));
+}
+
+.article-hero figure::after,
+.article-inline-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(8, 36, 82, 0.08), rgba(255, 255, 255, 0.18) 48%, rgba(18, 100, 216, 0.16));
+}
+
+.article-hero img,
+.article-inline-image img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.88;
+  filter: saturate(0.92) contrast(0.98);
+}
+
+.article-inline-image {
+  min-height: 320px;
+  display: flex;
+  align-items: end;
+}
+
+.article-inline-image figcaption {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.68));
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 860px) {
+  .article-inline-image {
+    min-height: 260px;
+  }
+}

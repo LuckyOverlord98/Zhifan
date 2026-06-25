@@ -261,11 +261,32 @@ function App() {
         </section>
 
         <section className="section contact" id="contact">
-          <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><img src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:0574-89007658">公司电话：0574-89007658</a><a href="tel:13805890268">手机联系：13805890268</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span></div></div>
+          <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><img src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:0574-89007658">公司电话：0574-89007658</a><a href="tel:13805890268">手机联系：13805890268</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
           <ContactForm />
         </section>
       </main>
-      <footer className="footer"><p>© 2026 宁波志凡焊材有限公司</p><a href="#top">返回顶部</a></footer>
+      <footer className="footer site-footer">
+        <div className="footer-main">
+          <div>
+            <strong>宁波志凡焊材有限公司</strong>
+            <p>营业时间：周一至周六 8:00-16:30，周日休息</p>
+            <p>地址：宁波市鄞州区富宁路119号</p>
+          </div>
+          <nav className="footer-links" aria-label="底部主要链接">
+            <a href="#home">首页</a>
+            <a href="#products">产品中心</a>
+            <a href="#solutions">案例及相关业绩</a>
+            <a href="#knowledge">焊接操作</a>
+            <a href="#strength">资质与服务</a>
+            <a href="#contact">联系我们</a>
+            <a href="/admin">后台</a>
+          </nav>
+        </div>
+        <div className="footer-bottom">
+          <p>© 2026 宁波志凡焊材有限公司</p>
+          <a href="#top">返回顶部</a>
+        </div>
+      </footer>
     </>
   );
 }
