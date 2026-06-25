@@ -308,7 +308,9 @@ const distDir = path.resolve(__dirname, "../dist");
 app.use(express.static(distDir, {
   maxAge: "1h",
   setHeaders(res, filePath) {
-    if (/\.(?:webp|avif|png|jpg|jpeg|svg|ico|css|js)$/i.test(filePath)) {
+    if (path.basename(filePath) === "styles.css") {
+      res.setHeader("Cache-Control", "public, max-age=3600");
+    } else if (/\.(?:webp|avif|png|jpg|jpeg|svg|ico|css|js)$/i.test(filePath)) {
       res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
     }
   }

@@ -559,6 +559,24 @@ function ProductCategoryPage({ categorySlug }) {
               </a>
             ))}
           </div>
+
+          {status === "ready" && items.length > pageSize && (
+            <nav className="pagination" aria-label="产品列表分页">
+              <button type="button" onClick={() => setPage((value) => Math.max(1, value - 1))} disabled={safePage === 1}>上一页</button>
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+                <button
+                  key={pageNumber}
+                  type="button"
+                  className={safePage === pageNumber ? "active" : ""}
+                  onClick={() => setPage(pageNumber)}
+                  aria-current={safePage === pageNumber ? "page" : undefined}
+                >
+                  {pageNumber}
+                </button>
+              ))}
+              <button type="button" onClick={() => setPage((value) => Math.min(totalPages, value + 1))} disabled={safePage === totalPages}>下一页</button>
+            </nav>
+          )}
         </section>
       </main>
     </ProductPageShell>
