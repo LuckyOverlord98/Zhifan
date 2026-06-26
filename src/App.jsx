@@ -881,8 +881,21 @@ function App() {
 
         <section className="section" id="products">
           <div className="section-split"><div className="section-heading"><p className="eyebrow">Products</p><h2>{"\u4ea7\u54c1\u4e2d\u5fc3"}</h2><p>{"\u9ad8\u9891\u54c1\u7c7b\u5e38\u5907\u5e93\u5b58\uff0c\u6309\u54c1\u724c\u3001\u89c4\u683c\u548c\u9879\u76ee\u8ba1\u5212\u8fdb\u884c\u4fdd\u4f9b\u3002"}</p><ProductSearch /></div><figure className="section-image"><OptimizedImage src="/assets/sections/products-shelves.png" alt="货架上的焊丝、焊条与焊剂库存" /></figure></div>
-          <div className="stock-proof-strip" aria-label="核心供应能力"><article><strong>备货量大</strong><span>常备焊材 2600-3200 吨，高频规格提前锁库。</span></article><article><strong>品类全</strong><span>7 大焊材与设备配件分类，按厂家和型号快速筛选。</span></article><article><strong>响应快</strong><span>宁波 48 小时、浙江 96 小时正常送达。</span></article></div>
-          <div className="product-grid">{products.map((item) => <a className="product-home-card" key={item.number} href={"/products/" + item.slug}><span>{item.number}</span><h3>{item.title}</h3><p>{item.text}</p></a>)}</div>
+          <div className="stock-proof-strip" aria-label="核心供应能力"><article><strong>备货量大</strong><span>常备焊材 2600-3200 吨，高频规格提前锁库。</span></article><article><strong>品类全</strong><span>8 大焊材与设备配件分类，按厂家和型号快速筛选。</span></article><article><strong>响应快</strong><span>宁波 48 小时、浙江 96 小时正常送达。</span></article></div>
+          <div className="product-grid">
+  {products.map((item) => (
+    <a
+      className="product-home-card"
+      key={item.number}
+      href={"/products/" + item.slug}
+      style={{ "--product-card-bg": `url('/assets/products/cards/${item.slug}.webp')` }}
+    >
+      <span>{item.number}</span>
+      <h3>{item.title}</h3>
+      <p>{item.text}</p>
+    </a>
+  ))}
+</div>
         </section>
 
         <section className="section soft" id="solutions">

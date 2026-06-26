@@ -1,10 +1,10 @@
 # 志凡焊材网站项目进度与交接记录
 
-更新时间：2026-06-26  
-项目目录：`C:\Users\Ning Sun\Documents\Codex\2026-06-23\new-chat\outputs\welding-distributor-site`  
-当前本地 HEAD：`8928a22 Enrich Jinqiao product content from manuals`  
-远程仓库：`https://github.com/LuckyOverlord98/Zhifan.git`  
-线上域名：`zhifanwelding.com.cn`  
+更新时间：2026-06-26
+项目目录：`C:\Users\Ning Sun\Documents\Codex\2026-06-23\new-chat\outputs\welding-distributor-site`
+当前本地 HEAD：`b33b1b9 补充产品数据并优化问答搜索响应式`
+远程仓库：`https://github.com/LuckyOverlord98/Zhifan.git`
+线上域名：`zhifanwelding.com.cn`
 ECS：`121.196.211.59`，凭据只在安全上下文中使用，不写入仓库。
 
 ## 项目目标
@@ -400,7 +400,7 @@ netstat -ano | findstr :3000
 - 文章没有明显 UTF-8 乱码。
 - Mongo seed 脚本存在并含多厂家清理逻辑。
 - 东风导入脚本含 PDF 提取和产品行识别。
-- 金桥仅剩 17 个待补充介绍/适用场景。
+- 金桥通用占位介绍和适用场景已清零，后续只做手册级交叉核对。
 - `J422`、`J507`、`JQ.CE71T-1` 有手册来源内容。
 - `JQ.CE71T-1` 有认证、化学成分和力学性能。
 - 上海东风产品不少于 200。
@@ -458,7 +458,7 @@ curl "http://zhifanwelding.com.cn/api/products?search=NB/T%2047018"
 
 高优先级：
 
-- 继续核对金桥产品的介绍和适用场景，尤其是 17 个未匹配型号。
+- 继续按 2025/2024 手册交叉核对金桥产品介绍、适用场景、标准、成分和力学性能。
 - 继续核对上海东风产品与 `2019焊材样本(2)(1).pdf`，确保分类、标准、成分、力学性能、应用与 PDF 一致。
 - 产品搜索继续实测：型号、标准号、厂家、分类词都要能搜。
 - 焊接知识二级页面手机端渲染问题要继续验证。
@@ -574,6 +574,11 @@ curl "http://zhifanwelding.com.cn/api/products?search=NB/T%2047018"
     - 典型表现：GitHub push 成功但 ECS 仍是旧版本；首页能开但 API、CSS、文章页错误。
     - 根因：只验证首页，没有验证 API、静态资源、详情页、知识页和 MIME。
     - 固定做法：部署后至少验证首页、`/api/health`、`/styles.css`、一个产品搜索、一个产品详情页、一个 Q&A 页面。
+
+13. Windows 临时脚本和沙盒路径反复踩坑
+    - 典型表现：写入 `C:\tmp` 被当前权限挡住；PowerShell 里用 bash 风格 heredoc（例如 `python - <<'PY'`）直接报语法错；图片或脚本路径被沙盒拦截后仍反复尝试同一路径。
+    - 根因：把 Linux/bash 习惯带到 PowerShell 7；没有优先使用项目可写目录；沙盒路径失败后没有及时换路径。
+    - 固定做法：临时脚本默认放项目内 `tmp/` 或当前工作区可写临时目录，用完立即删除；PowerShell 7 中需要多行 Python 时写入临时 `.py` 再执行，简单逻辑才用 `python -c`；如果 `C:\tmp`、`.codex/generated_images` 或其他外部路径被沙盒拦截，不要反复试，先复制/移动到项目 `public/assets` 或工作区内再处理。
 
 ### 每次改动前必须做
 

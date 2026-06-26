@@ -30,7 +30,7 @@ CATEGORY_SLUGS = {
     "碳钢埋弧焊丝焊剂": "submerged-arc",
     "铝焊丝": "aluminum-wires",
     "特种焊材": "special-materials",
-    "设备配件与工具": "equipment-tools",
+    "设备配件与工具": "equipment-accessories",
 }
 
 

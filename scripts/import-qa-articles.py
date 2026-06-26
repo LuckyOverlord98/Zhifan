@@ -8,6 +8,22 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = Path("C:/Users/Ning Sun/Documents/Codex/2026-06-25/new-chat/outputs")
 GENERATED_AT = "2026-06-26"
+SEO_KEYWORDS = [
+    "宁波焊材批发",
+    "浙江焊材供应商",
+    "江浙沪焊材配送",
+    "焊材选型",
+    "焊接操作",
+    "焊材质量证明书",
+    "焊材现货供应",
+    "金桥焊材",
+    "大西洋焊材",
+    "上海东风焊材",
+    "天泰焊材",
+    "船用焊材",
+    "钢结构焊材",
+    "压力容器焊材",
+]
 
 
 def find_source_docx():
@@ -246,6 +262,30 @@ def write_data_module(articles, categories):
     )
 
 
+
+def article_keywords(article):
+    text = " ".join([
+        article.get("title", ""),
+        article.get("category", ""),
+        article.get("shortAnswer", ""),
+        article.get("longAnswer", ""),
+    ])
+    model_terms = re.findall(r"(?:[A-Za-z]{1,6}[A-Za-z0-9·.\-]*\d+[A-Za-z0-9·.\-]*|Q\d{3,4}|16Mn)", text)
+    terms = [article.get("title", ""), article.get("category", ""), *model_terms, *SEO_KEYWORDS]
+    result = []
+    seen = set()
+    for term in terms:
+        term = re.sub(r"\s+", " ", str(term or "")).strip()
+        key = term.lower().replace(" ", "")
+        if not term or key in seen:
+            continue
+        seen.add(key)
+        result.append(term)
+    return ",".join(result[:32])
+
+
+def article_picture_html():
+    return '<picture><source type="image/webp" srcset="../../assets/optimized/sections__knowledge-operation-480.webp 480w, ../../assets/optimized/sections__knowledge-operation-768.webp 768w, ../../assets/optimized/sections__knowledge-operation-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 48vw" /><img src="../../assets/sections/knowledge-operation.png" alt="焊接操作与焊材选型" loading="lazy" decoding="async" /></picture>'
 def write_pages(articles):
     out_dir = ROOT / "public" / "articles" / "qa"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -270,6 +310,9 @@ def write_pages(articles):
     <link rel="icon" type="image/png" href="../../assets/site/favicon.png" />
     <title>{esc(article["title"])} | 宁波志凡焊材有限公司</title>
     <meta name="description" content="{esc(article["shortAnswer"][:150])}" />
+    <meta property="og:title" content="{esc(article["title"])} | 宁波志凡焊材有限公司" />
+    <meta property="og:description" content="{esc(article["shortAnswer"][:150])}" />
+    <meta name="keywords" content="{esc(article_keywords(article))}" />
     <link rel="stylesheet" href="../../styles.css" />
   </head>
   <body class="article-page qa-article-page">
@@ -287,7 +330,7 @@ def write_pages(articles):
         <a class="back-link" href="../../index.html#knowledge">返回焊接操作</a>
         <div class="article-hero qa-hero">
           <div><p class="eyebrow">{esc(article["category"])} · QA {esc(article["number"])}</p><h1>{esc(article["title"])}</h1><p class="article-generated-time">生成时间：{esc(article["generatedAt"])}</p></div>
-          <figure class="article-photo-bg"><img src="../../assets/sections/knowledge-operation.png" alt="焊接操作与焊材选型" /></figure>
+          <figure class="article-photo-bg">{article_picture_html()}</figure>
         </div>
         <section class="qa-answer-grid" aria-label="问答内容">
           <article class="qa-answer-card short-answer"><span>短答案</span><h2>先看结论</h2>{paragraphize(article["shortAnswer"])}</article>
@@ -295,7 +338,7 @@ def write_pages(articles):
         </section>
         {table_html(article)}
         {note}
-        <nav class="article-pager" aria-label="文章翻页"><a href="{esc(prev_link)}">{prev_text}</a><a href="../../index.html#knowledge">返回焊接操作</a><a href="{esc(next_link)}">{next_text}</a></nav>
+        <nav class="article-pager" aria-label="文章翻页"><a href="{esc(prev_link)}">{prev_text}</a><a href="../../index.html#knowledge">返回焊接操作</a><a href="{esc(next_link)}">{next_text}</a><a class="nav-cta" href="../../index.html#contact">联系业务找型号</a></nav>
       </article>
     </main>
     <footer class="footer"><p>© 2026 宁波志凡焊材有限公司</p><span>营业时间：周一至周六 8:00-16:30，周日休息</span><a href="#top">返回顶部</a></footer>
