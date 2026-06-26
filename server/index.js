@@ -1,4 +1,4 @@
-﻿import fs from "node:fs";
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import cors from "cors";
@@ -96,12 +96,34 @@ function loadSeedProducts() {
   return seedProductsCache;
 }
 
+const productSearchFields = ["model", "name", "summary", "standard", "standards", "categoryName", "manufacturer"];
+
+function productSearchTerms(value) {
+  return String(value || "")
+    .trim()
+    .split(/[\s,，、/]+/)
+    .map((term) => term.trim())
+    .filter(Boolean)
+    .slice(0, 6);
+}
+
+function buildProductSearchQuery(search) {
+  const terms = productSearchTerms(search);
+  if (terms.length === 0) return null;
+  return {
+    $and: terms.map((term) => ({
+      $or: productSearchFields.map((field) => ({ [field]: new RegExp(escapeRegex(term), "i") }))
+    }))
+  };
+}
+
 function productMatches(product, filters) {
   if (filters.category && product.categorySlug !== filters.category) return false;
   if (filters.manufacturer && product.manufacturer !== filters.manufacturer) return false;
-  if (filters.search) {
+  const terms = productSearchTerms(filters.search);
+  if (terms.length > 0) {
     const haystack = [product.model, product.name, product.summary, product.standard, ...(product.standards || []), product.categoryName, product.manufacturer].join(" ").toLowerCase();
-    if (!haystack.includes(filters.search.toLowerCase())) return false;
+    if (!terms.every((term) => haystack.includes(term.toLowerCase()))) return false;
   }
   return true;
 }
@@ -223,8 +245,7 @@ app.get("/api/products", async (req, res, next) => {
     if (category) query.categorySlug = category;
     if (manufacturer) query.manufacturer = manufacturer;
     if (search) {
-      const pattern = new RegExp(escapeRegex(search), "i");
-      query.$or = [{ model: pattern }, { name: pattern }, { summary: pattern }, { standard: pattern }, { standards: pattern }];
+      Object.assign(query, buildProductSearchQuery(search));
     }
 
     if (mongoose.connection.readyState !== 1) {

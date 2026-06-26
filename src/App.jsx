@@ -5,7 +5,7 @@ import { products, manufacturerTabs, categoryMeta } from "./data/productCatalog.
 import { knowledgeQaArticles, knowledgeQaCategories } from "./data/knowledgeQa.js";
 
 const navItems = [
-  ["/#products", "产品中心"],
+  ["/products/carbon-steel-electrodes", "产品中心"],
   ["/#solutions", "案例及相关业绩"],
   ["/#knowledge", "焊接操作"],
   ["/#strength", "资质与服务"],
@@ -239,6 +239,7 @@ function CountNumber({ value, suffix = "" }) {
 function CertificateSlider() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [preview, setPreview] = useState(null);
 
   const move = (direction) => {
     setActive((current) => (current + direction + certificates.length) % certificates.length);
@@ -269,7 +270,9 @@ function CertificateSlider() {
       <div className="certificate-stage" aria-live="polite">
         {certificates.map((item, index) => (
           <figure className={"certificate-slide" + (index === active ? " active" : "")} key={item.image} aria-hidden={index !== active}>
-            <OptimizedImage src={item.image} alt={item.title} loading={index === 0 ? "eager" : "lazy"} />
+            <button type="button" className="certificate-preview-trigger" onClick={() => setPreview(item)} aria-label={"preview " + item.title}>
+              <OptimizedImage src={item.image} alt={item.title} loading={index === 0 ? "eager" : "lazy"} />
+            </button>
           </figure>
         ))}
       </div>
@@ -278,6 +281,15 @@ function CertificateSlider() {
           <button key={item.image} type="button" className={index === active ? "active" : ""} onClick={() => setActive(index)} aria-label={"view " + item.title} aria-selected={index === active} />
         ))}
       </div>
+      {preview && (
+        <div className="certificate-modal" role="dialog" aria-modal="true" aria-label={preview.title} onClick={() => setPreview(null)}>
+          <div className="certificate-modal-inner" onClick={(event) => event.stopPropagation()}>
+            <button type="button" className="certificate-modal-close" onClick={() => setPreview(null)}>{"\u5173\u95ed"}</button>
+            <OptimizedImage src={preview.image} alt={preview.title} loading="eager" sizes="100vw" />
+            <p>{preview.title}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -527,14 +539,34 @@ function ProductCategoryPage({ categorySlug }) {
             <h1>{meta.title}</h1>
             <p>{meta.description}</p>
           </div>
+          <div className="product-page-actions">
+            <a className="secondary-btn" href="/#products">{"\u8fd4\u56de\u4ea7\u54c1\u4e2d\u5fc3"}</a>
+            <a className="primary-btn" href="/#contact">{"\u8054\u7cfb\u4e1a\u52a1\u627e\u578b\u53f7"}</a>
+          </div>
           <ProductSearch />
         </section>
 
         <section className="product-browser">
-          <div className="manufacturer-tabs" role="tablist" aria-label="manufacturer filter">
-            {manufacturerTabs.map((name) => (
-              <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => setManufacturer(name)}>{name}</button>
-            ))}
+          <div className="product-filter-grid">
+            <div className="product-filter-card category-filter-card">
+              <h2>{"\u4ea7\u54c1\u5927\u7c7b"}</h2>
+              <div className="category-tabs" role="list" aria-label="category filter">
+                {products.map((item) => (
+                  <a key={item.slug} href={"/products/" + item.slug} className={categorySlug === item.slug ? "active" : ""}>
+                    <strong>{item.number}</strong>
+                    <span>{item.title}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className="product-filter-card manufacturer-filter-card">
+              <h2>{"\u5382\u5bb6\u7b5b\u9009"}</h2>
+              <div className="manufacturer-tabs" role="tablist" aria-label="manufacturer filter">
+                {manufacturerTabs.map((name) => (
+                  <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => setManufacturer(name)}>{name}</button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {status === "loading" && <p className="product-state">{"\u6b63\u5728\u8bfb\u53d6\u4ea7\u54c1\u578b\u53f7..."}</p>}
@@ -629,6 +661,7 @@ function ProductDetailPage({ slug }) {
   useIndustrialMotion([slug]);
   const [product, setProduct] = useState(null);
   const [status, setStatus] = useState("loading");
+  const [siblings, setSiblings] = useState([]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -646,10 +679,29 @@ function ProductDetailPage({ slug }) {
     return () => controller.abort();
   }, [slug]);
 
+  useEffect(() => {
+    if (!product?.categorySlug) {
+      setSiblings([]);
+      return undefined;
+    }
+    const controller = new AbortController();
+    fetch("/api/products?category=" + encodeURIComponent(product.categorySlug), { signal: controller.signal })
+      .then((response) => response.json())
+      .then((data) => setSiblings(data.items || []))
+      .catch((error) => {
+        if (error.name !== "AbortError") setSiblings([]);
+      });
+    return () => controller.abort();
+  }, [product?.categorySlug]);
+
   usePageMeta(productDetailSeo(product));
 
   if (status === "loading") return <ProductPageShell><main className="product-page"><p className="product-state">{"\u6b63\u5728\u8bfb\u53d6\u4ea7\u54c1\u8be6\u60c5..."}</p></main></ProductPageShell>;
   if (status === "error" || !product) return <ProductPageShell><main className="product-page"><p className="product-state">{"\u672a\u627e\u5230\u8be5\u4ea7\u54c1\u578b\u53f7\u3002"}</p><a className="secondary-btn" href="/products/carbon-steel-electrodes">{"\u8fd4\u56de\u4ea7\u54c1\u5217\u8868"}</a></main></ProductPageShell>;
+
+  const siblingIndex = siblings.findIndex((item) => item.slug === product.slug);
+  const prevProduct = siblingIndex > 0 ? siblings[siblingIndex - 1] : null;
+  const nextProduct = siblingIndex >= 0 && siblingIndex < siblings.length - 1 ? siblings[siblingIndex + 1] : null;
 
   return (
     <ProductPageShell>
@@ -690,15 +742,22 @@ function ProductDetailPage({ slug }) {
           <article className="detail-card wide note-card">
             <h2>{"\u4f7f\u7528\u63d0\u793a"}</h2>
             <p>{product.notes}</p>
-            <div className="detail-actions">
-              <a className="primary-btn" href="/#contact">{"\u54a8\u8be2\u5e93\u5b58\u4e0e\u62a5\u4ef7"}</a>
+            <div className="detail-actions detail-nav-actions">
               <a className="secondary-btn" href={"/products/" + product.categorySlug}>{"\u8fd4\u56de\u578b\u53f7\u5217\u8868"}</a>
+              {prevProduct && <a className="secondary-btn" href={"/products/" + prevProduct.slug}>{"\u4e0a\u4e00\u578b\u53f7"}</a>}
+              {nextProduct && <a className="secondary-btn" href={"/products/" + nextProduct.slug}>{"\u4e0b\u4e00\u578b\u53f7"}</a>}
+              <a className="primary-btn" href="/#contact">{"\u8054\u7cfb\u4e1a\u52a1\u54a8\u8be2"}</a>
             </div>
           </article>
         </section>
       </main>
     </ProductPageShell>
   );
+}
+
+function formatKnowledgeCategoryTitle(title, index) {
+  const clean = String(title || "").replace(/^[一二三四五六七八九十]+[、.．]\s*/, "");
+  return (index + 1) + ". " + clean;
 }
 
 function App() {
@@ -774,7 +833,7 @@ function App() {
         </section>
 
         <section className="section soft" id="solutions">
-          <div className="section-split"><div className="section-heading"><p className="eyebrow">Cases</p><h2>案例及相关业绩</h2><p>客户名称和精确吨位已脱敏，仅保留行业、供应规模和服务方式。</p></div><figure className="section-image"><OptimizedImage src="/assets/sections/cases-handover.png" alt="仓库客户提货与交付沟通场景" /></figure></div>
+          <div className="section-split"><div className="section-heading"><p className="eyebrow">Cases</p><h2>案例及相关业绩</h2><p>深耕浙江市场28年，合作客户逾千家，其中上市企业超8家。服务网络覆盖省内各大知名船厂、钢结构工程公司、汽车主机厂及零部件企业、压力容器制造单位，并深度参与多项桥梁工程及基础设施建设项目，以稳定品质和高效保供赢得客户长期信赖。</p></div><figure className="section-image"><OptimizedImage src="/assets/sections/cases-handover.png" alt="仓库客户提货与交付沟通场景" /></figure></div>
           <div className="case-list compact-list"><article><h3>工程项目保供</h3><p>提前锁定常用规格，专门小组跟进库存、发货、资料和异常响应。</p></article><article><h3>区域快速配送</h3><p>宁波地区正常48小时内，浙江全区域正常96小时内送达。</p></article><article><h3>跨省发运</h3><p>覆盖江浙沪及周边省区，可按需发往指定地点或偏远省区。</p></article></div>
           <div className="case-data-grid">{caseCards.map(([tag, title, text]) => <article key={title}><span>{tag}</span><h4>{title}</h4><p>{text}</p></article>)}</div>
           <div className="delivery-scene-grid" aria-label="焊材配送场景素材"><article className="delivery-card steel"><span>钢结构工厂</span><strong>整托焊丝、焊条到厂交付</strong></article><article className="delivery-card shipyard"><span>船厂项目</span><strong>按批次保障船体与分段焊接</strong></article><article className="delivery-card auto"><span>汽车制造</span><strong>产线耗材稳定补给</strong></article><article className="delivery-card machinery"><span>机械制造</span><strong>设备构件焊材快速响应</strong></article></div>
@@ -796,9 +855,9 @@ function App() {
         <section className="section" id="knowledge">
           <div className="section-split"><div className="section-heading"><p className="eyebrow">Knowledge</p><h2>{"\u710a\u63a5\u64cd\u4f5c"}</h2><p>{"\u56f4\u7ed5\u710a\u6750\u57fa\u7840\u3001\u5e38\u89c1\u9009\u578b\u3001\u884c\u4e1a\u5e94\u7528\u3001\u73b0\u573a\u7f3a\u9677\u548c\u50a8\u5b58\u70d8\u5e72\u6574\u7406 80 \u7bc7\u95ee\u7b54\uff0c\u6309\u91c7\u8d2d\u548c\u73b0\u573a\u6c9f\u901a\u9891\u7387\u5206\u7c7b\u6d4f\u89c8\u3002"}</p></div><figure className="section-image"><OptimizedImage src="/assets/sections/knowledge-operation.png" alt={"\u710a\u6750\u9009\u578b\u4e0e\u710a\u63a5\u64cd\u4f5c\u51c6\u5907"} sizes="(max-width: 760px) 100vw, 46vw" /></figure></div>
           <div className="knowledge-category-tabs" role="tablist" aria-label="welding knowledge categories">
-            {knowledgeQaCategories.map((category) => (
+            {knowledgeQaCategories.map((category, index) => (
               <button key={category.slug} type="button" className={activeKnowledgeCategory === category.slug ? "active" : ""} onClick={() => { setActiveKnowledgeCategory(category.slug); setKnowledgeOpen(false); }}>
-                <span>{category.title.replace(/^\S+?/, "")}</span><small>{category.count}{" \u7bc7"}</small>
+                <span>{formatKnowledgeCategoryTitle(category.title, index)}</span><small>{category.count}{" \u7bc7"}</small>
               </button>
             ))}
           </div>

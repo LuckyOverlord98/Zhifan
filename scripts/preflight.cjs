@@ -76,6 +76,16 @@ assertFile("public/styles.css", "static article stylesheet");
 assertFile("dist/styles.css", "built static article stylesheet");
 assertContains("dist/styles.css", ".qa-answer-card", "QA article styling");
 assertContains("dist/styles.css", ".pagination", "product pagination styling");
+assertContains("styles.css", ".product-search-results-floating", "floating product search results");
+assertContains("styles.css", ".certificate-modal", "certificate preview modal styling");
+assertContains("styles.css", "object-fit: contain", "certificate complete image fitting");
+assertContains("src/components/ProductSearch.jsx", "getVisibleLimit", "viewport-aware search result limit");
+assertContains("src/components/ProductSearch.jsx", "item.standard", "standard number shown in product search results");
+assertContains("src/data/productCatalog.js", "aluminum-wires", "eighth product category");
+assertContains("src/App.jsx", "product-filter-grid", "primary category and manufacturer filters");
+assertContains("src/App.jsx", "formatKnowledgeCategoryTitle", "numbered knowledge category labels");
+assertContains("src/App.jsx", "certificate-preview-trigger", "clickable certificate preview");
+assertContains("server/index.js", "productSearchTerms", "like-term product search across standards");
 
 assertContains("src/App.jsx", `aria-label="${zh.paginationLabel}"`, "product pagination navigation");
 assertContains("src/App.jsx", zh.prev, "pagination previous button");
