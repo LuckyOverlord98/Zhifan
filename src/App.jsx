@@ -760,6 +760,30 @@ function formatKnowledgeCategoryTitle(title, index) {
   return (index + 1) + ". " + clean;
 }
 
+const quickMatchGroups = [
+  {
+    label: "行业",
+    title: "按客户工况先定方向",
+    text: "船厂、钢结构、压力容器、汽车制造、电力工程和石化项目，先匹配母材、等级、检测和质保要求。",
+    chips: ["船厂焊材", "钢结构焊材", "压力容器", "风电塔筒", "石化管道"],
+    href: "/articles/qa/qa-51-steel-structure.html"
+  },
+  {
+    label: "工艺",
+    title: "按焊接方法缩小范围",
+    text: "手工电弧焊、气保焊、氩弧焊和埋弧焊，分别对应焊条、实芯焊丝、药芯焊丝、焊剂组合。",
+    chips: ["气保焊丝", "药芯焊丝", "埋弧焊丝焊剂", "氩弧焊填丝"],
+    href: "/articles/qa/qa-07-wire-solid-flux-cored.html"
+  },
+  {
+    label: "标准",
+    title: "按标准和资料确认采购",
+    text: "重点核对 GB、AWS、ISO、NB/T 47018、船级社认证、质保书、批次号和熔敷金属性能。",
+    chips: ["GB 标准", "AWS 标准", "NB/T 47018", "船级社认证", "质保书"],
+    href: "/articles/qa/qa-10-standard.html"
+  }
+];
+
 function App() {
   const currentPath = window.location.pathname;
   const isAdminPage = currentPath === "/admin" || currentPath === "/admin/";
@@ -840,31 +864,45 @@ function App() {
         </section>
 
 
-        <section className="section seo-keywords" aria-label="焊材应用与采购关键词覆盖">
-          <div className="section-heading"><p className="eyebrow">Application Keywords</p><h2>按行业、工艺和标准快速匹配焊材</h2><p>面向船厂、钢结构、压力容器、汽车制造、电建火电风电水电核电、石化项目等客户，围绕焊材采购、焊材批发、焊材供应商、焊材现货供应和技术选型支持建立一站式入口。</p></div>
-          <div className="seo-keyword-grid">
-            <article><h3>行业场景</h3><p>船用焊材、船厂专用焊丝、船级社认证焊材、钢结构焊接材料、压力容器焊材、锅炉焊条、汽车焊接材料、风电塔筒焊丝、核电焊材、石化管道焊条。</p></article>
-            <article><h3>产品与工艺</h3><p>碳钢焊条、低合金钢焊条、实芯焊丝、药芯焊丝、埋弧焊丝焊剂、氩弧焊填充焊丝、手工电弧焊焊条、自动焊焊接材料、复合板焊接材料。</p></article>
-            <article><h3>材质体系</h3><p>铬钼耐热钢焊条、奥氏体不锈钢焊丝、双相不锈钢焊条、镍基合金焊丝、低温镍钢焊条、耐候钢焊材、耐磨堆焊合金焊条、铝镁合金焊丝。</p></article>
-            <article><h3>标准与质保</h3><p>CCS、ABS、DNV、LR、BV、NK船级社认证焊材，NB/T 47018标准焊材、AWS标准焊条、焊材质量证明书、焊材质保书、熔敷金属化学成分与冲击韧性报告。</p></article>
-            <article><h3>常用型号</h3><p>J422、J506、J507、ER50-6、ER50-G、E71T-1、E308-16、E309-16、E316-16、ER316L、H08MnA、H10Mn2、SJ101、HJ431、R307、A102、A132。</p></article>
-            <article><h3>工程采购</h3><p>海上平台焊接材料、桥梁钢结构焊材、LNG储罐焊材、高压管道焊条、锅炉受热面焊材、风电基础焊接材料、换热器焊接材料、宁波焊材配送上门。</p></article>
+        <section className="section knowledge-hub" id="knowledge">
+          <div className="knowledge-hub-hero">
+            <div className="section-heading">
+              <p className="eyebrow">Selection Guide</p>
+              <h2>按行业、工艺和标准快速匹配焊材</h2>
+              <p>把采购沟通先压缩成三步：客户行业判断工况，焊接工艺确定产品类型，执行标准确认质保资料。下方 80 篇问答围绕焊材基础、常见选型、行业应用、现场缺陷和储存烘干整理，按采购和现场沟通频率分类浏览。</p>
+            </div>
+            <figure className="section-image knowledge-hub-image">
+              <OptimizedImage src="/assets/sections/knowledge-operation.png" alt="焊材选型与焊接操作准备" sizes="(max-width: 760px) 100vw, 38vw" />
+            </figure>
           </div>
-        </section>
-
-        <section className="section" id="knowledge">
-          <div className="section-split"><div className="section-heading"><p className="eyebrow">Knowledge</p><h2>{"\u710a\u63a5\u64cd\u4f5c"}</h2><p>{"\u56f4\u7ed5\u710a\u6750\u57fa\u7840\u3001\u5e38\u89c1\u9009\u578b\u3001\u884c\u4e1a\u5e94\u7528\u3001\u73b0\u573a\u7f3a\u9677\u548c\u50a8\u5b58\u70d8\u5e72\u6574\u7406 80 \u7bc7\u95ee\u7b54\uff0c\u6309\u91c7\u8d2d\u548c\u73b0\u573a\u6c9f\u901a\u9891\u7387\u5206\u7c7b\u6d4f\u89c8\u3002"}</p></div><figure className="section-image"><OptimizedImage src="/assets/sections/knowledge-operation.png" alt={"\u710a\u6750\u9009\u578b\u4e0e\u710a\u63a5\u64cd\u4f5c\u51c6\u5907"} sizes="(max-width: 760px) 100vw, 46vw" /></figure></div>
-          <div className="knowledge-category-tabs" role="tablist" aria-label="welding knowledge categories">
-            {knowledgeQaCategories.map((category, index) => (
-              <button key={category.slug} type="button" className={activeKnowledgeCategory === category.slug ? "active" : ""} onClick={() => { setActiveKnowledgeCategory(category.slug); setKnowledgeOpen(false); }}>
-                <span>{formatKnowledgeCategoryTitle(category.title, index)}</span><small>{category.count}{" \u7bc7"}</small>
-              </button>
+          <div className="quick-match-grid" aria-label="焊材快速匹配入口">
+            {quickMatchGroups.map((group) => (
+              <a className="quick-match-card" href={group.href} key={group.label}>
+                <span>{group.label}</span>
+                <h3>{group.title}</h3>
+                <p>{group.text}</p>
+                <div>{group.chips.map((chip) => <em key={chip}>{chip}</em>)}</div>
+              </a>
             ))}
           </div>
-          <div className={`knowledge-list qa-knowledge-list ${knowledgeOpen ? "" : "collapsed"}`} id="knowledgeList">
-            {visibleArticles.map((article) => <a className="knowledge-card qa-knowledge-card" key={article.href} href={article.href}><span>{article.number}</span><h3>{article.title}</h3><p>{article.summary}</p><strong>{"\u9605\u8bfb\u5168\u6587"}</strong></a>)}
+          <div className="knowledge-library-panel">
+            <div className="knowledge-library-copy">
+              <p className="eyebrow">80 Q&A</p>
+              <h3>焊接操作与选型问答</h3>
+              <p>优先展示当前分类前 5 篇，剩余内容半隐藏，需要时展开。适合业务报价、项目资料沟通和现场焊工快速确认。</p>
+            </div>
+            <div className="knowledge-category-tabs" role="tablist" aria-label="welding knowledge categories">
+              {knowledgeQaCategories.map((category, index) => (
+                <button key={category.slug} type="button" className={activeKnowledgeCategory === category.slug ? "active" : ""} onClick={() => { setActiveKnowledgeCategory(category.slug); setKnowledgeOpen(false); }}>
+                  <span>{formatKnowledgeCategoryTitle(category.title, index)}</span><small>{category.count}{" 篇"}</small>
+                </button>
+              ))}
+            </div>
+            <div className={`knowledge-list qa-knowledge-list ${knowledgeOpen ? "" : "collapsed"}`} id="knowledgeList">
+              {visibleArticles.map((article) => <a className="knowledge-card qa-knowledge-card" key={article.href} href={article.href}><span>{article.number}</span><h3>{article.title}</h3><p>{article.summary}</p><strong>阅读全文</strong></a>)}
+            </div>
+            {currentKnowledgeArticles.length > 5 && <div className="knowledge-more"><button type="button" aria-expanded={knowledgeOpen} aria-controls="knowledgeList" onClick={() => setKnowledgeOpen((value) => !value)}>{knowledgeOpen ? "收起文章" : "查看更多 " + (currentKnowledgeArticles.length - 5) + " 篇"}</button></div>}
           </div>
-          {currentKnowledgeArticles.length > 5 && <div className="knowledge-more"><button type="button" aria-expanded={knowledgeOpen} aria-controls="knowledgeList" onClick={() => setKnowledgeOpen((value) => !value)}>{knowledgeOpen ? "\u6536\u8d77\u6587\u7ae0" : "\u67e5\u770b\u66f4\u591a " + (currentKnowledgeArticles.length - 5) + " \u7bc7"}</button></div>}
         </section>
 
         <section className="section soft strength-section" id="strength">
