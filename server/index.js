@@ -97,24 +97,57 @@ function loadSeedProducts() {
 }
 
 const productSearchFields = ["model", "name", "summary", "standard", "standards", "categoryName", "manufacturer"];
+const SEARCH_CACHE_VERSION = 2;
 
 function productSearchTerms(value) {
-  return String(value || "")
+  const terms = String(value || "")
     .trim()
-    .split(/[\s,，、/]+/)
+    .normalize("NFKC")
+    .split(/[\s,，,、；;]+/)
     .map((term) => term.trim())
     .filter(Boolean)
     .slice(0, 6);
+  return [...new Set(terms)];
+}
+
+function compactSearchText(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "");
+}
+
+function looseTermRegex(term) {
+  const compact = compactSearchText(term);
+  if (!compact) return null;
+  return new RegExp(compact.split("").map(escapeRegex).join("[\\s./\\\\\\-_()（）]*"), "i");
 }
 
 function buildProductSearchQuery(search) {
   const terms = productSearchTerms(search);
   if (terms.length === 0) return null;
   return {
-    $and: terms.map((term) => ({
-      $or: productSearchFields.map((field) => ({ [field]: new RegExp(escapeRegex(term), "i") }))
-    }))
+    $and: terms.map((term) => {
+      const exact = new RegExp(escapeRegex(term), "i");
+      const loose = looseTermRegex(term);
+      const patterns = loose ? [exact, loose] : [exact];
+      return {
+        $or: productSearchFields.flatMap((field) => patterns.map((pattern) => ({ [field]: pattern })))
+      };
+    })
   };
+}
+
+function productSearchHaystack(product) {
+  return [
+    product.model,
+    product.name,
+    product.summary,
+    product.standard,
+    ...(product.standards || []),
+    product.categoryName,
+    product.manufacturer
+  ].join(" ");
 }
 
 function productMatches(product, filters) {
@@ -122,17 +155,60 @@ function productMatches(product, filters) {
   if (filters.manufacturer && product.manufacturer !== filters.manufacturer) return false;
   const terms = productSearchTerms(filters.search);
   if (terms.length > 0) {
-    const haystack = [product.model, product.name, product.summary, product.standard, ...(product.standards || []), product.categoryName, product.manufacturer].join(" ").toLowerCase();
-    if (!terms.every((term) => haystack.includes(term.toLowerCase()))) return false;
+    const haystack = productSearchHaystack(product).normalize("NFKC").toLowerCase();
+    const compactHaystack = compactSearchText(haystack);
+    if (!terms.every((term) => haystack.includes(term.toLowerCase()) || compactHaystack.includes(compactSearchText(term)))) return false;
   }
   return true;
 }
 
+function productSearchScore(product, search) {
+  const terms = productSearchTerms(search);
+  if (terms.length === 0) return 0;
+  const model = compactSearchText(product.model);
+  const name = compactSearchText(product.name);
+  const standard = compactSearchText([product.standard, ...(product.standards || [])].join(" "));
+  const category = compactSearchText(product.categoryName);
+  const manufacturer = compactSearchText(product.manufacturer);
+  let score = 0;
+  for (const term of terms) {
+    const compact = compactSearchText(term);
+    if (!compact) continue;
+    if (model === compact) score += 120;
+    else if (model.startsWith(compact)) score += 90;
+    else if (model.includes(compact)) score += 70;
+    if (standard.includes(compact)) score += 45;
+    if (name.includes(compact)) score += 35;
+    if (category.includes(compact)) score += 18;
+    if (manufacturer.includes(compact)) score += 12;
+  }
+  return score;
+}
+
+function sortProductsByRelevance(products, search) {
+  if (!search) {
+    return products.sort((a, b) => (a.manufacturer + "-" + a.model).localeCompare(b.manufacturer + "-" + b.model, "zh-CN"));
+  }
+  return products.sort((a, b) => {
+    const scoreDiff = productSearchScore(b, search) - productSearchScore(a, search);
+    if (scoreDiff) return scoreDiff;
+    return (a.manufacturer + "-" + a.model).localeCompare(b.manufacturer + "-" + b.model, "zh-CN");
+  });
+}
+
+function mergeProducts(primary, fallback) {
+  const seen = new Set();
+  const merged = [];
+  for (const product of [...primary, ...fallback]) {
+    if (!product?.slug || seen.has(product.slug)) continue;
+    seen.add(product.slug);
+    merged.push(product);
+  }
+  return merged;
+}
+
 function listSeedProducts(filters = {}) {
-  return loadSeedProducts()
-    .filter((product) => productMatches(product, filters))
-    .sort((a, b) => (a.manufacturer + "-" + a.model).localeCompare(b.manufacturer + "-" + b.model, "zh-CN"))
-    .slice(0, 200);
+  return sortProductsByRelevance(loadSeedProducts().filter((product) => productMatches(product, filters)), filters.search).slice(0, 200);
 }
 
 function publicProductSummary(product) {
@@ -236,7 +312,7 @@ app.get("/api/products", async (req, res, next) => {
   const category = normalizeText(req.query.category);
   const manufacturer = normalizeText(req.query.manufacturer);
   const filters = { search, category, manufacturer };
-  const cacheKey = "products:" + JSON.stringify(filters);
+  const cacheKey = "products:v" + SEARCH_CACHE_VERSION + ":" + JSON.stringify(filters);
 
   try {
     const cached = getCachedJson(cacheKey);
@@ -254,22 +330,16 @@ app.get("/api/products", async (req, res, next) => {
       return sendCachedJson(res, payload, search ? 30 : 120);
     }
 
-    const items = await Product.find(query)
-      .select("slug manufacturer categorySlug categoryName model name standard summary")
+    const mongoItems = await Product.find(query)
+      .select("slug manufacturer categorySlug categoryName model name standard summary standards")
       .sort({ manufacturer: 1, model: 1 })
       .limit(200)
       .lean();
 
-    if (items.length === 0 && (category || search || manufacturer)) {
-      const seedItems = listSeedProducts(filters).map(publicProductSummary);
-      if (seedItems.length > 0) {
-        const payload = { items: seedItems, source: "seed" };
-        setCachedJson(cacheKey, payload);
-        return sendCachedJson(res, payload, search ? 30 : 120);
-      }
-    }
+    const seedItems = (category || search || manufacturer) ? listSeedProducts(filters).map(publicProductSummary) : [];
+    const items = sortProductsByRelevance(mergeProducts(mongoItems, seedItems), search).slice(0, 200);
 
-    const payload = { items, source: "mongo" };
+    const payload = { items, source: seedItems.length > 0 ? "mongo+seed" : "mongo" };
     setCachedJson(cacheKey, payload);
     sendCachedJson(res, payload, search ? 30 : 120);
   } catch (error) {
