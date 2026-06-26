@@ -46,6 +46,7 @@ const productSchema = new mongoose.Schema(
     composition: [{ name: String, value: String }],
     depositedMetal: [{ name: String, value: String }],
     dimensions: [{ name: String, value: String }],
+    certifications: [{ type: String, trim: true }],
     notes: { type: String, trim: true },
     source: { type: String, default: "Jinqiao 2024 product manual" }
   },

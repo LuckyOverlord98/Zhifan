@@ -724,6 +724,7 @@ function ProductDetailPage({ slug }) {
   const siblingIndex = siblings.findIndex((item) => item.slug === product.slug);
   const prevProduct = siblingIndex > 0 ? siblings[siblingIndex - 1] : null;
   const nextProduct = siblingIndex >= 0 && siblingIndex < siblings.length - 1 ? siblings[siblingIndex + 1] : null;
+  const certifications = Array.isArray(product.certifications) ? product.certifications.filter(Boolean) : [];
 
   return (
     <ProductPageShell>
@@ -761,6 +762,12 @@ function ProductDetailPage({ slug }) {
           <DataTable title={"\u5316\u5b66\u6210\u5206\u53c2\u8003"} rows={product.composition} />
           <DataTable title={"\u7194\u6577\u91d1\u5c5e\u529b\u5b66\u6027\u80fd"} rows={product.depositedMetal} />
           <DataTable title={"规格/焊丝粗细"} rows={product.dimensions} />
+          {certifications.length > 0 && (
+            <article className="detail-card certification-card">
+              <h2>{"认证情况"}</h2>
+              <p>{certifications.join("、")}</p>
+            </article>
+          )}
           <article className="detail-card wide note-card">
             <h2>{"\u4f7f\u7528\u63d0\u793a"}</h2>
             <p>{product.notes}</p>

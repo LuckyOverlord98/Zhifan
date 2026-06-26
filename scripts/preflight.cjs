@@ -86,6 +86,8 @@ assertContains("src/App.jsx", "product-filter-grid", "primary category and manuf
 assertContains("src/App.jsx", "formatKnowledgeCategoryTitle", "numbered knowledge category labels");
 assertContains("src/App.jsx", "certificate-preview-trigger", "clickable certificate preview");
 assertContains("server/index.js", "productSearchTerms", "like-term product search across standards");
+assertContains("src/App.jsx", "certification-card", "product certification detail tile");
+assertContains("server/index.js", "certifications: [{ type: String, trim: true }]", "product certification schema field");
 
 assertContains("src/App.jsx", `aria-label="${zh.paginationLabel}"`, "product pagination navigation");
 assertContains("src/App.jsx", zh.prev, "pagination previous button");
@@ -117,6 +119,24 @@ assertContains("scripts/import-dongfeng-products.py", "pdfplumber", "Dongfeng PD
 assertContains("scripts/import-dongfeng-products.py", "PRODUCT_ROW_RE", "Dongfeng product row boundary detection");
 
 const productData = JSON.parse(read("data/jinqiao-products.json").replace(/^\uFEFF/, ""));
+const genericJinqiaoContent = productData.filter((product) => product.manufacturer === "金桥" && (
+  (product.introduction || "").includes("详情页整理执行标准") ||
+  (product.applications || []).join("").includes("按母材、强度等级")
+));
+if (genericJinqiaoContent.length !== 17) fail("expected 17 Jinqiao products awaiting manual intro/application content, found " + genericJinqiaoContent.length);
+function requireJinqiaoManualContent(model, introNeedle, applicationNeedle) {
+  const product = productData.find((item) => item.manufacturer === "金桥" && item.model === model);
+  if (!product) fail("missing Jinqiao product " + model);
+  if (!product.introduction || !product.introduction.includes(introNeedle)) fail("Jinqiao product " + model + " missing manual introduction content");
+  if (!(product.applications || []).join("").includes(applicationNeedle)) fail("Jinqiao product " + model + " missing manual application content");
+}
+requireJinqiaoManualContent("J422", "钛钙型药皮", "Q235");
+requireJinqiaoManualContent("J507", "低氢钠型药皮", "受压、动载");
+requireJinqiaoManualContent("JQ.CE71T-1", "氧化钛型气体保护药芯焊丝", "490MPa");
+const jinqiaoCe71t1 = productData.find((product) => product.model === "JQ.CE71T-1");
+if (!jinqiaoCe71t1 || !Array.isArray(jinqiaoCe71t1.certifications) || !jinqiaoCe71t1.certifications.includes("CCS") || !jinqiaoCe71t1.certifications.includes("TüV")) fail("JQ.CE71T-1 missing certification data");
+if (!jinqiaoCe71t1.composition?.some((row) => row.name === "C" && row.value.includes("≤0.18"))) fail("JQ.CE71T-1 missing GB/T composition reference");
+if (!jinqiaoCe71t1.depositedMetal?.some((row) => row.name.includes("抗拉强度") && row.value.includes("490-670"))) fail("JQ.CE71T-1 missing mechanical performance reference");
 const dongfengProducts = productData.filter((product) => product.manufacturer === "上海东风");
 if (dongfengProducts.length < 200) fail("expected at least 200 Dongfeng products, found " + dongfengProducts.length);
 
