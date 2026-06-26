@@ -413,6 +413,7 @@ netstat -ano | findstr :3000
 最近关键提交：
 
 ```text
+4280bdb Improve product cards and QA article assets
 8928a22 Enrich Jinqiao product content from manuals
 5b2d496 Import Dongfeng product catalog
 58aa805 Fix Jinqiao product category mapping
@@ -427,7 +428,7 @@ netstat -ano | findstr :3000
 3. 确认 `git status --short`。
 4. `git add` 相关文件。
 5. `git commit -m "..."`
-6. 交给 Confucius 或部署流程 push + ECS 部署 + 校验。
+6. 默认停在本地 commit，不自动交给 Confucius。只有用户明确要求 push、部署或 ECS 验证时，才交给 Confucius 执行 push + ECS 部署 + 线上校验。
 
 不要把临时提取文件、密码、服务器凭据写入 commit。PDF/Word 原始资料如果不属于站点运行必要文件，优先放在 `source-docs` 或工作区外，只提交整理后的结构化数据和必要脚本。
 
