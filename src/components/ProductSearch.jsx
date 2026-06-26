@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 function getVisibleLimit() {
   const height = window.innerHeight || 720;
-  if (height < 620) return 5;
-  if (height < 840) return 6;
-  return 8;
+  const width = window.innerWidth || 1024;
+  if (height < 620 || width < 520) return 3;
+  if (height < 780 || width < 900) return 4;
+  return 5;
 }
 
 function ProductSearch() {
@@ -13,9 +14,10 @@ function ProductSearch() {
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState({ left: 0, top: 0, width: 320, maxHeight: 360, limit: 6 });
   const rootRef = useRef(null);
+  const inputRef = useRef(null);
 
   function updateDropdown() {
-    const element = rootRef.current;
+    const element = inputRef.current || rootRef.current;
     if (!element) return;
     const rect = element.getBoundingClientRect();
     const gutter = 12;
@@ -25,7 +27,7 @@ function ProductSearch() {
     const spaceBelow = window.innerHeight - rect.bottom - gutter;
     const spaceAbove = rect.top - gutter;
     const showAbove = spaceBelow < 240 && spaceAbove > spaceBelow;
-    const maxHeight = Math.max(220, Math.min(showAbove ? spaceAbove : spaceBelow, limit * 76 + 18));
+    const maxHeight = Math.max(180, Math.min(showAbove ? spaceAbove : spaceBelow, limit * 72 + 16));
     const top = showAbove ? Math.max(gutter, rect.top - maxHeight - 8) : rect.bottom + 8;
     setDropdown({ left, top, width, maxHeight, limit });
   }
@@ -70,6 +72,7 @@ function ProductSearch() {
       <label htmlFor="productSearch">{"\u4ea7\u54c1\u641c\u7d22"}</label>
       <input
         id="productSearch"
+        ref={inputRef}
         type="search"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
