@@ -492,8 +492,13 @@ function ProductPageShell({ children }) {
 }
 
 function ProductCategoryPage({ categorySlug }) {
-  useIndustrialMotion([categorySlug]);
-  const meta = categoryMeta[categorySlug] || { title: "\u4ea7\u54c1\u4e2d\u5fc3", eyebrow: "Products", description: "\u6309\u5382\u5bb6\u548c\u578b\u53f7\u67e5\u770b\u4ea7\u54c1\u89c4\u683c\u3002" };
+  const [selectedCategory, setSelectedCategory] = useState(categorySlug);
+  useIndustrialMotion([selectedCategory]);
+  const meta = categoryMeta[selectedCategory] || {
+    title: "\u4ea7\u54c1\u4e2d\u5fc3",
+    eyebrow: "Products",
+    description: "\u6309\u5382\u5bb6\u548c\u578b\u53f7\u67e5\u770b\u4ea7\u54c1\u89c4\u683c\u3002",
+  };
   usePageMeta(productCategorySeo(meta));
   const [manufacturer, setManufacturer] = useState("\u5168\u90e8");
   const [items, setItems] = useState([]);
@@ -502,14 +507,18 @@ function ProductCategoryPage({ categorySlug }) {
   const pageSize = 15;
 
   useEffect(() => {
+    setSelectedCategory(categorySlug);
+  }, [categorySlug]);
+
+  useEffect(() => {
     setPage(1);
-  }, [categorySlug, manufacturer]);
+  }, [selectedCategory, manufacturer]);
 
   useEffect(() => {
     const controller = new AbortController();
     setStatus("loading");
     const manufacturerQuery = manufacturer === "\u5168\u90e8" ? "" : "&manufacturer=" + encodeURIComponent(manufacturer);
-    fetch("/api/products?category=" + encodeURIComponent(categorySlug) + manufacturerQuery, { signal: controller.signal })
+    fetch("/api/products?category=" + encodeURIComponent(selectedCategory) + manufacturerQuery, { signal: controller.signal })
       .then((response) => response.json().then((data) => ({ ok: response.ok, data })))
       .then(({ ok, data }) => {
         if (!ok) throw new Error(data.message || "read failed");
@@ -523,7 +532,7 @@ function ProductCategoryPage({ categorySlug }) {
         }
       });
     return () => controller.abort();
-  }, [categorySlug, manufacturer]);
+  }, [selectedCategory, manufacturer]);
 
   const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
   const safePage = Math.min(page, totalPages);
@@ -547,24 +556,33 @@ function ProductCategoryPage({ categorySlug }) {
         </section>
 
         <section className="product-browser">
-          <div className="product-filter-grid">
-            <div className="product-filter-card category-filter-card">
-              <h2>{"\u4ea7\u54c1\u5927\u7c7b"}</h2>
-              <div className="category-tabs" role="list" aria-label="category filter">
-                {products.map((item) => (
-                  <a key={item.slug} href={"/products/" + item.slug} className={categorySlug === item.slug ? "active" : ""}>
-                    <strong>{item.number}</strong>
-                    <span>{item.title}</span>
-                  </a>
-                ))}
+          <div className="product-filter-grid product-filter-grid-single">
+            <div className="product-filter-card combined-filter-card">
+              <div className="filter-group">
+                <h2>{"\u4ea7\u54c1\u5927\u7c7b"}</h2>
+                <div className="category-tabs" role="tablist" aria-label="product category filter">
+                  {products.map((item) => (
+                    <button
+                      key={item.slug}
+                      type="button"
+                      className={selectedCategory === item.slug ? "active" : ""}
+                      onClick={() => setSelectedCategory(item.slug)}
+                    >
+                      <strong>{item.number}</strong>
+                      <span>{item.title}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="product-filter-card manufacturer-filter-card">
-              <h2>{"\u5382\u5bb6\u7b5b\u9009"}</h2>
-              <div className="manufacturer-tabs" role="tablist" aria-label="manufacturer filter">
-                {manufacturerTabs.map((name) => (
-                  <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => setManufacturer(name)}>{name}</button>
-                ))}
+              <div className="filter-group">
+                <h2>{"\u5382\u5bb6\u7b5b\u9009"}</h2>
+                <div className="manufacturer-tabs" role="tablist" aria-label="manufacturer filter">
+                  {manufacturerTabs.map((name) => (
+                    <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => setManufacturer(name)}>
+                      {name}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -594,7 +612,9 @@ function ProductCategoryPage({ categorySlug }) {
 
           {status === "ready" && items.length > pageSize && (
             <nav className="pagination" aria-label="产品列表分页">
-              <button type="button" onClick={() => setPage((value) => Math.max(1, value - 1))} disabled={safePage === 1}>上一页</button>
+              <button type="button" onClick={() => setPage((value) => Math.max(1, value - 1))} disabled={safePage === 1}>
+                上一页
+              </button>
               {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
                 <button
                   key={pageNumber}
@@ -606,7 +626,9 @@ function ProductCategoryPage({ categorySlug }) {
                   {pageNumber}
                 </button>
               ))}
-              <button type="button" onClick={() => setPage((value) => Math.min(totalPages, value + 1))} disabled={safePage === totalPages}>下一页</button>
+              <button type="button" onClick={() => setPage((value) => Math.min(totalPages, value + 1))} disabled={safePage === totalPages}>
+                下一页
+              </button>
             </nav>
           )}
         </section>

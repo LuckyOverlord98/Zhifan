@@ -12,6 +12,7 @@ function ProductSearch() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [open, setOpen] = useState(false);
+  const [status, setStatus] = useState("idle");
   const [dropdown, setDropdown] = useState({ left: 0, top: 0, width: 320, maxHeight: 360, limit: 6 });
   const rootRef = useRef(null);
   const inputRef = useRef(null);
@@ -36,18 +37,27 @@ function ProductSearch() {
     const keyword = query.trim();
     if (!keyword) {
       setResults([]);
+      setStatus("idle");
       return undefined;
     }
+    setStatus("loading");
+    setOpen(true);
+    updateDropdown();
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       try {
         const response = await fetch("/api/products?search=" + encodeURIComponent(keyword), { signal: controller.signal });
         const data = await response.json();
+        if (!response.ok) throw new Error(data.message || "search failed");
         setResults(data.items || []);
+        setStatus("ready");
         setOpen(true);
         updateDropdown();
       } catch (error) {
-        if (error.name !== "AbortError") setResults([]);
+        if (error.name !== "AbortError") {
+          setResults([]);
+          setStatus("error");
+        }
       }
     }, 300);
     return () => {
@@ -88,7 +98,11 @@ function ProductSearch() {
           className="product-search-results product-search-results-floating"
           style={{ left: dropdown.left, top: dropdown.top, width: dropdown.width, maxHeight: dropdown.maxHeight }}
         >
-          {results.length === 0 ? (
+          {status === "loading" ? (
+            <p className="search-status">{"\u641c\u7d22\u4e2d..."}</p>
+          ) : status === "error" ? (
+            <p className="search-status">{"\u641c\u7d22\u6682\u65f6\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5"}</p>
+          ) : results.length === 0 ? (
             <p>{"\u6682\u65e0\u5339\u914d\u578b\u53f7"}</p>
           ) : results.slice(0, dropdown.limit).map((item) => (
             <a key={item.slug} href={"/products/" + item.slug}>
