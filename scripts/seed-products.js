@@ -10,7 +10,7 @@ const rootDir = path.resolve(__dirname, "..");
 
 dotenv.config({ path: path.join(rootDir, ".env") });
 
-const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/zhifan";
+const mongoUri = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/zhifan_welding";
 const productsPath = path.join(rootDir, "data", "jinqiao-products.json");
 
 async function main() {
@@ -39,7 +39,8 @@ async function main() {
   });
 
   const slugs = products.map((product) => product.slug);
-  await collection.deleteMany({ manufacturer: "金桥", slug: { $nin: slugs } });
+  const manufacturers = [...new Set(products.map((product) => product.manufacturer).filter(Boolean))];
+  await collection.deleteMany({ manufacturer: { $in: manufacturers }, slug: { $nin: slugs } });
 
   let changed = 0;
   for (const product of products) {

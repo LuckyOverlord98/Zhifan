@@ -109,6 +109,40 @@ for (const file of articleFiles) {
 assertContains("public/articles/qa/qa-12-j507-electrode.html", "qa-answer-card", "QA article card markup");
 assertContains("public/articles/qa/qa-12-j507-electrode.html", zh.qaTitle, "QA article UTF-8 content");
 
+
+run("node", ["--check", "scripts/seed-products.js"]);
+assertContains("scripts/seed-products.js", "zhifan_welding", "seed MongoDB default database");
+assertContains("scripts/seed-products.js", "manufacturer: { $in: manufacturers }", "stale multi-manufacturer product cleanup");
+assertContains("scripts/import-dongfeng-products.py", "pdfplumber", "Dongfeng PDF extraction");
+assertContains("scripts/import-dongfeng-products.py", "PRODUCT_ROW_RE", "Dongfeng product row boundary detection");
+
+const productData = JSON.parse(read("data/jinqiao-products.json").replace(/^\uFEFF/, ""));
+const dongfengProducts = productData.filter((product) => product.manufacturer === "上海东风");
+if (dongfengProducts.length < 200) fail("expected at least 200 Dongfeng products, found " + dongfengProducts.length);
+
+function requireProduct(model, categorySlug) {
+  const product = dongfengProducts.find((item) => item.model === model);
+  if (!product) fail("missing Dongfeng product " + model);
+  if (product.categorySlug !== categorySlug) fail("Dongfeng product " + model + " category expected " + categorySlug + ", got " + product.categorySlug);
+  if (!product.standard || !product.standards || product.standards.length === 0) fail("Dongfeng product " + model + " missing standards");
+  if (!product.dimensions || product.dimensions.some((item) => /\?/.test(item.value) || !item.value.includes("Φ"))) fail("Dongfeng product " + model + " has invalid dimensions");
+  return product;
+}
+
+for (const [model, category] of [
+  ["SH.J422", "carbon-steel-electrodes"],
+  ["SH.J507", "carbon-steel-electrodes"],
+  ["SH.Y71T-1", "flux-cored-wires"],
+  ["SH.Y81K2", "special-materials"],
+  ["SH.S50-6", "solid-wires"],
+  ["SH.M08MnA", "submerged-arc"],
+  ["SH.S308L", "stainless-materials"],
+]) requireProduct(model, category);
+
+const nbDongfeng = dongfengProducts.filter((product) => (product.standards || []).some((standard) => standard.startsWith("NB/T")));
+if (nbDongfeng.some((product) => !(product.standards || []).includes("NB/T 47018 承压产品"))) fail("Dongfeng NB/T products missing NB/T 47018 note");
+if (dongfengProducts.some((product) => (product.dimensions || []).some((item) => item.value.includes("?")))) fail("Dongfeng dimensions contain ? instead of Φ");
+
 run("git", ["diff", "--check"]);
 
 log("All local checks passed. For ECS, still verify /styles.css MIME and /api/health after deploy.");
