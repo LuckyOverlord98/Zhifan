@@ -77,9 +77,11 @@ assertFile("dist/styles.css", "built static article stylesheet");
 assertContains("dist/styles.css", ".qa-answer-card", "QA article styling");
 assertContains("dist/styles.css", ".pagination", "product pagination styling");
 assertContains("styles.css", ".product-search-results-floating", "floating product search results");
+assertContains("styles.css", "Product home cards must always expose all 8 categories", "home product categories always visible");
 assertContains("styles.css", ".certificate-modal", "certificate preview modal styling");
 assertContains("styles.css", "object-fit: contain", "certificate complete image fitting");
 assertContains("src/components/ProductSearch.jsx", "getVisibleLimit", "viewport-aware search result limit");
+assertContains("src/components/ProductSearch.jsx", "createPortal", "body-level product search dropdown portal");
 assertContains("src/components/ProductSearch.jsx", "item.standard", "standard number shown in product search results");
 assertContains("src/data/productCatalog.js", "aluminum-wires", "eighth product category");
 assertContains("src/App.jsx", "product-filter-grid", "primary category and manufacturer filters");
@@ -110,6 +112,7 @@ for (const file of articleFiles) {
 
 assertContains("public/articles/qa/qa-12-j507-electrode.html", "qa-answer-card", "QA article card markup");
 assertContains("public/articles/qa/qa-12-j507-electrode.html", zh.qaTitle, "QA article UTF-8 content");
+assertContains("public/articles/qa/qa-12-j507-electrode.html", "生成时间：2026-06-26", "QA article generated date in hero");
 
 
 run("node", ["--check", "scripts/seed-products.js"]);
@@ -123,7 +126,7 @@ const genericJinqiaoContent = productData.filter((product) => product.manufactur
   (product.introduction || "").includes("详情页整理执行标准") ||
   (product.applications || []).join("").includes("按母材、强度等级")
 ));
-if (genericJinqiaoContent.length !== 17) fail("expected 17 Jinqiao products awaiting manual intro/application content, found " + genericJinqiaoContent.length);
+if (genericJinqiaoContent.length !== 0) fail("expected all Jinqiao products to have specific intro/application content, found generic placeholders: " + genericJinqiaoContent.map((product) => product.model).join(", "));
 function requireJinqiaoManualContent(model, introNeedle, applicationNeedle) {
   const product = productData.find((item) => item.manufacturer === "金桥" && item.model === model);
   if (!product) fail("missing Jinqiao product " + model);
@@ -133,6 +136,12 @@ function requireJinqiaoManualContent(model, introNeedle, applicationNeedle) {
 requireJinqiaoManualContent("J422", "钛钙型药皮", "Q235");
 requireJinqiaoManualContent("J507", "低氢钠型药皮", "受压、动载");
 requireJinqiaoManualContent("JQ.CE71T-1", "氧化钛型气体保护药芯焊丝", "490MPa");
+requireJinqiaoManualContent("JQ.TH500-NQ-II", "耐候钢用气保护实心焊丝", "500MPa");
+requireJinqiaoManualContent("JQ.H08MnMoTiB(H08C)", "高强钢埋弧焊丝", "X70");
+requireJinqiaoManualContent("JQ.H08MnNiTiB(H08D)", "非合金细晶粒钢埋弧焊丝", "X65");
+requireJinqiaoManualContent("JQ.H08MnSiCuCrNi-II", "耐候钢用气保护实心焊丝", "440MPa");
+requireJinqiaoManualContent("JQ.MG70S-3", "低合金钢用气体保护实心焊丝", "500MPa");
+requireJinqiaoManualContent("JQ.MG50-G-1", "碳钢用气体保护实心焊丝", "500MPa");
 const jinqiaoCe71t1 = productData.find((product) => product.model === "JQ.CE71T-1");
 if (!jinqiaoCe71t1 || !Array.isArray(jinqiaoCe71t1.certifications) || !jinqiaoCe71t1.certifications.includes("CCS") || !jinqiaoCe71t1.certifications.includes("TüV")) fail("JQ.CE71T-1 missing certification data");
 if (!jinqiaoCe71t1.composition?.some((row) => row.name === "C" && row.value.includes("≤0.18"))) fail("JQ.CE71T-1 missing GB/T composition reference");

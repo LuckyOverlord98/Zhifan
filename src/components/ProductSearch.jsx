@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 function getVisibleLimit() {
   const height = window.innerHeight || 720;
@@ -13,7 +14,7 @@ function ProductSearch() {
   const [results, setResults] = useState([]);
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState("idle");
-  const [dropdown, setDropdown] = useState({ left: 0, top: 0, width: 320, maxHeight: 360, limit: 6 });
+  const [dropdown, setDropdown] = useState({ left: 0, top: 0, width: 320, maxHeight: 360, limit: 5 });
   const rootRef = useRef(null);
   const inputRef = useRef(null);
 
@@ -27,10 +28,10 @@ function ProductSearch() {
     const left = Math.max(gutter, Math.min(rect.left, window.innerWidth - width - gutter));
     const spaceBelow = window.innerHeight - rect.bottom - gutter;
     const spaceAbove = rect.top - gutter;
-    const showAbove = spaceBelow < 240 && spaceAbove > spaceBelow;
-    const maxHeight = Math.max(180, Math.min(showAbove ? spaceAbove : spaceBelow, limit * 72 + 16));
-    const top = showAbove ? Math.max(gutter, rect.top - maxHeight - 8) : rect.bottom + 8;
-    setDropdown({ left, top, width, maxHeight, limit });
+    const showAbove = spaceBelow < 220 && spaceAbove > spaceBelow;
+    const availableSpace = Math.max(170, Math.min(showAbove ? spaceAbove : spaceBelow, limit * 70 + 14));
+    const top = showAbove ? Math.max(gutter, rect.top - availableSpace - 8) : Math.min(rect.bottom + 8, window.innerHeight - availableSpace - gutter);
+    setDropdown({ left, top, width, maxHeight: availableSpace, limit });
   }
 
   useEffect(() => {
@@ -53,6 +54,8 @@ function ProductSearch() {
         setStatus("ready");
         setOpen(true);
         updateDropdown();
+        window.setTimeout(updateDropdown, 80);
+        window.setTimeout(updateDropdown, 260);
       } catch (error) {
         if (error.name !== "AbortError") {
           setResults([]);
@@ -68,18 +71,54 @@ function ProductSearch() {
 
   useEffect(() => {
     if (!open) return undefined;
-    updateDropdown();
-    window.addEventListener("resize", updateDropdown);
-    window.addEventListener("scroll", updateDropdown, true);
+    let frame = 0;
+    const anchorDropdown = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(() => {
+        const rect = inputRef.current?.getBoundingClientRect();
+        if (!rect || rect.bottom < 0 || rect.top > window.innerHeight) {
+          setOpen(false);
+          return;
+        }
+        updateDropdown();
+      });
+    };
+    anchorDropdown();
+    window.addEventListener("resize", anchorDropdown);
+    window.addEventListener("scroll", anchorDropdown, true);
+    window.visualViewport?.addEventListener("resize", anchorDropdown);
     return () => {
-      window.removeEventListener("resize", updateDropdown);
-      window.removeEventListener("scroll", updateDropdown, true);
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("resize", anchorDropdown);
+      window.removeEventListener("scroll", anchorDropdown, true);
+      window.visualViewport?.removeEventListener("resize", anchorDropdown);
     };
   }, [open, query]);
 
+  const dropdownNode = open && query.trim() && typeof document !== "undefined" ? createPortal(
+    <div
+      className="product-search-results product-search-results-floating"
+      style={{ left: dropdown.left, top: dropdown.top, width: dropdown.width, maxHeight: dropdown.maxHeight }}
+    >
+      {status === "loading" ? (
+        <p className="search-status">{"搜索中..."}</p>
+      ) : status === "error" ? (
+        <p className="search-status">{"搜索暂时失败，请稍后重试"}</p>
+      ) : results.length === 0 ? (
+        <p>{"暂无匹配型号"}</p>
+      ) : results.slice(0, dropdown.limit).map((item) => (
+        <a key={item.slug} href={"/products/" + item.slug}>
+          <strong>{item.model}</strong>
+          <span>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" / ")}</span>
+        </a>
+      ))}
+    </div>,
+    document.body
+  ) : null;
+
   return (
     <div className="product-search" role="search" ref={rootRef}>
-      <label htmlFor="productSearch">{"\u4ea7\u54c1\u641c\u7d22"}</label>
+      <label htmlFor="productSearch">{"产品搜索"}</label>
       <input
         id="productSearch"
         ref={inputRef}
@@ -89,29 +128,13 @@ function ProductSearch() {
         onFocus={() => {
           setOpen(true);
           updateDropdown();
+          window.setTimeout(updateDropdown, 80);
+          window.setTimeout(updateDropdown, 260);
         }}
-        onBlur={() => window.setTimeout(() => setOpen(false), 140)}
-        placeholder={"\u641c\u7d22\u578b\u53f7 / \u6807\u51c6\u53f7\uff0c\u5982 J507 / AWS A5.1"}
+        onBlur={() => window.setTimeout(() => setOpen(false), 180)}
+        placeholder={"搜索型号 / 标准号，如 J507 / AWS A5.1"}
       />
-      {open && query.trim() && (
-        <div
-          className="product-search-results product-search-results-floating"
-          style={{ left: dropdown.left, top: dropdown.top, width: dropdown.width, maxHeight: dropdown.maxHeight }}
-        >
-          {status === "loading" ? (
-            <p className="search-status">{"\u641c\u7d22\u4e2d..."}</p>
-          ) : status === "error" ? (
-            <p className="search-status">{"\u641c\u7d22\u6682\u65f6\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5"}</p>
-          ) : results.length === 0 ? (
-            <p>{"\u6682\u65e0\u5339\u914d\u578b\u53f7"}</p>
-          ) : results.slice(0, dropdown.limit).map((item) => (
-            <a key={item.slug} href={"/products/" + item.slug}>
-              <strong>{item.model}</strong>
-              <span>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" / ")}</span>
-            </a>
-          ))}
-        </div>
-      )}
+      {dropdownNode}
     </div>
   );
 }

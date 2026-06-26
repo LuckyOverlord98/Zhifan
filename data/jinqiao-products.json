@@ -12926,12 +12926,12 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-th500-nq",
+    "slug": "jq-th500-nq-ii",
     "manufacturer": "金桥",
     "categorySlug": "solid-wires",
     "categoryName": "实芯气保及氩弧焊丝",
-    "model": "JQ.TH500-NQ",
-    "name": "金桥 JQ.TH500-NQ 实芯气保及氩弧焊丝",
+    "model": "JQ.TH500-NQ-II",
+    "name": "金桥 JQ.TH500-NQ-II 实芯气保及氩弧焊丝",
     "standard": "GB -- / GB/T 8110 G49A4UM21SNCC2 / GB/T 0.60～ 0.20～ 0.30～ 0.20～ / AWS --",
     "standards": [
       "GB --",
@@ -12939,12 +12939,11 @@
       "GB/T 0.60～ 0.20～ 0.30～ 0.20～",
       "AWS --"
     ],
-    "summary": "金桥 JQ.TH500-NQ，适用于实芯气保及氩弧焊丝相关工况。",
-    "introduction": "JQ.TH500-NQ 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "summary": "金桥 JQ.TH500-NQ-II，适用于实芯气保及氩弧焊丝相关工况。",
+    "introduction": "耐候钢用气保护实心焊丝，焊接工艺性优良，焊缝成型美观。熔敷金属具有良好的抗大气腐蚀性能、抗裂性能及良好的塑性和韧性。",
     "applications": [
-      "实芯气保及氩弧焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于 500MPa 抗拉强度级别耐候钢的焊接，如 Q400NQR1 等",
+      "常见应用领域为机车车辆、近海工程、集装箱、桥梁等"
     ],
     "composition": [
       {
@@ -13013,12 +13012,12 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-th550-nq",
+    "slug": "jq-th550-nq-ii",
     "manufacturer": "金桥",
     "categorySlug": "solid-wires",
     "categoryName": "实芯气保及氩弧焊丝",
-    "model": "JQ.TH550-NQ",
-    "name": "金桥 JQ.TH550-NQ 实芯气保及氩弧焊丝",
+    "model": "JQ.TH550-NQ-II",
+    "name": "金桥 JQ.TH550-NQ-II 实芯气保及氩弧焊丝",
     "standard": "GB -- / GB/T 8110 G55A4UM21SNCC1 / ISO 14341-B-G 55A 4 M21 SZ / AWS --",
     "standards": [
       "GB --",
@@ -13026,12 +13025,11 @@
       "ISO 14341-B-G 55A 4 M21 SZ",
       "AWS --"
     ],
-    "summary": "金桥 JQ.TH550-NQ，适用于实芯气保及氩弧焊丝相关工况。",
-    "introduction": "JQ.TH550-NQ 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "summary": "金桥 JQ.TH550-NQ-II，适用于实芯气保及氩弧焊丝相关工况。",
+    "introduction": "耐候钢用气保护实心焊丝，焊接工艺性优良，焊缝成型美观。熔敷金属具有良好的抗大气腐蚀性能、抗裂性能及良好的塑性和韧性。",
     "applications": [
-      "实芯气保及氩弧焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于 550MPa 抗拉强度级别耐候钢的焊接，如 Q400NQR1 等",
+      "常见应用领域为机车车辆、近海工程、集装箱、桥梁等"
     ],
     "composition": [
       {
@@ -13100,22 +13098,20 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-th650ew",
+    "slug": "jq-th650ew-ii",
     "manufacturer": "金桥",
     "categorySlug": "solid-wires",
     "categoryName": "实芯气保及氩弧焊丝",
-    "model": "JQ.TH650EW",
-    "name": "金桥 JQ.TH650EW 实芯气保及氩弧焊丝",
+    "model": "JQ.TH650EW-II",
+    "name": "金桥 JQ.TH650EW-II 实芯气保及氩弧焊丝",
     "standard": "GB/T 39281 G62A4M21ZN6C1M4",
     "standards": [
       "GB/T 39281 G62A4M21ZN6C1M4"
     ],
-    "summary": "金桥 JQ.TH650EW，适用于实芯气保及氩弧焊丝相关工况。",
-    "introduction": "JQ.TH650EW 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "summary": "金桥 JQ.TH650EW-II，适用于实芯气保及氩弧焊丝相关工况。",
+    "introduction": "耐候钢用气保护实心焊丝，焊接工艺性优良，焊缝成型美观。熔敷金属具有良好的抗大气腐蚀性能、抗裂性能及良好的塑性和韧性。",
     "applications": [
-      "实芯气保及氩弧焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于 650MPa 抗拉强度级别耐候钢的焊接，常见应用领域为机车车辆、近海工程、集装箱、桥梁等"
     ],
     "composition": [
       {
@@ -27732,7 +27728,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal1070",
+    "slug": "jq-sal1070",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -27747,11 +27743,10 @@
       "AWS ER1070 R1070"
     ],
     "summary": "金桥 JQ.SAl1070，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl1070 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "纯铝焊丝，Al 含量≥99.70%；焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮。焊丝特点：1. 焊缝金属具有优越的导电性、导热性和极好的可加工性；2. 具有良好的抗化学腐蚀能力和抗裂性；3. 经阳极化处理后，具有优良的颜色配比性。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于纯铝或含少量合金元素铝合金的焊接",
+      "常见应用于铁路机车、电力、化学、食品等领域"
     ],
     "composition": [
       {
@@ -27826,7 +27821,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal1100",
+    "slug": "jq-sal1100",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -27841,11 +27836,10 @@
       "AWS ER1100 R1100"
     ],
     "summary": "金桥 JQ.SAl1100，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl1100 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "纯铝焊丝，Al 含量≥99.00%；焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮。焊丝特点：1. 焊缝金属具有优越的导电性、导热性和极好的可加工性；2. 具有良好的抗化学腐蚀能力和抗裂性；3. 经阳极化处理后，具有优良的颜色配比性。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于纯铝或含少量合金元素铝合金的焊接",
+      "常见应用于铁路机车、电力、化学、食品等领域"
     ],
     "composition": [
       {
@@ -27904,7 +27898,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal2319",
+    "slug": "jq-sal2319",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -27919,11 +27913,10 @@
       "AWS ER2319 R2319"
     ],
     "summary": "金桥 JQ.SAl2319，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl2319 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "铝铜合金焊丝，Cu 含量 5.80%～6.80%；焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮。焊丝特点：1.适合焊接 2XXX 系列铝铜合金；2.焊缝金属具有比 4XXX 系列铝硅合金更高的强度和延展性，同时具有良好的抗应力腐蚀性能。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于高强度铝合金的焊接",
+      "常见应用于航空航天工业、军工等领域"
     ],
     "composition": [
       {
@@ -28002,7 +27995,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal4043",
+    "slug": "jq-sal4043",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28017,11 +28010,10 @@
       "AWS ER4043 R4043"
     ],
     "summary": "金桥 JQ.SAl4043，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl4043 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "铝硅合金焊丝，Si 含量 4.50%～6.00%；焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮。焊丝特点：1.适合焊接可热处理的铝合金，特别对于 6XXX 系列铝硅镁合金，具有较低的热裂纹敏感性；2.具有比 5XXX 系列铝镁合金更低的熔点和更好的流动性；3.Si 易与 Mg 形成 Mg2Si 脆性相，降低焊缝的塑性及耐蚀性，一般不采用 4043 焊接 5XXX 系列铝镁合金；4.不推荐用于阳极化处理的情况。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于除铝镁合金以外的铝合金工件的焊接",
+      "常见应用于船舶、机车、化工、食品、运动器材、汽车制造、家具、容器、集装箱制造等领域"
     ],
     "composition": [
       {
@@ -28092,7 +28084,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal4047",
+    "slug": "jq-sal4047",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28107,11 +28099,12 @@
       "AWS ER4047 R4047"
     ],
     "summary": "金桥 JQ.SAl4047，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl4047 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "焊丝特点：1.相对于 4043，具有更低的熔点和更窄的凝固区间，熔池流动性更好，减少热裂倾向，增加角焊缝剪切强度；2.适用于持续性高温环境（如 65℃以上）中的应用。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于各种铸造及挤压成型铝合金的焊接",
+      "常见应用于冷凝器、空调管、汽车水箱、油箱等领域",
+      "适用于铝硅合金焊丝，Si 含量 11.00%～13.00%",
+      "适用于焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮"
     ],
     "composition": [
       {
@@ -28178,7 +28171,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal5087",
+    "slug": "jq-sal5087",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28193,11 +28186,12 @@
       "AWS ER5087 R5087"
     ],
     "summary": "金桥 JQ.SAl5087，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl5087 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "焊丝特点：1.适合对强度、抗裂性、抗弯曲性和耐腐蚀性要求较高的铝合金结构的焊接；2.焊丝中锆元素的添加起到细化焊缝金属组织的作用。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于对强度、抗裂性、抗弯曲性和耐腐蚀性要求较高的铝合金的焊接",
+      "常见应用于海洋工程、铁路、造船、轻量化运输装备等领域",
+      "适用于铝镁合金焊丝，Mg 含量 4.50%～5.20%",
+      "适用于焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮"
     ],
     "composition": [
       {
@@ -28276,7 +28270,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal5183",
+    "slug": "jq-sal5183",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28291,11 +28285,12 @@
       "AWS ER5183 R5183"
     ],
     "summary": "金桥 JQ.SAl5183，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl5183 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "焊丝特点：1.常用于 5083 和 5654 等 5XXX 系列铝镁合金和 6XXX 系列铝硅镁合金的焊接，抗海水腐蚀性能优良；2.接头对应力腐蚀裂纹较敏感，一般不推荐用于有耐高温要求的焊接。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于对强度、冲击断裂韧性及抗腐蚀性要求高的铝合金的焊接",
+      "常见应用于海洋、冷藏装备、低温储罐、铁路工业、化学、食品、船舶、航空航天等领域",
+      "适用于铝镁合金焊丝，Mg 含量 4.30%～5.20%",
+      "适用于焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮"
     ],
     "composition": [
       {
@@ -28370,7 +28365,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal5356",
+    "slug": "jq-sal5356",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28385,11 +28380,12 @@
       "AWS ER5356 R5356"
     ],
     "summary": "金桥 JQ.SAl5356，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl5356 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "焊丝特点：1.适合焊接或表面堆焊含镁 5%的铸锻铝合金，强度高、可锻性好和抗腐蚀性优良；2.经阳极化处理后，具有优良的颜色配比性。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于铝镁合金、铝镁锌合金、铝镁锰合金及铝硅镁合金的焊接",
+      "常见应用于汽车零部件、造船业、机车车辆、化工压力容器、通用制造业等领域",
+      "适用于铝镁合金焊丝，Mg 含量 4.50%～5.50%",
+      "适用于焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮"
     ],
     "composition": [
       {
@@ -28464,7 +28460,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal5554",
+    "slug": "jq-sal5554",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28479,11 +28475,10 @@
       "AWS ER5554 R5554"
     ],
     "summary": "金桥 JQ.SAl5554，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl5554 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "铝镁合金焊丝，Mg 含量 2.40%～3.00%；焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮。焊丝特点：1.良好匹配 5454 铝合金化学特性，获得优良的抗腐蚀性能；2.焊缝金属在高温条件下不易发生应力腐蚀开裂；3.具有良好的加工性能，抗腐蚀性和阳极氧化颜色配比性。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于耐腐蚀低镁 5XXX 系列铝镁合金的焊接",
+      "常见应用于化学品储罐、汽车轮毂、公路拖车、铁路集装箱等领域"
     ],
     "composition": [
       {
@@ -28558,7 +28553,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal5556",
+    "slug": "jq-sal5556",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28573,11 +28568,10 @@
       "AWS ER5556 R5556"
     ],
     "summary": "金桥 JQ.SAl5556，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl5556 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "铝镁合金焊丝，Mg 含量 4.70%～5.50%；焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮。焊丝特点：1.焊缝金属具有较高的强度，良好的抗腐蚀性能和抗热裂性能；2.经阳极化处理后，具有优良的颜色配比性。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于强度较高的 5XXX 系列铝镁合金的焊接",
+      "常见应用于船舶结构框架、铁路工业、汽车零件、集装箱、拖车、军工装备等领域"
     ],
     "composition": [
       {
@@ -28652,7 +28646,7 @@
     "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
   },
   {
-    "slug": "jinqiao-jq-sal5a06",
+    "slug": "jq-sal5a06",
     "manufacturer": "金桥",
     "categorySlug": "aluminum-wires",
     "categoryName": "铝焊丝",
@@ -28664,11 +28658,12 @@
       "AWS --"
     ],
     "summary": "金桥 JQ.SAl5A06，适用于铝焊丝相关工况。",
-    "introduction": "JQ.SAl5A06 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "introduction": "焊丝特点：1.焊缝金属具有高的强度，良好的抗腐蚀性能；2.经阳极化处理后，具有优良的颜色配比性。",
     "applications": [
-      "铝焊丝",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于高镁 5XXX 系列铝镁合金的焊接",
+      "常见应用于船舶、汽车、飞机焊接件、地铁轻轨、制冷装置、电视塔、钻探设备、导弹零件、装甲等领域",
+      "适用于铝镁合金焊丝，Mg 含量 5.80%～6.80%",
+      "适用于焊接工艺性能优良，电弧稳定、飞溅小，焊缝成型美观光亮"
     ],
     "composition": [
       {
@@ -38464,24 +38459,22 @@
     ]
   },
   {
-    "slug": "jinqiao-jq-h08mnmotibh08c",
+    "slug": "jq-h08mnmotib-h08c",
     "manufacturer": "金桥",
     "categorySlug": "submerged-arc",
     "categoryName": "碳钢埋弧焊丝焊剂",
-    "model": "JQ.H08MnMoTiBH08C",
-    "name": "金桥 JQ.H08MnMoTiBH08C 碳钢埋弧焊丝焊剂",
+    "model": "JQ.H08MnMoTiB(H08C)",
+    "name": "金桥 JQ.H08MnMoTiB(H08C) 碳钢埋弧焊丝焊剂",
     "standard": "GB -- / GB/T 36034 SUG / AWS --",
     "standards": [
       "GB --",
       "GB/T 36034 SUG",
       "AWS --"
     ],
-    "summary": "金桥 JQ.H08MnMoTiBH08C，适用于碳钢埋弧焊丝焊剂相关工况。",
-    "introduction": "JQ.H08MnMoTiBH08C 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "summary": "金桥 JQ.H08MnMoTiB(H08C)，适用于碳钢埋弧焊丝焊剂相关工况。",
+    "introduction": "主要应用领域为管线行业。特性：高强钢埋弧焊丝，焊接工艺性优良，易脱渣，焊缝成型美观。可用于 X70、X80 管道焊接，适合大电流高速焊接。",
     "applications": [
-      "碳钢埋弧焊丝焊剂",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于与烧结型焊剂 JQ·SJ102G 配合，适用于 620MPa 抗拉强度级别母材的焊接，如 X70、X80 等"
     ],
     "composition": [
       {
@@ -38529,24 +38522,23 @@
     ]
   },
   {
-    "slug": "jinqiao-jq-h08mnnitibh08d",
+    "slug": "jq-h08mnnitib-h08d",
     "manufacturer": "金桥",
     "categorySlug": "submerged-arc",
     "categoryName": "碳钢埋弧焊丝焊剂",
-    "model": "JQ.H08MnNiTiBH08D",
-    "name": "金桥 JQ.H08MnNiTiBH08D 碳钢埋弧焊丝焊剂",
+    "model": "JQ.H08MnNiTiB(H08D)",
+    "name": "金桥 JQ.H08MnNiTiB(H08D) 碳钢埋弧焊丝焊剂",
     "standard": "GB SUG35 / GB/T 5293 SUG35 / AWS --",
     "standards": [
       "GB SUG35",
       "GB/T 5293 SUG35",
       "AWS --"
     ],
-    "summary": "金桥 JQ.H08MnNiTiBH08D，适用于碳钢埋弧焊丝焊剂相关工况。",
-    "introduction": "JQ.H08MnNiTiBH08D 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "summary": "金桥 JQ.H08MnNiTiB(H08D)，适用于碳钢埋弧焊丝焊剂相关工况。",
+    "introduction": "非合金细晶粒钢埋弧焊丝，焊接工艺性优良，焊缝成型美观。焊材 S、P 含量较低，可用于 X65 管道焊接，适合大电流焊接。",
     "applications": [
-      "碳钢埋弧焊丝焊剂",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于与烧结型焊剂 JQ·SJ101G 配合，适用于 540MPa 抗拉强度级别母材的焊接，如 X65 等",
+      "主要应用领域为管线行业"
     ],
     "composition": [
       {
@@ -38598,24 +38590,23 @@
     ]
   },
   {
-    "slug": "jinqiao-jq-h08mnsicucrni",
+    "slug": "jq-h08mnsicucrni-ii",
     "manufacturer": "金桥",
     "categorySlug": "submerged-arc",
     "categoryName": "碳钢埋弧焊丝焊剂",
-    "model": "JQ.H08MnSiCuCrNi",
-    "name": "金桥 JQ.H08MnSiCuCrNi 碳钢埋弧焊丝焊剂",
+    "model": "JQ.H08MnSiCuCrNi-II",
+    "name": "金桥 JQ.H08MnSiCuCrNi-II 碳钢埋弧焊丝焊剂",
     "standard": "GB G43A4UM21SN CC3 / GB/T 8110 G43A4UM21SNCC3 / AWS --",
     "standards": [
       "GB G43A4UM21SN CC3",
       "GB/T 8110 G43A4UM21SNCC3",
       "AWS --"
     ],
-    "summary": "金桥 JQ.H08MnSiCuCrNi，适用于碳钢埋弧焊丝焊剂相关工况。",
-    "introduction": "JQ.H08MnSiCuCrNi 为金桥焊材常用型号。详情页整理执行标准、化学成分参考和熔敷金属/力学性能数据，便于按型号快速核对。",
+    "summary": "金桥 JQ.H08MnSiCuCrNi-II，适用于碳钢埋弧焊丝焊剂相关工况。",
+    "introduction": "耐候钢用气保护实心焊丝，焊接工艺性优良，焊缝成型美观。熔敷金属具有良好的抗大气腐蚀性能、抗裂性能及良好的塑性和韧性。",
     "applications": [
-      "碳钢埋弧焊丝焊剂",
-      "按母材、强度等级与现场工艺要求选型",
-      "采购前建议结合图纸、执行标准和工况复核"
+      "适用于 440MPa 抗拉强度级别耐候钢的焊接，如 16CuCr、09CuPCrNi、15MnCuCr 等",
+      "常见应用领域为机车车辆、近海工程、集装箱、桥梁等"
     ],
     "composition": [
       {
@@ -54424,5 +54415,54 @@
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
     "sourcePage": 21
+  },
+  {
+    "slug": "jq-mg70s-3",
+    "manufacturer": "金桥",
+    "categorySlug": "solid-wires",
+    "categoryName": "实芯气保及氩弧焊丝",
+    "model": "JQ.MG70S-3",
+    "name": "金桥 JQ.MG70S-3 实芯气保及氩弧焊丝",
+    "standard": "GB / T 8110 G49A4C1S3 / G49A4M21S3AWS A5.18 ER70S-3ISO 14341-A-G 38 4 M21 2SiJIS YGW16",
+    "standards": [
+      "GB",
+      "T 8110 G49A4C1S3",
+      "G49A4M21S3AWS A5.18 ER70S-3ISO 14341-A-G 38 4 M21 2SiJIS YGW16"
+    ],
+    "summary": "金桥 JQ.MG70S-3，适用于实芯气保及氩弧焊丝相关工况。",
+    "introduction": "低合金钢用气体保护实心焊丝，焊接工艺性优良，电弧稳定、飞溅少、铁水流动性好，焊缝成型美观，特别适合于薄板的小电流高速焊接。熔敷金属具有优良的综合机械性能。在汽车行业，底盘制造，低硅场景大范围应用",
+    "applications": [
+      "适用于 500MPa 抗拉强度级别碳钢的焊接，常见应用领域为桥梁、建筑机械、汽车制造等"
+    ],
+    "composition": [],
+    "depositedMetal": [],
+    "dimensions": [],
+    "notes": "",
+    "source": "金桥待补充产品介绍与适用场景.docx"
+  },
+  {
+    "slug": "jq-mg50-g-1",
+    "manufacturer": "金桥",
+    "categorySlug": "solid-wires",
+    "categoryName": "实芯气保及氩弧焊丝",
+    "model": "JQ.MG50-G-1",
+    "name": "金桥 JQ.MG50-G-1 实芯气保及氩弧焊丝",
+    "standard": "GB / T 8110 G49A4UC1S6 / G49A4UM21S6AWS A5.18 ER70S-6ISO 14341-A-G 42 4 M21 / C1 3Si1",
+    "standards": [
+      "GB",
+      "T 8110 G49A4UC1S6",
+      "G49A4UM21S6AWS A5.18 ER70S-6ISO 14341-A-G 42 4 M21",
+      "C1 3Si1"
+    ],
+    "summary": "金桥 JQ.MG50-G-1，适用于实芯气保及氩弧焊丝相关工况。",
+    "introduction": "碳钢用气体保护实心焊丝。焊接工艺性优良，电弧稳定，飞溅小、易脱渣、送丝性良好，焊缝成型美观，熔敷金属力学性能良好。其它突出优势为抗母材表面氧化皮、油污能力强，气孔敏感性小。",
+    "applications": [
+      "适用于各种 500MPa 抗拉强度级别碳钢、低合金钢的焊接，常见应用领域为桥梁、建筑、汽车制造、机械结构等"
+    ],
+    "composition": [],
+    "depositedMetal": [],
+    "dimensions": [],
+    "notes": "",
+    "source": "金桥待补充产品介绍与适用场景.docx"
   }
 ]

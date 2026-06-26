@@ -7,6 +7,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = Path("C:/Users/Ning Sun/Documents/Codex/2026-06-25/new-chat/outputs")
+GENERATED_AT = "2026-06-26"
 
 
 def find_source_docx():
@@ -180,6 +181,7 @@ def extract_articles(doc):
         article["slug"] = slugify(article["title"], article["number"])
         article["href"] = f"/articles/qa/{article['slug']}.html"
         article["summary"] = article["shortAnswer"][:92] + ("..." if len(article["shortAnswer"]) > 92 else "")
+        article["generatedAt"] = GENERATED_AT
 
     categories = [
         {
@@ -284,7 +286,7 @@ def write_pages(articles):
       <article class="article-shell qa-shell">
         <a class="back-link" href="../../index.html#knowledge">返回焊接操作</a>
         <div class="article-hero qa-hero">
-          <div><p class="eyebrow">{esc(article["category"])} · QA {esc(article["number"])}</p><h1>{esc(article["title"])}</h1><p>{esc(article["summary"])}</p></div>
+          <div><p class="eyebrow">{esc(article["category"])} · QA {esc(article["number"])}</p><h1>{esc(article["title"])}</h1><p class="article-generated-time">生成时间：{esc(article["generatedAt"])}</p></div>
           <figure class="article-photo-bg"><img src="../../assets/sections/knowledge-operation.png" alt="焊接操作与焊材选型" /></figure>
         </div>
         <section class="qa-answer-grid" aria-label="问答内容">
