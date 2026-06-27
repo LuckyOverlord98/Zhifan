@@ -8,7 +8,7 @@ const navItems = [
   ["/#strength", "资质与服务"],
   ["/products/carbon-steel-electrodes", "产品中心"],
   ["/#solutions", "案例及相关业绩"],
-  ["/#knowledge", "焊接操作"],
+  ["/knowledge", "焊接操作"],
   ["/team-vision", "团队与愿景"],
   ["/#contact", "联系我们"]
 ];
@@ -145,7 +145,9 @@ function useIndustrialMotion(deps = []) {
       ".spec-table-card",
       ".detail-summary",
       ".certificate-slider",
-      ".team-vision-hero"
+      ".team-vision-hero",
+      ".qa-index-hero",
+      ".qa-index-card"
     ].join(",")));
 
     revealTargets.forEach((element, index) => {
@@ -484,7 +486,7 @@ function ProductPageShell({ children }) {
           <nav className="footer-links" aria-label="product footer links">
             <a href="/#products">{"\u4ea7\u54c1\u4e2d\u5fc3"}</a>
             <a href="/products/carbon-steel-electrodes">{"\u78b3\u94a2\u710a\u6761"}</a>
-            <a href="/#knowledge">{"\u710a\u63a5\u64cd\u4f5c"}</a>
+            <a href="/knowledge">{"\u710a\u63a5\u64cd\u4f5c"}</a>
             <a href="/team-vision">团队与愿景</a>
             <a href="/#contact">{"\u8054\u7cfb\u6211\u4eec"}</a>
           </nav>
@@ -507,7 +509,7 @@ function TeamVisionPage() {
       <main className="product-page team-vision-page">
         <section className="team-vision-hero" data-reveal="true">
           <div className="team-vision-copy">
-            <a className="breadcrumb" href="/#knowledge">焊接操作</a>
+            <a className="breadcrumb" href="/knowledge">焊接操作</a>
             <p className="eyebrow">Team & Vision</p>
             <h1>团队与愿景</h1>
             <p className="team-vision-status">施工中</p>
@@ -831,6 +833,131 @@ function formatKnowledgeCategoryTitle(title, index) {
   return (index + 1) + ". " + clean;
 }
 
+
+
+const knowledgePageSize = 12;
+
+function getKnowledgeViews(article) {
+  return Number(article?.views ?? article?.viewCount ?? article?.clickCount ?? article?.readCount ?? 0) || 0;
+}
+
+function getKnowledgePublishDate(article) {
+  return article?.publishedAt || article?.generatedAt || "2026-06-26";
+}
+
+function sortKnowledgeArticles(items) {
+  return [...items].sort((a, b) => {
+    const viewDiff = getKnowledgeViews(b) - getKnowledgeViews(a);
+    if (viewDiff) return viewDiff;
+    const dateDiff = String(getKnowledgePublishDate(b)).localeCompare(String(getKnowledgePublishDate(a)));
+    if (dateDiff) return dateDiff;
+    return Number(a.number || 0) - Number(b.number || 0);
+  });
+}
+
+function KnowledgeIndexPage() {
+  const [activeCategory, setActiveCategory] = useState("all");
+  const [page, setPage] = useState(1);
+  const categoryTabs = useMemo(() => ([{
+    slug: "all",
+    title: "全部问答",
+    count: knowledgeQaArticles.length
+  }, ...knowledgeQaCategories]), []);
+  const filteredArticles = useMemo(() => {
+    const source = activeCategory === "all"
+      ? knowledgeQaArticles
+      : knowledgeQaArticles.filter((article) => article.categorySlug === activeCategory);
+    return sortKnowledgeArticles(source);
+  }, [activeCategory]);
+  const totalPages = Math.max(1, Math.ceil(filteredArticles.length / knowledgePageSize));
+  const pagedArticles = useMemo(() => {
+    const start = (page - 1) * knowledgePageSize;
+    return filteredArticles.slice(start, start + knowledgePageSize);
+  }, [filteredArticles, page]);
+
+  useEffect(() => setPage(1), [activeCategory]);
+  useEffect(() => {
+    if (page > totalPages) setPage(totalPages);
+  }, [page, totalPages]);
+
+  usePageMeta({
+    title: "焊接操作问答 | 宁波志凡焊材有限公司",
+    description: "焊材基础知识、常见选型、行业应用、现场缺陷和储存烘干等 80 篇焊接操作与焊材选型问答，按问题类型分类浏览。",
+    keywords: "焊接操作,焊材选型,焊条选型,气保焊丝,药芯焊丝,不锈钢焊材,焊接缺陷,焊材烘干,宁波焊材批发"
+  });
+  useIndustrialMotion([activeCategory, page]);
+
+  return (
+    <ProductPageShell>
+      <main className="product-page qa-index-page">
+        <section className="qa-index-hero" data-reveal="true">
+          <div>
+            <a className="breadcrumb" href="/#home">返回首页</a>
+            <p className="eyebrow">Welding Q&A</p>
+            <h1>焊接操作与焊材选型问答</h1>
+            <p>按问题类型整理 80 篇知识文章，便于业务报价、项目资料沟通和现场焊工快速确认。</p>
+            <div className="product-page-actions">
+              <a className="secondary-btn" href="/#products">查看产品中心</a>
+              <a className="primary-btn" href="/#contact">联系业务找型号</a>
+            </div>
+          </div>
+          <figure className="qa-index-visual">
+            <OptimizedImage src="/assets/sections/knowledge-operation.png" alt="焊接操作与焊材选型" sizes="(max-width: 760px) 100vw, 42vw" />
+          </figure>
+        </section>
+
+        <section className="qa-index-panel detail-card wide" aria-label="焊接操作文章分类">
+          <div className="knowledge-category-tabs qa-index-tabs" role="tablist" aria-label="问题类型筛选">
+            {categoryTabs.map((category, index) => (
+              <button key={category.slug} type="button" className={activeCategory === category.slug ? "active" : ""} onClick={() => setActiveCategory(category.slug)}>
+                <span>{category.slug === "all" ? category.title : formatKnowledgeCategoryTitle(category.title, index - 1)}</span>
+                <small>{category.count} 篇</small>
+              </button>
+            ))}
+          </div>
+
+          <div className="qa-index-summary">
+            <strong>{filteredArticles.length} 篇文章</strong>
+            <span>列表前 3 篇按点击数置顶，标注“常问”；剩余文章按发布日期从新到旧展示。</span>
+          </div>
+
+          <div className="qa-index-grid">
+            {pagedArticles.map((article) => {
+              const globalIndex = filteredArticles.findIndex((item) => item.href === article.href);
+              const isCommon = globalIndex >= 0 && globalIndex < 3;
+              const views = getKnowledgeViews(article);
+              return (
+                <a className={`knowledge-card qa-knowledge-card qa-index-card ${isCommon ? "is-common" : ""}`} href={article.href} key={article.href}>
+                  <div className="qa-card-meta">
+                    <span>{article.number}</span>
+                    {isCommon && <em>常问</em>}
+                  </div>
+                  <h3>{article.title}</h3>
+                  <p>{article.summary}</p>
+                  <div className="qa-card-footer">
+                    <small>发布日期：{getKnowledgePublishDate(article)}</small>
+                    <small>点击：{views}</small>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+
+          {totalPages > 1 && (
+            <nav className="pagination qa-pagination" aria-label="焊接操作文章分页">
+              <button type="button" disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))}>上一页</button>
+              {Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => (
+                <button key={number} type="button" className={page === number ? "active" : ""} onClick={() => setPage(number)}>{number}</button>
+              ))}
+              <button type="button" disabled={page === totalPages} onClick={() => setPage((value) => Math.min(totalPages, value + 1))}>下一页</button>
+            </nav>
+          )}
+        </section>
+      </main>
+    </ProductPageShell>
+  );
+}
+
 const quickMatchGroups = [
   {
     label: "行业",
@@ -859,6 +986,7 @@ function App() {
   const currentPath = window.location.pathname;
   const isAdminPage = currentPath === "/admin" || currentPath === "/admin/";
   const isTeamVisionPage = currentPath === "/team-vision" || currentPath === "/team-vision/";
+  const isKnowledgePage = currentPath === "/knowledge" || currentPath === "/knowledge/";
   const [knowledgeOpen, setKnowledgeOpen] = useState(false);
   const [activeKnowledgeCategory, setActiveKnowledgeCategory] = useState(knowledgeQaCategories[0]?.slug || "all");
   const currentKnowledgeArticles = useMemo(() => {
@@ -867,11 +995,12 @@ function App() {
   }, [activeKnowledgeCategory]);
   const visibleArticles = useMemo(() => (knowledgeOpen ? currentKnowledgeArticles : currentKnowledgeArticles.slice(0, 5)), [knowledgeOpen, currentKnowledgeArticles]);
 
-  usePageMeta(isAdminPage || currentPath.startsWith("/products/") || isTeamVisionPage ? null : defaultSeo);
+  usePageMeta(isAdminPage || currentPath.startsWith("/products/") || isTeamVisionPage || isKnowledgePage ? null : defaultSeo);
   useIndustrialMotion([knowledgeOpen, activeKnowledgeCategory, currentPath]);
 
   if (isAdminPage) return <AdminDashboard />;
   if (isTeamVisionPage) return <TeamVisionPage />;
+  if (isKnowledgePage) return <KnowledgeIndexPage />;
   if (currentPath.startsWith("/products/")) {
     const productPath = decodeURIComponent(currentPath.replace("/products/", "").replace(/\/$/, ""));
     if (categoryMeta[productPath]) return <ProductCategoryPage categorySlug={productPath} />;
@@ -1016,7 +1145,7 @@ function App() {
             <a href="#strength">资质与服务</a>
             <a href="#products">产品中心</a>
             <a href="#solutions">案例及相关业绩</a>
-            <a href="#knowledge">焊接操作</a>
+            <a href="/knowledge">焊接操作</a>
             <a href="/team-vision">团队与愿景</a>
             <a href="#contact">联系我们</a>
             <a href="/admin">后台</a>

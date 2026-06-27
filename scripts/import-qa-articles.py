@@ -293,9 +293,9 @@ def write_pages(articles):
         old.unlink()
 
     for idx, article in enumerate(articles):
-        prev_link = articles[idx - 1]["href"] if idx > 0 else "../../index.html#knowledge"
+        prev_link = articles[idx - 1]["href"] if idx > 0 else "../../knowledge"
         prev_text = "上一篇" if idx > 0 else "返回焊接操作"
-        next_link = articles[idx + 1]["href"] if idx + 1 < len(articles) else "../../index.html#knowledge"
+        next_link = articles[idx + 1]["href"] if idx + 1 < len(articles) else "../../knowledge"
         next_text = "下一篇" if idx + 1 < len(articles) else "返回焊接操作"
         note = (
             f'<div class="qa-note"><strong>资料提示</strong><p>{esc(article["note"])}</p></div>'
@@ -322,12 +322,12 @@ def write_pages(articles):
           <img class="brand-logo" src="../../assets/site/zhifan-logo.png" alt="志凡焊材 logo" />
           <span><strong>宁波志凡焊材有限公司</strong><small>ZhiFan Welding Materials</small></span>
         </a>
-        <div class="nav-links article-nav-links"><a href="../../index.html#products">产品中心</a><a href="../../index.html#knowledge">焊接操作</a><a class="nav-cta" href="../../index.html#contact">联系我们</a></div>
+        <div class="nav-links article-nav-links"><a href="../../index.html#products">产品中心</a><a href="../../knowledge">焊接操作</a><a class="nav-cta" href="../../index.html#contact">联系我们</a></div>
       </nav>
     </header>
     <main>
       <article class="article-shell qa-shell">
-        <a class="back-link" href="../../index.html#knowledge">返回焊接操作</a>
+        <a class="back-link" href="../../knowledge">返回焊接操作</a>
         <div class="article-hero qa-hero">
           <div><p class="eyebrow">{esc(article["category"])} · QA {esc(article["number"])}</p><h1>{esc(article["title"])}</h1><p class="article-generated-time">生成时间：{esc(article["generatedAt"])}</p></div>
           <figure class="article-photo-bg">{article_picture_html()}</figure>
@@ -338,7 +338,7 @@ def write_pages(articles):
         </section>
         {table_html(article)}
         {note}
-        <nav class="article-pager" aria-label="文章翻页"><a href="{esc(prev_link)}">{prev_text}</a><a href="../../index.html#knowledge">返回焊接操作</a><a href="{esc(next_link)}">{next_text}</a><a class="nav-cta" href="../../index.html#contact">联系业务找型号</a></nav>
+        <nav class="article-pager" aria-label="文章翻页"><a href="{esc(prev_link)}">{prev_text}</a><a href="../../knowledge">返回焊接操作</a><a href="{esc(next_link)}">{next_text}</a><a class="nav-cta" href="../../index.html#contact">联系业务找型号</a></nav>
       </article>
     </main>
     <footer class="footer"><p>© 2026 宁波志凡焊材有限公司</p><span>营业时间：周一至周六 8:00-16:30，周日休息</span><a href="#top">返回顶部</a></footer>

@@ -5292,3 +5292,211 @@ body {
     animation: none;
   }
 }
+
+/* Standalone knowledge index page */
+.qa-index-page {
+  padding-top: 112px;
+}
+
+.qa-index-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.72fr);
+  align-items: center;
+  gap: clamp(22px, 4vw, 46px);
+  margin-bottom: 28px;
+}
+
+.qa-index-hero h1 {
+  margin: 12px 0 16px;
+  color: var(--ink);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.qa-index-hero p:not(.eyebrow) {
+  max-width: 680px;
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.qa-index-visual {
+  position: relative;
+  min-height: 360px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(18, 100, 216, 0.16);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(8, 39, 86, 0.08), rgba(255,255,255,0.92));
+  box-shadow: 0 22px 54px rgba(15, 35, 62, 0.12);
+}
+
+.qa-index-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(5, 25, 58, 0.18), rgba(18, 100, 216, 0.08) 45%, rgba(255,255,255,0.18));
+  pointer-events: none;
+}
+
+.qa-index-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+}
+
+.qa-index-panel {
+  padding: clamp(18px, 3vw, 30px);
+}
+
+.qa-index-tabs {
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.qa-index-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 18px 0 20px;
+  padding: 14px 16px;
+  border: 1px solid rgba(18, 100, 216, 0.12);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(232,243,255,0.72));
+  color: var(--text);
+}
+
+.qa-index-summary strong {
+  flex: 0 0 auto;
+  color: var(--blue-dark);
+  font-size: 18px;
+}
+
+.qa-index-summary span {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.qa-index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.qa-index-card {
+  min-height: 246px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.94), rgba(235,245,255,0.86)),
+    url("/assets/optimized/sections__knowledge-operation-768.webp") right bottom / 58% auto no-repeat;
+}
+
+.qa-index-card h3 {
+  margin: 14px 0 10px;
+  font-size: 19px;
+  line-height: 1.38;
+}
+
+.qa-index-card p {
+  flex: 1 1 auto;
+  margin: 0;
+  color: var(--text);
+  line-height: 1.75;
+}
+
+.qa-card-meta,
+.qa-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.qa-card-meta span {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(18, 100, 216, 0.1);
+  color: var(--blue-dark);
+  font-weight: 900;
+}
+
+.qa-card-meta em {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: #d9232f;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(217, 35, 47, 0.22);
+}
+
+.qa-index-card.is-common {
+  border-color: rgba(217, 35, 47, 0.28);
+  box-shadow: 0 18px 42px rgba(18, 100, 216, 0.12), 0 0 0 1px rgba(217, 35, 47, 0.08);
+}
+
+.qa-card-footer {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.qa-card-footer small {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.qa-pagination {
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .qa-index-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .qa-index-visual,
+  .qa-index-visual img {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .qa-index-page {
+    padding-top: 88px;
+  }
+
+  .qa-index-hero h1 {
+    font-size: 32px;
+  }
+
+  .qa-index-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .qa-index-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qa-index-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .qa-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
