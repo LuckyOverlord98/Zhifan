@@ -4711,3 +4711,19 @@ main {
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
+/* Intro and capability section are a continuous company-strength band */
+.intro-strength-lead {
+  padding-bottom: clamp(22px, 3vw, 34px);
+}
+
+.intro-strength-lead + .strength-after-intro {
+  padding-top: 0;
+}
+
+.strength-after-intro .strength-hero {
+  margin-top: 0;
+}
+
+.strength-after-intro + .brand-strip {
+  padding-top: clamp(42px, 5vw, 58px);
+}

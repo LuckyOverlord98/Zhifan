@@ -5,10 +5,10 @@ import { products, manufacturerTabs, categoryMeta } from "./data/productCatalog.
 import { knowledgeQaArticles, knowledgeQaCategories } from "./data/knowledgeQa.js";
 
 const navItems = [
+  ["/#strength", "资质与服务"],
   ["/products/carbon-steel-electrodes", "产品中心"],
   ["/#solutions", "案例及相关业绩"],
   ["/#knowledge", "焊接操作"],
-  ["/#strength", "资质与服务"],
   ["/#contact", "联系我们"]
 ];
 
@@ -850,9 +850,16 @@ function App() {
           <dl className="hero-metrics" aria-label="core data"><div><dt><CountNumber value={28} suffix={"\u5e74"} /></dt><dd>{"\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</dd></div><div><dt>{"\u7701\u5185\u9886\u5148"}</dt><dd>{"\u4f9b\u8d27\u89c4\u6a21"}</dd></div><div><dt><CountNumber value={96} suffix={"\u5c0f\u65f6"} /></dt><dd>{"\u6d59\u6c5f\u533a\u57df\u6b63\u5e38\u9001\u8fbe"}</dd></div></dl>
         </section>
 
-        <section className="section intro" aria-label="公司简介">
+        <section className="section intro intro-strength-lead soft" aria-label="公司简介">
           <div className="intro-text"><p className="eyebrow">About</p><h2>焊材、设备、配件辅料与五金工具，一站式配齐。</h2></div>
           <p>宁波志凡焊材有限公司位于宁波市鄞州区富宁路119号，代理天津金桥、上海大西洋、上海东风、天泰、常州运河、亚泰、隆兴割炬、上海通用电焊机等品牌。</p>
+        </section>
+
+        <section className="section soft strength-section strength-after-intro" id="strength">
+          <div className="strength-hero"><div><p className="eyebrow">Capability</p><h2>{"\u8d44\u8d28\u4e0e\u670d\u52a1"}</h2><p>{"\u4e00\u7ea7\u7ecf\u9500\u8d44\u6e90\u3001\u5145\u8db3\u73b0\u8d27\u5e93\u5b58\u548c\u533a\u57df\u7269\u6d41\u80fd\u529b\uff0c\u5171\u540c\u652f\u6491\u7a33\u5b9a\u4ea4\u4ed8\u3002"}</p></div></div>
+          <div className="credential-panel"><div><strong>28{"\u5e74"}</strong><span>{"\u710a\u6750\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</span></div><div><strong>省内领先</strong><span>浙江省内供货规模</span></div><div><strong>3200吨</strong><span>常备焊材库存上限</span></div><div><strong>一级</strong><span>多品牌全国经销商</span></div></div>
+          <div className="service-grid"><article><span>服务</span><h4>全过程技术支持</h4><p>技术工程师与客户经理配合，提供参数说明、现场指导、调试和使用问题处理。</p></article><article><span>响应</span><h4>质量问题快速处理</h4><p>质保期内质量问题立即响应，48小时内派专人到现场，并按要求配合更换。</p></article><article><span>预案</span><h4>紧急保供机制</h4><p>安全库存、备选货品、多元物流和快速响应小组，应对突发订单与运输异常。</p></article></div>
+          <div className="stock-gallery" aria-label="仓储实景素材"><figure><OptimizedImage src="/assets/sections/warehouse-ai-shelves-3.png" alt="仓库货架实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-stock-2.png" alt="焊丝焊条托盘库存实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-overview-1.png" alt="仓库整体库存实景" /></figure></div>
         </section>
 
         <section className="section brand-strip" aria-label="授权品牌">
@@ -947,13 +954,6 @@ function App() {
           </div>
         </section>
 
-        <section className="section soft strength-section" id="strength">
-          <div className="strength-hero"><div><p className="eyebrow">Capability</p><h2>{"\u8d44\u8d28\u4e0e\u670d\u52a1"}</h2><p>{"\u4e00\u7ea7\u7ecf\u9500\u8d44\u6e90\u3001\u5145\u8db3\u73b0\u8d27\u5e93\u5b58\u548c\u533a\u57df\u7269\u6d41\u80fd\u529b\uff0c\u5171\u540c\u652f\u6491\u7a33\u5b9a\u4ea4\u4ed8\u3002"}</p></div></div>
-          <div className="credential-panel"><div><strong>28{"\u5e74"}</strong><span>{"\u710a\u6750\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</span></div><div><strong>省内领先</strong><span>浙江省内供货规模</span></div><div><strong>3200吨</strong><span>常备焊材库存上限</span></div><div><strong>一级</strong><span>多品牌全国经销商</span></div></div>
-          <div className="service-grid"><article><span>服务</span><h4>全过程技术支持</h4><p>技术工程师与客户经理配合，提供参数说明、现场指导、调试和使用问题处理。</p></article><article><span>响应</span><h4>质量问题快速处理</h4><p>质保期内质量问题立即响应，48小时内派专人到现场，并按要求配合更换。</p></article><article><span>预案</span><h4>紧急保供机制</h4><p>安全库存、备选货品、多元物流和快速响应小组，应对突发订单与运输异常。</p></article></div>
-          <div className="stock-gallery" aria-label="仓储实景素材"><figure><OptimizedImage src="/assets/sections/warehouse-ai-shelves-3.png" alt="仓库货架实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-stock-2.png" alt="焊丝焊条托盘库存实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-overview-1.png" alt="仓库整体库存实景" /></figure></div>
-        </section>
-
         <section className="section contact" id="contact">
           <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><OptimizedImage src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:0574-89007658">公司电话：0574-89007658</a><a href="tel:13805890268">手机联系：13805890268</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
           <div className="amap-card"><div><strong>现场志凡焊材（新仓库）</strong><span>高德地图定位：宁波市鄞州区富宁路119号</span></div><a href="https://uri.amap.com/marker?position=121.6359,29.8325&name=%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%EF%BC%88%E6%96%B0%E4%BB%93%E5%BA%93%EF%BC%89&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div>
@@ -969,10 +969,10 @@ function App() {
           </div>
           <nav className="footer-links" aria-label="底部主要链接">
             <a href="#home">首页</a>
+            <a href="#strength">资质与服务</a>
             <a href="#products">产品中心</a>
             <a href="#solutions">案例及相关业绩</a>
             <a href="#knowledge">焊接操作</a>
-            <a href="#strength">资质与服务</a>
             <a href="#contact">联系我们</a>
             <a href="/admin">后台</a>
           </nav>
