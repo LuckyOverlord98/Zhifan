@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ProductSearch from "./components/ProductSearch.jsx";
 import OptimizedImage from "./components/OptimizedImage.jsx";
 import { products, manufacturerTabs, categoryMeta } from "./data/productCatalog.js";
@@ -582,7 +582,7 @@ function ProductCategoryPage({ categorySlug }) {
             <p>{meta.description}</p>
           </div>
           <div className="product-page-actions">
-            <a className="secondary-btn" href="/#products">{"\u8fd4\u56de\u4ea7\u54c1\u4e2d\u5fc3"}</a>
+            <a className="secondary-btn" href="/#home">{"\u8fd4\u56de\u9996\u9875"}</a>
             <a className="primary-btn" href="/#contact">{"\u8054\u7cfb\u4e1a\u52a1\u627e\u578b\u53f7"}</a>
           </div>
           <ProductSearch />
@@ -717,6 +717,7 @@ function ProductDetailPage({ slug }) {
   const [product, setProduct] = useState(null);
   const [status, setStatus] = useState("loading");
   const [siblings, setSiblings] = useState([]);
+  const clickTrackedRef = useRef("");
 
   useEffect(() => {
     const controller = new AbortController();
@@ -749,6 +750,12 @@ function ProductDetailPage({ slug }) {
     return () => controller.abort();
   }, [product?.categorySlug]);
 
+  useEffect(() => {
+    if (!slug || clickTrackedRef.current === slug) return undefined;
+    clickTrackedRef.current = slug;
+    fetch("/api/products/" + encodeURIComponent(slug) + "/click", { method: "POST" }).catch(() => {});
+    return undefined;
+  }, [slug]);
   usePageMeta(productDetailSeo(product));
 
   if (status === "loading") return <ProductPageShell><main className="product-page"><p className="product-state">{"\u6b63\u5728\u8bfb\u53d6\u4ea7\u54c1\u8be6\u60c5..."}</p></main></ProductPageShell>;

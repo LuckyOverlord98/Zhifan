@@ -4,9 +4,9 @@ import { createPortal } from "react-dom";
 function getVisibleLimit() {
   const height = window.innerHeight || 720;
   const width = window.innerWidth || 1024;
-  if (height < 620 || width < 520) return 3;
-  if (height < 780 || width < 900) return 4;
-  return 5;
+  if (height < 620 || width < 520) return 5;
+  if (height < 820 || width < 900) return 6;
+  return 7;
 }
 
 function ProductSearch() {
@@ -29,7 +29,7 @@ function ProductSearch() {
     const spaceBelow = window.innerHeight - rect.bottom - gutter;
     const spaceAbove = rect.top - gutter;
     const showAbove = spaceBelow < 220 && spaceAbove > spaceBelow;
-    const availableSpace = Math.max(170, Math.min(showAbove ? spaceAbove : spaceBelow, limit * 70 + 14));
+    const availableSpace = Math.max(260, Math.min(showAbove ? spaceAbove : spaceBelow, limit * 70 + 14));
     const top = showAbove ? Math.max(gutter, rect.top - availableSpace - 8) : Math.min(rect.bottom + 8, window.innerHeight - availableSpace - gutter);
     setDropdown({ left, top, width, maxHeight: availableSpace, limit });
   }
@@ -47,10 +47,10 @@ function ProductSearch() {
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       try {
-        const response = await fetch("/api/products?search=" + encodeURIComponent(keyword), { signal: controller.signal });
+        const response = await fetch("/api/products?search=" + encodeURIComponent(keyword) + "&limit=20", { signal: controller.signal });
         const data = await response.json();
         if (!response.ok) throw new Error(data.message || "search failed");
-        setResults(data.items || []);
+        setResults((data.items || []).slice(0, 20));
         setStatus("ready");
         setOpen(true);
         updateDropdown();
@@ -106,7 +106,7 @@ function ProductSearch() {
         <p className="search-status">{"搜索暂时失败，请稍后重试"}</p>
       ) : results.length === 0 ? (
         <p>{"暂无匹配型号"}</p>
-      ) : results.slice(0, dropdown.limit).map((item) => (
+      ) : results.map((item) => (
         <a key={item.slug} href={"/products/" + item.slug}>
           <strong>{item.model}</strong>
           <span>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" / ")}</span>

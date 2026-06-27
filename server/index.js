@@ -48,7 +48,9 @@ const productSchema = new mongoose.Schema(
     dimensions: [{ name: String, value: String }],
     certifications: [{ type: String, trim: true }],
     notes: { type: String, trim: true },
-    source: { type: String, default: "Jinqiao 2024 product manual" }
+    source: { type: String, default: "Jinqiao 2024 product manual" },
+    clickCount: { type: Number, default: 0, index: true },
+    lastClickedAt: { type: Date }
   },
   { timestamps: true }
 );
@@ -62,6 +64,7 @@ inquirySchema.index({ customerLocation: 1, createdAt: -1 });
 productSchema.index({ name: 1 });
 productSchema.index({ summary: 1 });
 productSchema.index({ categorySlug: 1, manufacturer: 1, model: 1 });
+productSchema.index({ categorySlug: 1, manufacturer: 1, clickCount: -1, model: 1 });
 
 const Inquiry = mongoose.model("Inquiry", inquirySchema);
 const Product = mongoose.model("Product", productSchema);
@@ -188,11 +191,17 @@ function productSearchScore(product, search) {
 
 function sortProductsByRelevance(products, search) {
   if (!search) {
-    return products.sort((a, b) => (a.manufacturer + "-" + a.model).localeCompare(b.manufacturer + "-" + b.model, "zh-CN"));
+    return products.sort((a, b) => {
+      const clickDiff = Number(b.clickCount || 0) - Number(a.clickCount || 0);
+      if (clickDiff) return clickDiff;
+      return (a.manufacturer + "-" + a.model).localeCompare(b.manufacturer + "-" + b.model, "zh-CN");
+    });
   }
   return products.sort((a, b) => {
     const scoreDiff = productSearchScore(b, search) - productSearchScore(a, search);
     if (scoreDiff) return scoreDiff;
+    const clickDiff = Number(b.clickCount || 0) - Number(a.clickCount || 0);
+    if (clickDiff) return clickDiff;
     return (a.manufacturer + "-" + a.model).localeCompare(b.manufacturer + "-" + b.model, "zh-CN");
   });
 }
@@ -213,8 +222,8 @@ function listSeedProducts(filters = {}) {
 }
 
 function publicProductSummary(product) {
-  const { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary } = product;
-  return { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary };
+  const { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary, clickCount } = product;
+  return { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary, clickCount: clickCount || 0 };
 }
 
 function buildCategories(products) {
@@ -312,8 +321,10 @@ app.get("/api/products", async (req, res, next) => {
   const search = normalizeText(req.query.search);
   const category = normalizeText(req.query.category);
   const manufacturer = normalizeText(req.query.manufacturer);
+  const requestedLimit = Number.parseInt(req.query.limit, 10);
+  const limit = Number.isFinite(requestedLimit) ? Math.max(1, Math.min(requestedLimit, 200)) : 200;
   const filters = { search, category, manufacturer };
-  const cacheKey = "products:v" + SEARCH_CACHE_VERSION + ":" + JSON.stringify(filters);
+  const cacheKey = "products:v" + SEARCH_CACHE_VERSION + ":" + JSON.stringify({ ...filters, limit });
 
   try {
     const cached = getCachedJson(cacheKey);
@@ -326,27 +337,42 @@ app.get("/api/products", async (req, res, next) => {
     }
 
     if (mongoose.connection.readyState !== 1) {
-      const payload = { items: listSeedProducts(filters).map(publicProductSummary), source: "seed" };
+      const payload = { items: listSeedProducts(filters).slice(0, limit).map(publicProductSummary), source: "seed" };
       setCachedJson(cacheKey, payload);
       return sendCachedJson(res, payload, search ? 30 : 120);
     }
 
     const mongoItems = await Product.find(query)
-      .select("slug manufacturer categorySlug categoryName model name standard summary standards")
-      .sort({ manufacturer: 1, model: 1 })
-      .limit(200)
+      .select("slug manufacturer categorySlug categoryName model name standard summary standards clickCount")
+      .sort({ clickCount: -1, manufacturer: 1, model: 1 })
+      .limit(limit)
       .lean();
 
     const seedItems = (category || search || manufacturer) ? listSeedProducts(filters).map(publicProductSummary) : [];
-    const items = sortProductsByRelevance(mergeProducts(mongoItems, seedItems), search).slice(0, 200);
+    const items = sortProductsByRelevance(mergeProducts(mongoItems, seedItems), search).slice(0, limit);
 
     const payload = { items, source: seedItems.length > 0 ? "mongo+seed" : "mongo" };
     setCachedJson(cacheKey, payload);
     sendCachedJson(res, payload, search ? 30 : 120);
   } catch (error) {
-    const payload = { items: listSeedProducts(filters).map(publicProductSummary), source: "seed" };
+    const payload = { items: listSeedProducts(filters).slice(0, limit).map(publicProductSummary), source: "seed" };
     setCachedJson(cacheKey, payload);
     sendCachedJson(res, payload, search ? 30 : 120);
+  }
+});
+
+app.post("/api/products/:slug/click", async (req, res, next) => {
+  try {
+    if (mongoose.connection.readyState === 1) {
+      await Product.updateOne(
+        { slug: req.params.slug },
+        { $inc: { clickCount: 1 }, $set: { lastClickedAt: new Date() } }
+      );
+      apiCache.clear();
+    }
+    res.json({ ok: true });
+  } catch (error) {
+    next(error);
   }
 });
 
