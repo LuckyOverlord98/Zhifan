@@ -80,6 +80,18 @@ NON_ALLOY_FC = {
 SOLID_WIRE = {"SH.S49-1", "SH.S50-6", "YSH.S50-6"}
 SUBMERGED = {"SH.M08A", "SH.M08MnA", "SH.M10Mn2"}
 STAINLESS_SOLID = {"SH.S304", "SH.S308", "SH.S308L", "SH.S309", "SH.S309L", "SH.S316L", "SH.S321", "SH.S347"}
+STAINLESS_EXPLICIT = {
+    "SH.A002", "YSH.A002", "YSH.A002A", "YSH.A002LT", "SH.A002Nb",
+    "SH.A022", "YSH.A022", "YSH.A022A", "YSH.A022LT", "YSH.A042A",
+    "SH.A062", "YSH.A062A", "SH.A237", "SH.A242", "SH.A302",
+    "YSH.A302", "YSH.A302A", "YSH.A307", "YSH.A312", "YSH.A312A",
+    "SH.A402", "YSH.A402A", "SH.A407", "SH.A412", "SH.A422",
+    "SH.A432", "SH.A462", "SH.A502", "SH.A507", "SH.A607",
+    "SH.A707", "SH.A902", "SH.E2209", "YSH.E2209", "SH.E2553",
+    "SH.E2594", "SH.G202", "SH.G207", "SH.G307", "SH.Y308L",
+    "SH.Y309L", "SH.Y316L", "SH.Y309LMo", "SH.Y347L", "SH.Y2209",
+    "SH.Y2594", "SH.Y409Ti", "SH.Y439Ti",
+}
 
 def normalize_standard_text(text):
     text = text.replace("AWSSE", "AWS E").replace("AWSSE", "AWS E")
@@ -205,6 +217,8 @@ def summarize_application(english, category_name, section):
     return apps[:5]
 
 def classify(model, page):
+    if model in STAINLESS_EXPLICIT:
+        return "stainless-materials"
     if model in SOLID_WIRE:
         return "solid-wires"
     if model in SUBMERGED:

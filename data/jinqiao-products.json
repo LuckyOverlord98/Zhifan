@@ -46110,16 +46110,16 @@
   {
     "slug": "dongfeng-sh-a002",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A002",
-    "name": "上海东风 SH.A002 特种焊材",
+    "name": "上海东风 SH.A002 不锈钢焊材",
     "standard": "GB/T E308L-16 / AWS E308L-16",
     "standards": [
       "GB/T E308L-16",
       "AWS E308L-16"
     ],
-    "summary": "上海东风 SH.A002，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A002，不锈钢焊材。",
     "introduction": "SH.A002 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46178,10 +46178,10 @@
   {
     "slug": "dongfeng-ysh-a002",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A002",
-    "name": "上海东风 YSH.A002 特种焊材",
+    "name": "上海东风 YSH.A002 不锈钢焊材",
     "standard": "NB/T E308L-16 / GB/T E308L-16 / ASME E308L-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E308L-16",
@@ -46189,7 +46189,7 @@
       "ASME E308L-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A002，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A002，不锈钢焊材。",
     "introduction": "YSH.A002 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46248,10 +46248,10 @@
   {
     "slug": "dongfeng-ysh-a002a",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A002A",
-    "name": "上海东风 YSH.A002A 特种焊材",
+    "name": "上海东风 YSH.A002A 不锈钢焊材",
     "standard": "NB/T E308L-16 / GB/T E308L-16 / ASME E308L-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E308L-16",
@@ -46259,7 +46259,7 @@
       "ASME E308L-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A002A，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A002A，不锈钢焊材。",
     "introduction": "YSH.A002A 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46318,10 +46318,10 @@
   {
     "slug": "dongfeng-ysh-a002lt",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A002LT",
-    "name": "上海东风 YSH.A002LT 特种焊材",
+    "name": "上海东风 YSH.A002LT 不锈钢焊材",
     "standard": "NB/T E308L-16 / GB/T E308L-16 / ASME E308L-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E308L-16",
@@ -46329,7 +46329,7 @@
       "ASME E308L-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A002LT，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A002LT，不锈钢焊材。",
     "introduction": "YSH.A002LT 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46401,15 +46401,15 @@
   {
     "slug": "dongfeng-sh-a002nb",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A002Nb",
-    "name": "上海东风 SH.A002Nb 特种焊材",
+    "name": "上海东风 SH.A002Nb 不锈钢焊材",
     "standard": "GB/T E316L-16 C",
     "standards": [
       "GB/T E316L-16 C"
     ],
-    "summary": "上海东风 SH.A002Nb，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A002Nb，不锈钢焊材。",
     "introduction": "SH.A002Nb 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46468,16 +46468,16 @@
   {
     "slug": "dongfeng-sh-a022",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A022",
-    "name": "上海东风 SH.A022 特种焊材",
+    "name": "上海东风 SH.A022 不锈钢焊材",
     "standard": "GB/T E316L-16 / AWS E316L-16",
     "standards": [
       "GB/T E316L-16",
       "AWS E316L-16"
     ],
-    "summary": "上海东风 SH.A022，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A022，不锈钢焊材。",
     "introduction": "SH.A022 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46536,10 +46536,10 @@
   {
     "slug": "dongfeng-ysh-a022",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A022",
-    "name": "上海东风 YSH.A022 特种焊材",
+    "name": "上海东风 YSH.A022 不锈钢焊材",
     "standard": "NB/T E316L-16 / GB/T E316L-16 / ASME E316L-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E316L-16",
@@ -46547,7 +46547,7 @@
       "ASME E316L-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A022，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A022，不锈钢焊材。",
     "introduction": "YSH.A022 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46606,10 +46606,10 @@
   {
     "slug": "dongfeng-ysh-a022a",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A022A",
-    "name": "上海东风 YSH.A022A 特种焊材",
+    "name": "上海东风 YSH.A022A 不锈钢焊材",
     "standard": "NB/T E316L-16 / GB/T E316L-16 / ASME E316L-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E316L-16",
@@ -46617,7 +46617,7 @@
       "ASME E316L-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A022A，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A022A，不锈钢焊材。",
     "introduction": "YSH.A022A 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46676,10 +46676,10 @@
   {
     "slug": "dongfeng-ysh-a022lt",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A022LT",
-    "name": "上海东风 YSH.A022LT 特种焊材",
+    "name": "上海东风 YSH.A022LT 不锈钢焊材",
     "standard": "NB/T E316L-16 / GB/T E316L-16 / ASME E316L-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E316L-16",
@@ -46687,7 +46687,7 @@
       "ASME E316L-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A022LT，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A022LT，不锈钢焊材。",
     "introduction": "YSH.A022LT 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46761,10 +46761,10 @@
   {
     "slug": "dongfeng-ysh-a042a",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A042A",
-    "name": "上海东风 YSH.A042A 特种焊材",
+    "name": "上海东风 YSH.A042A 不锈钢焊材",
     "standard": "NB/T E309MoL-16 / GB/T E309MoL-16 / ASME E309MoL-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E309MoL-16",
@@ -46772,7 +46772,7 @@
       "ASME E309MoL-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A042A，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A042A，不锈钢焊材。",
     "introduction": "YSH.A042A 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46831,16 +46831,16 @@
   {
     "slug": "dongfeng-sh-a062",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A062",
-    "name": "上海东风 SH.A062 特种焊材",
+    "name": "上海东风 SH.A062 不锈钢焊材",
     "standard": "GB/T E309L-16 / AWS E309L-16",
     "standards": [
       "GB/T E309L-16",
       "AWS E309L-16"
     ],
-    "summary": "上海东风 SH.A062，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A062，不锈钢焊材。",
     "introduction": "SH.A062 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -46899,10 +46899,10 @@
   {
     "slug": "dongfeng-ysh-a062a",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A062A",
-    "name": "上海东风 YSH.A062A 特种焊材",
+    "name": "上海东风 YSH.A062A 不锈钢焊材",
     "standard": "NB/T E309L-16 / GB/T E309L-16 / ASME E309L-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E309L-16",
@@ -46910,7 +46910,7 @@
       "ASME E309L-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A062A，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A062A，不锈钢焊材。",
     "introduction": "YSH.A062A 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -47773,15 +47773,15 @@
   {
     "slug": "dongfeng-sh-a237",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A237",
-    "name": "上海东风 SH.A237 特种焊材",
+    "name": "上海东风 SH.A237 不锈钢焊材",
     "standard": "GB/T E318V-15",
     "standards": [
       "GB/T E318V-15"
     ],
-    "summary": "上海东风 SH.A237，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A237，不锈钢焊材。",
     "introduction": "SH.A237 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -47844,16 +47844,16 @@
   {
     "slug": "dongfeng-sh-a242",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A242",
-    "name": "上海东风 SH.A242 特种焊材",
+    "name": "上海东风 SH.A242 不锈钢焊材",
     "standard": "GB/T E317-16 / AWS E317-16",
     "standards": [
       "GB/T E317-16",
       "AWS E317-16"
     ],
-    "summary": "上海东风 SH.A242，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A242，不锈钢焊材。",
     "introduction": "SH.A242 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -47912,16 +47912,16 @@
   {
     "slug": "dongfeng-sh-a302",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A302",
-    "name": "上海东风 SH.A302 特种焊材",
+    "name": "上海东风 SH.A302 不锈钢焊材",
     "standard": "GB/T E309-16 / AWS E309-16",
     "standards": [
       "GB/T E309-16",
       "AWS E309-16"
     ],
-    "summary": "上海东风 SH.A302，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A302，不锈钢焊材。",
     "introduction": "SH.A302 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -47980,10 +47980,10 @@
   {
     "slug": "dongfeng-ysh-a302",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A302",
-    "name": "上海东风 YSH.A302 特种焊材",
+    "name": "上海东风 YSH.A302 不锈钢焊材",
     "standard": "NB/T E309-16 / GB/T E309-16 / ASME E309-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E309-16",
@@ -47991,7 +47991,7 @@
       "ASME E309-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A302，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A302，不锈钢焊材。",
     "introduction": "YSH.A302 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48050,10 +48050,10 @@
   {
     "slug": "dongfeng-ysh-a302a",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A302A",
-    "name": "上海东风 YSH.A302A 特种焊材",
+    "name": "上海东风 YSH.A302A 不锈钢焊材",
     "standard": "NB/T E309-16 / GB/T E309-16 / ASME E309-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E309-16",
@@ -48061,7 +48061,7 @@
       "ASME E309-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A302A，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A302A，不锈钢焊材。",
     "introduction": "YSH.A302A 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48120,10 +48120,10 @@
   {
     "slug": "dongfeng-ysh-a307",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A307",
-    "name": "上海东风 YSH.A307 特种焊材",
+    "name": "上海东风 YSH.A307 不锈钢焊材",
     "standard": "NB/T E309-15 / GB/T E309-15 / ASME E309-15 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E309-15",
@@ -48131,7 +48131,7 @@
       "ASME E309-15",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A307，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A307，不锈钢焊材。",
     "introduction": "YSH.A307 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48190,10 +48190,10 @@
   {
     "slug": "dongfeng-ysh-a312",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A312",
-    "name": "上海东风 YSH.A312 特种焊材",
+    "name": "上海东风 YSH.A312 不锈钢焊材",
     "standard": "NB/T E309Mo-16 / GB/T E309Mo-16 / ASME E309Mo-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E309Mo-16",
@@ -48201,7 +48201,7 @@
       "ASME E309Mo-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A312，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A312，不锈钢焊材。",
     "introduction": "YSH.A312 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48260,10 +48260,10 @@
   {
     "slug": "dongfeng-ysh-a312a",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A312A",
-    "name": "上海东风 YSH.A312A 特种焊材",
+    "name": "上海东风 YSH.A312A 不锈钢焊材",
     "standard": "NB/T E309Mo-16 / GB/T E309Mo-16 / ASME E309Mo-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E309Mo-16",
@@ -48271,7 +48271,7 @@
       "ASME E309Mo-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A312A，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A312A，不锈钢焊材。",
     "introduction": "YSH.A312A 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48330,16 +48330,16 @@
   {
     "slug": "dongfeng-sh-a402",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A402",
-    "name": "上海东风 SH.A402 特种焊材",
+    "name": "上海东风 SH.A402 不锈钢焊材",
     "standard": "GB/T E310-16 / AWS E310-16",
     "standards": [
       "GB/T E310-16",
       "AWS E310-16"
     ],
-    "summary": "上海东风 SH.A402，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A402，不锈钢焊材。",
     "introduction": "SH.A402 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48398,10 +48398,10 @@
   {
     "slug": "dongfeng-ysh-a402a",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.A402A",
-    "name": "上海东风 YSH.A402A 特种焊材",
+    "name": "上海东风 YSH.A402A 不锈钢焊材",
     "standard": "NB/T E310-16 / GB/T E310-16 / ASME E310-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E310-16",
@@ -48409,7 +48409,7 @@
       "ASME E310-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.A402A，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.A402A，不锈钢焊材。",
     "introduction": "YSH.A402A 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48468,16 +48468,16 @@
   {
     "slug": "dongfeng-sh-a407",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A407",
-    "name": "上海东风 SH.A407 特种焊材",
+    "name": "上海东风 SH.A407 不锈钢焊材",
     "standard": "GB/T E310-15 / AWS E310-15",
     "standards": [
       "GB/T E310-15",
       "AWS E310-15"
     ],
-    "summary": "上海东风 SH.A407，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A407，不锈钢焊材。",
     "introduction": "SH.A407 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48536,16 +48536,16 @@
   {
     "slug": "dongfeng-sh-a412",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A412",
-    "name": "上海东风 SH.A412 特种焊材",
+    "name": "上海东风 SH.A412 不锈钢焊材",
     "standard": "GB/T E310Mo-16 / AWS E310Mo-16",
     "standards": [
       "GB/T E310Mo-16",
       "AWS E310Mo-16"
     ],
-    "summary": "上海东风 SH.A412，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A412，不锈钢焊材。",
     "introduction": "SH.A412 为上海东风焊条。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48605,13 +48605,13 @@
   {
     "slug": "dongfeng-sh-a422",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A422",
-    "name": "上海东风 SH.A422 特种焊材",
+    "name": "上海东风 SH.A422 不锈钢焊材",
     "standard": "",
     "standards": [],
-    "summary": "上海东风 SH.A422，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A422，不锈钢焊材。",
     "introduction": "SH.A422 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48646,16 +48646,16 @@
   {
     "slug": "dongfeng-sh-a432",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A432",
-    "name": "上海东风 SH.A432 特种焊材",
+    "name": "上海东风 SH.A432 不锈钢焊材",
     "standard": "GB/T E310H-16 / AWS E310H-16",
     "standards": [
       "GB/T E310H-16",
       "AWS E310H-16"
     ],
-    "summary": "上海东风 SH.A432，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A432，不锈钢焊材。",
     "introduction": "SH.A432 为上海东风焊条。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48714,13 +48714,13 @@
   {
     "slug": "dongfeng-sh-a462",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A462",
-    "name": "上海东风 SH.A462 特种焊材",
+    "name": "上海东风 SH.A462 不锈钢焊材",
     "standard": "",
     "standards": [],
-    "summary": "上海东风 SH.A462，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A462，不锈钢焊材。",
     "introduction": "SH.A462 为上海东风焊条。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48775,15 +48775,15 @@
   {
     "slug": "dongfeng-sh-a502",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A502",
-    "name": "上海东风 SH.A502 特种焊材",
+    "name": "上海东风 SH.A502 不锈钢焊材",
     "standard": "GB/T E16-25MoN-16",
     "standards": [
       "GB/T E16-25MoN-16"
     ],
-    "summary": "上海东风 SH.A502，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A502，不锈钢焊材。",
     "introduction": "SH.A502 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48846,15 +48846,15 @@
   {
     "slug": "dongfeng-sh-a507",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A507",
-    "name": "上海东风 SH.A507 特种焊材",
+    "name": "上海东风 SH.A507 不锈钢焊材",
     "standard": "GB/T E16-25MoN-15",
     "standards": [
       "GB/T E16-25MoN-15"
     ],
-    "summary": "上海东风 SH.A507，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A507，不锈钢焊材。",
     "introduction": "SH.A507 为上海东风焊条。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48917,15 +48917,15 @@
   {
     "slug": "dongfeng-sh-a607",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A607",
-    "name": "上海东风 SH.A607 特种焊材",
+    "name": "上海东风 SH.A607 不锈钢焊材",
     "standard": "GB/T E330MoMnWNb-15",
     "standards": [
       "GB/T E330MoMnWNb-15"
     ],
-    "summary": "上海东风 SH.A607，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A607，不锈钢焊材。",
     "introduction": "SH.A607 为上海东风焊条。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -48992,15 +48992,15 @@
   {
     "slug": "dongfeng-sh-a707",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A707",
-    "name": "上海东风 SH.A707 特种焊材",
+    "name": "上海东风 SH.A707 不锈钢焊材",
     "standard": "GB/T E240-15",
     "standards": [
       "GB/T E240-15"
     ],
-    "summary": "上海东风 SH.A707，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A707，不锈钢焊材。",
     "introduction": "SH.A707 为上海东风焊条。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49055,16 +49055,16 @@
   {
     "slug": "dongfeng-sh-a902",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.A902",
-    "name": "上海东风 SH.A902 特种焊材",
+    "name": "上海东风 SH.A902 不锈钢焊材",
     "standard": "GB/T E320-16 / AWS E320-16",
     "standards": [
       "GB/T E320-16",
       "AWS E320-16"
     ],
-    "summary": "上海东风 SH.A902，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.A902，不锈钢焊材。",
     "introduction": "SH.A902 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49127,16 +49127,16 @@
   {
     "slug": "dongfeng-sh-e2209",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.E2209",
-    "name": "上海东风 SH.E2209 特种焊材",
+    "name": "上海东风 SH.E2209 不锈钢焊材",
     "standard": "GB/T E2209-16 / AWS E2209-16",
     "standards": [
       "GB/T E2209-16",
       "AWS E2209-16"
     ],
-    "summary": "上海东风 SH.E2209，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.E2209，不锈钢焊材。",
     "introduction": "SH.E2209 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49199,10 +49199,10 @@
   {
     "slug": "dongfeng-ysh-e2209",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "YSH.E2209",
-    "name": "上海东风 YSH.E2209 特种焊材",
+    "name": "上海东风 YSH.E2209 不锈钢焊材",
     "standard": "NB/T E2209-16 / GB/T E2209-16 / ASME E2209-16 / NB/T 47018 承压产品",
     "standards": [
       "NB/T E2209-16",
@@ -49210,7 +49210,7 @@
       "ASME E2209-16",
       "NB/T 47018 承压产品"
     ],
-    "summary": "上海东风 YSH.E2209，适用于特种焊材相关工况。",
+    "summary": "上海东风 YSH.E2209，不锈钢焊材。",
     "introduction": "YSH.E2209 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49273,16 +49273,16 @@
   {
     "slug": "dongfeng-sh-e2553",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.E2553",
-    "name": "上海东风 SH.E2553 特种焊材",
+    "name": "上海东风 SH.E2553 不锈钢焊材",
     "standard": "GB/T E2553-16 / AWS E2553-16",
     "standards": [
       "GB/T E2553-16",
       "AWS E2553-16"
     ],
-    "summary": "上海东风 SH.E2553，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.E2553，不锈钢焊材。",
     "introduction": "SH.E2553 为上海东风焊条。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49345,16 +49345,16 @@
   {
     "slug": "dongfeng-sh-e2594",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.E2594",
-    "name": "上海东风 SH.E2594 特种焊材",
+    "name": "上海东风 SH.E2594 不锈钢焊材",
     "standard": "GB/T E2594-16 / AWS E2594-16",
     "standards": [
       "GB/T E2594-16",
       "AWS E2594-16"
     ],
-    "summary": "上海东风 SH.E2594，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.E2594，不锈钢焊材。",
     "introduction": "SH.E2594 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49417,16 +49417,16 @@
   {
     "slug": "dongfeng-sh-g202",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.G202",
-    "name": "上海东风 SH.G202 特种焊材",
+    "name": "上海东风 SH.G202 不锈钢焊材",
     "standard": "GB/T E410-16 / AWS E410-16",
     "standards": [
       "GB/T E410-16",
       "AWS E410-16"
     ],
-    "summary": "上海东风 SH.G202，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.G202，不锈钢焊材。",
     "introduction": "SH.G202 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49485,16 +49485,16 @@
   {
     "slug": "dongfeng-sh-g207",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.G207",
-    "name": "上海东风 SH.G207 特种焊材",
+    "name": "上海东风 SH.G207 不锈钢焊材",
     "standard": "GB/T E410-15 / AWS E410-15",
     "standards": [
       "GB/T E410-15",
       "AWS E410-15"
     ],
-    "summary": "上海东风 SH.G207，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.G207，不锈钢焊材。",
     "introduction": "SH.G207 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -49537,16 +49537,16 @@
   {
     "slug": "dongfeng-sh-g307",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.G307",
-    "name": "上海东风 SH.G307 特种焊材",
+    "name": "上海东风 SH.G307 不锈钢焊材",
     "standard": "GB/T E430-15 / AWS E430-15",
     "standards": [
       "GB/T E430-15",
       "AWS E430-15"
     ],
-    "summary": "上海东风 SH.G307，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.G307，不锈钢焊材。",
     "introduction": "SH.G307 为上海东风焊条，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52534,16 +52534,16 @@
   {
     "slug": "dongfeng-sh-y308l",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y308L",
-    "name": "上海东风 SH.Y308L 特种焊材",
+    "name": "上海东风 SH.Y308L 不锈钢焊材",
     "standard": "GB/T TS308L-FC11 / AWS E308LT1-1",
     "standards": [
       "GB/T TS308L-FC11",
       "AWS E308LT1-1"
     ],
-    "summary": "上海东风 SH.Y308L，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y308L，不锈钢焊材。",
     "introduction": "SH.Y308L 为上海东风药芯焊丝，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52592,16 +52592,16 @@
   {
     "slug": "dongfeng-sh-y309l",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y309L",
-    "name": "上海东风 SH.Y309L 特种焊材",
+    "name": "上海东风 SH.Y309L 不锈钢焊材",
     "standard": "GB/T TS309L-FC11 / AWS E309LT1-1",
     "standards": [
       "GB/T TS309L-FC11",
       "AWS E309LT1-1"
     ],
-    "summary": "上海东风 SH.Y309L，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y309L，不锈钢焊材。",
     "introduction": "SH.Y309L 为上海东风药芯焊丝，常用于有低温冲击 且耐蚀性优要求的压力容器场合。 C：0.025 Mn：1.55 Si：0.60。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52662,16 +52662,16 @@
   {
     "slug": "dongfeng-sh-y316l",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y316L",
-    "name": "上海东风 SH.Y316L 特种焊材",
+    "name": "上海东风 SH.Y316L 不锈钢焊材",
     "standard": "GB/T TS316L-FC11 / AWS E316LT1-1",
     "standards": [
       "GB/T TS316L-FC11",
       "AWS E316LT1-1"
     ],
-    "summary": "上海东风 SH.Y316L，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y316L，不锈钢焊材。",
     "introduction": "SH.Y316L 为上海东风药芯焊丝。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52732,16 +52732,16 @@
   {
     "slug": "dongfeng-sh-y309lmo",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y309LMo",
-    "name": "上海东风 SH.Y309LMo 特种焊材",
+    "name": "上海东风 SH.Y309LMo 不锈钢焊材",
     "standard": "GB/T TS309LMo-FC11 / AWS E309LMoT1-1",
     "standards": [
       "GB/T TS309LMo-FC11",
       "AWS E309LMoT1-1"
     ],
-    "summary": "上海东风 SH.Y309LMo，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y309LMo，不锈钢焊材。",
     "introduction": "SH.Y309LMo 为上海东风药芯焊丝，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52813,16 +52813,16 @@
   {
     "slug": "dongfeng-sh-y347l",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y347L",
-    "name": "上海东风 SH.Y347L 特种焊材",
+    "name": "上海东风 SH.Y347L 不锈钢焊材",
     "standard": "GB/T TS347L-FC11 / AWS E347T1-1",
     "standards": [
       "GB/T TS347L-FC11",
       "AWS E347T1-1"
     ],
-    "summary": "上海东风 SH.Y347L，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y347L，不锈钢焊材。",
     "introduction": "SH.Y347L 为上海东风药芯焊丝，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52875,16 +52875,16 @@
   {
     "slug": "dongfeng-sh-y2209",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y2209",
-    "name": "上海东风 SH.Y2209 特种焊材",
+    "name": "上海东风 SH.Y2209 不锈钢焊材",
     "standard": "GB/T TS2209-FC11 / AWS E2209T1-1",
     "standards": [
       "GB/T TS2209-FC11",
       "AWS E2209T1-1"
     ],
-    "summary": "上海东风 SH.Y2209，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y2209，不锈钢焊材。",
     "introduction": "SH.Y2209 为上海东风药芯焊丝，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52935,16 +52935,16 @@
   {
     "slug": "dongfeng-sh-y2594",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y2594",
-    "name": "上海东风 SH.Y2594 特种焊材",
+    "name": "上海东风 SH.Y2594 不锈钢焊材",
     "standard": "AWS TS2594-FC11 / AWS E2594T1-1",
     "standards": [
       "AWS TS2594-FC11",
       "AWS E2594T1-1"
     ],
-    "summary": "上海东风 SH.Y2594，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y2594，不锈钢焊材。",
     "introduction": "SH.Y2594 为上海东风药芯焊丝，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -52996,16 +52996,16 @@
   {
     "slug": "dongfeng-sh-y409ti",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y409Ti",
-    "name": "上海东风 SH.Y409Ti 特种焊材",
+    "name": "上海东风 SH.Y409Ti 不锈钢焊材",
     "standard": "GB/T TS409-MM130 / AWS EC409",
     "standards": [
       "GB/T TS409-MM130",
       "AWS EC409"
     ],
-    "summary": "上海东风 SH.Y409Ti，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y409Ti，不锈钢焊材。",
     "introduction": "SH.Y409Ti 为上海东风药芯焊丝。详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",
@@ -53064,15 +53064,15 @@
   {
     "slug": "dongfeng-sh-y439ti",
     "manufacturer": "上海东风",
-    "categorySlug": "special-materials",
-    "categoryName": "特种焊材",
+    "categorySlug": "stainless-materials",
+    "categoryName": "不锈钢焊材",
     "model": "SH.Y439Ti",
-    "name": "上海东风 SH.Y439Ti 特种焊材",
+    "name": "上海东风 SH.Y439Ti 不锈钢焊材",
     "standard": "AWS EC439",
     "standards": [
       "AWS EC439"
     ],
-    "summary": "上海东风 SH.Y439Ti，适用于特种焊材相关工况。",
+    "summary": "上海东风 SH.Y439Ti，不锈钢焊材。",
     "introduction": "SH.Y439Ti 为上海东风药芯焊丝，详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。",
     "applications": [
       "特种焊材",

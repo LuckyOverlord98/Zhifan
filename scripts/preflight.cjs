@@ -173,6 +173,12 @@ for (const [model, category] of [
   ["SH.S50-6", "solid-wires"],
   ["SH.M08MnA", "submerged-arc"],
   ["SH.S308L", "stainless-materials"],
+  ["SH.A002", "stainless-materials"],
+  ["SH.A302", "stainless-materials"],
+  ["SH.E2209", "stainless-materials"],
+  ["SH.Y308L", "stainless-materials"],
+  ["SH.Y409Ti", "stainless-materials"],
+  ["SH.Y439Ti", "stainless-materials"],
 ]) requireProduct(model, category);
 
 const nbDongfeng = dongfengProducts.filter((product) => (product.standards || []).some((standard) => standard.startsWith("NB/T")));
