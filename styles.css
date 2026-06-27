@@ -4841,3 +4841,75 @@ main {
     margin-bottom: 18px;
   }
 }
+
+/* Warehouse stock markers for matched in-stock products. */
+.product-row,
+.product-detail-hero {
+  position: relative;
+}
+
+.product-row.in-stock-product {
+  padding-top: 48px;
+}
+
+.stock-label,
+.search-stock-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: linear-gradient(135deg, #df1f2d, #b60816);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(190, 12, 27, 0.18);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.stock-label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.detail-stock-label {
+  top: 18px;
+  left: 18px;
+}
+
+.in-stock-detail {
+  padding-top: 58px;
+}
+
+.search-stock-label {
+  margin-left: 8px;
+  min-height: 20px;
+  padding: 0 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 900;
+  vertical-align: middle;
+}
+
+@media (max-width: 760px) {
+  .product-row.in-stock-product {
+    padding-top: 44px;
+  }
+
+  .stock-label {
+    top: 10px;
+    left: 10px;
+    min-height: 24px;
+    font-size: 12px;
+  }
+
+  .in-stock-detail {
+    padding-top: 50px;
+  }
+}

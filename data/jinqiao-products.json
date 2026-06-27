@@ -765,7 +765,9 @@
         "name": "参考电流",
         "value": "60-100A / 80-140A / 140-220A / 180-240A / 70-90A / 90-130A / 130-210A / 190-230A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j422crcu",
@@ -1016,7 +1018,9 @@
         "name": "参考电流",
         "value": "70-100A / 90-140A / 130-180A / 170-230A / 60-90A / 90-120A / 130-160A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j427crcu",
@@ -1617,7 +1621,9 @@
         "name": "参考电流",
         "value": "60-100A / 80-140A / 140-220A / 180-240A / 70-90A / 90-140A / 130-210A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j502nicu",
@@ -1860,7 +1866,9 @@
         "name": "参考电流",
         "value": "70-100A / 90-140A / 130-180A / 170-230A / 60-90A / 90-120A / 130-160A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j506fe",
@@ -2456,7 +2464,9 @@
         "name": "参考电流",
         "value": "70-100A / 90-140A / 130-180A / 170-230A / 60-90A / 90-120A / 130-160A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j507crni",
@@ -2539,7 +2549,9 @@
         "name": "参考电流",
         "value": "70-100A / 90-130A / 130-180A / 170-220A / 60-90A / 90-120A / 130-160A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j507feni",
@@ -3359,7 +3371,9 @@
         "name": "参考电流",
         "value": "70-100A / 90-130A / 130-180A / 170-210A / 60-90A / 90-120A / 130-160A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j556",
@@ -3584,7 +3598,9 @@
         "name": "参考电流",
         "value": "70-100A / 90-130A / 130-180A / 170-220A / 60-90A / 90-120A / 130-160A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-j557r",
@@ -5457,7 +5473,9 @@
         "value": "100-260A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-2594",
@@ -5547,7 +5565,9 @@
         "value": "100-260A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-308l",
@@ -5631,7 +5651,9 @@
         "value": "100-260A / 110-300A / 120-320A / 120-180A / 120-180A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-308lt",
@@ -5797,7 +5819,9 @@
         "value": "100-260A / 110-300A / 120-320A / 120-180A / 120-180A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-309mol",
@@ -5880,7 +5904,9 @@
         "value": "100-260A / 110-300A / 120-320A / 120-180A / 120-180A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-310",
@@ -6043,7 +6069,9 @@
         "value": "100-260A / 110-300A / 120-320A / 120-180A / 120-180A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-316lt",
@@ -7020,7 +7048,9 @@
         "value": "100-260A / 110-300A / 120-320A / 120-180A / 120-180A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-y309l",
@@ -7103,7 +7133,9 @@
         "value": "100-260A / 110-300A / 120-320A / 120-180A / 120-180A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-y316l",
@@ -7187,7 +7219,9 @@
         "value": "100-260A / 110-300A / 120-320A / 120-180A / 120-180A / 120-180A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-a002lt",
@@ -7911,7 +7945,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.634",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-ag30cuzn",
@@ -8182,7 +8218,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.636",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-ag40cuznin",
@@ -8344,7 +8382,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.629",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-ag50cuzn",
@@ -8608,7 +8648,9 @@
       "RINA",
       "CE",
       "TüV"
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-cjq-1",
@@ -11027,7 +11069,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.436",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mh308",
@@ -11120,7 +11164,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.410",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mh308l",
@@ -11213,7 +11259,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.411",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mh308lt",
@@ -11771,7 +11819,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.416",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mh316lt",
@@ -12750,7 +12800,9 @@
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-s2209-15",
@@ -13095,7 +13147,9 @@
         "value": "350-500A / 400-550A / 470-600A / 550-650A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jq-th650ew-ii",
@@ -13574,7 +13628,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.229",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yr621b3l-1",
@@ -13674,7 +13730,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.518",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yd172-1",
@@ -13758,7 +13816,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.523",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yd212-q",
@@ -14474,7 +14534,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.531",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yd601-q",
@@ -15395,7 +15457,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.82"
+    "source": "金桥焊材 2024 产品手册 p.82",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yj501-1a",
@@ -15503,7 +15567,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.88"
+    "source": "金桥焊材 2024 产品手册 p.88",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yj501-1m",
@@ -15849,7 +15915,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.87"
+    "source": "金桥焊材 2024 产品手册 p.87",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yj507-1",
@@ -15900,7 +15968,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.85"
+    "source": "金桥焊材 2024 产品手册 p.85",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yj507-1a",
@@ -16196,7 +16266,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.291"
+    "source": "金桥焊材 2024 产品手册 p.291",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yj601ni-1",
@@ -16256,7 +16328,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.90"
+    "source": "金桥焊材 2024 产品手册 p.90",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-yj601ni1-5-1",
@@ -16939,7 +17013,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg100cbl",
@@ -17582,7 +17658,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg50-4",
@@ -17771,7 +17849,9 @@
         "name": "参考电流",
         "value": "50-120A / 80-250A / 100-350A / 170-500A / 50-100A / 80-160A / 80-180A / 170-300A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg50-6a",
@@ -18303,7 +18383,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg55-b2",
@@ -18822,7 +18904,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg55-nh",
@@ -19341,7 +19425,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg60-g-1",
@@ -19426,7 +19512,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg62-b3",
@@ -19780,7 +19868,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg70-g-1",
@@ -19870,7 +19960,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg70-g-2",
@@ -20055,7 +20147,9 @@
         "name": "参考电流",
         "value": "50-120A / 80-250A / 100-350A / 170-500A / 50-100A / 80-160A / 80-180A / 170-300A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg70s-6an",
@@ -20150,7 +20244,9 @@
         "name": "参考电流",
         "value": "50-120A / 80-250A / 100-350A / 170-500A / 50-100A / 80-160A / 80-180A / 150-300A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg70s-6n",
@@ -20244,7 +20340,9 @@
         "name": "参考电流",
         "value": "50-120A / 50-250A / 100-300A / 170-400A / 50-100A / 80-160A / 80-180A / 150-300A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg76-g",
@@ -20417,7 +20515,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg80-g-1",
@@ -20507,7 +20607,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg90-g",
@@ -20605,7 +20707,9 @@
         "name": "参考电流",
         "value": "50-100A / 50-220A / 80-350A / 170-550A / 50-90A / 50-140A / 80-250A / 140-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mgni-1",
@@ -20747,7 +20851,9 @@
         "name": "参考电流",
         "value": "70-150A / 100-200A / 140-220A / 180-300A / 70-120A / 100-170A / 140-200A / 180-250A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mgnicrcomo-1",
@@ -21316,7 +21422,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.430",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg2594",
@@ -21409,7 +21517,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.431",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg410",
@@ -21681,7 +21791,9 @@
         "name": "参考电流",
         "value": "50-220A / 50-220A / 50-220A / 50-300A / 50-300A / 50-300A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg50hr",
@@ -22548,7 +22660,9 @@
         "name": "参考电流",
         "value": "50-220A / 50-300A / 50-300A / 50-300A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tgf2209",
@@ -22702,7 +22816,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.462",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tgf309l",
@@ -22777,7 +22893,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.463",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tgf316l",
@@ -22852,7 +22970,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.464",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tgf347",
@@ -22931,7 +23051,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.465",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tgni-1",
@@ -23308,7 +23430,9 @@
         "name": "参考电流",
         "value": "50-100A / 100-200A / 200-300A / 300-400A / 50-80A / 100-180A / 200-280A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tgnicrmo-4",
@@ -23884,7 +24008,9 @@
         "name": "参考电流",
         "value": "50-220A / 50-220A / 50-220A / 50-300A / 50-300A / 50-300A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tgr55-b6",
@@ -24392,7 +24518,9 @@
         "value": "90-130A / 120-170A / 160-210A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-d217",
@@ -24608,7 +24736,9 @@
         "value": "90-130A / 120-170A / 160-210A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-d266",
@@ -26677,7 +26807,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.623",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-cu87pag",
@@ -26771,7 +26903,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.621",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-cu88snp",
@@ -26950,7 +27084,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.619",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-cu92p",
@@ -27034,7 +27170,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.616",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-enicrcomo-1",
@@ -27342,7 +27480,9 @@
         "value": "55-85A / 70-115A / 105-145A / 50-80A / 60-105A / 85-125A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-enicrmo-1",
@@ -27488,7 +27628,9 @@
         "value": "60-90A / 70-110A / 90-140A / 50-80A / 60-100A / 85-130A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-enicrmo-4",
@@ -28081,7 +28223,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.595",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jq-sal4047",
@@ -28168,7 +28312,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.596",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jq-sal5087",
@@ -28362,7 +28508,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.598",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jq-sal5356",
@@ -28457,7 +28605,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.599",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jq-sal5554",
@@ -30916,7 +31066,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.557",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-z308",
@@ -31238,7 +31390,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a022",
@@ -31320,7 +31474,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a022mo",
@@ -31483,7 +31639,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a062",
@@ -31566,7 +31724,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a102",
@@ -31648,7 +31808,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a107",
@@ -31817,7 +31979,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a137",
@@ -32068,7 +32232,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a207",
@@ -32568,7 +32734,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a302fe",
@@ -32816,7 +32984,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a402",
@@ -32898,7 +33068,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a407",
@@ -33063,7 +33235,9 @@
         "name": "参考电流",
         "value": "50-90A / 80-120A / 100-150A / 140-180A / 60-80A / 90-110A / 110-140A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-a422",
@@ -33724,7 +33898,9 @@
         "value": "50-220A / 50-300A / 50-300A / 50-300A"
       }
     ],
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-er50-3",
@@ -34394,7 +34570,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.360",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg307",
@@ -34656,7 +34834,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.363"
+    "source": "金桥焊材 2024 产品手册 p.363",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg308l",
@@ -34744,7 +34924,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.364"
+    "source": "金桥焊材 2024 产品手册 p.364",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg308lsi",
@@ -34832,7 +35014,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.365"
+    "source": "金桥焊材 2024 产品手册 p.365",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg308lsi-g",
@@ -35101,7 +35285,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.366"
+    "source": "金桥焊材 2024 产品手册 p.366",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg309l",
@@ -35189,7 +35375,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.367"
+    "source": "金桥焊材 2024 产品手册 p.367",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg309lsi",
@@ -35621,7 +35809,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.369"
+    "source": "金桥焊材 2024 产品手册 p.369",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg316",
@@ -35797,7 +35987,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.371"
+    "source": "金桥焊材 2024 产品手册 p.371",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-mg316lt",
@@ -36427,7 +36619,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.383",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg308",
@@ -36515,7 +36709,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.384"
+    "source": "金桥焊材 2024 产品手册 p.384",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg308l",
@@ -36603,7 +36799,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.385"
+    "source": "金桥焊材 2024 产品手册 p.385",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg308lhr",
@@ -36788,7 +36986,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.445"
+    "source": "金桥焊材 2024 产品手册 p.445",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg309",
@@ -36876,7 +37076,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.386"
+    "source": "金桥焊材 2024 产品手册 p.386",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg309l",
@@ -36964,7 +37166,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.387"
+    "source": "金桥焊材 2024 产品手册 p.387",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg310",
@@ -37052,7 +37256,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.388"
+    "source": "金桥焊材 2024 产品手册 p.388",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg316",
@@ -37228,7 +37434,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.390"
+    "source": "金桥焊材 2024 产品手册 p.390",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-tg316lhr",
@@ -37766,7 +37974,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.394"
+    "source": "金桥焊材 2024 产品手册 p.394",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-h08a",
@@ -37851,7 +38061,9 @@
         "name": "参考电流",
         "value": "350-500A / 400-550A / 470-600A / 550-650A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-h08crmoa",
@@ -38071,7 +38283,9 @@
         "name": "参考电流",
         "value": "350-500A / 400-550A / 470-600A / 550-650A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-h08mn2moa",
@@ -38311,7 +38525,9 @@
         "name": "参考电流",
         "value": "350-500A / 400-550A / 470-600A / 550-650A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-h08mne",
@@ -38456,7 +38672,9 @@
         "name": "参考电流",
         "value": "350-500A / 400-550A / 470-600A / 550-650A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jq-h08mnmotib-h08c",
@@ -38839,7 +39057,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.374"
+    "source": "金桥焊材 2024 产品手册 p.374",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-h10mn2",
@@ -38929,7 +39149,9 @@
         "name": "参考电流",
         "value": "350-500A / 400-550A / 470-600A / 550-650A"
       }
-    ]
+    ],
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-h10mnsia",
@@ -39301,7 +39523,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.120"
+    "source": "金桥焊材 2024 产品手册 p.120",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-sj101c",
@@ -39403,7 +39627,9 @@
       }
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
-    "source": "金桥焊材 2024 产品手册 p.119"
+    "source": "金桥焊材 2024 产品手册 p.119",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-sj101fnh",
@@ -40112,7 +40338,9 @@
     ],
     "notes": "批量采购或关键工程使用前，建议以厂家最新质保书、材质证明和合同技术条件为准。",
     "source": "金桥焊材 2024 产品手册 p.420",
-    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对"
+    "classificationSource": "金桥焊材 2025 产品手册分类优先；2024 产品手册与集团手册交叉核对",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "jinqiao-jq-sj601t",
@@ -40819,7 +41047,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 2
+    "sourcePage": 2,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-ysh-j422",
@@ -40890,7 +41120,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。 含 NB/T 项目，已补充 NB/T 47018 承压产品标识。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 2
+    "sourcePage": 2,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-j422d",
@@ -40958,7 +41190,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 2
+    "sourcePage": 2,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh422-01",
@@ -41027,7 +41261,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 2
+    "sourcePage": 2,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-j423",
@@ -41855,7 +42091,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 3
+    "sourcePage": 3,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-j502wcu",
@@ -42001,7 +42239,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 3
+    "sourcePage": 3,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-ysh-j506",
@@ -42472,7 +42712,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 4
+    "sourcePage": 4,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-ysh-j507",
@@ -42527,7 +42769,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。 含 NB/T 项目，已补充 NB/T 47018 承压产品标识。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 4
+    "sourcePage": 4,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-e7015",
@@ -42740,7 +42984,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 4
+    "sourcePage": 4,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-j507x",
@@ -50685,7 +50931,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 15
+    "sourcePage": 15,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-y71t-1m",
@@ -50825,7 +51073,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 15
+    "sourcePage": 15,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-y71ni",
@@ -52335,7 +52585,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 17
+    "sourcePage": 17,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-y309l",
@@ -52403,7 +52655,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 18
+    "sourcePage": 18,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-y316l",
@@ -52471,7 +52725,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 18
+    "sourcePage": 18,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-y309lmo",
@@ -52612,7 +52868,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 18
+    "sourcePage": 18,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-sh-y2209",
@@ -53748,7 +54006,9 @@
     ],
     "notes": "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。",
     "source": "上海东风 2019 焊材样本 PDF",
-    "sourcePage": 20
+    "sourcePage": 20,
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "dongfeng-ysh-s50-6",
@@ -54463,7 +54723,9 @@
     "depositedMetal": [],
     "dimensions": [],
     "notes": "",
-    "source": "金桥待补充产品介绍与适用场景.docx"
+    "source": "金桥待补充产品介绍与适用场景.docx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-al5183",
@@ -54589,7 +54851,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275259.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275259.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che422r",
@@ -54641,7 +54905,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276995.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276995.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che427",
@@ -54714,7 +54980,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275222.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275222.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che427crcusb",
@@ -54843,7 +55111,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276990.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276990.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che427sha",
@@ -54967,7 +55237,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276322.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276322.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che502",
@@ -55036,7 +55308,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275215.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275215.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che506",
@@ -55232,7 +55506,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275181.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275181.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che507cr",
@@ -55453,7 +55729,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276967.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276967.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che507rh",
@@ -55502,7 +55780,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276958.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276958.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che507sha",
@@ -55851,7 +56131,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276314.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276314.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che58-1r",
@@ -55895,7 +56177,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276932.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276932.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che607",
@@ -56612,7 +56896,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27274756.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27274756.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-cht715",
@@ -56674,7 +56960,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27274731.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27274731.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-cht71nhy",
@@ -57033,7 +57321,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276266.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276266.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-55b2jh",
@@ -57121,7 +57411,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276837.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276837.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-56",
@@ -57199,7 +57491,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276247.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276247.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-56r",
@@ -57262,7 +57556,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276830.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276830.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-60c",
@@ -57324,7 +57620,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276245.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276245.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-s5",
@@ -57460,7 +57758,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276785.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276785.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-50c",
@@ -57616,7 +57916,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275816.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275816.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-50c6r",
@@ -57687,7 +57989,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276115.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276115.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-50c6sm",
@@ -58091,7 +58395,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276229.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276229.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-91r",
@@ -58164,7 +58470,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276844.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276844.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-92",
@@ -58262,7 +58570,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-nicr-3",
@@ -58340,7 +58650,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276064.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276064.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-nicrmo-3",
@@ -58520,7 +58832,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276035.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276035.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chm-410nimo",
@@ -59291,7 +59605,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275520.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275520.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chh307r",
@@ -59354,7 +59670,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276779.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276779.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chh407",
@@ -59420,7 +59738,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275494.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275494.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chh507r",
@@ -59439,7 +59759,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chh517r",
@@ -59958,7 +60280,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276789.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276789.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-2594r",
@@ -59977,7 +60301,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-304",
@@ -60076,7 +60402,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-308hr",
@@ -60269,7 +60597,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-308lr",
@@ -60363,7 +60693,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-308r",
@@ -60437,7 +60769,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276817.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276817.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-309",
@@ -60517,7 +60851,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-309lmogf",
@@ -60626,7 +60962,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276803.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276803.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-309molr",
@@ -60720,7 +61058,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276808.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276808.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-310lgf",
@@ -60810,7 +61150,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276799.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276799.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-316h",
@@ -60890,7 +61232,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276084.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276084.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-316lgf",
@@ -60909,7 +61253,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-316lr",
@@ -60984,7 +61330,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276795.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276795.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-316r",
@@ -61055,7 +61403,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276803.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276803.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-317l",
@@ -61631,7 +61981,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276841.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276841.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chg-55c3r",
@@ -61918,7 +62270,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276663.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276663.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chm-308l",
@@ -62494,7 +62848,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27274728.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27274728.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-cht308l",
@@ -62748,7 +63104,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276075.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276075.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-308r",
@@ -62824,7 +63182,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276048.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276048.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-309lmor",
@@ -62862,7 +63222,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-316lr",
@@ -62947,7 +63309,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276031.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276031.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-347r",
@@ -63346,7 +63710,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-che107rh",
@@ -63484,7 +63850,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275507.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275507.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chh317r",
@@ -63549,7 +63917,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276776.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276776.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chh407r",
@@ -63616,7 +63986,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276753.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276753.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chk232",
@@ -63762,7 +64134,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276708.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276708.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs022",
@@ -63953,7 +64327,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276600.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276600.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs027lt",
@@ -64078,7 +64454,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276598.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276598.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs032mor",
@@ -64214,7 +64592,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276591.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276591.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs062r",
@@ -64282,7 +64662,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276585.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276585.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs102",
@@ -64483,7 +64865,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276452.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276452.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs102rh",
@@ -64627,7 +65011,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276460.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276460.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs132",
@@ -64817,7 +65203,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276445.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276445.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs132rh",
@@ -65037,7 +65425,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276428.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276428.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs2209",
@@ -65143,7 +65533,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276151.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276151.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs2594",
@@ -65275,7 +65667,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276145.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276145.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs302",
@@ -65418,7 +65812,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276401.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276401.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs302rh",
@@ -65622,7 +66018,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276397.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276397.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs312r",
@@ -65694,7 +66092,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276397.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276397.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chs385r",
@@ -66009,7 +66409,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276639.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276639.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chf101cg",
@@ -66051,7 +66453,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276446.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276446.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chf101gx",
@@ -66216,7 +66620,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275894.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275894.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chf102",
@@ -66320,7 +66726,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275813.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275813.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chf102sh",
@@ -66960,7 +67368,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276525.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276525.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-s11r",
@@ -67122,7 +67532,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275930.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275930.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-s1r",
@@ -67199,7 +67611,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275930.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275930.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-s1sh",
@@ -67499,7 +67913,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275894.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275894.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-s3",
@@ -67541,7 +67957,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276515.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27276515.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-s3ar",
@@ -67621,7 +68039,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275868.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275868.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-s3r",
@@ -67690,7 +68110,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275880.html"
+    "source": "推送_三引擎标准复核版.xlsx；来源页：https://www.weldatlantic.com/doc_27275880.html",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "atlantic-chw-s8r",
@@ -68096,7 +68518,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以大西洋最新质保书、产品样本及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "推送_三引擎标准复核版.xlsx"
+    "source": "推送_三引擎标准复核版.xlsx",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tac-16-j506crnicu",
@@ -69751,7 +70175,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：27；位置：右"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：27；位置：右",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-twe-611",
@@ -69925,7 +70351,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：23；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：23；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-twe-711h",
@@ -70180,7 +70608,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：26；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：26；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-twe-711pro",
@@ -70510,7 +70940,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：23；位置：右"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：23；位置：右",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tec-70",
@@ -74384,7 +74816,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：45；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：45；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-twe-811b2vm",
@@ -74822,7 +75256,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：61；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：61；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-twe-81k2c",
@@ -75547,7 +75983,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：62；位置：右"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：62；位置：右",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-twe-91nh",
@@ -75956,7 +76394,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：113；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：113；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tfs-300nb",
@@ -76114,7 +76554,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：96；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：96；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tfw-308h",
@@ -76247,7 +76689,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：87；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：87；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tfw-308ld",
@@ -76508,7 +76952,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：89；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：89；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tfw-309ld",
@@ -76839,7 +77285,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：92；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：92；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tfw-316ld",
@@ -78082,7 +78530,9 @@
     "dimensions": [],
     "certifications": [],
     "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
-    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：110；位置：左"
+    "source": "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx；页码：110；位置：左",
+    "inStock": true,
+    "stockSource": "匹配产品.xlsx"
   },
   {
     "slug": "tiantai-tgs-316lsi",

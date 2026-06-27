@@ -632,7 +632,8 @@ function ProductCategoryPage({ categorySlug }) {
 
           <div className="product-list">
             {pagedItems.map((item) => (
-              <a className="product-row" key={item.slug} href={"/products/" + item.slug}>
+              <a className={"product-row" + (item.inStock ? " in-stock-product" : "")} key={item.slug} href={"/products/" + item.slug}>
+                {item.inStock && <span className="stock-label">仓内现货产品</span>}
                 <span className="model-badge">{item.model}</span>
                 <div>
                   <h3>{item.name}</h3>
@@ -769,7 +770,8 @@ function ProductDetailPage({ slug }) {
   return (
     <ProductPageShell>
       <main className="product-page detail-page">
-        <section className="product-detail-hero">
+        <section className={"product-detail-hero" + (product.inStock ? " in-stock-detail" : "")}>
+          {product.inStock && <span className="stock-label detail-stock-label">仓内现货产品</span>}
           <div>
             <a className="breadcrumb" href={"/products/" + product.categorySlug}>{product.categoryName}</a>
             <p className="eyebrow">{product.manufacturer}</p>

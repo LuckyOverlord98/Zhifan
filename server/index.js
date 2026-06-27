@@ -47,6 +47,8 @@ const productSchema = new mongoose.Schema(
     depositedMetal: [{ name: String, value: String }],
     dimensions: [{ name: String, value: String }],
     certifications: [{ type: String, trim: true }],
+    inStock: { type: Boolean, default: false, index: true },
+    stockSource: { type: String, trim: true },
     notes: { type: String, trim: true },
     source: { type: String, default: "Jinqiao 2024 product manual" },
     clickCount: { type: Number, default: 0, index: true },
@@ -222,8 +224,8 @@ function listSeedProducts(filters = {}) {
 }
 
 function publicProductSummary(product) {
-  const { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary, clickCount } = product;
-  return { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary, clickCount: clickCount || 0 };
+  const { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary, clickCount, inStock } = product;
+  return { slug, manufacturer, categorySlug, categoryName, model, name, standard, summary, inStock: Boolean(inStock), clickCount: clickCount || 0 };
 }
 
 function buildCategories(products) {
@@ -343,7 +345,7 @@ app.get("/api/products", async (req, res, next) => {
     }
 
     const mongoItems = await Product.find(query)
-      .select("slug manufacturer categorySlug categoryName model name standard summary standards clickCount")
+      .select("slug manufacturer categorySlug categoryName model name standard summary standards inStock clickCount")
       .sort({ clickCount: -1, manufacturer: 1, model: 1 })
       .limit(limit)
       .lean();
