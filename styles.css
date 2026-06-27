@@ -2433,8 +2433,17 @@ body {
   background: linear-gradient(135deg, #ffffff, #eef6ff);
 }
 
-.amap-card a {
+.map-actions {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.amap-card a,
+.map-actions a {
   min-height: 42px;
   display: inline-flex;
   align-items: center;
@@ -2444,6 +2453,11 @@ body {
   background: var(--blue);
   color: #ffffff;
   font-weight: 900;
+  white-space: nowrap;
+}
+
+.map-actions a:first-child {
+  background: #0f172a;
 }
 
 @keyframes softRise {
@@ -2506,8 +2520,15 @@ body {
     flex-direction: column;
   }
 
-  .amap-card a {
+  .map-actions {
     width: 100%;
+    justify-content: stretch;
+  }
+
+  .amap-card a,
+  .map-actions a {
+    flex: 1 1 160px;
+    width: auto;
   }
 
   .manufacturer-tabs {

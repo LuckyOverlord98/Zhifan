@@ -286,11 +286,9 @@ def make_product(page, model, context, meta=None):
         dimensions_match = re.search(re.escape(model) + r"\s+(\d+(?:\.\d+)?\s*-\s*\d+(?:\.\d+)?|\d+(?:\.\d+)?)\b", model_line)
         if dimensions_match:
             dimensions.append({"name": "规格直径", "value": "Φ" + dimensions_match.group(1).replace(" ", "") + " mm"})
-    intro = f"{model} 为上海东风{type_label}，来源于《2019焊材样本》{section}章节。"
-    if english:
-        intro += "PDF 应用说明显示：" + english + "。"
-    intro += "详情页按现有产品格式整理执行标准、典型化学成分和熔敷金属力学性能，便于采购和项目选型复核。"
-    notes = "数据由上海东风 2019 焊材样本 PDF 抽取；中文原文因 PDF 字体编码限制，应用说明按英文 Application 摘要整理。"
+    intro = f"{model} \u4e3a\u4e0a\u6d77\u4e1c\u98ce{type_label}\u3002"
+    intro += "\u8be6\u60c5\u9875\u6309\u73b0\u6709\u4ea7\u54c1\u683c\u5f0f\u6574\u7406\u6267\u884c\u6807\u51c6\u3001\u5178\u578b\u5316\u5b66\u6210\u5206\u548c\u7194\u6577\u91d1\u5c5e\u529b\u5b66\u6027\u80fd\uff0c\u4fbf\u4e8e\u91c7\u8d2d\u548c\u9879\u76ee\u9009\u578b\u590d\u6838\u3002"
+    notes = "\u6570\u636e\u7531\u4e0a\u6d77\u4e1c\u98ce 2019 \u710a\u6750\u6837\u672c PDF \u62bd\u53d6\uff1b\u6700\u65b0\u5185\u5bb9\u8bf7\u8054\u7cfb\u4e1a\u52a1\u54a8\u8be2\uff1b\u5b9e\u9645\u5e93\u5b58\u6570\u91cf\u5b9e\u65f6\u53d8\u52a8\uff0c\u8bf7\u4e8e\u9500\u552e\u8ba2\u8d27\u65f6\u4e8c\u6b21\u6838\u5b9e\u3002"
     if any(s.startswith("NB/T") for s in standards):
         notes += " 含 NB/T 项目，已补充 NB/T 47018 承压产品标识。"
     return {

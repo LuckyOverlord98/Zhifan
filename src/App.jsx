@@ -999,8 +999,8 @@ function App() {
         </section>
 
         <section className="section contact" id="contact">
-          <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><OptimizedImage src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:0574-89007658">公司电话：0574-89007658</a><a href="tel:13805890268">手机联系：13805890268</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
-          <div className="amap-card"><div><strong>现场志凡焊材（新仓库）</strong><span>高德地图定位：宁波市鄞州区富宁路119号</span></div><a href="https://uri.amap.com/marker?position=121.6359,29.8325&name=%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%EF%BC%88%E6%96%B0%E4%BB%93%E5%BA%93%EF%BC%89&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div>
+          <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><OptimizedImage src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:057489007658" aria-label="拨打公司座机 0574-89007658">公司电话：0574-89007658</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
+          <div className="amap-card map-card"><div><strong>现场志凡焊材（新仓库）</strong><span>地图定位：宁波市鄞州区富宁路119号（坐标 @13540153.526783343,3460185.0272463434）</span></div><div className="map-actions"><a href="https://j.map.baidu.com/9e/TTsM" target="_blank" rel="noreferrer">打开通用地图</a><a href="https://uri.amap.com/search?keyword=%E5%AE%81%E6%B3%A2%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%20%E5%AF%8C%E5%AE%81%E8%B7%AF119%E5%8F%B7&city=%E5%AE%81%E6%B3%A2&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div></div>
           <ContactForm />
         </section>
       </main>
