@@ -9,6 +9,7 @@ const navItems = [
   ["/products/carbon-steel-electrodes", "产品中心"],
   ["/#solutions", "案例及相关业绩"],
   ["/#knowledge", "焊接操作"],
+  ["/team-vision", "团队与愿景"],
   ["/#contact", "联系我们"]
 ];
 
@@ -143,7 +144,8 @@ function useIndustrialMotion(deps = []) {
       ".detail-card",
       ".spec-table-card",
       ".detail-summary",
-      ".certificate-slider"
+      ".certificate-slider",
+      ".team-vision-hero"
     ].join(",")));
 
     revealTargets.forEach((element, index) => {
@@ -483,6 +485,7 @@ function ProductPageShell({ children }) {
             <a href="/#products">{"\u4ea7\u54c1\u4e2d\u5fc3"}</a>
             <a href="/products/carbon-steel-electrodes">{"\u78b3\u94a2\u710a\u6761"}</a>
             <a href="/#knowledge">{"\u710a\u63a5\u64cd\u4f5c"}</a>
+            <a href="/team-vision">团队与愿景</a>
             <a href="/#contact">{"\u8054\u7cfb\u6211\u4eec"}</a>
           </nav>
         </div>
@@ -491,6 +494,36 @@ function ProductPageShell({ children }) {
   );
 }
 
+function TeamVisionPage() {
+  usePageMeta({
+    title: "团队与愿景 | 宁波志凡焊材有限公司",
+    description: "宁波志凡焊材有限公司团队与愿景页面正在建设中。",
+    keywords: "宁波志凡焊材有限公司,团队与愿景,焊材服务团队,焊材供应链服务"
+  });
+  useIndustrialMotion([]);
+
+  return (
+    <ProductPageShell>
+      <main className="product-page team-vision-page">
+        <section className="team-vision-hero" data-reveal="true">
+          <div className="team-vision-copy">
+            <a className="breadcrumb" href="/#knowledge">焊接操作</a>
+            <p className="eyebrow">Team & Vision</p>
+            <h1>团队与愿景</h1>
+            <p className="team-vision-status">施工中</p>
+            <div className="product-page-actions">
+              <a className="secondary-btn" href="/#home">返回首页</a>
+              <a className="primary-btn" href="/#contact">联系业务</a>
+            </div>
+          </div>
+          <figure className="team-vision-visual">
+            <OptimizedImage src="/assets/sections/team-vision.png" alt="志凡焊材团队与愿景建设中" sizes="(max-width: 760px) 100vw, 48vw" />
+          </figure>
+        </section>
+      </main>
+    </ProductPageShell>
+  );
+}
 function ProductCategoryPage({ categorySlug }) {
   const [selectedCategory, setSelectedCategory] = useState(categorySlug);
   useIndustrialMotion([selectedCategory]);
@@ -816,6 +849,7 @@ const quickMatchGroups = [
 function App() {
   const currentPath = window.location.pathname;
   const isAdminPage = currentPath === "/admin" || currentPath === "/admin/";
+  const isTeamVisionPage = currentPath === "/team-vision" || currentPath === "/team-vision/";
   const [knowledgeOpen, setKnowledgeOpen] = useState(false);
   const [activeKnowledgeCategory, setActiveKnowledgeCategory] = useState(knowledgeQaCategories[0]?.slug || "all");
   const currentKnowledgeArticles = useMemo(() => {
@@ -824,10 +858,11 @@ function App() {
   }, [activeKnowledgeCategory]);
   const visibleArticles = useMemo(() => (knowledgeOpen ? currentKnowledgeArticles : currentKnowledgeArticles.slice(0, 5)), [knowledgeOpen, currentKnowledgeArticles]);
 
-  usePageMeta(isAdminPage || currentPath.startsWith("/products/") ? null : defaultSeo);
+  usePageMeta(isAdminPage || currentPath.startsWith("/products/") || isTeamVisionPage ? null : defaultSeo);
   useIndustrialMotion([knowledgeOpen, activeKnowledgeCategory, currentPath]);
 
   if (isAdminPage) return <AdminDashboard />;
+  if (isTeamVisionPage) return <TeamVisionPage />;
   if (currentPath.startsWith("/products/")) {
     const productPath = decodeURIComponent(currentPath.replace("/products/", "").replace(/\/$/, ""));
     if (categoryMeta[productPath]) return <ProductCategoryPage categorySlug={productPath} />;
@@ -973,6 +1008,7 @@ function App() {
             <a href="#products">产品中心</a>
             <a href="#solutions">案例及相关业绩</a>
             <a href="#knowledge">焊接操作</a>
+            <a href="/team-vision">团队与愿景</a>
             <a href="#contact">联系我们</a>
             <a href="/admin">后台</a>
           </nav>

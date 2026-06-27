@@ -482,6 +482,25 @@ export const optimizedImages = {
       }
     ]
   },
+  "/assets/sections/team-vision.png": {
+    "width": 1717,
+    "height": 916,
+    "fallback": "/assets/sections/team-vision.png",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/sections__team-vision-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/sections__team-vision-768.webp"
+      },
+      {
+        "width": 1280,
+        "src": "/assets/optimized/sections__team-vision-1280.webp"
+      }
+    ]
+  },
   "/assets/sections/warehouse-ai-overview-1.png": {
     "width": 1536,
     "height": 1024,

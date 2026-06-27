@@ -4727,3 +4727,117 @@ main {
 .strength-after-intro + .brand-strip {
   padding-top: clamp(42px, 5vw, 58px);
 }
+
+/* Team and vision standalone placeholder page */
+.team-vision-page {
+  padding-top: clamp(96px, 12vw, 132px);
+}
+
+.team-vision-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
+  gap: clamp(22px, 4vw, 52px);
+  align-items: stretch;
+  overflow: hidden;
+  min-height: min(620px, calc(100vh - 180px));
+  padding: clamp(22px, 4vw, 46px);
+  border: 1px solid rgba(16, 45, 85, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(239, 246, 255, 0.92)),
+    radial-gradient(circle at 12% 12%, rgba(38, 119, 220, 0.16), transparent 34%);
+  box-shadow: 0 22px 54px rgba(15, 46, 92, 0.12);
+}
+
+.team-vision-hero::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(11, 63, 147, 0.08));
+}
+
+.team-vision-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.team-vision-copy h1 {
+  margin: 10px 0 14px;
+  color: var(--ink);
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: 0.98;
+}
+
+.team-vision-status {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 24px;
+  padding: 10px 16px;
+  border: 1px solid rgba(18, 100, 216, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--brand);
+  font-weight: 700;
+  box-shadow: 0 12px 26px rgba(18, 100, 216, 0.10);
+}
+
+.team-vision-visual {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  min-height: 420px;
+  margin: 0;
+  border-radius: 8px;
+  background: #dbe7f5;
+}
+
+.team-vision-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(5, 24, 52, 0.36), rgba(18, 100, 216, 0.08) 44%, rgba(255, 255, 255, 0.10));
+}
+
+.team-vision-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+@media (max-width: 980px) {
+  .team-vision-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .team-vision-visual {
+    min-height: clamp(260px, 54vw, 420px);
+  }
+}
+
+@media (max-width: 560px) {
+  .team-vision-page {
+    padding-top: 86px;
+  }
+
+  .team-vision-hero {
+    padding: 18px;
+  }
+
+  .team-vision-copy h1 {
+    font-size: clamp(34px, 12vw, 46px);
+  }
+
+  .team-vision-status {
+    margin-bottom: 18px;
+  }
+}
