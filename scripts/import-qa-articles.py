@@ -8,6 +8,12 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = Path("C:/Users/Ning Sun/Documents/Codex/2026-06-25/new-chat/outputs")
 GENERATED_AT = "2026-06-26"
+QA_ARTICLE_VIDEOS = [
+    "qa-article-weld-1.mp4",
+    "qa-article-weld-2.mp4",
+    "qa-article-weld-3.mp4",
+]
+
 SEO_KEYWORDS = [
     "宁波焊材批发",
     "浙江焊材供应商",
@@ -284,8 +290,16 @@ def article_keywords(article):
     return ",".join(result[:32])
 
 
-def article_picture_html():
-    return '<picture><source type="image/webp" srcset="../../assets/optimized/sections__knowledge-operation-480.webp 480w, ../../assets/optimized/sections__knowledge-operation-768.webp 768w, ../../assets/optimized/sections__knowledge-operation-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 48vw" /><img src="../../assets/sections/knowledge-operation.png" alt="焊接材料问答Q&A" loading="lazy" decoding="async" /></picture>'
+def article_picture_html(article):
+    key = article.get("slug") or article.get("number") or "qa"
+    index = sum(ord(ch) for ch in key) % len(QA_ARTICLE_VIDEOS)
+    video = QA_ARTICLE_VIDEOS[index]
+    return (
+        f'<video class="article-photo-video" src="../../assets/videos/{video}" '
+        'poster="../../assets/sections/knowledge-operation.png" '
+        'autoplay muted loop playsinline preload="metadata" '
+        'aria-label="welding Q&A article video background"></video>'
+    )
 def write_pages(articles):
     out_dir = ROOT / "public" / "articles" / "qa"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -330,7 +344,7 @@ def write_pages(articles):
         <a class="back-link" href="../../knowledge">返回焊接材料问答Q&A</a>
         <div class="article-hero qa-hero">
           <div><p class="eyebrow">{esc(article["category"])} · QA {esc(article["number"])}</p><h1>{esc(article["title"])}</h1><p class="article-generated-time">生成时间：{esc(article["generatedAt"])}</p></div>
-          <figure class="article-photo-bg">{article_picture_html()}</figure>
+          <figure class="article-photo-bg">{article_picture_html(article)}</figure>
         </div>
         <section class="qa-answer-grid" aria-label="问答内容">
           <article class="qa-answer-card short-answer"><span>短答案</span><h2>先看结论</h2>{paragraphize(article["shortAnswer"])}</article>
