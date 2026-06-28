@@ -1209,7 +1209,17 @@ function App() {
           <div className="strength-hero"><div><p className="eyebrow">Capability</p><h2>{"\u8d44\u8d28\u4e0e\u670d\u52a1"}</h2><p>{"\u4e00\u7ea7\u7ecf\u9500\u8d44\u6e90\u3001\u5145\u8db3\u73b0\u8d27\u5e93\u5b58\u548c\u533a\u57df\u7269\u6d41\u80fd\u529b\uff0c\u5171\u540c\u652f\u6491\u7a33\u5b9a\u4ea4\u4ed8\u3002"}</p></div></div>
           <div className="credential-panel"><div><strong>28{"\u5e74"}</strong><span>{"\u710a\u6750\u4e13\u4e1a\u6279\u53d1\u7ecf\u9a8c"}</span></div><div><strong>省内领先</strong><span>浙江省内供货规模</span></div><div><strong>3200吨</strong><span>常备焊材库存上限</span></div><div><strong>一级</strong><span>多品牌全国经销商</span></div></div>
           <div className="service-grid"><article><span>服务</span><h4>全过程技术支持</h4><p>技术工程师与客户经理配合，提供参数说明、现场指导、调试和使用问题处理。</p></article><article><span>响应</span><h4>质量问题快速处理</h4><p>质保期内质量问题立即响应，48小时内派专人到现场，并按要求配合更换。</p></article><article><span>预案</span><h4>紧急保供机制</h4><p>安全库存、备选货品、多元物流和快速响应小组，应对突发订单与运输异常。</p></article></div>
-          <div className="stock-gallery" aria-label="仓储实景素材"><figure><OptimizedImage src="/assets/sections/warehouse-ai-shelves-3.png" alt="仓库货架实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-stock-2.png" alt="焊丝焊条托盘库存实景" /></figure><figure><OptimizedImage src="/assets/sections/warehouse-ai-overview-1.png" alt="仓库整体库存实景" /></figure></div>
+          <div className="stock-gallery" aria-label="stock warehouse video gallery">
+            <figure>
+              <video className="stock-gallery-video" src="/assets/videos/stock-gallery-shelves.mp4" poster="/assets/sections/warehouse-ai-shelves-3.png" autoPlay muted loop playsInline preload="metadata" aria-label="warehouse shelves and welding consumables stock video" />
+            </figure>
+            <figure>
+              <video className="stock-gallery-video" src="/assets/videos/stock-gallery-loading.mp4" poster="/assets/sections/warehouse-ai-stock-2.png" autoPlay muted loop playsInline preload="metadata" aria-label="welding wire and electrode pallet stock video" />
+            </figure>
+            <figure>
+              <video className="stock-gallery-video" src="/assets/videos/stock-gallery-overview.mp4" poster="/assets/sections/warehouse-ai-overview-1.png" autoPlay muted loop playsInline preload="metadata" aria-label="warehouse stock overview video" />
+            </figure>
+          </div>
         </section>
 
         <section className="section brand-strip" aria-label="授权品牌">
