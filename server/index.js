@@ -269,7 +269,11 @@ function validateInquiry(body) {
 
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
-app.use(helmet({ contentSecurityPolicy: false }));
+app.use(helmet({
+  contentSecurityPolicy: false,
+  crossOriginOpenerPolicy: false,
+  originAgentCluster: false
+}));
 app.use(cors({ origin: true }));
 app.use(express.json({ limit: "64kb" }));
 
@@ -428,7 +432,9 @@ const distDir = path.resolve(__dirname, "../dist");
 app.use(express.static(distDir, {
   maxAge: "1h",
   setHeaders(res, filePath) {
-    if (path.basename(filePath) === "styles.css") {
+    if (path.basename(filePath) === "index.html") {
+      res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+    } else if (path.basename(filePath) === "styles.css") {
       res.setHeader("Cache-Control", "public, max-age=3600");
     } else if (/\.(?:webp|avif|png|jpg|jpeg|svg|ico|css|js)$/i.test(filePath)) {
       res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
@@ -437,6 +443,10 @@ app.use(express.static(distDir, {
 }));
 app.get("*", (req, res, next) => {
   if (req.path.startsWith("/api")) return next();
+  if (req.path.startsWith("/assets/") || /\.[a-z0-9]+$/i.test(req.path)) {
+    return res.status(404).type("text/plain").send("Not found");
+  }
+  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
   res.sendFile(path.join(distDir, "index.html"));
 });
 
