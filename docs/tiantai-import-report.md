@@ -1,175 +1,81 @@
 # 天泰产品导入报告
 
-- 来源文件：`C:\Users\Ning Sun\Documents\Codex\2026-06-27\implement-this-ui-in-the-current-6\outputs\天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx`
+- 来源文件：`C:\Users\Ning Sun\Documents\Codex\2026-06-27\implement-this-ui-in-the-current-6\outputs\天泰产品分类表_新版PDF_三模型交叉复核_4x表格增强版.xlsx`
 - 导入厂家：天泰
-- 导入产品：195 个
+- 新版表格有效产品：188 个
+- ??????115 ????????????
+- ?????73 ????????????
+- ???????????80 ????????????
+- 当前天泰总产品：268 个
 - 跳过空牌号行：0
-- 重复 slug 合并：18 组
+- 重复型号合并：17 组
 
-## 分类数量
+## 新版来源分类数量
 
-- 不锈钢焊材: 78
+- 不锈钢焊材: 99
+- 实芯气保及氩弧焊丝: 9
+- 特种焊材: 55
+- 碳钢埋弧焊丝焊剂: 2
+- 碳钢焊条: 12
+- 药芯气保焊丝: 11
+
+## 当前天泰库内分类数量
+
+- 不锈钢焊材: 133
 - 实芯气保及氩弧焊丝: 10
-- 特种焊材: 73
-- 碳钢埋弧焊丝焊剂: 5
-- 碳钢焊条: 17
+- 特种焊材: 85
+- 碳钢埋弧焊丝焊剂: 2
+- 碳钢焊条: 26
 - 药芯气保焊丝: 12
 
-## 缺失字段统计
+## 新版来源缺失字段统计
 
-- 介绍: 7
-- 适用场景: 98
-- 执行标准: 6
-- 成分: 9
-- 熔敷金属: 26
+- 介绍: 52
+- 适用场景: 95
+- 执行标准: 0
+- 成分: 1
+- 熔敷金属: 7
 
 ## 数据清洗说明
 
-- 成分优先使用表格中 `化学C` 至 `化学N` 的结构化列。
-- 熔敷金属优先使用 `屈服强度 / 抗拉强度 / 延伸率 / 冲击值 / PWHT` 结构化列。
-- 发现明显 OCR 异常的化学成分值会跳过，并记录在下方。
+- 同型号按去除空格、点号、连字符、括号后的统一 key 匹配，保留 -II 等后缀的实际字母信息。
+- 新表已有同型号覆盖天泰旧记录，但保留现货标识、点击量等站内运营字段。
+- 成分使用表格中 `化学C` 至 `化学N` 的结构化列，熔敷金属使用力学性能列，规格粗细单独存入 dimensions。
 
-## 跳过的疑似 OCR 异常值
+## 合并的重复型号示例
 
-- TL-507HIC(J507) P=6000
-- TL-6O7RH(J607RH) 屈服强度=0E9
-- TL-118M Cr=6E0
-- TWE-712 Cu=6000
-- TWE-712 Cr=6000
-- TWE-711PRO 抗拉强度=09
-- TM-58 P=0.73
-- TM-60 P=0.61
-- TIG-49(HO8MN2SIA) P=0.785
-- TIG-52 P=0.56
-- TIG-52 S=0.0100.0080.0030.0150.0090.123
-- TEC-70 P=0.60
-- TF-250 Cu=0.0180.0020.0120.0150.046
-- TF-250API P=0.35
-- TF-250API S=1.590.0140.0040.14
-- TF-560 P=0.55
-- TF-560 S=1.33
-- TF-210 P=0.0110.002
-- TF-210 S=0.48
-- TL-78A1(R106FE) P=0.54
-- TR-307(R307) C=600
-- TR-307(R307) 抗拉强度=059
-- TR-317(R317) P=0.38
-- TL-98B3(R406FE) P=0.43
-- TL-98B3(R406FE) 抗拉强度=059
-- TR-507(R507) P=0.49
-- TR-507(R507) Mo=5.94
-- TR-717(R717) Si=0.200.0090.008
-- TR-717(R717) P=9.53
-- TR-717(R717) S=1.16
-- TL-96B9(R717) Si=0.220.0090.005
-- TL-96B9(R717) P=9.32
-- TL-96B9(R717) S=1.03
-- TM-60A1 P=680
-- TWE-815B2V 抗拉强度=0E9
-- TWE-811B2M P=0.39
-- TWE-811B2VM P=0.30
-- TWE-911B3 P=0.40
-- TWE-915B3 P=0.37
-- TWE-911B3M P=0.40
-- TIG-1CMV P=0.65
-- TF-250 Si=0.240.63≤0.0120.004
-- TF-250 P=0.93
-- TF-250R Si=0.280.600.0100.010
-- TF-250R P=0.97
-- TF-350CMV Mn=1≤0.0100.0042.220.950.260.048≤12ppm
-- TF-350CMV Si=0.110131.21
-- TN-28(W706NI) P=0.32
-- TN-38(W906NI) P=0.43
-- TN-58 S=6000
-- TWE-811NI1 P=0.89
-- TWE-811NI2 S=2.40
-- TWE-911NI2 P=0.40
-- TS-307HM Mn=5.28
-- TS-307HM Ni=9.69
-- TS-307HM Cr=19.50
-- TS-308(A102) Ni=19.35
-- TS-308(A102) Cr=10.03
-- TS-308H Ni=19.20
-- TS-308H Cr=9.55
-- TS-308L(A002) Ni=19.0
-- TS-308L(A002) Cr=9.72
-- TS-308LB(A007) Ni=18.2
-- TS-308LB(A007) Cr=10.3
-- TS-308LD(A002) Ni=19.30
-- TS-308LD(A002) Cr=10.6
-- TS-308LT(A002) Ni=18.7
-- TS-308LT(A002) Cr=10.5
-- TS-308Z(A107) Ni=19.2
-- TS-308Z(A107) Cr=9.45
-- TS-309(A302) Ni=23.2
-- TS-309(A302) Cr=12.8
-- TS-309L(A062) Ni=23.6
-- TS-309L(A062) Cr=13.0
-- TS-309LD(A062) Ni=24.8
-- TS-309LD(A062) Cr=12.7
-- TS-309Z(A307) Ni=23.6
-- TS-309Z(A307) Cr=12.5
-- TS-309M0(A312) Ni=22.1
-- TS-309M0(A312) Cr=13.6
-- TS-309M0L(A042) Ni=22.2
-- TS-309M0L(A042) Cr=12.5
-- TS-310(A402) Ni=26.1
-- TS-310(A402) Cr=21.1
-- TS-310M0(A412) Ni=25.6
-- TS-310M0(A412) Cr=20.7
-- TS-310Z(A407) Ni=26.0
-- TS-310Z(A407) Cr=21.5
-- TS-316(A202) Ni=18.4
-- TS-316(A202) Cr=11.6
-- TS-316H(A202) Ni=18.4
-- TS-316H(A202) Cr=11.6
-- TS-316L(A022) Ni=18.3
-- TS-316L(A022) Cr=11.8
-- TS-316LB(A027) Ni=17.8
-- TS-316LB(A027) Cr=11.9
-- TS-316LD(A022) Ni=18.3
-- TS-316LD(A022) Cr=11.8
-- TS-316LT(A022) Ni=18.1
-- TS-316LT(A022) Cr=11.9
-- TS-316Z(A207) Ni=18.0
-- TS-316Z(A207) Cr=11.6
-- TS-317L Ni=18.4
-- TS-317L Cr=11.6
-- TS-318(A212) Cu=18.1
-- TS-318(A212) Ni=11.7
-- TS-347(A132) Cu=19.3
-- TS-347(A132) Ni=10.3
-- TS-347L Cu=19.5
-- TS-347L Ni=9.58
-- TS-347LD Cu=18.6
-- TS-347LD Ni=9.56
-- TS-347LD 屈服强度=029
-- TS-347LD 抗拉强度=029
-- TS-347Z(A137) Cu=19.42
-- TS-347Z(A137) Ni=9.38
-- TS-512(A512) Ni=15.8
-- TS-512(A512) Cr=8.42
-- TS-2209 Cu=22.6
-- TS-2209 Ni=8.73
-- 其余 156 条略。
+- TIG-50 / TIG-50
+- TF-210 / TF-210
+- TF-210 / TF-210
+- MIG-1CM / MIG-1CM
+- MIG-2CM / MIG-2CM
+- TIG-1CM / TIG-1CM
+- TIG-2CM / TIG-2CM
+- TF-250 / TF-250
+- TF-210 / TF-210
+- TF-250 / TF-250
+- TS-308L / TS308L
+- TFS-300 / TFS-300
+- TFS-300 / TFS-300
+- TFS-300 / TFS-300
+- TFS-300NB / TFS-300NB
+- TFS-300NB / TFS-300NB
+- TFS-330 / TFS-330
 
-## 重复合并记录
+## 清洗异常值
 
-- `tiantai-tig-50`: 来源行 34 / 35
-- `tiantai-tf-210`: 来源行 40 / 46
-- `tiantai-tig-1cm`: 来源行 68 / 69
-- `tiantai-tig-2cm`: 来源行 71 / 72
-- `tiantai-tf-250`: 来源行 41 / 74
-- `tiantai-tf-210`: 来源行 46 / 96
-- `tiantai-tfs-300`: 来源行 172 / 173
-- `tiantai-tfs-300`: 来源行 172 / 174
-- `tiantai-tfs-300`: 来源行 172 / 175
-- `tiantai-tfs-300nb`: 来源行 176 / 178
-- `tiantai-tfs-330`: 来源行 179 / 180
-- `tiantai-tbd-316l`: 来源行 182 / 185
-- `tiantai-tbd-347`: 来源行 183 / 186
-- `tiantai-tbd-309lnb`: 来源行 187 / 188
-- `tiantai-tientai`: 来源行 77 / 202
-- `tiantai-twe-91k2`: 来源行 91 / 208
-- `tiantai-tgs-308l`: 来源行 158 / 210
-- `tiantai-tm-70c`: 来源行 21 / 211
+- TIG-52 Mn: suspicious chemistry value 0.560.0100.0080.0030.0150.0090.123
+- TF-250 S: suspicious chemistry value 1.080.0180.0020.0120.0150.046
+- TF-250API P: suspicious chemistry value 1.590.0140.0040.140.21
+- TF-210 P: suspicious chemistry value 1.550.011 0.0020.480.98
+- TF-210 Si: suspicious chemistry value 0.0650.431.550.018 0.002 0.4692.510.378
+- TR-717 Mn: suspicious chemistry value 0.580.200.0090.008
+- TIG-9CB Mn: suspicious chemistry value 0.090.630.250.0070.0020.57
+- TF-250 Cu: suspicious chemistry value 0.0060.0060.0090.027
+- TFS-300 Si: suspicious chemistry value 0.470.0230.005
+- MIG-61 Mn: suspicious chemistry value 64.2
+- MIG-82 Cu: suspicious chemistry value 73.0
+- TGS-NI1 Ni: suspicious chemistry value 95.10
+- TGS-61 Ni: suspicious chemistry value 64.4
+- TGS-82 Cu: suspicious chemistry value 73.0
+- TFS-340 Ni: suspicious chemistry value 59.8515.490.040.0423.670.02

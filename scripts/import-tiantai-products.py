@@ -4,56 +4,71 @@ import re
 from collections import Counter
 from pathlib import Path
 
-import pandas as pd
+import openpyxl
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCEL_PATH = Path(
-    r"C:\Users\Ning Sun\Documents\Codex\2026-06-27\implement-this-ui-in-the-current-6\outputs\天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx"
-)
+SOURCE_DIR = Path(r"C:\Users\Ning Sun\Documents\Codex\2026-06-27\implement-this-ui-in-the-current-6\outputs")
+SOURCE_GLOB = "*4x*.xlsx"
 PRODUCTS_PATH = ROOT / "data" / "jinqiao-products.json"
 REPORT_PATH = ROOT / "docs" / "tiantai-import-report.md"
 
-MANUFACTURER = "天泰"
-SOURCE_NAME = "天泰产品分类表_熔敷金属表格重提取_去空牌号_药芯气保分类版.xlsx"
-
+MANUFACTURER = "\u5929\u6cf0"
 CATEGORY_NAMES = {
-    "carbon-steel-electrodes": "碳钢焊条",
-    "solid-wires": "实芯气保及氩弧焊丝",
-    "flux-cored-wires": "药芯气保焊丝",
-    "stainless-materials": "不锈钢焊材",
-    "submerged-arc": "碳钢埋弧焊丝焊剂",
-    "aluminum-wires": "铝焊丝",
-    "special-materials": "特种焊材",
+    "carbon-steel-electrodes": "\u78b3\u94a2\u710a\u6761",
+    "solid-wires": "\u5b9e\u82af\u6c14\u4fdd\u53ca\u6c29\u5f27\u710a\u4e1d",
+    "flux-cored-wires": "\u836f\u82af\u6c14\u4fdd\u710a\u4e1d",
+    "stainless-materials": "\u4e0d\u9508\u94a2\u710a\u6750",
+    "submerged-arc": "\u78b3\u94a2\u57cb\u5f27\u710a\u4e1d\u710a\u5242",
+    "aluminum-wires": "\u94dd\u710a\u4e1d\u4e0e\u7279\u79cd\u710a\u6750",
+    "special-materials": "\u7279\u79cd\u710a\u6750",
 }
 
 CHEMISTRY_COLUMNS = [
-    ("C", "化学C"),
-    ("Mn", "化学Mn"),
-    ("Si", "化学Si"),
-    ("P", "化学P"),
-    ("S", "化学S"),
-    ("Cu", "化学Cu"),
-    ("Ni", "化学Ni"),
-    ("Cr", "化学Cr"),
-    ("Mo", "化学Mo"),
-    ("V", "化学V"),
-    ("Nb", "化学Nb"),
-    ("Al", "化学Al"),
-    ("Ti", "化学Ti"),
-    ("B", "化学B"),
-    ("W", "化学W"),
-    ("Co", "化学Co"),
-    ("N", "化学N"),
+    ("C", "\u5316\u5b66C"),
+    ("Mn", "\u5316\u5b66Mn"),
+    ("Si", "\u5316\u5b66Si"),
+    ("P", "\u5316\u5b66P"),
+    ("S", "\u5316\u5b66S"),
+    ("Cu", "\u5316\u5b66Cu"),
+    ("Ni", "\u5316\u5b66Ni"),
+    ("Cr", "\u5316\u5b66Cr"),
+    ("Mo", "\u5316\u5b66Mo"),
+    ("V", "\u5316\u5b66V"),
+    ("Nb", "\u5316\u5b66Nb"),
+    ("Al", "\u5316\u5b66Al"),
+    ("Ti", "\u5316\u5b66Ti"),
+    ("B", "\u5316\u5b66B"),
+    ("W", "\u5316\u5b66W"),
+    ("Co", "\u5316\u5b66Co"),
+    ("N", "\u5316\u5b66N"),
 ]
 
 MECHANICAL_COLUMNS = [
-    ("屈服强度", "机械屈服强度MPa", "MPa"),
-    ("抗拉强度", "机械抗拉强度MPa", "MPa"),
-    ("延伸率", "机械延伸率%", "%"),
-    ("冲击值", "机械冲击值", ""),
+    ("\u5c48\u670d\u5f3a\u5ea6", "\u673a\u68b0\u5c48\u670d\u5f3a\u5ea6MPa", "MPa"),
+    ("\u6297\u62c9\u5f3a\u5ea6", "\u673a\u68b0\u6297\u62c9\u5f3a\u5ea6MPa", "MPa"),
+    ("\u5ef6\u4f38\u7387", "\u673a\u68b0\u5ef6\u4f38\u7387%", "%"),
+    ("\u51b2\u51fb\u503c", "\u673a\u68b0\u51b2\u51fb\u503c", ""),
     ("PWHT", "PWHT", ""),
 ]
+
+OPERATIONAL_FIELDS = (
+    "inStock",
+    "stockSource",
+    "clickCount",
+    "lastClickedAt",
+    "createdAt",
+    "updatedAt",
+)
+
+
+def is_blank(value):
+    if value is None:
+        return True
+    if isinstance(value, float) and math.isnan(value):
+        return True
+    text = str(value).strip()
+    return not text or text.lower() in {"nan", "none", "null"}
 
 
 def clean_text(value):
@@ -64,9 +79,10 @@ def clean_text(value):
         "\u3000": " ",
         "\r\n": "\n",
         "\r": "\n",
-        "℃": "°C",
-        "（": "(",
-        "）": ")",
+        "\u2103": "\u00b0C",
+        "\uff08": "(",
+        "\uff09": ")",
+        "\uff1a": ":",
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
@@ -82,81 +98,78 @@ def clean_inline(value):
     return " ".join(clean_text(value).split())
 
 
-def is_blank(value):
-    if value is None:
-        return True
-    if isinstance(value, float) and math.isnan(value):
-        return True
-    text = str(value).strip()
-    return text == "" or text.lower() == "nan"
+def normalize_model(value):
+    model = clean_inline(value)
+    model = model.replace("\uff0e", ".").replace("\u3002", ".")
+    model = model.replace("\uff08", "(").replace("\uff09", ")")
+    model = model.replace("\uff0d", "-").replace("\u2011", "-").replace("\u2013", "-").replace("\u2014", "-")
+    return model.strip()
 
 
-def normalize_model(model):
-    model = clean_inline(model)
-    return model.replace("（", "(").replace("）", ")")
+def model_key(value):
+    model = normalize_model(value).upper()
+    return re.sub(r"[^A-Z0-9]+", "", model)
 
 
 def slugify_model(model):
-    slug = model.lower()
-    slug = slug.replace("φ", "phi").replace("Φ", "phi")
-    slug = re.sub(r"[\s/\\()（）]+", "-", slug)
-    slug = re.sub(r"[^a-z0-9-]+", "-", slug)
-    slug = re.sub(r"-+", "-", slug).strip("-")
-    return slug or "unknown"
+    slug = normalize_model(model).lower()
+    slug = re.sub(r"[^a-z0-9]+", "-", slug)
+    return slug.strip("-") or "unknown"
 
 
-def split_standards(*values):
-    standards = []
-    for value in values:
-        text = clean_text(value)
-        if not text:
-            continue
-        for part in re.split(r"[\n;；]+", text):
-            item = clean_inline(part)
-            if not item:
-                continue
-            item = item.replace("GB/T5117", "GB/T 5117")
-            item = item.replace("AWSA", "AWS A")
-            item = item.replace("ENISO", "EN ISO")
-            item = re.sub(r"\s+", " ", item).strip(" /,，")
-            if item and item not in standards:
-                standards.append(item)
-    if any(item.startswith("NB/T") for item in standards) and "NB/T 47018 承压产品" not in standards:
-        standards.append("NB/T 47018 承压产品")
-    return standards
+def find_excel_path():
+    matches = sorted(SOURCE_DIR.glob(SOURCE_GLOB), key=lambda item: item.stat().st_mtime, reverse=True)
+    if not matches:
+        raise FileNotFoundError(f"No source workbook matching {SOURCE_GLOB!r} under {SOURCE_DIR}")
+    return matches[0]
+
+
+def read_source_rows(excel_path):
+    workbook = openpyxl.load_workbook(excel_path, data_only=True, read_only=True)
+    sheet = workbook.worksheets[0]
+    headers = [clean_inline(cell.value) for cell in sheet[1]]
+    rows = []
+    for row_index, cells in enumerate(sheet.iter_rows(min_row=2, values_only=True), start=2):
+        row = {headers[index]: value for index, value in enumerate(cells) if index < len(headers) and headers[index]}
+        row["_sourceRow"] = row_index
+        rows.append(row)
+    workbook.close()
+    return rows
 
 
 def category_for(row):
-    group = clean_inline(row.get("上方分类"))
-    product_type = clean_inline(row.get("类型"))
-    name = clean_inline(row.get("产品命名"))
-    combined = f"{group} {product_type} {name}"
+    product_type = clean_inline(row.get("\u7c7b\u578b"))
+    group = clean_inline(row.get("\u4e0a\u65b9\u5206\u7c7b"))
+    product_name = clean_inline(row.get("\u4ea7\u54c1\u547d\u540d"))
+    combined = f"{product_type} {group} {product_name}"
 
-    if "铝" in combined:
-        return "aluminum-wires"
-    if "不锈钢" in combined:
+    if product_type == "\u4e0d\u9508\u94a2\u710a\u6750" or "\u4e0d\u9508\u94a2" in combined:
         return "stainless-materials"
-    if "埋弧" in combined and "碳钢" in combined:
+    if product_type == "\u836f\u82af\u6c14\u4fdd\u710a\u4e1d":
+        return "flux-cored-wires"
+    if product_type == "\u710a\u5242":
         return "submerged-arc"
-    if "埋弧" in combined:
+    if product_type == "\u7279\u79cd\u710a\u6750":
         return "special-materials"
-    if "药芯" in combined:
-        if "碳钢及高强钢" in combined or product_type == "药芯气保焊丝":
+    if product_type == "\u78b3\u94a2\u53ca\u9ad8\u5f3a\u94a2\u710a\u6750":
+        if "\u57cb\u5f27" in combined or "\u710a\u5242" in combined:
+            return "submerged-arc"
+        if "\u836f\u82af" in combined:
             return "flux-cored-wires"
-        return "special-materials"
-    if (
-        "气保焊丝" in combined
-        or "氩弧焊丝" in combined
-        or "实心" in combined
-        or "金属粉型焊丝" in combined
-        or ("焊丝" in combined and "碳钢及高强钢" in combined)
-    ):
-        if "碳钢及高强钢" in combined:
+        if "\u6c14\u4fdd\u710a\u4e1d" in combined or "\u6c29\u5f27\u710a\u4e1d" in combined or "\u91d1\u5c5e\u7c89\u578b\u710a\u4e1d" in combined or "\u710a\u4e1d" in combined:
             return "solid-wires"
-        return "special-materials"
-    if "碳钢及高强钢" in combined and "手焊条" in combined:
+        if "\u624b\u710a\u6761" in combined or "\u710a\u6761" in combined:
+            return "carbon-steel-electrodes"
         return "carbon-steel-electrodes"
-    if product_type == "碳钢及高强钢焊材":
+    if "\u94dd" in combined:
+        return "aluminum-wires"
+    if "\u57cb\u5f27" in combined or "\u710a\u5242" in combined:
+        return "submerged-arc"
+    if "\u836f\u82af" in combined:
+        return "flux-cored-wires"
+    if "\u710a\u4e1d" in combined:
+        return "solid-wires"
+    if "\u710a\u6761" in combined:
         return "carbon-steel-electrodes"
     return "special-materials"
 
@@ -167,47 +180,51 @@ def safe_number_text(value, unit="", element=None, mechanical=None, anomalies=No
     text = clean_inline(value)
     if not text:
         return ""
-    text = text.replace("°°C", "°C").replace("℃", "°C")
-
-    # Excel OCR can occasionally produce values such as 0E9 or 6000 in chemical
-    # columns. Keep uncertain values out of product details and log them.
+    text = text.replace("\u2103", "\u00b0C").replace("\u00b0\u00b0C", "\u00b0C")
     if re.search(r"\d+E\d+", text, re.I):
         if anomalies is not None:
-            anomalies.append(f"{model} {element or mechanical or 'value'}={text}")
+            anomalies.append(f"{model or ''} {element or mechanical or ''}: suspicious exponential value {text}")
         return ""
-    try:
-        number = float(text)
-        if element and (number > 5 or number < 0):
+    if element:
+        numbers = [float(item) for item in re.findall(r"(?<![A-Za-z])\d+(?:\.\d+)?", text)]
+        if numbers and max(numbers) > 50:
             if anomalies is not None:
-                anomalies.append(f"{model} {element}={text}")
+                anomalies.append(f"{model or ''} {element}: suspicious chemistry value {text}")
             return ""
-        if element in {"P", "S"} and number > 0.1:
-            if anomalies is not None:
-                anomalies.append(f"{model} {element}={text}")
-            return ""
-        if mechanical in {"屈服强度", "抗拉强度"} and number < 100:
-            if anomalies is not None:
-                anomalies.append(f"{model} {mechanical}={text}")
-            return ""
-        if mechanical == "延伸率" and not (0 <= number <= 100):
-            if anomalies is not None:
-                anomalies.append(f"{model} {mechanical}={text}")
-            return ""
-        text = f"{number:g}"
-    except ValueError:
-        if element and re.search(r"\b\d{3,}\b", text):
-            if anomalies is not None:
-                anomalies.append(f"{model} {element}={text}")
-            return ""
-    return f"{text}{unit}" if unit and not text.endswith(unit) else text
+    if unit and unit not in text:
+        return f"{text}{unit}"
+    return text
+
+
+def normalize_standard(value):
+    item = clean_inline(value)
+    item = re.sub(r"\bGB\s*/\s*T\b", "GB/T", item, flags=re.I)
+    item = re.sub(r"\bGB\s+T\b", "GB/T", item, flags=re.I)
+    item = re.sub(r"\bGB/T\s+GB/T\s+", "GB/T ", item, flags=re.I)
+    item = re.sub(r"\bISO\s+ISO\s+", "ISO ", item, flags=re.I)
+    item = re.sub(r"\s+", " ", item).strip()
+    return item
+
+
+def split_standards(*values):
+    standards = []
+    for value in values:
+        text = clean_text(value)
+        if not text:
+            continue
+        for part in re.split(r"[\n;\uff1b]+", text):
+            item = normalize_standard(part)
+            if item and item not in standards:
+                standards.append(item)
+    return standards
 
 
 def build_composition(row, model, anomalies):
     rows = []
-    for name, column in CHEMISTRY_COLUMNS:
-        value = safe_number_text(row.get(column), element=name, anomalies=anomalies, model=model)
+    for element, column in CHEMISTRY_COLUMNS:
+        value = safe_number_text(row.get(column), element=element, anomalies=anomalies, model=model)
         if value:
-            rows.append({"name": name, "value": value})
+            rows.append({"name": element, "value": value})
     return rows
 
 
@@ -220,51 +237,81 @@ def build_deposited_metal(row, model, anomalies):
     return rows
 
 
+def build_dimensions(row):
+    ocr = clean_text(row.get("OCR\u539f\u6587"))
+    if not ocr:
+        return []
+    specs = []
+    for line in ocr.split("\n"):
+        if not any(word in line for word in ("\u76f4\u5f84", "\u7ebf\u5f84", "\u4e1d\u5f84")):
+            continue
+        for spec in re.findall(r"(?:\u03a6|\u03c6|\uffe0)?\s*(\d+(?:\.\d+)?(?:\s*[xX]\s*\d+)?)\s*(?:mm|MM|\u6beb\u7c73)?", line):
+            value = re.sub(r"\s+", "", spec).replace("x", "X")
+            if value and value not in specs and len(specs) < 8:
+                specs.append(value)
+    if not specs:
+        return []
+    return [{"name": "\u89c4\u683c", "value": " / ".join(f"\u03a6{item}" for item in specs)}]
+
+
 def fallback_summary(model, category_name, intro, applications):
     source = clean_inline(intro) or clean_inline(applications)
     if source:
-        first = re.split(r"[。！？.!?]", source)[0].strip()
+        first = re.split(r"[\u3002\uff01\uff1f.!?]", source)[0].strip()
         if first:
-            return f"天泰 {model}，{category_name}。{first}。"
-    return f"天泰 {model}，{category_name}，适用于相应母材、强度等级和焊接工况的项目选型。"
+            return f"{MANUFACTURER} {model}\uff0c{category_name}\u3002{first}\u3002"
+    return f"{MANUFACTURER} {model}\uff0c{category_name}\uff0c\u9002\u7528\u4e8e\u76f8\u5e94\u6bcd\u6750\u3001\u5f3a\u5ea6\u7b49\u7ea7\u548c\u710a\u63a5\u5de5\u51b5\u7684\u9879\u76ee\u9009\u578b\u3002"
 
 
-def build_products():
-    frame = pd.read_excel(EXCEL_PATH, sheet_name=0)
+def data_score(product):
+    score = 0
+    for key in ("introduction", "applications", "standards", "composition", "depositedMetal", "dimensions"):
+        value = product.get(key)
+        if isinstance(value, list):
+            score += len(value) * 3
+        elif value:
+            score += 5
+    score += len(product.get("summary", "")) // 20
+    return score
+
+
+def build_products(excel_path):
     products = []
     skipped = []
     anomalies = []
+    source_name = excel_path.name
 
-    for source_row, raw in frame.iterrows():
-        row = raw.to_dict()
-        if clean_inline(row.get("品牌")) != MANUFACTURER:
+    for row in read_source_rows(excel_path):
+        source_row = int(row.get("_sourceRow") or 0)
+        if clean_inline(row.get("\u54c1\u724c")) != MANUFACTURER:
             continue
-        model = normalize_model(row.get("牌号"))
+        model = normalize_model(row.get("\u724c\u53f7"))
         if not model:
-            skipped.append(int(source_row) + 2)
+            skipped.append(source_row)
             continue
 
         category_slug = category_for(row)
         category_name = CATEGORY_NAMES[category_slug]
-        product_name = clean_inline(row.get("产品命名"))
-        introduction = clean_text(row.get("特性"))
-        applications = clean_text(row.get("应用场景"))
-        standards = split_standards(row.get("国标"), row.get("美标"), row.get("国际标准"))
-        page = clean_inline(row.get("页码"))
-        position = clean_inline(row.get("位置"))
-        source = SOURCE_NAME
+        product_name = clean_inline(row.get("\u4ea7\u54c1\u547d\u540d"))
+        introduction = clean_text(row.get("\u7279\u6027"))
+        applications = clean_text(row.get("\u5e94\u7528\u573a\u666f"))
+        standards = split_standards(row.get("\u56fd\u6807"), row.get("\u7f8e\u6807"), row.get("\u56fd\u9645\u6807\u51c6"))
+        page = clean_inline(row.get("\u9875\u7801"))
+        position = clean_inline(row.get("\u4f4d\u7f6e"))
+        source = source_name
         if page:
-            source += f"；页码：{page}"
+            source += f"\uff1b\u9875\u7801\uff1a{page}"
         if position:
-            source += f"；位置：{position}"
+            source += f"\uff1b\u4f4d\u7f6e\uff1a{position}"
 
+        display_name = f"{MANUFACTURER} {model} {product_name}" if product_name else f"{MANUFACTURER} {model} {category_name}"
         product = {
             "slug": f"tiantai-{slugify_model(model)}",
             "manufacturer": MANUFACTURER,
             "categorySlug": category_slug,
             "categoryName": category_name,
             "model": model,
-            "name": product_name or f"天泰 {model} {category_name}",
+            "name": display_name,
             "standard": " / ".join(standards),
             "standards": standards,
             "summary": fallback_summary(model, category_name, introduction, applications),
@@ -272,108 +319,128 @@ def build_products():
             "applications": [applications] if applications else [],
             "composition": build_composition(row, model, anomalies),
             "depositedMetal": build_deposited_metal(row, model, anomalies),
-            "dimensions": [],
+            "dimensions": build_dimensions(row),
             "certifications": [],
-            "notes": "以天泰最新产品手册、质保书及项目技术条件为准；关键工程请结合 WPS/PQR 复核。",
+            "notes": "\u4ee5\u5929\u6cf0\u6700\u65b0\u4ea7\u54c1\u624b\u518c\u3001\u8d28\u4fdd\u4e66\u53ca\u9879\u76ee\u6280\u672f\u6761\u4ef6\u4e3a\u51c6\uff1b\u5173\u952e\u5de5\u7a0b\u8bf7\u7ed3\u5408 WPS/PQR \u590d\u6838\uff1b\u6700\u65b0\u5185\u5bb9\u8bf7\u8054\u7cfb\u4e1a\u52a1\u54a8\u8be2\uff1b\u5b9e\u9645\u5e93\u5b58\u6570\u91cf\u5b9e\u65f6\u53d8\u52a8\uff0c\u8bf7\u4e8e\u9500\u552e\u8ba2\u8d27\u65f6\u4e8c\u6b21\u6838\u5b9e\u3002",
             "source": source,
-            "_sourceRow": int(source_row) + 2,
+            "_sourceRow": source_row,
         }
         products.append(product)
 
-    deduped = {}
+    by_key = {}
     duplicates = []
     for product in products:
-        slug = product["slug"]
-        if slug not in deduped:
-            deduped[slug] = product
+        key = model_key(product["model"])
+        if key in by_key:
+            duplicates.append((by_key[key]["model"], product["model"]))
+            if data_score(product) > data_score(by_key[key]):
+                by_key[key] = product
+        else:
+            by_key[key] = product
+
+    return list(by_key.values()), skipped, duplicates, anomalies
+
+
+def preserve_existing_fields(new_product, existing_product):
+    merged = dict(new_product)
+    for field in OPERATIONAL_FIELDS:
+        if field in existing_product:
+            merged[field] = existing_product[field]
+    return merged
+
+
+def merge_products(existing, source_products):
+    source_by_key = {model_key(item.get("model")): item for item in source_products}
+    existing_tiantai_by_key = {
+        model_key(item.get("model")): item for item in existing if item.get("manufacturer") == MANUFACTURER
+    }
+    used_source_keys = set()
+    merged = []
+    overwritten = 0
+    retained_missing = 0
+
+    for item in existing:
+        if item.get("manufacturer") != MANUFACTURER:
+            merged.append(item)
             continue
-        duplicates.append((slug, deduped[slug]["_sourceRow"], product["_sourceRow"]))
-        if data_score(product) > data_score(deduped[slug]):
-            deduped[slug] = product
+        key = model_key(item.get("model"))
+        replacement = source_by_key.get(key)
+        if replacement:
+            merged.append(preserve_existing_fields(replacement, item))
+            used_source_keys.add(key)
+            overwritten += 1
+        else:
+            merged.append(item)
+            retained_missing += 1
 
-    result = []
-    for product in deduped.values():
-        product.pop("_sourceRow", None)
-        result.append(product)
-    result.sort(key=lambda item: (item["categorySlug"], item["model"]))
-    return result, skipped, duplicates, anomalies
+    added = []
+    for product in source_products:
+        key = model_key(product.get("model"))
+        if key not in existing_tiantai_by_key and key not in used_source_keys:
+            added.append(product)
+            merged.append(product)
+            used_source_keys.add(key)
 
-
-def data_score(product):
-    return sum(
-        [
-            len(product.get("standards") or []),
-            len(product.get("introduction") or ""),
-            len(product.get("applications") or []),
-            len(product.get("composition") or []),
-            len(product.get("depositedMetal") or []),
-        ]
-    )
+    return merged, overwritten, added, retained_missing
 
 
 def main():
-    tiantai_products, skipped, duplicates, anomalies = build_products()
+    excel_path = find_excel_path()
+    source_products, skipped, duplicates, anomalies = build_products(excel_path)
     existing = json.loads(PRODUCTS_PATH.read_text(encoding="utf-8-sig"))
-    retained = [item for item in existing if item.get("manufacturer") != MANUFACTURER]
-    merged = retained + tiantai_products
+    merged, overwritten, added, retained_missing = merge_products(existing, source_products)
     PRODUCTS_PATH.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    category_counts = Counter(item["categoryName"] for item in tiantai_products)
+    final_tiantai = [item for item in merged if item.get("manufacturer") == MANUFACTURER]
+    source_counts = Counter(item["categoryName"] for item in source_products)
+    final_counts = Counter(item["categoryName"] for item in final_tiantai)
     missing = {
-        "介绍": sum(not item.get("introduction") for item in tiantai_products),
-        "适用场景": sum(not item.get("applications") for item in tiantai_products),
-        "执行标准": sum(not item.get("standards") for item in tiantai_products),
-        "成分": sum(not item.get("composition") for item in tiantai_products),
-        "熔敷金属": sum(not item.get("depositedMetal") for item in tiantai_products),
+        "\u4ecb\u7ecd": sum(not item.get("introduction") for item in source_products),
+        "\u9002\u7528\u573a\u666f": sum(not item.get("applications") for item in source_products),
+        "\u6267\u884c\u6807\u51c6": sum(not item.get("standards") for item in source_products),
+        "\u6210\u5206": sum(not item.get("composition") for item in source_products),
+        "\u7194\u6577\u91d1\u5c5e": sum(not item.get("depositedMetal") for item in source_products),
     }
 
     report = [
-        "# 天泰产品导入报告",
+        "# \u5929\u6cf0\u4ea7\u54c1\u5bfc\u5165\u62a5\u544a",
         "",
-        f"- 来源文件：`{EXCEL_PATH}`",
-        f"- 导入厂家：{MANUFACTURER}",
-        f"- 导入产品：{len(tiantai_products)} 个",
-        f"- 跳过空牌号行：{len(skipped)}",
-        f"- 重复 slug 合并：{len(duplicates)} 组",
+        f"- \u6765\u6e90\u6587\u4ef6\uff1a`{excel_path}`",
+        f"- \u5bfc\u5165\u5382\u5bb6\uff1a{MANUFACTURER}",
+        f"- \u65b0\u7248\u8868\u683c\u6709\u6548\u4ea7\u54c1\uff1a{len(source_products)} \u4e2a",
+        f"- \u540c\u578b\u53f7\u8986\u76d6\uff1a{overwritten} \u4e2a",
+        f"- \u65b0\u589e\u4ea7\u54c1\uff1a{len(added)} \u4e2a",
+        f"- \u672a\u5728\u65b0\u8868\u4e2d\u51fa\u73b0\u4f46\u4fdd\u7559\uff1a{retained_missing} \u4e2a",
+        f"- \u5f53\u524d\u5929\u6cf0\u603b\u4ea7\u54c1\uff1a{len(final_tiantai)} \u4e2a",
+        f"- \u8df3\u8fc7\u7a7a\u724c\u53f7\u884c\uff1a{len(skipped)}",
+        f"- \u91cd\u590d\u578b\u53f7\u5408\u5e76\uff1a{len(duplicates)} \u7ec4",
         "",
-        "## 分类数量",
+        "## \u65b0\u7248\u6765\u6e90\u5206\u7c7b\u6570\u91cf",
         "",
     ]
-    for name, count in sorted(category_counts.items()):
+    for name, count in sorted(source_counts.items()):
         report.append(f"- {name}: {count}")
-    report.extend(["", "## 缺失字段统计", ""])
+    report.extend(["", "## \u5f53\u524d\u5929\u6cf0\u5e93\u5185\u5206\u7c7b\u6570\u91cf", ""])
+    for name, count in sorted(final_counts.items()):
+        report.append(f"- {name}: {count}")
+    report.extend(["", "## \u65b0\u7248\u6765\u6e90\u7f3a\u5931\u5b57\u6bb5\u7edf\u8ba1", ""])
     for name, count in missing.items():
         report.append(f"- {name}: {count}")
-    report.extend(["", "## 数据清洗说明", ""])
-    report.append("- 成分优先使用表格中 `化学C` 至 `化学N` 的结构化列。")
-    report.append("- 熔敷金属优先使用 `屈服强度 / 抗拉强度 / 延伸率 / 冲击值 / PWHT` 结构化列。")
-    report.append("- 发现明显 OCR 异常的化学成分值会跳过，并记录在下方。")
-    if anomalies:
-        report.extend(["", "## 跳过的疑似 OCR 异常值", ""])
-        for item in anomalies[:120]:
-            report.append(f"- {item}")
-        if len(anomalies) > 120:
-            report.append(f"- 其余 {len(anomalies) - 120} 条略。")
+    report.extend(["", "## \u6570\u636e\u6e05\u6d17\u8bf4\u660e", ""])
+    report.append("- \u540c\u578b\u53f7\u6309\u53bb\u9664\u7a7a\u683c\u3001\u70b9\u53f7\u3001\u8fde\u5b57\u7b26\u3001\u62ec\u53f7\u540e\u7684\u7edf\u4e00 key \u5339\u914d\uff0c\u4fdd\u7559 -II \u7b49\u540e\u7f00\u7684\u5b9e\u9645\u5b57\u6bcd\u4fe1\u606f\u3002")
+    report.append("- \u65b0\u8868\u5df2\u6709\u540c\u578b\u53f7\u8986\u76d6\u5929\u6cf0\u65e7\u8bb0\u5f55\uff0c\u4f46\u4fdd\u7559\u73b0\u8d27\u6807\u8bc6\u3001\u70b9\u51fb\u91cf\u7b49\u7ad9\u5185\u8fd0\u8425\u5b57\u6bb5\u3002")
+    report.append("- \u6210\u5206\u4f7f\u7528\u8868\u683c\u4e2d `\u5316\u5b66C` \u81f3 `\u5316\u5b66N` \u7684\u7ed3\u6784\u5316\u5217\uff0c\u7194\u6577\u91d1\u5c5e\u4f7f\u7528\u529b\u5b66\u6027\u80fd\u5217\uff0c\u89c4\u683c\u7c97\u7ec6\u5355\u72ec\u5b58\u5165 dimensions\u3002")
     if duplicates:
-        report.extend(["", "## 重复合并记录", ""])
-        for slug, first_row, duplicate_row in duplicates[:80]:
-            report.append(f"- `{slug}`: 来源行 {first_row} / {duplicate_row}")
-
-    REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        report.extend(["", "## \u5408\u5e76\u7684\u91cd\u590d\u578b\u53f7\u793a\u4f8b", ""])
+        for old, new in duplicates[:30]:
+            report.append(f"- {old} / {new}")
+    if anomalies:
+        report.extend(["", "## \u6e05\u6d17\u5f02\u5e38\u503c", ""])
+        for item in anomalies[:80]:
+            report.append(f"- {item}")
     REPORT_PATH.write_text("\n".join(report) + "\n", encoding="utf-8")
-    print(
-        json.dumps(
-            {
-                "imported": len(tiantai_products),
-                "categoryCounts": dict(category_counts),
-                "missing": missing,
-                "duplicates": len(duplicates),
-                "anomalies": len(anomalies),
-            },
-            ensure_ascii=True,
-            indent=2,
-        )
-    )
+
+    print(f"source={len(source_products)} overwritten={overwritten} added={len(added)} retained_missing={retained_missing} final_tiantai={len(final_tiantai)}")
 
 
 if __name__ == "__main__":
