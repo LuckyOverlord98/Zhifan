@@ -6,7 +6,7 @@ import { knowledgeQaArticles, knowledgeQaCategories } from "./data/knowledgeQa.j
 
 const navItems = [
   ["/#strength", "资质与服务"],
-  ["/products/carbon-steel-electrodes", "产品中心"],
+  ["/products", "产品中心"],
   ["/#solutions", "案例及相关业绩"],
   ["/knowledge", "焊接操作"],
   ["/team-vision", "团队与愿景"],
@@ -484,7 +484,7 @@ function ProductPageShell({ children }) {
             <p>{"\u5730\u5740\uff1a\u5b81\u6ce2\u5e02\u911e\u5dde\u533a\u5bcc\u5b81\u8def119\u53f7"}</p>
           </div>
           <nav className="footer-links" aria-label="product footer links">
-            <a href="/#products">{"\u4ea7\u54c1\u4e2d\u5fc3"}</a>
+            <a href="/products">{"\u4ea7\u54c1\u4e2d\u5fc3"}</a>
             <a href="/products/carbon-steel-electrodes">{"\u78b3\u94a2\u710a\u6761"}</a>
             <a href="/knowledge">{"\u710a\u63a5\u64cd\u4f5c"}</a>
             <a href="/team-vision">团队与愿景</a>
@@ -526,23 +526,41 @@ function TeamVisionPage() {
     </ProductPageShell>
   );
 }
+
+function getPaginationPages(totalPages, currentPage, maxVisible = 5) {
+  const total = Math.max(1, Number(totalPages) || 1);
+  const current = Math.min(Math.max(1, Number(currentPage) || 1), total);
+  const visible = Math.max(1, Math.min(maxVisible, total));
+  let start = current - Math.floor(visible / 2);
+  let end = start + visible - 1;
+  if (start < 1) {
+    start = 1;
+    end = visible;
+  }
+  if (end > total) {
+    end = total;
+    start = Math.max(1, end - visible + 1);
+  }
+  return Array.from({ length: end - start + 1 }, (_, index) => start + index);
+}
+
 function ProductCategoryPage({ categorySlug }) {
-  const [selectedCategory, setSelectedCategory] = useState(categorySlug);
+  const [selectedCategory, setSelectedCategory] = useState(categorySlug || "");
   useIndustrialMotion([selectedCategory]);
   const meta = categoryMeta[selectedCategory] || {
-    title: "\u4ea7\u54c1\u4e2d\u5fc3",
+    title: "产品中心",
     eyebrow: "Products",
-    description: "\u6309\u5382\u5bb6\u548c\u578b\u53f7\u67e5\u770b\u4ea7\u54c1\u89c4\u683c\u3002",
+    description: "根据分类与厂家挑选焊材",
   };
   usePageMeta(productCategorySeo(meta));
-  const [manufacturer, setManufacturer] = useState("\u5168\u90e8");
+  const [manufacturer, setManufacturer] = useState("全部");
   const [items, setItems] = useState([]);
   const [status, setStatus] = useState("loading");
   const [page, setPage] = useState(1);
   const pageSize = 15;
 
   useEffect(() => {
-    setSelectedCategory(categorySlug);
+    setSelectedCategory(categorySlug || "");
   }, [categorySlug]);
 
   useEffect(() => {
@@ -552,8 +570,11 @@ function ProductCategoryPage({ categorySlug }) {
   useEffect(() => {
     const controller = new AbortController();
     setStatus("loading");
-    const manufacturerQuery = manufacturer === "\u5168\u90e8" ? "" : "&manufacturer=" + encodeURIComponent(manufacturer);
-    fetch("/api/products?category=" + encodeURIComponent(selectedCategory) + manufacturerQuery, { signal: controller.signal })
+    const params = new URLSearchParams();
+    if (selectedCategory) params.set("category", selectedCategory);
+    if (manufacturer !== "全部") params.set("manufacturer", manufacturer);
+    const query = params.toString();
+    fetch("/api/products" + (query ? "?" + query : ""), { signal: controller.signal })
       .then((response) => response.json().then((data) => ({ ok: response.ok, data })))
       .then(({ ok, data }) => {
         if (!ok) throw new Error(data.message || "read failed");
@@ -571,6 +592,7 @@ function ProductCategoryPage({ categorySlug }) {
 
   const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
   const safePage = Math.min(page, totalPages);
+  const visiblePageNumbers = getPaginationPages(totalPages, safePage, 5);
   const pagedItems = items.slice((safePage - 1) * pageSize, safePage * pageSize);
 
   return (
@@ -578,14 +600,14 @@ function ProductCategoryPage({ categorySlug }) {
       <main className="product-page category-page">
         <section className="product-page-hero">
           <div>
-            <a className="breadcrumb" href="/#products">{"\u4ea7\u54c1\u4e2d\u5fc3"}</a>
+            <a className="breadcrumb" href="/#products">{"产品中心"}</a>
             <p className="eyebrow">{meta.eyebrow}</p>
             <h1>{meta.title}</h1>
             <p>{meta.description}</p>
           </div>
           <div className="product-page-actions">
-            <a className="secondary-btn" href="/#home">{"\u8fd4\u56de\u9996\u9875"}</a>
-            <a className="primary-btn" href="/#contact">{"\u8054\u7cfb\u4e1a\u52a1\u627e\u578b\u53f7"}</a>
+            <a className="secondary-btn" href="/#home">{"返回首页"}</a>
+            <a className="primary-btn" href="/#contact">{"联系业务找型号"}</a>
           </div>
           <ProductSearch />
         </section>
@@ -594,14 +616,14 @@ function ProductCategoryPage({ categorySlug }) {
           <div className="product-filter-grid product-filter-grid-single">
             <div className="product-filter-card combined-filter-card">
               <div className="filter-group">
-                <h2>{"\u4ea7\u54c1\u5927\u7c7b"}</h2>
+                <h2>{"产品大类"}</h2>
                 <div className="category-tabs" role="tablist" aria-label="product category filter">
                   {products.map((item) => (
                     <button
                       key={item.slug}
                       type="button"
                       className={selectedCategory === item.slug ? "active" : ""}
-                      onClick={() => setSelectedCategory(item.slug)}
+                      onClick={() => setSelectedCategory((current) => current === item.slug ? "" : item.slug)}
                     >
                       <strong>{item.number}</strong>
                       <span>{item.title}</span>
@@ -610,10 +632,10 @@ function ProductCategoryPage({ categorySlug }) {
                 </div>
               </div>
               <div className="filter-group">
-                <h2>{"\u5382\u5bb6\u7b5b\u9009"}</h2>
+                <h2>{"厂家筛选"}</h2>
                 <div className="manufacturer-tabs" role="tablist" aria-label="manufacturer filter">
                   {manufacturerTabs.map((name) => (
-                    <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => setManufacturer(name)}>
+                    <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => setManufacturer((current) => current === name ? "全部" : name)}>
                       {name}
                     </button>
                   ))}
@@ -622,20 +644,20 @@ function ProductCategoryPage({ categorySlug }) {
             </div>
           </div>
 
-          {status === "loading" && <p className="product-state">{"\u6b63\u5728\u8bfb\u53d6\u4ea7\u54c1\u578b\u53f7..."}</p>}
-          {status === "error" && <p className="product-state">{"\u4ea7\u54c1\u6570\u636e\u6682\u65f6\u8bfb\u53d6\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u5237\u65b0\u3002"}</p>}
-          {status === "ready" && items.length === 0 && <p className="product-state">{"\u8be5\u5382\u5bb6\u578b\u53f7\u6b63\u5728\u6574\u7406\u4e2d\uff0c\u5df2\u9884\u7559\u5206\u7c7b\u5165\u53e3\u3002"}</p>}
+          {status === "loading" && <p className="product-state">{"正在读取产品型号..."}</p>}
+          {status === "error" && <p className="product-state">{"产品数据暂时读取失败，请稍后刷新。"}</p>}
+          {status === "ready" && items.length === 0 && <p className="product-state">{"该筛选条件下型号正在整理中，可取消筛选或联系业务确认。"}</p>}
           {status === "ready" && items.length > 0 && (
             <div className="product-list-meta">
-              <span>{"\u5171 " + items.length + " \u4e2a\u578b\u53f7"}</span>
-              {items.length > pageSize && <span>{"\u7b2c " + safePage + " / " + totalPages + " \u9875\uff0c\u6bcf\u9875 15 \u4e2a"}</span>}
+              <span>{"共 " + items.length + " 个型号"}</span>
+              {items.length > pageSize && <span>{"第 " + safePage + " / " + totalPages + " 页，每页 15 个"}</span>}
             </div>
           )}
 
           <div className="product-list">
             {pagedItems.map((item) => (
               <a className={"product-row" + (item.inStock ? " in-stock-product" : "")} key={item.slug} href={"/products/" + item.slug}>
-                {item.inStock && <span className="stock-label">仓内现货产品</span>}
+                {item.inStock && <span className="stock-label product-stock-label">仓内现货产品</span>}
                 <span className="model-badge">{item.model}</span>
                 <div>
                   <h3>{item.name}</h3>
@@ -648,10 +670,11 @@ function ProductCategoryPage({ categorySlug }) {
 
           {status === "ready" && items.length > pageSize && (
             <nav className="pagination" aria-label="产品列表分页">
+              <button type="button" onClick={() => setPage(1)} disabled={safePage === 1}>首页</button>
               <button type="button" onClick={() => setPage((value) => Math.max(1, value - 1))} disabled={safePage === 1}>
                 上一页
               </button>
-              {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+              {visiblePageNumbers.map((pageNumber) => (
                 <button
                   key={pageNumber}
                   type="button"
@@ -665,6 +688,7 @@ function ProductCategoryPage({ categorySlug }) {
               <button type="button" onClick={() => setPage((value) => Math.min(totalPages, value + 1))} disabled={safePage === totalPages}>
                 下一页
               </button>
+              <button type="button" onClick={() => setPage(totalPages)} disabled={safePage === totalPages}>尾页</button>
             </nav>
           )}
         </section>
@@ -987,6 +1011,7 @@ function App() {
   const isAdminPage = currentPath === "/admin" || currentPath === "/admin/";
   const isTeamVisionPage = currentPath === "/team-vision" || currentPath === "/team-vision/";
   const isKnowledgePage = currentPath === "/knowledge" || currentPath === "/knowledge/";
+  const isProductsIndexPage = currentPath === "/products" || currentPath === "/products/";
   const [knowledgeOpen, setKnowledgeOpen] = useState(false);
   const [activeKnowledgeCategory, setActiveKnowledgeCategory] = useState(knowledgeQaCategories[0]?.slug || "all");
   const currentKnowledgeArticles = useMemo(() => {
@@ -995,12 +1020,13 @@ function App() {
   }, [activeKnowledgeCategory]);
   const visibleArticles = useMemo(() => (knowledgeOpen ? currentKnowledgeArticles : currentKnowledgeArticles.slice(0, 5)), [knowledgeOpen, currentKnowledgeArticles]);
 
-  usePageMeta(isAdminPage || currentPath.startsWith("/products/") || isTeamVisionPage || isKnowledgePage ? null : defaultSeo);
+  usePageMeta(isAdminPage || currentPath.startsWith("/products") || isTeamVisionPage || isKnowledgePage ? null : defaultSeo);
   useIndustrialMotion([knowledgeOpen, activeKnowledgeCategory, currentPath]);
 
   if (isAdminPage) return <AdminDashboard />;
   if (isTeamVisionPage) return <TeamVisionPage />;
   if (isKnowledgePage) return <KnowledgeIndexPage />;
+  if (isProductsIndexPage) return <ProductCategoryPage categorySlug="" />;
   if (currentPath.startsWith("/products/")) {
     const productPath = decodeURIComponent(currentPath.replace("/products/", "").replace(/\/$/, ""));
     if (categoryMeta[productPath]) return <ProductCategoryPage categorySlug={productPath} />;

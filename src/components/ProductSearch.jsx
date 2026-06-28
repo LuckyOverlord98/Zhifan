@@ -108,7 +108,7 @@ function ProductSearch() {
         <p>{"暂无匹配型号"}</p>
       ) : results.map((item) => (
         <a key={item.slug} href={"/products/" + item.slug}>
-          <strong>{item.model}{item.inStock && <span className="search-stock-label">现货</span>}</strong>
+          <strong>{item.model}{item.inStock && <span className="search-stock-label">仓内现货产品</span>}</strong>
           <span>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" / ")}</span>
         </a>
       ))}

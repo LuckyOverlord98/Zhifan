@@ -5500,3 +5500,93 @@ body {
     flex-direction: column;
   }
 }
+
+/* Product page and contact layout refinements */
+.hero-metrics {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.hero-metrics div {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.amap-card {
+  min-width: 0;
+}
+
+.amap-card > div:first-child {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.map-actions {
+  flex: 1 1 230px;
+  min-width: 0;
+  justify-content: flex-end;
+}
+
+.map-actions a,
+.amap-card a {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
+  padding: 8px 16px;
+}
+
+.map-actions a {
+  flex: 1 1 138px;
+}
+
+.product-row.in-stock-product {
+  padding-top: 20px;
+}
+
+.product-row .product-stock-label {
+  position: static;
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin: 0 0 -4px;
+}
+
+.stock-label,
+.search-stock-label {
+  background: linear-gradient(135deg, #e12231, #b40716);
+  color: #fff !important;
+  font-weight: 900;
+}
+
+.search-stock-label {
+  margin-left: 8px;
+  min-height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.pagination button {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 760px) {
+  .product-row.in-stock-product {
+    padding-top: 14px;
+  }
+
+  .product-row .product-stock-label {
+    margin-bottom: -2px;
+  }
+}
+
+@media (max-width: 640px) {
+  .map-actions a,
+  .amap-card a {
+    flex-basis: 100%;
+  }
+}
