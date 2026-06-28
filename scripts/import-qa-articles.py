@@ -13,7 +13,7 @@ SEO_KEYWORDS = [
     "浙江焊材供应商",
     "江浙沪焊材配送",
     "焊材选型",
-    "焊接操作",
+    "焊接材料问答Q&A",
     "焊材质量证明书",
     "焊材现货供应",
     "金桥焊材",
@@ -285,7 +285,7 @@ def article_keywords(article):
 
 
 def article_picture_html():
-    return '<picture><source type="image/webp" srcset="../../assets/optimized/sections__knowledge-operation-480.webp 480w, ../../assets/optimized/sections__knowledge-operation-768.webp 768w, ../../assets/optimized/sections__knowledge-operation-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 48vw" /><img src="../../assets/sections/knowledge-operation.png" alt="焊接操作与焊材选型" loading="lazy" decoding="async" /></picture>'
+    return '<picture><source type="image/webp" srcset="../../assets/optimized/sections__knowledge-operation-480.webp 480w, ../../assets/optimized/sections__knowledge-operation-768.webp 768w, ../../assets/optimized/sections__knowledge-operation-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 48vw" /><img src="../../assets/sections/knowledge-operation.png" alt="焊接材料问答Q&A" loading="lazy" decoding="async" /></picture>'
 def write_pages(articles):
     out_dir = ROOT / "public" / "articles" / "qa"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -294,9 +294,9 @@ def write_pages(articles):
 
     for idx, article in enumerate(articles):
         prev_link = articles[idx - 1]["href"] if idx > 0 else "../../knowledge"
-        prev_text = "上一篇" if idx > 0 else "返回焊接操作"
+        prev_text = "上一篇" if idx > 0 else "返回焊接材料问答Q&A"
         next_link = articles[idx + 1]["href"] if idx + 1 < len(articles) else "../../knowledge"
-        next_text = "下一篇" if idx + 1 < len(articles) else "返回焊接操作"
+        next_text = "下一篇" if idx + 1 < len(articles) else "返回焊接材料问答Q&A"
         note = (
             f'<div class="qa-note"><strong>资料提示</strong><p>{esc(article["note"])}</p></div>'
             if article.get("note")
@@ -322,12 +322,12 @@ def write_pages(articles):
           <img class="brand-logo" src="../../assets/site/zhifan-logo.png" alt="志凡焊材 logo" />
           <span><strong>宁波志凡焊材有限公司</strong><small>ZhiFan Welding Materials</small></span>
         </a>
-        <div class="nav-links article-nav-links"><a href="../../index.html#products">产品中心</a><a href="../../knowledge">焊接操作</a><a class="nav-cta" href="../../index.html#contact">联系我们</a></div>
+        <div class="nav-links article-nav-links"><a href="../../index.html#products">产品中心</a><a href="../../knowledge">焊接材料问答Q&A</a><a class="nav-cta" href="../../index.html#contact">联系我们</a></div>
       </nav>
     </header>
     <main>
       <article class="article-shell qa-shell">
-        <a class="back-link" href="../../knowledge">返回焊接操作</a>
+        <a class="back-link" href="../../knowledge">返回焊接材料问答Q&A</a>
         <div class="article-hero qa-hero">
           <div><p class="eyebrow">{esc(article["category"])} · QA {esc(article["number"])}</p><h1>{esc(article["title"])}</h1><p class="article-generated-time">生成时间：{esc(article["generatedAt"])}</p></div>
           <figure class="article-photo-bg">{article_picture_html()}</figure>
@@ -338,7 +338,7 @@ def write_pages(articles):
         </section>
         {table_html(article)}
         {note}
-        <nav class="article-pager" aria-label="文章翻页"><a href="{esc(prev_link)}">{prev_text}</a><a href="../../knowledge">返回焊接操作</a><a href="{esc(next_link)}">{next_text}</a><a class="nav-cta" href="../../index.html#contact">联系业务找型号</a></nav>
+        <nav class="article-pager" aria-label="文章翻页"><a href="{esc(prev_link)}">{prev_text}</a><a href="../../knowledge">返回焊接材料问答Q&A</a><a href="{esc(next_link)}">{next_text}</a><a class="nav-cta" href="../../index.html#contact">联系业务找型号</a></nav>
       </article>
     </main>
     <footer class="footer"><p>© 2026 宁波志凡焊材有限公司</p><span>营业时间：周一至周六 8:00-16:30，周日休息</span><a href="#top">返回顶部</a></footer>

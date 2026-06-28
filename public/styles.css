@@ -5948,3 +5948,105 @@ body::before {
     flex-basis: clamp(142px, 49vw, 190px) !important;
   }
 }
+/* 2026-06-28 in-stock marquee labels and Apple-like desktop tile hover. */
+@keyframes stockMarqueeBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 220% 50%; }
+}
+
+.stock-label,
+.search-stock-label {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid transparent !important;
+  background: linear-gradient(135deg, #e51d2d, #a90614) padding-box !important;
+  color: #fff !important;
+  box-shadow: 0 10px 24px rgba(190, 12, 27, 0.22), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+
+.stock-label::before,
+.search-stock-label::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #ff2438 0%, #ffffff 18%, #ff8a92 32%, #b50614 50%, #ff2438 70%, #ffffff 88%, #ff2438 100%);
+  background-size: 220% 100%;
+  animation: stockMarqueeBorder 1.45s linear infinite;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.stock-label::after,
+.search-stock-label::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -45%;
+  z-index: 1;
+  width: 42%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  transform: skewX(-18deg);
+  animation: stockLabelGlint 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes stockLabelGlint {
+  0%, 42% { left: -48%; opacity: 0; }
+  55% { opacity: 1; }
+  78%, 100% { left: 112%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stock-label::before,
+  .search-stock-label::before,
+  .stock-label::after,
+  .search-stock-label::after {
+    animation: none !important;
+  }
+}
+
+@media (min-width: 900px) and (hover: hover) and (pointer: fine) {
+  .hero-metrics div,
+  .credential-panel div,
+  .stock-proof-strip article,
+  #products .product-home-card,
+  #solutions .case-list article,
+  #solutions .case-data-grid article,
+  #solutions .delivery-card,
+  .knowledge-hub .quick-match-card,
+  .knowledge-hub .knowledge-card {
+    transform-origin: center;
+    transition:
+      transform 520ms cubic-bezier(.2, .8, .2, 1),
+      box-shadow 520ms cubic-bezier(.2, .8, .2, 1),
+      border-color 360ms ease,
+      filter 360ms ease;
+    will-change: transform;
+  }
+
+  .hero-metrics div:hover,
+  .credential-panel div:hover,
+  .stock-proof-strip article:hover,
+  #products .product-home-card:hover,
+  #solutions .case-list article:hover,
+  #solutions .case-data-grid article:hover,
+  #solutions .delivery-card:hover,
+  .knowledge-hub .quick-match-card:hover,
+  .knowledge-hub .knowledge-card:hover {
+    transform: translateY(-6px) scale(1.018);
+    border-color: rgba(18, 100, 216, 0.28);
+    box-shadow: 0 24px 58px rgba(9, 33, 72, 0.16);
+    filter: saturate(1.03);
+  }
+
+  #products .product-home-card:hover {
+    transform: translateY(-7px) scale(1.022);
+    box-shadow: 0 28px 64px rgba(8, 35, 74, 0.22);
+  }
+}

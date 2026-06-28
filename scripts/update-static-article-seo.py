@@ -3,7 +3,7 @@ import html
 import re
 
 ROOT = Path('.')
-GENERIC = '宁波焊材批发,浙江焊材供应商,焊材选型,焊接操作,焊材质量证明书,焊材现货供应,金桥焊材,大西洋焊材,上海东风焊材,天泰焊材,船用焊材,钢结构焊材,压力容器焊材'
+GENERIC = '宁波焊材批发,浙江焊材供应商,焊材选型,焊接材料问答Q&A,焊材质量证明书,焊材现货供应,金桥焊材,大西洋焊材,上海东风焊材,天泰焊材,船用焊材,钢结构焊材,压力容器焊材'
 MODEL_RE = re.compile(r'\b(?:J\d{3}[A-Z]?|E\d{4}(?:-\d+)?|ER\d+[A-Z0-9-]*|A\d{3}[A-Z]?|D\d{3}[A-Z]?|H\d{2}[A-Za-z0-9]*|SJ\d{3}|HJ\d{3}|Q\d{3}|16Mn|304|316L)\b', re.I)
 
 manifest = (ROOT / 'src/data/imageManifest.js').read_text(encoding='utf-8') if (ROOT / 'src/data/imageManifest.js').exists() else ''

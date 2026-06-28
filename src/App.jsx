@@ -8,7 +8,7 @@ const navItems = [
   ["/#strength", "资质与服务"],
   ["/products", "产品中心"],
   ["/#solutions", "案例及相关业绩"],
-  ["/knowledge", "焊接操作"],
+  ["/knowledge", "焊接材料问答Q&A"],
   ["/team-vision", "团队与愿景"],
   ["/#contact", "联系我们"]
 ];
@@ -556,7 +556,7 @@ function ProductPageShell({ children }) {
           <nav className="footer-links" aria-label="product footer links">
             <a href="/products">{"\u4ea7\u54c1\u4e2d\u5fc3"}</a>
             <a href="/products/carbon-steel-electrodes">{"\u78b3\u94a2\u710a\u6761"}</a>
-            <a href="/knowledge">{"\u710a\u63a5\u64cd\u4f5c"}</a>
+            <a href="/knowledge">{"焊接材料问答Q&A"}</a>
             <a href="/team-vision">团队与愿景</a>
             <a href="/#contact">{"\u8054\u7cfb\u6211\u4eec"}</a>
           </nav>
@@ -579,7 +579,7 @@ function TeamVisionPage() {
       <main className="product-page team-vision-page">
         <section className="team-vision-hero" data-reveal="true">
           <div className="team-vision-copy">
-            <a className="breadcrumb" href="/knowledge">焊接操作</a>
+            <span className="breadcrumb">团队与愿景</span>
             <p className="eyebrow">Team & Vision</p>
             <h1>团队与愿景</h1>
             <p className="team-vision-status">施工中</p>
@@ -975,9 +975,9 @@ function KnowledgeIndexPage() {
   }, [page, totalPages]);
 
   usePageMeta({
-    title: "焊接操作问答 | 宁波志凡焊材有限公司",
-    description: "焊材基础知识、常见选型、行业应用、现场缺陷和储存烘干等 80 篇焊接操作与焊材选型问答，按问题类型分类浏览。",
-    keywords: "焊接操作,焊材选型,焊条选型,气保焊丝,药芯焊丝,不锈钢焊材,焊接缺陷,焊材烘干,宁波焊材批发"
+    title: "焊接材料问答Q&A | 宁波志凡焊材有限公司",
+    description: "焊材基础知识、常见选型、行业应用、现场缺陷和储存烘干等 80 篇焊接材料问答Q&A，按问题类型分类浏览。",
+    keywords: "焊接材料问答Q&A,焊材选型,焊条选型,气保焊丝,药芯焊丝,不锈钢焊材,焊接缺陷,焊材烘干,宁波焊材批发"
   });
   useIndustrialMotion([activeCategory, page]);
 
@@ -988,7 +988,7 @@ function KnowledgeIndexPage() {
           <div>
             <a className="breadcrumb" href="/#home">返回首页</a>
             <p className="eyebrow">Welding Q&A</p>
-            <h1>焊接操作与焊材选型问答</h1>
+            <h1>焊接材料问答Q&A</h1>
             <p>按问题类型整理 80 篇知识文章，便于业务报价、项目资料沟通和现场焊工快速确认。</p>
             <div className="product-page-actions">
               <a className="secondary-btn" href="/#products">查看产品中心</a>
@@ -996,11 +996,11 @@ function KnowledgeIndexPage() {
             </div>
           </div>
           <figure className="qa-index-visual">
-            <OptimizedImage src="/assets/sections/knowledge-operation.png" alt="焊接操作与焊材选型" sizes="(max-width: 760px) 100vw, 42vw" />
+            <OptimizedImage src="/assets/sections/knowledge-operation.png" alt="焊接材料问答Q&A" sizes="(max-width: 760px) 100vw, 42vw" />
           </figure>
         </section>
 
-        <section className="qa-index-panel detail-card wide" aria-label="焊接操作文章分类">
+        <section className="qa-index-panel detail-card wide" aria-label="焊接材料问答Q&A文章分类">
           <div className="knowledge-category-tabs qa-index-tabs" role="tablist" aria-label="问题类型筛选">
             {categoryTabs.map((category, index) => (
               <button key={category.slug} type="button" className={activeCategory === category.slug ? "active" : ""} onClick={() => setActiveCategory(category.slug)}>
@@ -1033,7 +1033,7 @@ function KnowledgeIndexPage() {
           </div>
 
           {totalPages > 1 && (
-            <nav className="pagination qa-pagination" aria-label="焊接操作文章分页">
+            <nav className="pagination qa-pagination" aria-label="焊接材料问答Q&A文章分页">
               <button type="button" disabled={page === 1} onClick={() => setPage((value) => Math.max(1, value - 1))}>上一页</button>
               {Array.from({ length: totalPages }, (_, index) => index + 1).map((number) => (
                 <button key={number} type="button" className={page === number ? "active" : ""} onClick={() => setPage(number)}>{number}</button>
@@ -1186,7 +1186,7 @@ function App() {
               <p>把采购沟通先压缩成三步：客户行业判断工况，焊接工艺确定产品类型，执行标准确认质保资料。下方 80 篇问答围绕焊材基础、常见选型、行业应用、现场缺陷和储存烘干整理，按采购和现场沟通频率分类浏览。</p>
             </div>
             <figure className="section-image knowledge-hub-image">
-              <OptimizedImage src="/assets/sections/knowledge-operation.png" alt="焊材选型与焊接操作准备" sizes="(max-width: 760px) 100vw, 38vw" />
+              <OptimizedImage src="/assets/sections/knowledge-operation.png" alt="焊接材料问答Q&A" sizes="(max-width: 760px) 100vw, 38vw" />
             </figure>
           </div>
           <div className="quick-match-grid" aria-label="焊材快速匹配入口">
@@ -1202,7 +1202,7 @@ function App() {
           <div className="knowledge-library-panel">
             <div className="knowledge-library-copy">
               <p className="eyebrow">80 Q&A</p>
-              <h3>焊接操作与选型问答</h3>
+              <h3>焊接材料问答Q&A</h3>
               <p>优先展示当前分类前 5 篇，剩余内容半隐藏，需要时展开。适合业务报价、项目资料沟通和现场焊工快速确认。</p>
             </div>
             <div className="knowledge-category-tabs" role="tablist" aria-label="welding knowledge categories">
@@ -1237,7 +1237,7 @@ function App() {
             <a href="#strength">资质与服务</a>
             <a href="#products">产品中心</a>
             <a href="#solutions">案例及相关业绩</a>
-            <a href="/knowledge">焊接操作</a>
+            <a href="/knowledge">焊接材料问答Q&A</a>
             <a href="/team-vision">团队与愿景</a>
             <a href="#contact">联系我们</a>
             <a href="/admin">后台</a>
