@@ -87,25 +87,103 @@ function productCardStyle(slug) {
     "--product-card-bg-set": `image-set(url('${optimizedBase}-480.webp') 1x, url('${optimizedBase}-768.webp') 2x, url('${base}') 3x)`
   };
 }
-function productCategorySeo(meta) {
+const productRegionKeywords = ["宁波", "舟山", "浙江", "绍兴", "新昌", "江浙沪", "宁波焊材", "舟山焊材", "浙江焊材供应商", "绍兴焊材", "新昌焊材", "江浙沪焊材供应"];
+const productServiceKeywords = ["焊材现货供应", "焊材质量证明书", "焊材厂家授权经销商", "焊材技术选型支持", "焊材急件配送"];
+const productIndustryKeywords = ["船厂焊材", "钢结构焊材", "压力容器焊材", "机械厂焊材", "电力工程焊材", "石化项目焊材"];
+const productBrandKeywords = ["金桥焊材", "大西洋焊材", "上海东风焊材", "天泰焊材"];
+const categorySeoKeywordMap = {
+  "carbon-steel-electrodes": ["碳钢焊条", "低合金钢焊条", "J422碳钢焊条", "J507低合金钢焊条", "Q235焊条", "Q345焊条", "手工电弧焊焊条"],
+  "solid-wires": ["实芯气保焊丝", "氩弧焊填充焊丝", "ER50-6气体保护焊丝", "CO₂气体保护焊丝", "钢结构CO₂焊丝", "汽车车身焊丝"],
+  "flux-cored-wires": ["药芯气保焊丝", "E71T-1药芯焊丝", "船用药芯焊丝", "非合金钢药芯焊丝", "工程机械药芯焊丝"],
+  "stainless-materials": ["不锈钢焊材", "不锈钢焊条", "不锈钢焊丝", "ER308L焊丝", "ER316L焊丝", "A102不锈钢焊条", "A132不锈钢焊条"],
+  "submerged-arc": ["碳钢埋弧焊丝焊剂", "埋弧焊焊丝焊剂", "H08MnA埋弧焊丝", "H10Mn2埋弧焊丝", "SJ101烧结焊剂", "HJ431熔炼焊剂"],
+  "aluminum-wires": ["铝焊丝", "铝合金焊丝", "铝镁合金焊丝", "铝硅合金焊丝", "船用铝合金焊丝"],
+  "special-materials": ["特种焊材", "耐磨焊条", "堆焊焊条", "耐热钢焊条", "低温钢焊条", "镍基合金焊丝", "异种钢焊材"],
+  "equipment-accessories": ["焊割配件", "电焊机", "割炬", "焊接工具", "五金工具", "设备配件与工具"]
+};
+
+function uniqueSeoTerms(terms) {
+  return [...new Set(terms.flatMap((term) => String(term || "").split(/[，,、/]+/)).map((term) => term.trim()).filter(Boolean))].join(",");
+}
+
+function limitSeoText(text, max = 155) {
+  const normalized = String(text || "").replace(/\s+/g, "").replace(/。{2,}/g, "。");
+  return normalized.length > max ? normalized.slice(0, max - 1) + "。" : normalized;
+}
+
+function firstProductText(...values) {
+  for (const value of values) {
+    const text = Array.isArray(value) ? value.filter(Boolean).join("；") : String(value || "");
+    const cleaned = text.replace(/\s+/g, "").trim();
+    if (cleaned) return cleaned.split(/[。；;]/)[0];
+  }
+  return "支持按执行标准、成分和熔敷金属力学性能进行选型";
+}
+
+function normalizeStandards(product) {
+  return [...new Set([...(product?.standards || []), product?.standard].flatMap((item) => String(item || "").split(/\s*\/\s*/)).map((item) => item.trim()).filter(Boolean))];
+}
+
+function productCategorySeo(meta, categorySlug = "", manufacturer = "全部") {
   const title = meta.title || "产品中心";
+  const activeManufacturer = manufacturer && manufacturer !== "全部" ? manufacturer : "";
+  const manufacturerText = activeManufacturer ? `${activeManufacturer} ` : "";
+  const categoryKeywords = categorySeoKeywordMap[categorySlug] || products.map((item) => item.title);
+  const description = limitSeoText(`${manufacturerText}${title}现货产品清单，${meta.description || "支持按分类与厂家挑选焊材"}。服务宁波、舟山、浙江、绍兴、新昌及江浙沪客户，适配船厂、钢结构、压力容器、机械厂、电力工程和石化项目采购。`);
+  const keywords = uniqueSeoTerms([
+    manufacturerText + title,
+    title,
+    activeManufacturer && `${activeManufacturer}焊材`,
+    meta.eyebrow,
+    categoryKeywords,
+    productRegionKeywords,
+    productServiceKeywords,
+    productIndustryKeywords,
+    productBrandKeywords
+  ]);
   return {
-    title: `${title} | 产品中心 | 宁波志凡焊材有限公司`,
-    description: `${title}现货产品清单，支持按厂家筛选金桥、大西洋、上海东风、天泰及其他品牌型号，适配船厂、钢结构、压力容器、机械厂、电力工程和石化项目焊材采购。`,
-    keywords: [title, meta.eyebrow, "宁波焊材批发", "浙江焊材供应商", "焊材现货供应", "焊材质量证明书", "焊材急件配送", "金桥焊材", "大西洋焊材", "上海东风焊材", "天泰焊材"].filter(Boolean).join(",")
+    title: `${manufacturerText}${title}现货清单 | 宁波舟山浙江焊材供应 | 宁波志凡焊材有限公司`,
+    description,
+    keywords
   };
 }
 
 function productDetailSeo(product) {
   if (!product) return {
     title: "产品详情 | 宁波志凡焊材有限公司",
-    description: "查看焊材型号、执行标准、化学成分、熔敷金属力学性能与规格信息。",
-    keywords: "焊材型号,执行标准,化学成分,熔敷金属,宁波焊材批发"
+    description: "查看焊材型号、执行标准、化学成分、熔敷金属力学性能与规格信息，服务宁波、舟山、浙江、绍兴、新昌及江浙沪焊材采购。",
+    keywords: uniqueSeoTerms(["焊材型号", "执行标准", "化学成分", "熔敷金属", productRegionKeywords, productServiceKeywords])
   };
-  const title = `${product.manufacturer || ""} ${product.model || product.name} | ${product.categoryName || "焊材"}`;
-  const description = `${product.manufacturer || "品牌"}${product.model || ""}${product.name ? " " + product.name : ""}产品详情，包含执行标准、适用场景、化学成分、熔敷金属力学性能与规格信息，支持宁波、浙江及江浙沪项目现货保供。`;
-  const keywords = [product.model, product.name, product.manufacturer, product.categoryName, product.standard, ...(product.standards || []), "焊材现货供应", "焊材质量证明书", "熔敷金属化学成分", "焊材力学性能", "宁波焊材批发"].filter(Boolean).join(",");
-  return { title: `${title} | 宁波志凡焊材有限公司`, description, keywords };
+  const manufacturer = product.manufacturer || "焊材品牌";
+  const model = product.model || product.name || "焊材型号";
+  const category = product.categoryName || "焊材";
+  const standards = normalizeStandards(product);
+  const categoryKeywords = categorySeoKeywordMap[product.categorySlug] || [category];
+  const useCase = firstProductText(product.applications, product.summary, product.introduction);
+  const standardText = standards.length ? `执行标准：${standards.slice(0, 4).join("、")}。` : "执行标准按厂家资料确认。";
+  const stockText = product.inStock ? "仓内现货产品，" : "";
+  const description = limitSeoText(`${manufacturer}${model}${product.name ? " " + product.name : ""}，${category}详情页。${useCase}。${standardText}可查看成分、熔敷金属力学性能与规格，${stockText}服务宁波、舟山、浙江、绍兴、新昌及江浙沪项目采购。`);
+  const keywords = uniqueSeoTerms([
+    `${manufacturer}${model}`,
+    `${model}${category}`,
+    product.name,
+    product.model,
+    manufacturer,
+    `${manufacturer}焊材`,
+    category,
+    categoryKeywords,
+    standards,
+    product.inStock && "仓内现货产品",
+    productRegionKeywords,
+    productServiceKeywords,
+    "熔敷金属化学成分",
+    "焊材力学性能"
+  ]);
+  return {
+    title: `${manufacturer} ${model} ${category} | 标准 成分 熔敷金属 | 宁波志凡焊材有限公司`,
+    description,
+    keywords
+  };
 }
 
 const knowledgeArticles = [
@@ -622,8 +700,8 @@ function ProductCategoryPage({ categorySlug }) {
     eyebrow: "Products",
     description: "根据分类与厂家挑选焊材",
   };
-  usePageMeta(productCategorySeo(meta));
   const [manufacturer, setManufacturer] = useState("全部");
+  usePageMeta(productCategorySeo(meta, selectedCategory, manufacturer));
   const [items, setItems] = useState([]);
   const [status, setStatus] = useState("loading");
   const [page, setPage] = useState(1);
