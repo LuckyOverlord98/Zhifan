@@ -1188,7 +1188,7 @@ function App() {
     <>
       <Header />
       <main>
-        <section className="hero" id="home">
+        <section className="hero hero-video-shell" id="home">`r`n          <video className="hero-bg-video" autoPlay muted loop playsInline preload="metadata" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" aria-hidden="true">`r`n            <source src="/assets/videos/hero-welding-loop.mp4" type="video/mp4" />`r`n          </video>
           <div className="hero-copy-wrap">
             <p className="eyebrow">{"\u5b81\u6ce2 \u6700\u4e13\u4e1a\u7684\u710a\u6750\u670d\u52a1\u5546"}</p>
             <h1>{"\u4e13\u6ce8\u710a\u6750\u9886\u57df\uff0c\u7cbe\u901a\u884c\u6807\u4e0e\u5de5\u51b5\u3002"}</h1>
