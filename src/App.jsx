@@ -126,6 +126,7 @@ function useIndustrialMotion(deps = []) {
       ".section-image",
       ".intro-text",
       ".intro > p",
+      ".hero-metrics div",
       ".product-home-card",
       ".stock-proof-strip article",
       ".case-list article",
@@ -165,7 +166,7 @@ function useIndustrialMotion(deps = []) {
           observer.unobserve(entry.target);
         }
       });
-    }, { rootMargin: "0px 0px -10%", threshold: 0.12 });
+    }, { rootMargin: "0px 0px -18%", threshold: 0.18 });
 
     revealTargets.forEach((element) => observer.observe(element));
     return () => observer.disconnect();
@@ -940,11 +941,6 @@ function KnowledgeIndexPage() {
             ))}
           </div>
 
-          <div className="qa-index-summary">
-            <strong>{filteredArticles.length} 篇文章</strong>
-            <span>列表前 3 篇按点击数置顶，标注“常问”；剩余文章按发布日期从新到旧展示。</span>
-          </div>
-
           <div className="qa-index-grid">
             {pagedArticles.map((article) => {
               const globalIndex = filteredArticles.findIndex((item) => item.href === article.href);
@@ -1073,6 +1069,7 @@ function App() {
           <details className="brand-more">
             <summary>查看更多合作品牌</summary>
             <div className="brand-logo-grid brand-logo-grid-small">
+              <article className="mobile-only-brand"><OptimizedImage src="/assets/brands/tiantai.png" alt={"\u5929\u6cf0\u710a\u6750 logo"} /><span>{"\u5929\u6cf0\u710a\u6750"}</span></article>
               <article><OptimizedImage src="/assets/brands/longxing.png" alt="隆兴割炬 logo" /><span>隆兴割炬</span></article>
               <article><OptimizedImage src="/assets/brands/tayor.png" alt="上海通用重工集团 logo" /><span>上海通用电焊机</span></article>
               <article><OptimizedImage src="/assets/brands/great-wall-precision.png" alt="长城精工 logo" /><span>长城精工</span></article>
@@ -1155,7 +1152,7 @@ function App() {
 
         <section className="section contact" id="contact">
           <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><OptimizedImage src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:057489007658" aria-label="拨打公司座机 0574-89007658">公司电话：0574-89007658</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
-          <div className="amap-card map-card"><div><strong>现场志凡焊材（新仓库）</strong><span>地图定位：宁波市鄞州区富宁路119号（坐标 @13540153.526783343,3460185.0272463434）</span></div><div className="map-actions"><a href="https://j.map.baidu.com/9e/TTsM" target="_blank" rel="noreferrer">打开通用地图</a><a href="https://uri.amap.com/search?keyword=%E5%AE%81%E6%B3%A2%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%20%E5%AF%8C%E5%AE%81%E8%B7%AF119%E5%8F%B7&city=%E5%AE%81%E6%B3%A2&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div></div>
+          <div className="amap-card map-card"><div><strong>现场志凡焊材（新仓库）</strong><span>{"\u5730\u56fe\u5b9a\u4f4d\uff1a\u5b81\u6ce2\u5e02\u911e\u5dde\u533a\u5bcc\u5b81\u8def119\u53f7"}</span></div><div className="map-actions"><a href="https://j.map.baidu.com/9e/TTsM" target="_blank" rel="noreferrer">打开通用地图</a><a href="https://uri.amap.com/search?keyword=%E5%AE%81%E6%B3%A2%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%20%E5%AF%8C%E5%AE%81%E8%B7%AF119%E5%8F%B7&city=%E5%AE%81%E6%B3%A2&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div></div>
           <ContactForm />
         </section>
       </main>
