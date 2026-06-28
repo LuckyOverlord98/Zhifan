@@ -763,6 +763,14 @@ function ProductCategoryPage({ categorySlug }) {
         <section className="product-browser">
           <div className="product-filter-grid product-filter-grid-single">
             <div className="product-filter-card combined-filter-card">
+              <div className="product-procurement-head">
+                <span>采购筛选工具</span>
+                <p>按大类、厂家、型号或标准号快速缩小范围；重复点击已选筛选项可取消。</p>
+              </div>
+              <div className="filter-group product-toolbar-search">
+                <h2>{"型号 / 标准搜索"}</h2>
+                <ProductSearch />
+              </div>
               <div className="filter-group">
                 <h2>{"产品大类"}</h2>
                 <div className="category-tabs" role="tablist" aria-label="product category filter">
@@ -1297,6 +1305,19 @@ function App() {
           </div>
         </section>
 
+        <section className="section seo-entry-section soft" aria-label="行业地域与标准快速入口">
+          <div className="section-heading compact-heading">
+            <p className="eyebrow">Fast Match</p>
+            <h2>按行业、地区和标准快速沟通焊材需求</h2>
+            <p>面向宁波、舟山、浙江、绍兴、新昌及江浙沪项目客户，先用行业场景和执行标准确认方向，再由业务协助核对厂家、型号、库存和质保资料。</p>
+          </div>
+          <div className="seo-keyword-grid geo-entry-grid">
+            <article><span>行业</span><h3>船厂 / 钢结构 / 压力容器</h3><p>覆盖船用焊材、钢结构焊材、压力容器焊材、机械制造和石化项目常用选型。</p><a href="/knowledge">查看选型问答</a></article>
+            <article><span>地区</span><h3>宁波、舟山、浙江、绍兴、新昌</h3><p>围绕江浙沪客户的现货、资料、配送和项目跟单需求，支持区域快速响应。</p><a href="#contact">提交采购位置</a></article>
+            <article><span>标准</span><h3>GB / AWS / ISO / NB/T 47018</h3><p>按执行标准、熔敷金属、化学成分、认证和质保书要求核对产品资料。</p><a href="/products">按标准查型号</a></article>
+            <article><span>常用型号</span><h3>J422、J507、ER50-6、E71T-1</h3><p>高频型号可从产品中心直接搜索，现货标签用于优先识别仓内可供应产品。</p><a href="/products">进入产品中心</a></article>
+          </div>
+        </section>
         <section className="section contact" id="contact">
           <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><OptimizedImage src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:057489007658" aria-label="拨打公司座机 0574-89007658">公司电话：0574-89007658</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
           <div className="amap-card map-card"><div><strong>现场志凡焊材（新仓库）</strong><span>{"\u5730\u56fe\u5b9a\u4f4d\uff1a\u5b81\u6ce2\u5e02\u911e\u5dde\u533a\u5bcc\u5b81\u8def119\u53f7"}</span></div><div className="map-actions"><a href="https://j.map.baidu.com/9e/TTsM" target="_blank" rel="noreferrer">打开通用地图</a><a href="https://uri.amap.com/search?keyword=%E5%AE%81%E6%B3%A2%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%20%E5%AF%8C%E5%AE%81%E8%B7%AF119%E5%8F%B7&city=%E5%AE%81%E6%B3%A2&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div></div>
