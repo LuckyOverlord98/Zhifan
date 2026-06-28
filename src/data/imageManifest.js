@@ -235,6 +235,126 @@ export const optimizedImages = {
       }
     ]
   },
+  "/assets/products/cards/aluminum-wires.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/aluminum-wires.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__aluminum-wires-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__aluminum-wires-768.webp"
+      }
+    ]
+  },
+  "/assets/products/cards/carbon-steel-electrodes.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/carbon-steel-electrodes.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__carbon-steel-electrodes-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__carbon-steel-electrodes-768.webp"
+      }
+    ]
+  },
+  "/assets/products/cards/equipment-accessories.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/equipment-accessories.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__equipment-accessories-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__equipment-accessories-768.webp"
+      }
+    ]
+  },
+  "/assets/products/cards/flux-cored-wires.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/flux-cored-wires.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__flux-cored-wires-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__flux-cored-wires-768.webp"
+      }
+    ]
+  },
+  "/assets/products/cards/solid-wires.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/solid-wires.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__solid-wires-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__solid-wires-768.webp"
+      }
+    ]
+  },
+  "/assets/products/cards/special-materials.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/special-materials.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__special-materials-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__special-materials-768.webp"
+      }
+    ]
+  },
+  "/assets/products/cards/stainless-materials.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/stainless-materials.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__stainless-materials-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__stainless-materials-768.webp"
+      }
+    ]
+  },
+  "/assets/products/cards/submerged-arc.webp": {
+    "width": 900,
+    "height": 520,
+    "fallback": "/assets/products/cards/submerged-arc.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/products__cards__submerged-arc-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/products__cards__submerged-arc-768.webp"
+      }
+    ]
+  },
   "/assets/sections/cases-handover.png": {
     "width": 1536,
     "height": 1024,
@@ -669,6 +789,21 @@ export const optimizedImages = {
       {
         "width": 768,
         "src": "/assets/optimized/site__zhifan-logo-768.webp"
+      }
+    ]
+  },
+  "/assets/ui/brushed-metal-blue.webp": {
+    "width": 960,
+    "height": 960,
+    "fallback": "/assets/ui/brushed-metal-blue.webp",
+    "variants": [
+      {
+        "width": 480,
+        "src": "/assets/optimized/ui__brushed-metal-blue-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "/assets/optimized/ui__brushed-metal-blue-768.webp"
       }
     ]
   }

@@ -79,6 +79,14 @@ function usePageMeta(meta) {
   }, [meta?.title, meta?.description, meta?.keywords]);
 }
 
+function productCardStyle(slug) {
+  const base = `/assets/products/cards/${slug}.webp`;
+  const optimizedBase = `/assets/optimized/products__cards__${slug}`;
+  return {
+    "--product-card-bg": `url('${base}')`,
+    "--product-card-bg-set": `image-set(url('${optimizedBase}-480.webp') 1x, url('${optimizedBase}-768.webp') 2x, url('${base}') 3x)`
+  };
+}
 function productCategorySeo(meta) {
   const title = meta.title || "产品中心";
   return {
@@ -172,6 +180,67 @@ function useIndustrialMotion(deps = []) {
     return () => observer.disconnect();
   }, deps);
 
+  useEffect(() => {
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const media = window.matchMedia?.("(max-width: 760px)");
+    if (reduceMotion || !media?.matches) return undefined;
+
+    const selectors = ".hero-metrics, .credential-panel, .stock-proof-strip, .case-list.compact-list";
+    const scrollers = Array.from(document.querySelectorAll(selectors)).filter((element) => element.scrollWidth > element.clientWidth + 12);
+    if (!scrollers.length) return undefined;
+
+    const paused = new WeakSet();
+    const timers = new WeakMap();
+    const cleanups = [];
+    let frame = 0;
+    let lastTime = performance.now();
+
+    const pauseTemporarily = (element, delay = 1400) => {
+      paused.add(element);
+      window.clearTimeout(timers.get(element));
+      timers.set(element, window.setTimeout(() => paused.delete(element), delay));
+    };
+
+    scrollers.forEach((element) => {
+      element.classList.add("mobile-auto-marquee");
+      const pause = () => pauseTemporarily(element);
+      const hold = () => paused.add(element);
+      const release = () => paused.delete(element);
+      element.addEventListener("pointerdown", pause, { passive: true });
+      element.addEventListener("wheel", pause, { passive: true });
+      element.addEventListener("touchstart", pause, { passive: true });
+      element.addEventListener("focusin", hold);
+      element.addEventListener("focusout", release);
+      cleanups.push(() => {
+        element.classList.remove("mobile-auto-marquee");
+        element.removeEventListener("pointerdown", pause);
+        element.removeEventListener("wheel", pause);
+        element.removeEventListener("touchstart", pause);
+        element.removeEventListener("focusin", hold);
+        element.removeEventListener("focusout", release);
+        window.clearTimeout(timers.get(element));
+      });
+    });
+
+    const tick = (time) => {
+      const delta = Math.min(34, time - lastTime);
+      lastTime = time;
+      scrollers.forEach((element) => {
+        if (paused.has(element)) return;
+        const maxScroll = element.scrollWidth - element.clientWidth;
+        if (maxScroll <= 4) return;
+        element.scrollLeft += delta * 0.026;
+        if (element.scrollLeft >= maxScroll - 1) element.scrollLeft = 0;
+      });
+      frame = window.requestAnimationFrame(tick);
+    };
+
+    frame = window.requestAnimationFrame(tick);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      cleanups.forEach((cleanup) => cleanup());
+    };
+  }, deps);
   useEffect(() => {
     const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return undefined;
@@ -1091,7 +1160,7 @@ function App() {
       className="product-home-card"
       key={item.number}
       href={"/products/" + item.slug}
-      style={{ "--product-card-bg": `url('/assets/products/cards/${item.slug}.webp')` }}
+      style={productCardStyle(item.slug)}
     >
       <span>{item.number}</span>
       <h3>{item.title}</h3>

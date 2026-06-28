@@ -8,7 +8,7 @@ ASSET_ROOT = ROOT / "public" / "assets"
 OUT_ROOT = ASSET_ROOT / "optimized"
 MANIFEST = ROOT / "src" / "data" / "imageManifest.js"
 WIDTHS = [480, 768, 1280, 1920]
-EXTENSIONS = {".png", ".jpg", ".jpeg"}
+EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 
 
 def public_path(path):
