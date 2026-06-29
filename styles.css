@@ -7071,3 +7071,145 @@ body {
     max-width: none;
   }
 }
+
+/* 2026-06-29 correction: unstack product filters into clear zones. */
+.product-filter-card.combined-filter-card {
+  grid-template-columns: minmax(240px, .55fr) minmax(0, 1.45fr) !important;
+  grid-template-areas:
+    "intro search"
+    "categories categories"
+    "manufacturer availability" !important;
+  gap: clamp(16px, 2vw, 22px) !important;
+  align-items: stretch;
+}
+
+.product-procurement-head {
+  grid-area: intro !important;
+  min-height: 128px;
+}
+
+.product-toolbar-search {
+  grid-area: search !important;
+  min-width: 0;
+}
+
+.product-category-filter {
+  grid-area: categories !important;
+  min-width: 0;
+}
+
+.product-manufacturer-filter {
+  grid-area: manufacturer !important;
+  min-width: 0;
+}
+
+.product-availability-filter {
+  grid-area: availability !important;
+  align-self: stretch !important;
+  justify-self: stretch !important;
+  min-width: 0 !important;
+  max-width: none !important;
+}
+
+.product-filter-card.combined-filter-card .filter-group {
+  min-width: 0;
+  padding: clamp(14px, 1.8vw, 18px);
+  border: 1px solid rgba(18, 100, 216, .12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .72);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72);
+}
+
+.product-filter-card.combined-filter-card .product-toolbar-search {
+  display: grid;
+  align-content: center;
+}
+
+.product-search-control-row {
+  align-items: stretch;
+}
+
+.product-filter-card.combined-filter-card .category-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+.product-filter-card.combined-filter-card .category-tabs button {
+  min-height: 88px;
+}
+
+.product-filter-card.combined-filter-card .manufacturer-tabs,
+.product-filter-card.combined-filter-card .stock-filter-tabs {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.product-filter-card.combined-filter-card .manufacturer-tabs button,
+.product-filter-card.combined-filter-card .stock-filter-tabs button {
+  min-width: max-content;
+}
+
+@media (max-width: 1080px) {
+  .product-filter-card.combined-filter-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "intro"
+      "search"
+      "categories"
+      "manufacturer"
+      "availability" !important;
+  }
+
+  .product-procurement-head {
+    min-height: 0;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .product-filter-card.combined-filter-card {
+    padding: 12px !important;
+    gap: 12px !important;
+  }
+
+  .product-filter-card.combined-filter-card .filter-group {
+    padding: 12px;
+  }
+
+  .filter-group-title-row {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .filter-reset-btn {
+    width: 100%;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs button {
+    min-height: 74px;
+  }
+
+  .product-filter-card.combined-filter-card .manufacturer-tabs button,
+  .product-filter-card.combined-filter-card .stock-filter-tabs button {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .product-filter-card.combined-filter-card .category-tabs button {
+    min-height: 68px;
+    padding-inline: 6px;
+  }
+}
