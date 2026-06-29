@@ -6890,3 +6890,184 @@ body {
     text-shadow: 0 1px 0 rgba(255,255,255,.92), 0 10px 24px rgba(7,31,67,.18);
   }
 }
+
+/* 2026-06-29 product filter console layout: search first, filters second, no dead space. */
+.product-filter-grid.product-filter-grid-single {
+  width: min(1180px, 100%);
+  margin-inline: auto;
+}
+
+.product-filter-card.combined-filter-card {
+  display: grid;
+  grid-template-columns: minmax(220px, .72fr) minmax(0, 1.9fr);
+  grid-template-areas:
+    "intro search"
+    "intro categories"
+    "intro maker";
+  gap: clamp(12px, 1.8vw, 18px);
+  align-items: stretch;
+}
+
+.product-procurement-head {
+  grid-area: intro;
+}
+
+.product-toolbar-search {
+  grid-area: search;
+}
+
+.combined-filter-card .filter-group:nth-of-type(2) {
+  grid-area: categories;
+}
+
+.combined-filter-card .filter-group:nth-of-type(3) {
+  grid-area: maker;
+}
+
+.combined-filter-card .filter-group:nth-of-type(4) {
+  grid-area: maker;
+  align-self: end;
+  justify-self: end;
+  min-width: min(320px, 100%);
+  max-width: 360px;
+}
+
+.filter-group-title-row,
+.product-search-control-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.filter-group-title-row {
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.filter-group-title-row h2 {
+  margin: 0;
+}
+
+.product-search-control-row .product-search {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.filter-reset-btn {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid rgba(18, 100, 216, .24);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,.96), rgba(239,247,255,.92));
+  color: var(--blue-dark);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 10px 20px rgba(18,100,216,.08);
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.filter-reset-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(18, 100, 216, .5);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 14px 26px rgba(18,100,216,.14);
+}
+
+.product-filter-card.combined-filter-card .category-tabs {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.product-filter-card.combined-filter-card .manufacturer-tabs,
+.product-filter-card.combined-filter-card .stock-filter-tabs {
+  align-content: flex-start;
+}
+
+@media (max-width: 1180px) {
+  .product-filter-card.combined-filter-card {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "intro"
+      "search"
+      "categories"
+      "maker";
+  }
+
+  .combined-filter-card .filter-group:nth-of-type(4) {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .product-filter-card.combined-filter-card .category-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filter-group-title-row {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .product-filter-card.combined-filter-card {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .product-procurement-head {
+    padding: 14px;
+  }
+
+  .product-toolbar-search .product-search input {
+    min-height: 44px;
+  }
+
+  .filter-group-title-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter-reset-btn {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs {
+    gap: 8px;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs button {
+    min-height: 72px;
+    padding: 10px 8px;
+  }
+
+  .product-filter-card.combined-filter-card .manufacturer-tabs button,
+  .product-filter-card.combined-filter-card .stock-filter-tabs button {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+  }
+}
+
+.product-category-filter { grid-area: categories !important; }
+.product-manufacturer-filter { grid-area: maker !important; }
+.product-availability-filter {
+  grid-area: maker !important;
+  align-self: end;
+  justify-self: end;
+  min-width: min(320px, 100%);
+  max-width: 360px;
+}
+
+@media (max-width: 1180px) {
+  .product-availability-filter {
+    justify-self: stretch;
+    max-width: none;
+  }
+}

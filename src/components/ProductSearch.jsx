@@ -19,7 +19,7 @@ function buildSearchUrl(keyword, limit, extraParams = {}) {
   return "/api/products?" + params.toString();
 }
 
-function ProductSearch({ onSearchSubmit, extraParams = {}, submitLimit = 200 }) {
+function ProductSearch({ onSearchSubmit, extraParams = {}, submitLimit = 200, resetSignal = 0 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [open, setOpen] = useState(false);
@@ -69,6 +69,13 @@ function ProductSearch({ onSearchSubmit, extraParams = {}, submitLimit = 200 }) 
       onSearchSubmit?.({ query: keyword, items: [] });
     }
   }
+
+  useEffect(() => {
+    setQuery("");
+    setResults([]);
+    setOpen(false);
+    setStatus("idle");
+  }, [resetSignal]);
 
   useEffect(() => {
     const keyword = query.trim();

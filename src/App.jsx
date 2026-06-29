@@ -710,6 +710,7 @@ function ProductCategoryPage({ categorySlug }) {
   const [availability, setAvailability] = useState("all");
   const [submittedSearch, setSubmittedSearch] = useState({ active: false, query: "" });
   const [listRefreshKey, setListRefreshKey] = useState(0);
+  const [searchResetKey, setSearchResetKey] = useState(0);
   usePageMeta(productCategorySeo(meta, selectedCategory, manufacturer));
   const [items, setItems] = useState([]);
   const [status, setStatus] = useState("loading");
@@ -733,6 +734,16 @@ function ProductCategoryPage({ categorySlug }) {
   function resetSubmittedSearch(refresh = false) {
     setSubmittedSearch({ active: false, query: "" });
     if (refresh) setListRefreshKey((value) => value + 1);
+  }
+
+  function resetAllProductFilters() {
+    setSelectedCategory(categorySlug || "");
+    setManufacturer(allManufacturersLabel);
+    setAvailability("all");
+    setSubmittedSearch({ active: false, query: "" });
+    setPage(1);
+    setListRefreshKey((value) => value + 1);
+    setSearchResetKey((value) => value + 1);
   }
 
   useEffect(() => {
@@ -777,7 +788,7 @@ function ProductCategoryPage({ categorySlug }) {
             <a className="secondary-btn" href="/#home">{"返回首页"}</a>
             <a className="primary-btn" href="/#contact">{"联系业务找型号"}</a>
           </div>
-          <ProductSearch onSearchSubmit={({ query, items }) => {
+          <ProductSearch resetSignal={searchResetKey} onSearchSubmit={({ query, items }) => {
             setSubmittedSearch({ active: true, query });
             setItems(applyAvailabilityFilter(items));
             setStatus("ready");
@@ -793,18 +804,24 @@ function ProductCategoryPage({ categorySlug }) {
                 <p>按大类、厂家、型号或标准号快速缩小范围；重复点击已选筛选项可取消。</p>
               </div>
               <div className="filter-group product-toolbar-search">
-                <h2>{"型号 / 标准搜索"}</h2>
-                <ProductSearch
-                  extraParams={{ category: selectedCategory, manufacturer: manufacturer !== allManufacturersLabel ? manufacturer : "" }}
-                  onSearchSubmit={({ query, items }) => {
-                    setSubmittedSearch({ active: true, query });
-                    setItems(applyAvailabilityFilter(items));
-                    setStatus("ready");
-                    setPage(1);
-                  }}
-                />
+                <div className="filter-group-title-row">
+                  <h2>{"型号 / 标准搜索"}</h2>
+                  <button className="filter-reset-btn" type="button" onClick={resetAllProductFilters}>重置筛选</button>
+                </div>
+                <div className="product-search-control-row">
+                  <ProductSearch
+                    resetSignal={searchResetKey}
+                    extraParams={{ category: selectedCategory, manufacturer: manufacturer !== allManufacturersLabel ? manufacturer : "" }}
+                    onSearchSubmit={({ query, items }) => {
+                      setSubmittedSearch({ active: true, query });
+                      setItems(applyAvailabilityFilter(items));
+                      setStatus("ready");
+                      setPage(1);
+                    }}
+                  />
+                </div>
               </div>
-              <div className="filter-group">
+              <div className="filter-group product-category-filter">
                 <h2>{"产品大类"}</h2>
                 <div className="category-tabs" role="tablist" aria-label="product category filter">
                   {products.map((item) => (
@@ -820,7 +837,7 @@ function ProductCategoryPage({ categorySlug }) {
                   ))}
                 </div>
               </div>
-              <div className="filter-group">
+              <div className="filter-group product-manufacturer-filter">
                 <h2>{"厂家筛选"}</h2>
                 <div className="manufacturer-tabs" role="tablist" aria-label="manufacturer filter">
                   {manufacturerTabs.map((name) => (
@@ -830,7 +847,7 @@ function ProductCategoryPage({ categorySlug }) {
                   ))}
                 </div>
               </div>
-              <div className="filter-group">
+              <div className="filter-group product-availability-filter">
                 <h2>{"现货 / 订货"}</h2>
                 <div className="stock-filter-tabs" role="tablist" aria-label="stock availability filter">
                   {availabilityTabs.map((tab) => (
