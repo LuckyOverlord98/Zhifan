@@ -1256,6 +1256,7 @@ function App() {
       <main>
         <section className="hero hero-video-shell" id="home">
           <video className="hero-bg-video" autoPlay muted loop playsInline preload="metadata" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" aria-hidden="true">
+            <source media="(max-width: 820px)" src="/assets/videos/hero-mobile-welding-loop.mp4" type="video/mp4" />
             <source src="/assets/videos/hero-welding-loop.mp4" type="video/mp4" />
           </video>
           <div className="hero-copy-wrap">
