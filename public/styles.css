@@ -7286,3 +7286,58 @@ body {
     padding-inline: 10px;
   }
 }
+
+/* 2026-06-29 desktop product page density tune: reduce hero and category filter whitespace. */
+@media (min-width: 1081px) {
+  .product-page {
+    padding-top: 44px;
+    padding-bottom: 64px;
+  }
+
+  .product-page-hero {
+    gap: 24px;
+    padding: 26px 28px;
+    align-items: center;
+  }
+
+  .product-page-hero h1 {
+    font-size: clamp(38px, 4.6vw, 62px);
+    line-height: .98;
+  }
+
+  .product-page-hero > div > p:last-child {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .product-page-hero .breadcrumb {
+    margin-bottom: 10px;
+  }
+
+  .product-browser {
+    margin-top: 18px;
+    padding: 20px;
+  }
+
+  .product-filter-card.combined-filter-card {
+    gap: 14px !important;
+  }
+
+  .product-filter-card.combined-filter-card .filter-group {
+    padding: 12px 14px;
+  }
+
+  .product-category-filter h2 {
+    margin-bottom: 10px;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs {
+    gap: 9px !important;
+  }
+
+  .product-filter-card.combined-filter-card .category-tabs button {
+    min-height: 72px;
+    padding: 10px 12px;
+  }
+}
