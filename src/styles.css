@@ -7213,3 +7213,76 @@ body {
     padding-inline: 6px;
   }
 }
+
+/* 2026-06-29 final product filter sizing: maker 2/3, availability 1/3, mobile reset safe. */
+.product-filter-card.combined-filter-card {
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 1fr) minmax(260px, .72fr) !important;
+  grid-template-areas:
+    "intro search search"
+    "categories categories categories"
+    "manufacturer manufacturer availability" !important;
+}
+
+.product-manufacturer-filter {
+  grid-area: manufacturer !important;
+}
+
+.product-availability-filter {
+  grid-area: availability !important;
+}
+
+@media (max-width: 1080px) {
+  .product-filter-card.combined-filter-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-areas:
+      "intro"
+      "search"
+      "categories"
+      "manufacturer"
+      "availability" !important;
+  }
+}
+
+@media (max-width: 880px) {
+  .product-toolbar-search {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .product-toolbar-search .filter-group-title-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    align-items: stretch !important;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .product-toolbar-search .filter-group-title-row h2 {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .product-toolbar-search .filter-reset-btn {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .product-toolbar-search .filter-reset-btn {
+    min-height: 36px;
+    font-size: 12px;
+    padding-inline: 10px;
+  }
+}
