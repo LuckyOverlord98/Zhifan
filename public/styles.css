@@ -7416,3 +7416,9 @@ body {
     padding: 16px 14px;
   }
 }
+
+/* 2026-06-29 temporary hide knowledge hero and quick match blocks. */
+.knowledge-hub-hero,
+.quick-match-grid {
+  display: none !important;
+}
