@@ -9,7 +9,17 @@ function getVisibleLimit() {
   return 7;
 }
 
-function ProductSearch() {
+function buildSearchUrl(keyword, limit, extraParams = {}) {
+  const params = new URLSearchParams();
+  params.set("search", keyword);
+  params.set("limit", String(limit));
+  Object.entries(extraParams).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && String(value).trim()) params.set(key, String(value));
+  });
+  return "/api/products?" + params.toString();
+}
+
+function ProductSearch({ onSearchSubmit, extraParams = {}, submitLimit = 200 }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [open, setOpen] = useState(false);
@@ -34,6 +44,32 @@ function ProductSearch() {
     setDropdown({ left, top, width, maxHeight: availableSpace, limit });
   }
 
+  async function fetchResults(keyword, limit, signal) {
+    const response = await fetch(buildSearchUrl(keyword, limit, extraParams), { signal });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.message || "search failed");
+    return data.items || [];
+  }
+
+  async function submitSearch() {
+    const keyword = query.trim();
+    if (!keyword) return;
+    setStatus("loading");
+    setOpen(true);
+    updateDropdown();
+    try {
+      const items = await fetchResults(keyword, submitLimit);
+      setResults(items.slice(0, 20));
+      setStatus("ready");
+      setOpen(false);
+      onSearchSubmit?.({ query: keyword, items });
+    } catch {
+      setResults([]);
+      setStatus("error");
+      onSearchSubmit?.({ query: keyword, items: [] });
+    }
+  }
+
   useEffect(() => {
     const keyword = query.trim();
     if (!keyword) {
@@ -47,10 +83,8 @@ function ProductSearch() {
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       try {
-        const response = await fetch("/api/products?search=" + encodeURIComponent(keyword) + "&limit=20", { signal: controller.signal });
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.message || "search failed");
-        setResults((data.items || []).slice(0, 20));
+        const items = await fetchResults(keyword, 20, controller.signal);
+        setResults(items.slice(0, 20));
         setStatus("ready");
         setOpen(true);
         updateDropdown();
@@ -67,7 +101,7 @@ function ProductSearch() {
       window.clearTimeout(timer);
       controller.abort();
     };
-  }, [query]);
+  }, [query, JSON.stringify(extraParams)]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -96,19 +130,16 @@ function ProductSearch() {
   }, [open, query]);
 
   const dropdownNode = open && query.trim() && typeof document !== "undefined" ? createPortal(
-    <div
-      className="product-search-results product-search-results-floating"
-      style={{ left: dropdown.left, top: dropdown.top, width: dropdown.width, maxHeight: dropdown.maxHeight }}
-    >
+    <div className="product-search-results product-search-results-floating" style={{ left: dropdown.left, top: dropdown.top, width: dropdown.width, maxHeight: dropdown.maxHeight }}>
       {status === "loading" ? (
-        <p className="search-status">{"搜索中..."}</p>
+        <p className="search-status">{"\u641c\u7d22\u4e2d..."}</p>
       ) : status === "error" ? (
-        <p className="search-status">{"搜索暂时失败，请稍后重试"}</p>
+        <p className="search-status">{"\u641c\u7d22\u6682\u65f6\u5931\u8d25\uff0c\u8bf7\u7a0d\u540e\u91cd\u8bd5"}</p>
       ) : results.length === 0 ? (
-        <p>{"暂无匹配型号"}</p>
+        <p>{"\u6682\u65e0\u5339\u914d\u578b\u53f7"}</p>
       ) : results.map((item) => (
         <a key={item.slug} href={"/products/" + item.slug}>
-          <strong>{item.model}{item.inStock && <span className="search-stock-label">仓内现货产品</span>}</strong>
+          <strong>{item.model}{item.inStock && <span className="search-stock-label">{"\u4ed3\u5185\u73b0\u8d27\u4ea7\u54c1"}</span>}</strong>
           <span>{[item.manufacturer, item.categoryName, item.standard].filter(Boolean).join(" / ")}</span>
         </a>
       ))}
@@ -118,13 +149,19 @@ function ProductSearch() {
 
   return (
     <div className="product-search" role="search" ref={rootRef}>
-      <label htmlFor="productSearch">{"产品搜索"}</label>
+      <label htmlFor="productSearch">{"\u4ea7\u54c1\u641c\u7d22"}</label>
       <input
         id="productSearch"
         ref={inputRef}
         type="search"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            submitSearch();
+          }
+        }}
         onFocus={() => {
           setOpen(true);
           updateDropdown();
@@ -132,7 +169,7 @@ function ProductSearch() {
           window.setTimeout(updateDropdown, 260);
         }}
         onBlur={() => window.setTimeout(() => setOpen(false), 180)}
-        placeholder={"搜索型号 / 标准号，如 J507 / AWS A5.1"}
+        placeholder={"\u641c\u7d22\u578b\u53f7 / \u6807\u51c6\u53f7\uff0c\u5982 J507 / AWS A5.1"}
       />
       {dropdownNode}
     </div>

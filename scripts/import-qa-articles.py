@@ -336,7 +336,7 @@ def write_pages(articles):
           <img class="brand-logo" src="../../assets/site/zhifan-logo.png" alt="志凡焊材 logo" />
           <span><strong>宁波志凡焊材有限公司</strong><small>ZhiFan Welding Materials</small></span>
         </a>
-        <div class="nav-links article-nav-links"><a href="../../index.html#products">产品中心</a><a href="../../knowledge">焊接材料问答Q&A</a><a class="nav-cta" href="../../index.html#contact">联系我们</a></div>
+        <div class="nav-links article-nav-links"><a href="../../index.html#strength">资质与服务</a><a href="../../products">产品中心</a><a href="../../index.html#solutions">案例及相关业绩</a><a href="../../knowledge">焊接材料问答Q&A</a><a href="../../team-vision">团队与愿景</a><a class="nav-cta" href="../../index.html#contact">联系我们</a></div>
       </nav>
     </header>
     <main>

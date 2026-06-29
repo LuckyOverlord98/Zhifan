@@ -6575,3 +6575,189 @@ body::before {
     min-height: 240px;
   }
 }
+/* Navigation, product-search submit mode, and mobile overflow hardening. */
+.stock-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stock-filter-tabs button,
+.search-result-meta button {
+  min-height: 38px;
+  padding: 8px 14px;
+  border: 1px solid rgba(18, 100, 216, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--blue-dark);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.stock-filter-tabs button:hover,
+.search-result-meta button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(18, 100, 216, 0.42);
+}
+
+.stock-filter-tabs button.active {
+  border-color: rgba(18, 100, 216, 0.78);
+  background: linear-gradient(135deg, #1264d8, #0b3f93);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(18, 100, 216, 0.18);
+}
+
+.search-result-meta {
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.article-nav-links {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: min(780px, 100%);
+}
+
+.article-nav-links a {
+  white-space: normal;
+}
+
+@media (max-width: 880px) {
+  .site-header .nav-links.open {
+    max-height: calc(100svh - 76px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    align-content: flex-start;
+  }
+
+  .site-header .nav-links a {
+    min-height: 42px;
+    white-space: normal;
+    line-height: 1.35;
+    text-align: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .article-page .site-header .nav {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .article-page .article-nav-links {
+    display: flex !important;
+    position: static;
+    width: 100%;
+    max-height: none;
+    padding: 10px 0 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    gap: 8px;
+  }
+
+  .article-page .article-nav-links a {
+    flex: 1 1 calc(50% - 8px);
+    min-height: 40px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+  }
+
+  .article-page .article-nav-links .nav-cta {
+    flex-basis: 100%;
+  }
+
+  .qa-index-hero,
+  .qa-hero,
+  .article-hero {
+    grid-template-columns: 1fr !important;
+    overflow: hidden;
+  }
+
+  .qa-index-hero h1,
+  .qa-hero h1,
+  .article-hero h1,
+  .qa-index-tabs button span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .qa-index-visual,
+  .article-photo-bg,
+  .article-hero figure {
+    min-height: 220px;
+  }
+
+  .hero-metrics,
+  .credential-panel,
+  .stock-proof-strip,
+  .case-list.compact-list {
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y;
+  }
+
+  .hero-metrics div,
+  .credential-panel div,
+  .stock-proof-strip article,
+  .case-list.compact-list article {
+    flex: 0 0 min(78vw, 286px) !important;
+    scroll-snap-align: center;
+  }
+
+  .product-search-results-floating {
+    max-width: calc(100vw - 24px);
+    z-index: 99999;
+  }
+}
+
+@media (max-width: 420px) {
+  .article-page .article-nav-links a {
+    flex-basis: 100%;
+  }
+
+  .hero-metrics div,
+  .credential-panel div,
+  .stock-proof-strip article,
+  .case-list.compact-list article {
+    flex-basis: 82vw !important;
+  }
+}
+
+/* Wider mobile/tablet fallback for real-device horizontal auto-flow strips. */
+@media (max-width: 880px) {
+  .hero-metrics,
+  .credential-panel,
+  .stock-proof-strip,
+  .case-list.compact-list {
+    display: flex !important;
+    grid-template-columns: none !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y;
+  }
+
+  .hero-metrics div,
+  .credential-panel div,
+  .stock-proof-strip article,
+  .case-list.compact-list article {
+    flex: 0 0 min(78vw, 286px) !important;
+    scroll-snap-align: center;
+  }
+}

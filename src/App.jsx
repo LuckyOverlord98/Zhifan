@@ -693,6 +693,12 @@ function getPaginationPages(totalPages, currentPage, maxVisible = 5) {
 }
 
 function ProductCategoryPage({ categorySlug }) {
+  const allManufacturersLabel = "全部";
+  const availabilityTabs = [
+    { value: "all", label: "全部" },
+    { value: "in-stock", label: "仓内现货" },
+    { value: "order", label: "可订货" },
+  ];
   const [selectedCategory, setSelectedCategory] = useState(categorySlug || "");
   useIndustrialMotion([selectedCategory]);
   const meta = categoryMeta[selectedCategory] || {
@@ -700,7 +706,10 @@ function ProductCategoryPage({ categorySlug }) {
     eyebrow: "Products",
     description: "根据分类与厂家挑选焊材",
   };
-  const [manufacturer, setManufacturer] = useState("全部");
+  const [manufacturer, setManufacturer] = useState(allManufacturersLabel);
+  const [availability, setAvailability] = useState("all");
+  const [submittedSearch, setSubmittedSearch] = useState({ active: false, query: "" });
+  const [listRefreshKey, setListRefreshKey] = useState(0);
   usePageMeta(productCategorySeo(meta, selectedCategory, manufacturer));
   const [items, setItems] = useState([]);
   const [status, setStatus] = useState("loading");
@@ -713,20 +722,31 @@ function ProductCategoryPage({ categorySlug }) {
 
   useEffect(() => {
     setPage(1);
-  }, [selectedCategory, manufacturer]);
+  }, [selectedCategory, manufacturer, availability, listRefreshKey]);
+
+  function applyAvailabilityFilter(list) {
+    if (availability === "in-stock") return list.filter((item) => item.inStock);
+    if (availability === "order") return list.filter((item) => !item.inStock);
+    return list;
+  }
+
+  function resetSubmittedSearch(refresh = false) {
+    setSubmittedSearch({ active: false, query: "" });
+    if (refresh) setListRefreshKey((value) => value + 1);
+  }
 
   useEffect(() => {
     const controller = new AbortController();
     setStatus("loading");
     const params = new URLSearchParams();
     if (selectedCategory) params.set("category", selectedCategory);
-    if (manufacturer !== "全部") params.set("manufacturer", manufacturer);
+    if (manufacturer !== allManufacturersLabel) params.set("manufacturer", manufacturer);
     const query = params.toString();
     fetch("/api/products" + (query ? "?" + query : ""), { signal: controller.signal })
       .then((response) => response.json().then((data) => ({ ok: response.ok, data })))
       .then(({ ok, data }) => {
         if (!ok) throw new Error(data.message || "read failed");
-        setItems(data.items || []);
+        setItems(applyAvailabilityFilter(data.items || []));
         setStatus("ready");
       })
       .catch((error) => {
@@ -736,7 +756,7 @@ function ProductCategoryPage({ categorySlug }) {
         }
       });
     return () => controller.abort();
-  }, [selectedCategory, manufacturer]);
+  }, [selectedCategory, manufacturer, availability, listRefreshKey]);
 
   const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
   const safePage = Math.min(page, totalPages);
@@ -757,7 +777,12 @@ function ProductCategoryPage({ categorySlug }) {
             <a className="secondary-btn" href="/#home">{"返回首页"}</a>
             <a className="primary-btn" href="/#contact">{"联系业务找型号"}</a>
           </div>
-          <ProductSearch />
+          <ProductSearch onSearchSubmit={({ query, items }) => {
+            setSubmittedSearch({ active: true, query });
+            setItems(applyAvailabilityFilter(items));
+            setStatus("ready");
+            setPage(1);
+          }} />
         </section>
 
         <section className="product-browser">
@@ -769,7 +794,15 @@ function ProductCategoryPage({ categorySlug }) {
               </div>
               <div className="filter-group product-toolbar-search">
                 <h2>{"型号 / 标准搜索"}</h2>
-                <ProductSearch />
+                <ProductSearch
+                  extraParams={{ category: selectedCategory, manufacturer: manufacturer !== allManufacturersLabel ? manufacturer : "" }}
+                  onSearchSubmit={({ query, items }) => {
+                    setSubmittedSearch({ active: true, query });
+                    setItems(applyAvailabilityFilter(items));
+                    setStatus("ready");
+                    setPage(1);
+                  }}
+                />
               </div>
               <div className="filter-group">
                 <h2>{"产品大类"}</h2>
@@ -779,7 +812,7 @@ function ProductCategoryPage({ categorySlug }) {
                       key={item.slug}
                       type="button"
                       className={selectedCategory === item.slug ? "active" : ""}
-                      onClick={() => setSelectedCategory((current) => current === item.slug ? "" : item.slug)}
+                      onClick={() => { resetSubmittedSearch(); setSelectedCategory((current) => current === item.slug ? "" : item.slug); }}
                     >
                       <strong>{item.number}</strong>
                       <span>{item.title}</span>
@@ -791,8 +824,18 @@ function ProductCategoryPage({ categorySlug }) {
                 <h2>{"厂家筛选"}</h2>
                 <div className="manufacturer-tabs" role="tablist" aria-label="manufacturer filter">
                   {manufacturerTabs.map((name) => (
-                    <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => setManufacturer((current) => current === name ? "全部" : name)}>
+                    <button key={name} type="button" className={manufacturer === name ? "active" : ""} onClick={() => { resetSubmittedSearch(); setManufacturer((current) => current === name ? allManufacturersLabel : name); }}>
                       {name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="filter-group">
+                <h2>{"现货 / 订货"}</h2>
+                <div className="stock-filter-tabs" role="tablist" aria-label="stock availability filter">
+                  {availabilityTabs.map((tab) => (
+                    <button key={tab.value} type="button" className={availability === tab.value ? "active" : ""} onClick={() => { resetSubmittedSearch(); setAvailability((current) => current === tab.value ? "all" : tab.value); }}>
+                      {tab.label}
                     </button>
                   ))}
                 </div>
@@ -803,6 +846,12 @@ function ProductCategoryPage({ categorySlug }) {
           {status === "loading" && <p className="product-state">{"正在读取产品型号..."}</p>}
           {status === "error" && <p className="product-state">{"产品数据暂时读取失败，请稍后刷新。"}</p>}
           {status === "ready" && items.length === 0 && <p className="product-state">{"该筛选条件下型号正在整理中，可取消筛选或联系业务确认。"}</p>}
+          {submittedSearch.active && (
+            <div className="product-list-meta search-result-meta">
+              <span>{"搜索：" + submittedSearch.query}</span>
+              <button type="button" onClick={() => resetSubmittedSearch(true)}>清除搜索</button>
+            </div>
+          )}
           {status === "ready" && items.length > 0 && (
             <div className="product-list-meta">
               <span>{"共 " + items.length + " 个型号"}</span>
@@ -1188,7 +1237,10 @@ function App() {
     <>
       <Header />
       <main>
-        <section className="hero hero-video-shell" id="home">`r`n          <video className="hero-bg-video" autoPlay muted loop playsInline preload="metadata" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" aria-hidden="true">`r`n            <source src="/assets/videos/hero-welding-loop.mp4" type="video/mp4" />`r`n          </video>
+        <section className="hero hero-video-shell" id="home">
+          <video className="hero-bg-video" autoPlay muted loop playsInline preload="metadata" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" aria-hidden="true">
+            <source src="/assets/videos/hero-welding-loop.mp4" type="video/mp4" />
+          </video>
           <div className="hero-copy-wrap">
             <p className="eyebrow">{"\u5b81\u6ce2 \u6700\u4e13\u4e1a\u7684\u710a\u6750\u670d\u52a1\u5546"}</p>
             <h1>{"\u4e13\u6ce8\u710a\u6750\u9886\u57df\uff0c\u7cbe\u901a\u884c\u6807\u4e0e\u5de5\u51b5\u3002"}</h1>
@@ -1330,7 +1382,7 @@ function App() {
         </section>
         <section className="section contact" id="contact">
           <div><p className="eyebrow">Contact</p><h2>联系我们</h2><p>提供品牌、型号、数量、收货地址和到货时间，我们将安排专门负责小组对接库存、报价和配送。</p><figure className="contact-image"><OptimizedImage src="/assets/sections/contact.png" alt="焊材采购咨询与配送安排" /></figure><div className="contact-info"><a href="tel:057489007658" aria-label="拨打公司座机 0574-89007658">公司电话：0574-89007658</a><span>地址：宁波市鄞州区富宁路119号</span><span>配送：宁波地区正常48小时内，浙江全区域正常96小时内</span><span>营业时间：周一至周六 8:00-16:30，周日休息</span></div></div>
-          <div className="amap-card map-card"><div><strong>现场志凡焊材（新仓库）</strong><span>{"\u5730\u56fe\u5b9a\u4f4d\uff1a\u5b81\u6ce2\u5e02\u911e\u5dde\u533a\u5bcc\u5b81\u8def119\u53f7"}</span></div><div className="map-actions"><a href="https://j.map.baidu.com/9e/TTsM" target="_blank" rel="noreferrer">打开通用地图</a><a href="https://uri.amap.com/search?keyword=%E5%AE%81%E6%B3%A2%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%20%E5%AF%8C%E5%AE%81%E8%B7%AF119%E5%8F%B7&city=%E5%AE%81%E6%B3%A2&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div></div>
+          <div className="amap-card map-card"><div><strong>现场志凡焊材（新仓库）</strong><span>{"\u5730\u56fe\u5b9a\u4f4d\uff1a\u5b81\u6ce2\u5e02\u911e\u5dde\u533a\u5bcc\u5b81\u8def119\u53f7"}</span></div><div className="map-actions"><a href="https://j.map.baidu.com/9e/TTsM" target="_blank" rel="noreferrer">打开百度地图</a><a href="https://uri.amap.com/search?keyword=%E5%AE%81%E6%B3%A2%E5%BF%97%E5%87%A1%E7%84%8A%E6%9D%90%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%20%E5%AF%8C%E5%AE%81%E8%B7%AF119%E5%8F%B7&city=%E5%AE%81%E6%B3%A2&src=zhifan-site&callnative=1" target="_blank" rel="noreferrer">打开高德地图</a></div></div>
           <ContactForm />
         </section>
       </main>
