@@ -84,7 +84,7 @@ assertContains("src/components/ProductSearch.jsx", "getVisibleLimit", "viewport-
 assertContains("src/components/ProductSearch.jsx", "createPortal", "body-level product search dropdown portal");
 assertContains("src/components/ProductSearch.jsx", "item.standard", "standard number shown in product search results");
 assertContains("scripts/import-qa-articles.py", "og:title", "QA article Open Graph title generation");
-assertContains("scripts/import-qa-articles.py", "article_picture_html", "QA optimized picture generation");
+assertContains("public/articles/qa/qa-12-j507-electrode.html", "article-photo-video", "QA article video generation output");
 assertContains("scripts/apply-jinqiao-missing-docx.py", "equipment-accessories", "equipment category slug matches frontend catalog");
 assertContains("src/data/productCatalog.js", "aluminum-wires", "eighth product category");
 assertContains("src/App.jsx", "product-filter-grid", "primary category and manufacturer filters");
@@ -117,8 +117,8 @@ assertContains("public/articles/qa/qa-12-j507-electrode.html", "qa-answer-card",
 assertContains("public/articles/qa/qa-12-j507-electrode.html", zh.qaTitle, "QA article UTF-8 content");
 assertContains("public/articles/qa/qa-12-j507-electrode.html", "生成时间：2026-06-26", "QA article generated date in hero");
 assertContains("public/articles/qa/qa-12-j507-electrode.html", "property=\"og:title\"", "QA article Open Graph title markup");
-assertContains("public/articles/qa/qa-12-j507-electrode.html", "<picture>", "QA article optimized picture markup");
-assertContains("public/articles/qa/qa-12-j507-electrode.html", "loading=\"lazy\"", "QA article lazy image loading");
+assertContains("public/articles/qa/qa-12-j507-electrode.html", "article-photo-video", "QA article video markup");
+assertContains("public/articles/qa/qa-12-j507-electrode.html", "preload=\"metadata\"", "QA article video metadata preload");
 assertContains("public/articles/qa/qa-12-j507-electrode.html", "联系业务找型号", "QA article contact CTA");
 
 
