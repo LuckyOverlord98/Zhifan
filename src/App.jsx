@@ -79,34 +79,57 @@ function usePageMeta(meta) {
   }, [meta?.title, meta?.description, meta?.keywords]);
 }
 
+const heroVideoSources = {
+  desktop: "/assets/videos/hero-welding-loop.mp4",
+  mobile: "/assets/videos/hero-mobile-welding-loop.mp4"
+};
+
+function getHeroVideoSource() {
+  if (typeof window !== "undefined" && window.matchMedia?.("(max-width: 820px)").matches) {
+    return heroVideoSources.mobile;
+  }
+  return heroVideoSources.desktop;
+}
+
 function useHeroVideoPlayback() {
   const videoRef = useRef(null);
+  const [videoSource, setVideoSource] = useState(getHeroVideoSource);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return undefined;
 
-    const desktopSource = "/assets/videos/hero-welding-loop.mp4";
-    const mobileSource = "/assets/videos/hero-mobile-welding-loop.mp4";
     const media = window.matchMedia?.("(max-width: 820px)");
-    let activeSource = "";
 
-    const tryPlay = () => {
+    const prepareInlinePlayback = () => {
       video.muted = true;
       video.defaultMuted = true;
+      video.autoplay = true;
+      video.loop = true;
       video.playsInline = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("webkit-playsinline", "true");
+      video.setAttribute("x5-playsinline", "true");
+      video.setAttribute("x5-video-player-type", "h5");
+      video.setAttribute("x5-video-player-fullscreen", "false");
+    };
+
+    const tryPlay = () => {
+      prepareInlinePlayback();
       const playPromise = video.play?.();
-      if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(() => {
-          video.classList.add("video-fallback");
-        });
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise
+          .then(() => video.classList.remove("video-fallback"))
+          .catch(() => video.classList.add("video-fallback"));
       }
     };
 
-    const setSource = () => {
-      const nextSource = media?.matches ? mobileSource : desktopSource;
-      if (activeSource !== nextSource || video.getAttribute("src") !== nextSource) {
-        activeSource = nextSource;
+    const syncSource = () => {
+      const nextSource = media?.matches ? heroVideoSources.mobile : heroVideoSources.desktop;
+      setVideoSource((currentSource) => (currentSource === nextSource ? currentSource : nextSource));
+      if (video.getAttribute("src") !== nextSource) {
         video.classList.remove("video-fallback");
         video.setAttribute("src", nextSource);
         video.load();
@@ -118,17 +141,20 @@ function useHeroVideoPlayback() {
       if (!document.hidden) tryPlay();
     };
 
-    setSource();
-    media?.addEventListener?.("change", setSource);
-    media?.addListener?.(setSource);
+    prepareInlinePlayback();
+    syncSource();
+    media?.addEventListener?.("change", syncSource);
+    media?.addListener?.(syncSource);
+    video.addEventListener("loadedmetadata", tryPlay);
     video.addEventListener("loadeddata", tryPlay);
     video.addEventListener("canplay", tryPlay);
     document.addEventListener("visibilitychange", retryVisiblePlayback);
     document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
 
     return () => {
-      media?.removeEventListener?.("change", setSource);
-      media?.removeListener?.(setSource);
+      media?.removeEventListener?.("change", syncSource);
+      media?.removeListener?.(syncSource);
+      video.removeEventListener("loadedmetadata", tryPlay);
       video.removeEventListener("loadeddata", tryPlay);
       video.removeEventListener("canplay", tryPlay);
       document.removeEventListener("visibilitychange", retryVisiblePlayback);
@@ -136,7 +162,7 @@ function useHeroVideoPlayback() {
     };
   }, []);
 
-  return videoRef;
+  return { videoRef, videoSource };
 }
 
 function productCardStyle(slug) {
@@ -1284,7 +1310,7 @@ const quickMatchGroups = [
 ];
 
 function App() {
-  const heroVideoRef = useHeroVideoPlayback();
+  const { videoRef: heroVideoRef, videoSource: heroVideoSource } = useHeroVideoPlayback();
   const currentPath = window.location.pathname;
   const isAdminPage = currentPath === "/admin" || currentPath === "/admin/";
   const isTeamVisionPage = currentPath === "/team-vision" || currentPath === "/team-vision/";
@@ -1316,7 +1342,7 @@ function App() {
       <Header />
       <main>
         <section className="hero hero-video-shell" id="home">
-          <video ref={heroVideoRef} className="hero-bg-video" autoPlay muted loop playsInline preload="auto" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" aria-hidden="true" />
+          <video ref={heroVideoRef} className="hero-bg-video" src={heroVideoSource} autoPlay muted loop playsInline preload="auto" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" webkit-playsinline="true" x5-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" aria-hidden="true" />
           <div className="hero-copy-wrap">
             <p className="eyebrow">{"\u5b81\u6ce2 \u6700\u4e13\u4e1a\u7684\u710a\u6750\u670d\u52a1\u5546"}</p>
             <h1>{"\u4e13\u6ce8\u710a\u6750\u9886\u57df\uff0c\u7cbe\u901a\u884c\u6807\u4e0e\u5de5\u51b5\u3002"}</h1>
