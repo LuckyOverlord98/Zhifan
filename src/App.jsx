@@ -79,6 +79,66 @@ function usePageMeta(meta) {
   }, [meta?.title, meta?.description, meta?.keywords]);
 }
 
+function useHeroVideoPlayback() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return undefined;
+
+    const desktopSource = "/assets/videos/hero-welding-loop.mp4";
+    const mobileSource = "/assets/videos/hero-mobile-welding-loop.mp4";
+    const media = window.matchMedia?.("(max-width: 820px)");
+    let activeSource = "";
+
+    const tryPlay = () => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      const playPromise = video.play?.();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {
+          video.classList.add("video-fallback");
+        });
+      }
+    };
+
+    const setSource = () => {
+      const nextSource = media?.matches ? mobileSource : desktopSource;
+      if (activeSource !== nextSource || video.getAttribute("src") !== nextSource) {
+        activeSource = nextSource;
+        video.classList.remove("video-fallback");
+        video.setAttribute("src", nextSource);
+        video.load();
+      }
+      tryPlay();
+    };
+
+    const retryVisiblePlayback = () => {
+      if (!document.hidden) tryPlay();
+    };
+
+    setSource();
+    media?.addEventListener?.("change", setSource);
+    media?.addListener?.(setSource);
+    video.addEventListener("loadeddata", tryPlay);
+    video.addEventListener("canplay", tryPlay);
+    document.addEventListener("visibilitychange", retryVisiblePlayback);
+    document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+
+    return () => {
+      media?.removeEventListener?.("change", setSource);
+      media?.removeListener?.(setSource);
+      video.removeEventListener("loadeddata", tryPlay);
+      video.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("visibilitychange", retryVisiblePlayback);
+      document.removeEventListener("touchstart", tryPlay);
+    };
+  }, []);
+
+  return videoRef;
+}
+
 function productCardStyle(slug) {
   const base = `/assets/products/cards/${slug}.webp`;
   const optimizedBase = `/assets/optimized/products__cards__${slug}`;
@@ -1224,6 +1284,7 @@ const quickMatchGroups = [
 ];
 
 function App() {
+  const heroVideoRef = useHeroVideoPlayback();
   const currentPath = window.location.pathname;
   const isAdminPage = currentPath === "/admin" || currentPath === "/admin/";
   const isTeamVisionPage = currentPath === "/team-vision" || currentPath === "/team-vision/";
@@ -1255,10 +1316,7 @@ function App() {
       <Header />
       <main>
         <section className="hero hero-video-shell" id="home">
-          <video className="hero-bg-video" autoPlay muted loop playsInline preload="metadata" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" aria-hidden="true">
-            <source media="(max-width: 820px)" src="/assets/videos/hero-mobile-welding-loop.mp4" type="video/mp4" />
-            <source src="/assets/videos/hero-welding-loop.mp4" type="video/mp4" />
-          </video>
+          <video ref={heroVideoRef} className="hero-bg-video" autoPlay muted loop playsInline preload="auto" poster="/assets/optimized/sections__hero-building-zhifan-1280.webp" aria-hidden="true" />
           <div className="hero-copy-wrap">
             <p className="eyebrow">{"\u5b81\u6ce2 \u6700\u4e13\u4e1a\u7684\u710a\u6750\u670d\u52a1\u5546"}</p>
             <h1>{"\u4e13\u6ce8\u710a\u6750\u9886\u57df\uff0c\u7cbe\u901a\u884c\u6807\u4e0e\u5de5\u51b5\u3002"}</h1>

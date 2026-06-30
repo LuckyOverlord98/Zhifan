@@ -7587,3 +7587,7 @@ body {
     grid-area: availability !important;
   }
 }
+
+.hero-bg-video.video-fallback {
+  opacity: .72;
+}
