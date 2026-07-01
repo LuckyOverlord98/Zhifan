@@ -7603,8 +7603,7 @@ body {
   box-shadow: 0 18px 42px rgba(92, 44, 180, 0.16), 0 0 0 1px rgba(133, 70, 255, 0.18);
 }
 .knowledge-card.is-designated-purple::before,
-.qa-designated-card::before,
-.qa-designated-hero::before {
+.qa-designated-card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -7632,12 +7631,31 @@ body {
   font-weight: 900;
   box-shadow: 0 8px 18px rgba(109, 53, 214, 0.25);
 }
-.qa-designated-card,
-.qa-designated-hero {
+.qa-designated-card {
   position: relative;
   overflow: hidden;
   border-color: rgba(133, 70, 255, 0.38);
   box-shadow: 0 16px 38px rgba(92, 44, 180, 0.12);
+}
+.qa-designated-hero {
+  align-items: center;
+  gap: clamp(22px, 4vw, 34px);
+}
+.qa-designated-hero > div {
+  min-width: 0;
+}
+.qa-designated-hero .eyebrow {
+  margin-bottom: 10px;
+}
+.qa-designated-hero h1 {
+  margin: 10px 0 12px;
+  line-height: 1.12;
+}
+.qa-designated-hero .article-generated-time {
+  margin-top: 14px;
+}
+.qa-designated-hero .article-photo-bg {
+  justify-self: stretch;
 }
 .qa-designated-card span,
 .qa-designated-note strong {
@@ -7687,8 +7705,7 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .knowledge-card.is-designated-purple::before,
-  .qa-designated-card::before,
-  .qa-designated-hero::before {
+  .qa-designated-card::before {
     animation: none;
   }
 }
