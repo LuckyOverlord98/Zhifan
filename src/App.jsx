@@ -1254,10 +1254,11 @@ function KnowledgeIndexPage() {
               const isCommon = globalIndex >= 0 && globalIndex < 3;
               const views = getKnowledgeViews(article);
               return (
-                <a className={`knowledge-card qa-knowledge-card qa-index-card ${isCommon ? "is-common" : ""}`} href={article.href} key={article.href}>
+                <a className={`knowledge-card qa-knowledge-card qa-index-card ${isCommon ? "is-common" : ""} ${article.featuredTone === "purple" ? "is-designated-purple" : ""}`} href={article.href} key={article.href}>
                   <div className="qa-card-meta">
                     <span>{article.number}</span>
-                    {isCommon && <em>常问</em>}
+                    {article.featuredLabel && <em className="designated-label">{article.featuredLabel}</em>}
+                    {!article.featuredLabel && isCommon && <em>常问</em>}
                   </div>
                   <h3>{article.title}</h3>
                   <p>{article.summary}</p>
@@ -1463,7 +1464,7 @@ function App() {
               ))}
             </div>
             <div className={`knowledge-list qa-knowledge-list ${knowledgeOpen ? "" : "collapsed"}`} id="knowledgeList">
-              {visibleArticles.map((article) => <a className="knowledge-card qa-knowledge-card" key={article.href} href={article.href}><span>{article.number}</span><h3>{article.title}</h3><p>{article.summary}</p><strong>阅读全文</strong></a>)}
+              {visibleArticles.map((article) => <a className={`knowledge-card qa-knowledge-card ${article.featuredTone === "purple" ? "is-designated-purple" : ""}`} key={article.href} href={article.href}><span>{article.number}</span>{article.featuredLabel && <em className="designated-label">{article.featuredLabel}</em>}<h3>{article.title}</h3><p>{article.summary}</p><strong>阅读全文</strong></a>)}
             </div>
             {currentKnowledgeArticles.length > 5 && <div className="knowledge-more"><button type="button" aria-expanded={knowledgeOpen} aria-controls="knowledgeList" onClick={() => setKnowledgeOpen((value) => !value)}>{knowledgeOpen ? "收起文章" : "查看更多 " + (currentKnowledgeArticles.length - 5) + " 篇"}</button></div>}
           </div>

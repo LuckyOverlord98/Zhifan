@@ -7591,3 +7591,104 @@ body {
 .hero-bg-video.video-fallback {
   opacity: .72;
 }
+
+
+/* Q&A designated highlights and content protection */
+.knowledge-card.is-designated-purple,
+.qa-index-card.is-designated-purple {
+  border-color: rgba(133, 70, 255, 0.62);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(246, 241, 255, 0.92)),
+    url("/assets/optimized/sections__knowledge-operation-768.webp") right bottom / 58% auto no-repeat;
+  box-shadow: 0 18px 42px rgba(92, 44, 180, 0.16), 0 0 0 1px rgba(133, 70, 255, 0.18);
+}
+.knowledge-card.is-designated-purple::before,
+.qa-designated-card::before,
+.qa-designated-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, transparent, rgba(133, 70, 255, 0.95), rgba(218, 179, 255, 0.9), transparent);
+  background-size: 260% 100%;
+  animation: purple-marquee-border 3.8s linear infinite;
+  pointer-events: none;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.knowledge-card .designated-label,
+.qa-card-meta .designated-label {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6d35d6, #a45cff);
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  box-shadow: 0 8px 18px rgba(109, 53, 214, 0.25);
+}
+.qa-designated-card,
+.qa-designated-hero {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(133, 70, 255, 0.38);
+  box-shadow: 0 16px 38px rgba(92, 44, 180, 0.12);
+}
+.qa-designated-card span,
+.qa-designated-note strong {
+  background: rgba(133, 70, 255, 0.12);
+  color: #5c2cb4;
+}
+.protected-content-page,
+.protected-content-page * {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+.protected-content-page input,
+.protected-content-page textarea,
+.protected-content-page select,
+.protected-content-page button {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+.protected-content-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(-24deg, rgba(18, 100, 216, 0) 0 76px, rgba(18, 100, 216, 0.035) 76px 77px, rgba(18, 100, 216, 0) 77px 152px);
+}
+.protected-content-page::after {
+  content: "宁波志凡焊材";
+  position: fixed;
+  inset: -12vh -12vw;
+  z-index: 2147483001;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  color: rgba(12, 44, 86, 0.115);
+  font-size: clamp(30px, 5vw, 70px);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.34);
+  transform: rotate(-24deg);
+}
+@keyframes purple-marquee-border {
+  from { background-position: 0% 50%; }
+  to { background-position: 260% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .knowledge-card.is-designated-purple::before,
+  .qa-designated-card::before,
+  .qa-designated-hero::before {
+    animation: none;
+  }
+}
