@@ -7709,3 +7709,52 @@ body {
     animation: none;
   }
 }
+
+/* Compact mobile hero metrics: keep all three metrics visible without wide blank cards. */
+@media (max-width: 760px) {
+  .hero-metrics {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100%;
+    gap: 8px !important;
+    overflow: visible !important;
+    scroll-snap-type: none !important;
+    padding: 0 !important;
+  }
+
+  .hero-metrics div {
+    flex: none !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 10px 8px !important;
+    border-radius: 12px;
+    text-align: center;
+    scroll-snap-align: none !important;
+  }
+
+  .hero-metrics dt {
+    font-size: clamp(18px, 5.2vw, 22px);
+    line-height: 1.08;
+  }
+
+  .hero-metrics dd {
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-metrics {
+    gap: 6px !important;
+  }
+
+  .hero-metrics div {
+    padding: 8px 5px !important;
+  }
+
+  .hero-metrics dd {
+    font-size: 11px;
+  }
+}
