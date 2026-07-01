@@ -1299,7 +1299,7 @@ const quickMatchGroups = [
     title: "按焊接方法缩小范围",
     text: "手工电弧焊、气保焊、氩弧焊和埋弧焊，分别对应焊条、实芯焊丝、药芯焊丝、焊剂组合。",
     chips: ["气保焊丝", "药芯焊丝", "埋弧焊丝焊剂", "氩弧焊填丝"],
-    href: "/articles/qa/qa-07-wire-solid-flux-cored.html"
+    href: "/articles/qa/qa-00-welding-material-selection-parameters.html"
   },
   {
     label: "标准",
